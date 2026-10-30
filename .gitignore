@@ -1,0 +1,28 @@
+# Keep the source snapshot reviewable; deployment credentials, local config,
+# historical logs/archives and generated evidence are intentionally excluded.
+*
+!/.gitignore
+!/*.go
+!/go.mod
+!/go.sum
+!/README.md
+!/DESIGN-v2.md
+!/migrations/
+!/migrations/*.sql
+!/web/
+!/web/**
+!/rules/
+!/rules/**
+!/plugins/
+!/plugins/*.yaml
+!/passive_providers/
+!/passive_providers/*.yaml
+!/third_party/
+!/third_party/**
+!/.github/
+!/.github/workflows/
+!/.github/workflows/*.yml
+!/docs/
+!/docs/p0/
+!/docs/p0/*.md
+!/docs/p0/*.json

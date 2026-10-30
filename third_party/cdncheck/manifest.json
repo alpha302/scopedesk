@@ -1,0 +1,32 @@
+{
+  "repository": "https://github.com/projectdiscovery/cdncheck",
+  "commit": "81bed4981f1110c572f7c94c4b3580c8b91ab24f",
+  "license": "MIT",
+  "retrieved_at": "2026-10-29",
+  "sha256": "d4adc27601c9970291b43b9973ec6d796779fa7f95f9fa72d91dd8ba1f219f4a",
+  "suffixes": [
+    {
+      "suffix": "cloudfront.net",
+      "category": "cdn",
+      "provider": "cloudfront",
+      "upstream_provider": "amazon",
+      "reference": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/LinkFormat.html"
+    },
+    {
+      "suffix": "alikunlun.com",
+      "category": "cdn",
+      "provider": "aliyun",
+      "upstream_provider": "aliyun",
+      "reference": "https://help.aliyun.com/en/cdn/getting-started/quick-access-to-alibaba-cloud-cdn"
+    }
+  ],
+  "import_counts": {
+    "cdn": 7694,
+    "waf": 1103,
+    "cloud": 116097
+  },
+  "common_total": 104,
+  "common_enabled": 2,
+  "common_policy": "Untyped common suffixes require explicit category review; unused entries are preserved in the raw snapshot.",
+  "license_sha256": "cbcdaab87df3175107aa28915bd253cebdd618a49c9ac5d6c669c0b1cbebcacb"
+}

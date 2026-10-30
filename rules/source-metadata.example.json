@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/projectdiscovery/wappalyzergo",
+  "commit": "219e0a5d4b493f1937994db15ffdac786d361b84",
+  "sha256": "REPLACE_WITH_SHA256_OF_LOCAL_PINNED_INPUT",
+  "code_license": "MIT",
+  "rule_license": "UNREVIEWED_UPSTREAM",
+  "license_references": [
+    "https://github.com/projectdiscovery/wappalyzergo/blob/219e0a5d4b493f1937994db15ffdac786d361b84/README.md",
+    "https://github.com/enthec/webappanalyzer/blob/main/LICENSE"
+  ],
+  "redistribution_reviewed": false
+}

@@ -1,0 +1,20 @@
+{
+  "repository": "https://github.com/cnshym/httpgo",
+  "commit": "0368858d0020d471f35d554834bc882af248b106",
+  "sha256": "b9bde6f43a5b875fdf1a860a91f58e728afd255290a6194a0674d441bd0114df",
+  "code_license": "not-declared",
+  "rule_license": "LicenseRef-ScopeDesk-ProjectPermission",
+  "license_references": [
+    "https://github.com/cnshym/httpgo/tree/0368858d0020d471f35d554834bc882af248b106"
+  ],
+  "redistribution_reviewed": false,
+  "project_use_authorized": true,
+  "permission_basis": "2026-10-29 conversation: user explicitly allowed ScopeDesk to use cnshym/httpgo fingerprints; no general open-source or third-party sublicensing assertion.",
+  "generated_sha256": "5248c6cc49e5c411b9368bfc09e0c79455c26e569fc5586fbaae7a596e55aa30",
+  "input_path": "cmd/httpgo/fingers.json",
+  "generated_path": "rules/httpgo.yaml",
+  "retrieved_at": "2026-10-29",
+  "rules_original": 8372,
+  "rules_converted": 8139,
+  "rules_skipped": 233
+}

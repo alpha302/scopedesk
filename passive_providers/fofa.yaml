@@ -1,0 +1,29 @@
+name: fofa
+verified: true
+reference: https://fofapro.github.io/fofa-py/_modules/fofa/client.html
+endpoint: https://fofa.info/api/v1/search/all
+query_template: 'domain="{{domain}}"'
+encoding: base64
+page_parameter: page
+size_parameter: size
+page_size: 100
+max_pages: 10
+fields: [host, ip, port, title, server, protocol, lastupdatetime]
+mapping:
+  host: host
+  ip: ip
+  port: port
+  title: title
+  server: server
+  service: protocol
+provider_time_field: lastupdatetime
+provider_time_meaning: provider_updated_at
+provider_time_timezone: unconfirmed
+pagination: numbered_total_if_present
+charge_reporting: unverified
+error_codes:
+  "http:401": auth_expired
+  "http:403": auth_expired
+  "http:429": rate_limited
+  "http:503": unavailable
+# Other provider codes remain unknown; upstream error text is never persisted.

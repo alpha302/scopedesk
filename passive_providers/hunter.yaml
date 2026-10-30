@@ -1,0 +1,45 @@
+name: hunter
+verified: true
+reference: https://hunter.qianxin.com/home/helpCenter?r=5-1-1
+# Official help remains unreadable. Wire format and quota strings were verified
+# against the live official API on 2026-10-29 with user-authorized credit-only tests.
+# verified means reviewed adapter, not official verification of daily reset rules.
+# Wire-format hints below are traced to the user-selected ones commit, not official verification.
+# Daily reset time/timezone remain unverified; paid fallback is blocked by live balance checks.
+# Implementation reference: https://github.com/ffffffff0x/ones/blob/4f2a6e8d9e7df57bc4a838c2d44b62a3346a5918/engine/hunter.go
+# Response reference: https://github.com/ffffffff0x/ones/blob/4f2a6e8d9e7df57bc4a838c2d44b62a3346a5918/mod/structinfo.go
+endpoint: https://hunter.qianxin.com/openApi/search
+query_template: 'domain="{{domain}}"'
+encoding: base64url
+page_parameter: page
+size_parameter: page_size
+page_size: 10
+max_pages: 10
+fields: [domain, url, ip, port, web_title, protocol, base_protocol, status_code, component, updated_at]
+mapping:
+  host: domain
+  ip: ip
+  port: port
+  title: web_title
+  server: header_server
+  banner: banner
+  service: protocol
+  protocol: base_protocol
+  status_code: status_code
+  fingerprints: component
+provider_time_field: updated_at
+provider_time_meaning: provider_reported_updated_at
+provider_time_timezone: unconfirmed
+pagination: unverified
+charge_reporting: explicit_points_text
+error_codes:
+  "http:401": auth_expired
+  "http:403": auth_expired
+  "http:429": rate_limited
+preferred_charge_unit: points
+# Multiple accounts are individually configured; never rotated after rate limiting.
+# Reference request parameters: api-key, search, page, page_size.
+# Reference response envelope: code, message, data.total, data.arr.
+# consume_quota/rest_quota are declared as strings; do not assume numeric units.
+# Only observed success 200 / referenced auth 401 and standard HTTP failures are classified.
+# Do not enable this template merely because wire hints are populated.

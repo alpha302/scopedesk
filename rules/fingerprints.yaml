@@ -1,0 +1,50 @@
+# ScopeDesk-authored seed rules. No external rule corpus is redistributed here.
+schema: 1
+rules:
+  - id: scopedesk-nginx-server
+    product: nginx
+    combination: any
+    confidence: 30
+    source: ScopeDesk
+    version: "2026-10-29"
+    license: project-authored
+    matchers:
+      - {field: server, kind: regex, pattern: '^nginx(?:/|$)'}
+  - id: scopedesk-apache-server
+    product: Apache
+    combination: any
+    confidence: 30
+    source: ScopeDesk
+    version: "2026-10-29"
+    license: project-authored
+    matchers:
+      - {field: server, kind: regex, pattern: '^Apache(?:/|$)'}
+  - id: scopedesk-iis-server
+    product: IIS
+    combination: any
+    confidence: 30
+    source: ScopeDesk
+    version: "2026-10-29"
+    license: project-authored
+    matchers:
+      - {field: server, kind: regex, pattern: '^Microsoft-IIS(?:/|$)'}
+  - id: scopedesk-wordpress
+    product: WordPress
+    combination: all
+    confidence: 75
+    source: ScopeDesk
+    version: "2026-10-29"
+    license: project-authored
+    matchers:
+      - {field: body, kind: contains, pattern: '/wp-content/'}
+      - {field: header, key: Link, kind: contains, pattern: 'https://api.w.org/'}
+  - id: scopedesk-grafana
+    product: Grafana
+    combination: all
+    confidence: 75
+    source: ScopeDesk
+    version: "2026-10-29"
+    license: project-authored
+    matchers:
+      - {field: title, kind: contains, pattern: Grafana}
+      - {field: body, kind: contains, pattern: grafanaBootData}

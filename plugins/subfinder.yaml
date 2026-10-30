@@ -1,0 +1,36 @@
+name: subfinder
+version: "2.17.0"
+kind: collector
+mode: external
+active: false
+dns_only: false
+scope_modes: [subdomains, descendants]
+config_files:
+  - source: subfinder/provider-config.yaml
+    destination: config/subfinder/provider-config.yaml
+    optional: true
+  - source: subfinder/config.yaml
+    destination: config/subfinder/config.yaml
+    optional: true
+requires:
+  caps: []
+  worker_label: []
+exec:
+  bin: /opt/scopedesk-tools/subfinder
+  args: ["-d", "{{domain}}", "-json", "-silent", "-duc", "-rl", "{{rate}}", "-timeout", "15", "-max-time", "1"]
+  timeout: 120s
+  max_output: 8000000
+  rate_format: integer
+  task_limit: 512
+  limits:
+    cpu: 100
+    as: 2147483648
+    fsize: 16777216
+input: domain
+output:
+  format: jsonl
+  max_line_bytes: 1000000
+  mapping:
+    host: host
+params: {}
+post: [normalize, deduplicate, scope_guard]
