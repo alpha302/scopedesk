@@ -15,6 +15,25 @@ import (
 	"golang.org/x/net/dns/dnsmessage"
 )
 
+func TestP0DatabaseBoundary(t *testing.T) {
+	for _, tc := range []struct {
+		dsn     string
+		allowed bool
+	}{
+		{"postgres://fixture@127.0.0.1/scopedesk_p0?sslmode=disable", true},
+		{"postgres://fixture@localhost/scopedesk_p0?sslmode=disable", true},
+		{"postgres://fixture@remote.invalid/scopedesk_p0?sslmode=disable", false},
+		{"postgres://fixture@localhost/business?sslmode=disable", false},
+		{"postgres://fixture@localhost/scopedesk_p0?host=remote.invalid&sslmode=disable", false},
+		{"postgres://fixture@localhost/scopedesk_p0?dbname=business&sslmode=disable", false},
+		{"postgres://fixture@localhost,remote.invalid/scopedesk_p0?sslmode=disable", false},
+	} {
+		if p0DatabaseAllowed(tc.dsn) != tc.allowed {
+			t.Fatal("P0 effective database destination boundary failed (destination suppressed)")
+		}
+	}
+}
+
 // Observe the resolver's wire response separately from DNSError. The fixture
 // never uses a real resolver, provider, or target and cannot grant authorization.
 func p0NegativeResolver(t *testing.T, code dnsmessage.RCode) (*net.Resolver, *atomic.Int64) {

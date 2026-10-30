@@ -21,6 +21,27 @@ import (
 
 type p0Trace struct{ queries atomic.Int64 }
 
+func p0DatabaseAllowed(dsn string) bool {
+	u, err := url.Parse(dsn)
+	if err != nil || u == nil || u.Path != "/scopedesk_p0" {
+		return false
+	}
+	cfg, err := pgxpool.ParseConfig(dsn)
+	if err != nil || cfg.ConnConfig.Database != "scopedesk_p0" {
+		return false
+	}
+	local := func(host string) bool { return host == "127.0.0.1" || host == "localhost" }
+	if !local(cfg.ConnConfig.Host) {
+		return false
+	}
+	for _, fallback := range cfg.ConnConfig.Fallbacks {
+		if !local(fallback.Host) {
+			return false
+		}
+	}
+	return true
+}
+
 func (p *p0Trace) TraceQueryStart(ctx context.Context, _ *pgx.Conn, _ pgx.TraceQueryStartData) context.Context {
 	p.queries.Add(1)
 	return ctx
@@ -34,8 +55,7 @@ func p0Store(t *testing.T) (*Store, *p0Trace) {
 	if os.Getenv("P0_ISOLATED") != "ephemeral-ci" {
 		t.Skip("P0 requires an explicitly disposable PostgreSQL 16 environment")
 	}
-	u, err := url.Parse(os.Getenv("DATABASE_URL"))
-	if err != nil || u == nil || (u.Hostname() != "127.0.0.1" && u.Hostname() != "localhost") || u.Path != "/scopedesk_p0" {
+	if !p0DatabaseAllowed(os.Getenv("DATABASE_URL")) {
 		t.Fatal("P0 refuses this database destination (connection details suppressed)")
 	}
 	s := integrationStore(t)
