@@ -17,7 +17,7 @@
 
 ## 安全边界（现在固定）
 
-测试不启动应用 server、worker、scheduler，不连接真实目标，不调用真实供应商，不导入聊天密钥，不执行生产迁移/部署。数据库仅允许显式 `P0_ISOLATED=ephemeral-ci`、localhost/127.0.0.1、数据库名 `scopedesk_p0` 的临时 PG16 实例；每例另建随机 schema 并清理。不要在已有业务库用这个名称绕过环境边界。
+测试不启动应用 server、worker、scheduler，不连接真实目标，不调用真实供应商，不导入聊天密钥，不执行生产迁移/部署。数据库仅允许显式 `P0_ISOLATED=ephemeral-ci`、localhost/127.0.0.1、数据库名 `scopedesk_p0` 的临时 PG16 实例；按 pgx 最终配置及全部 fallback 主机核对，拒绝 URL 参数覆盖到其他主机/数据库；每例另建随机 schema 并清理。不要在已有业务库用这个名称绕过环境边界。
 
 测试仍使用现有 ScopeGuard、黑名单、平台/项目/范围限速和预算代码；不增加默认速率。文档网段只作为合成资产证据入库，不用于探测。后续固定 IP 也不替代每次实际请求前的最新授权复核。无法确认租约时不能外发；撤销/预算/范围测试必须零漏放。NXDOMAIN 必须有独立可解释证据，`DNSError.IsNotFound` 不足以区分 NXDOMAIN/NODATA，单次负面结果不能判 HTTP 下线。
 
@@ -51,12 +51,24 @@
 - W30 的实际 SQL 往返：0/1/100/1000 范围分别为 1/2/101/1001 次，三轮一致，证明该代码路径存在逐范围 plan 查询。资产列表各测试路径为 2 次、概览为 3 次、20 范围列表为 21 次；不能把资产列表内部服务聚合叫做应用级 N+1。
 - 两种 10k 分布均核对 10k 资产/20k 服务，首屏 EXPLAIN 实际输出 50 行，原始 plans/loops/buffers 已留存。没有前后优化对照，不做速度提升、并发容量、p95/p99 或 SLO 达标结论。
 
+### 2026-10-30 扩充复现及最终重跑
+
+[Actions run 41026869234](https://github.com/alpha302/scopedesk/actions/runs/41026869234) 成功，测试 commit 为 `938bd4b6c3f17116aa2a0a4e59fa4fea7dccc109`；原始制品和校验清单在 `evidence/run-41026869234/`。10 个 P0 顶层测试及 11 个数据/协议子用例通过，零失败/跳过；7 项原有定向安全测试继续通过。该轮额外保存 PostgreSQL 镜像 digest。资源尚未设置硬上限，不能与首次运行的耗时作严格性能改善对比。
+
+- W26：受控 UDP DNS 分别返回 RCODE 3（NXDOMAIN）、0（空记录 NODATA）、2（SERVFAIL）；Go 对前两者均给出 `IsNotFound=true`。当前 Pipeline 对三者只有通用 DNS 错误，没有独立的负面 RCODE 证据；单次均保持 HTTP 存活未知，HTTP 测试传输器调用数为零。记录的 UDP 请求数包含 Go 重试/搜索行为，不能当作每主机固定包数或生产开销；本例使用即时本地 limiter，只用于复现，不是限速器性能验收。
+- W04：写入边界真实执行三个 complete=true 的 CertSpotter 作业，manual/Hunter-only 资产变为 miss_count=3、is_alive=false，并产生一个 ASSET_DOWN。未调用 collector，证明的是 writer 未按历史来源限定缺失，不宣称整条收集链已验收。
+- W27：写入边界的稳定主机、CDN=true、三次 IP 变化产生 2 个 IP_CHANGED 事件和 3 个快照。IP 只是 fixture 数据；CDN 身份和重要变化漏报矩阵仍待补齐。
+- W37：同一真实测试账号从 9 个不同 fixture IP 登录失败，均到达口令校验并返回 401，产生 9 个 IP 桶，没有账户级限制。不是实际网络攻击，也不是并发/耗时侧信道验收。
+- P0 环境边界新增 7 种配置检查，包括远程主机、错误库名、query 参数覆盖和远程 fallback，防止测试助手误向别处自动迁移。
+
+扩充复现的[首跑 41025870874](https://github.com/alpha302/scopedesk/actions/runs/41025870874) 曾因 CDN fixture 缺少必填证据数组失败；已修正 fixture，并在最终完整定向重跑通过。没有为让测试变绿而修改业务实现。未运行完整历史功能回归或登录后浏览器验收。
+
 ## 完整 B16 复现台账
 
 1. 默认来源完整性 → W04：`collectors.go` crtsh 返回 incomplete_source；已有完整性 fixture，待运行及状态解释合同。
-2. 单来源缺失误伤 → W04/W10：`results.go` complete 分支按全范围未 seen 资产增 miss_count；来源×历史资产复现矩阵待补。
-3. NXDOMAIN → W26：`pipeline.go` 无独立 RCODE 证据；可控权威 DNS 的 NXDOMAIN/NODATA/SERVFAIL 真值表待补。
-4. CDN IP 变化/长键 → W27/W01：`results.go` 不区分 CDN 比较 IP 列表，detail 十六进制拼入键；64KiB 事件索引键失败已在 PG16 复现；CDN 事件量对照待补。
+2. 单来源缺失误伤 → W04/W10：`results.go` complete 分支按全范围未 seen 资产增 miss_count；已完成 CertSpotter 与 manual/Hunter-only 资产的写入边界复现，完整来源×历史资产矩阵待补。
+3. NXDOMAIN → W26：`pipeline.go` 无独立 RCODE 证据；可控 DNS 的 NXDOMAIN/NODATA/SERVFAIL 与 HTTP 未知语义已复现；持久化、恢复/多轮和授权中途变化待补。
+4. CDN IP 变化/长键 → W27/W01：`results.go` 不区分 CDN 比较 IP 列表，detail 十六进制拼入键；64KiB 事件索引键失败与 CDN 写入边界事件/快照量已在 PG16 复现；完整降噪真值表和负载对照待补。
 5. 分类 → W05：`pipeline.go:categoryScore` 使用 Contains；contest/capital 误报已复现。
 6. 画像饥饿 → W06：`queue.go` 字母序主机列表顺序 Probe；有限预算的等待上界复现待补。
 7. 重复解析/串行 → W28/W08：`pipeline.go` 初次 DNS 与 DialContext 再解析，`queue.go` 顺序 Probe；逐请求 DNS/HTTP/PG 计量 fixture 待补，不能假定固定次数。
@@ -67,7 +79,7 @@
 12. 历史/循环日志 → W12/W39：每主机操作日志写入与历史增长影响待测，保留/保护窗口待定，不执行清理。
 13. 心跳失败 → W07：`queue.go` 单次错误即取消；短断连/池耗尽/租约接管故障注入待补。
 14. 分区维护 → W13：`queue.go:scheduleTick` 末调用 ensurePartitions；10 秒周期/多实例 DDL 计量待补。
-15. 登录/会话 → W37/W38：`main.go:login` attempts 仅按 IP、session 内存映射；分布 IP/重启/跨实例撤销待复现，未声称已支持持久会话。
+15. 登录/会话 → W37/W38：`main.go:login` attempts 仅按 IP、session 内存映射；同账号多 IP 的缺限制已复现；重启/跨实例撤销待复现，未声称已支持持久会话。
 16. IPv6 → W02：NAT64/6to4 嵌入回环/私网的 publicIP 分类已复现；受控实际路由/拨号待验，分类接受不等于实际已可达或已越权。
 
 ## SLO 与退出闸门

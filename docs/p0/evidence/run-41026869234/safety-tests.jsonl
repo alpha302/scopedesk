@@ -1,0 +1,32 @@
+{"Time":"2026-10-30T08:30:43.169984501Z","Action":"start","Package":"scopedesk"}
+{"Time":"2026-10-30T08:30:43.173902252Z","Action":"run","Package":"scopedesk","Test":"TestDNSPrivateAnswersNeverReachHTTP"}
+{"Time":"2026-10-30T08:30:43.173920279Z","Action":"output","Package":"scopedesk","Test":"TestDNSPrivateAnswersNeverReachHTTP","Output":"=== RUN   TestDNSPrivateAnswersNeverReachHTTP\n"}
+{"Time":"2026-10-30T08:30:43.237507812Z","Action":"output","Package":"scopedesk","Test":"TestDNSPrivateAnswersNeverReachHTTP","Output":"--- PASS: TestDNSPrivateAnswersNeverReachHTTP (0.06s)\n"}
+{"Time":"2026-10-30T08:30:43.23755408Z","Action":"pass","Package":"scopedesk","Test":"TestDNSPrivateAnswersNeverReachHTTP","Elapsed":0.06}
+{"Time":"2026-10-30T08:30:43.237570143Z","Action":"run","Package":"scopedesk","Test":"TestPassiveCertificateCompletenessMarkers"}
+{"Time":"2026-10-30T08:30:43.2375745Z","Action":"output","Package":"scopedesk","Test":"TestPassiveCertificateCompletenessMarkers","Output":"=== RUN   TestPassiveCertificateCompletenessMarkers\n"}
+{"Time":"2026-10-30T08:30:43.237637963Z","Action":"output","Package":"scopedesk","Test":"TestPassiveCertificateCompletenessMarkers","Output":"--- PASS: TestPassiveCertificateCompletenessMarkers (0.00s)\n"}
+{"Time":"2026-10-30T08:30:43.237643692Z","Action":"pass","Package":"scopedesk","Test":"TestPassiveCertificateCompletenessMarkers","Elapsed":0}
+{"Time":"2026-10-30T08:30:43.23764949Z","Action":"run","Package":"scopedesk","Test":"TestPassiveProviderGuardAndHistory"}
+{"Time":"2026-10-30T08:30:43.237666836Z","Action":"output","Package":"scopedesk","Test":"TestPassiveProviderGuardAndHistory","Output":"=== RUN   TestPassiveProviderGuardAndHistory\n"}
+{"Time":"2026-10-30T08:30:43.238030371Z","Action":"output","Package":"scopedesk","Test":"TestPassiveProviderGuardAndHistory","Output":"--- PASS: TestPassiveProviderGuardAndHistory (0.00s)\n"}
+{"Time":"2026-10-30T08:30:43.238038332Z","Action":"pass","Package":"scopedesk","Test":"TestPassiveProviderGuardAndHistory","Elapsed":0}
+{"Time":"2026-10-30T08:30:43.238042699Z","Action":"run","Package":"scopedesk","Test":"TestPassiveRootQueryRespectsFreshBlacklist"}
+{"Time":"2026-10-30T08:30:43.238046264Z","Action":"output","Package":"scopedesk","Test":"TestPassiveRootQueryRespectsFreshBlacklist","Output":"=== RUN   TestPassiveRootQueryRespectsFreshBlacklist\n"}
+{"Time":"2026-10-30T08:30:43.238052263Z","Action":"output","Package":"scopedesk","Test":"TestPassiveRootQueryRespectsFreshBlacklist","Output":"--- PASS: TestPassiveRootQueryRespectsFreshBlacklist (0.00s)\n"}
+{"Time":"2026-10-30T08:30:43.238057401Z","Action":"pass","Package":"scopedesk","Test":"TestPassiveRootQueryRespectsFreshBlacklist","Elapsed":0}
+{"Time":"2026-10-30T08:30:43.238093514Z","Action":"run","Package":"scopedesk","Test":"TestScopeGuardBoundaries"}
+{"Time":"2026-10-30T08:30:43.238105031Z","Action":"output","Package":"scopedesk","Test":"TestScopeGuardBoundaries","Output":"=== RUN   TestScopeGuardBoundaries\n"}
+{"Time":"2026-10-30T08:30:43.238200421Z","Action":"output","Package":"scopedesk","Test":"TestScopeGuardBoundaries","Output":"--- PASS: TestScopeGuardBoundaries (0.00s)\n"}
+{"Time":"2026-10-30T08:30:43.23820624Z","Action":"pass","Package":"scopedesk","Test":"TestScopeGuardBoundaries","Elapsed":0}
+{"Time":"2026-10-30T08:30:43.238211457Z","Action":"run","Package":"scopedesk","Test":"TestPipelineRejectsBeforeDNS"}
+{"Time":"2026-10-30T08:30:43.238214792Z","Action":"output","Package":"scopedesk","Test":"TestPipelineRejectsBeforeDNS","Output":"=== RUN   TestPipelineRejectsBeforeDNS\n"}
+{"Time":"2026-10-30T08:30:43.23824018Z","Action":"output","Package":"scopedesk","Test":"TestPipelineRejectsBeforeDNS","Output":"--- PASS: TestPipelineRejectsBeforeDNS (0.00s)\n"}
+{"Time":"2026-10-30T08:30:43.238244586Z","Action":"pass","Package":"scopedesk","Test":"TestPipelineRejectsBeforeDNS","Elapsed":0}
+{"Time":"2026-10-30T08:30:43.238249784Z","Action":"run","Package":"scopedesk","Test":"TestBudgetIsAtomic"}
+{"Time":"2026-10-30T08:30:43.238252958Z","Action":"output","Package":"scopedesk","Test":"TestBudgetIsAtomic","Output":"=== RUN   TestBudgetIsAtomic\n"}
+{"Time":"2026-10-30T08:30:43.238414556Z","Action":"output","Package":"scopedesk","Test":"TestBudgetIsAtomic","Output":"--- PASS: TestBudgetIsAtomic (0.00s)\n"}
+{"Time":"2026-10-30T08:30:43.238418252Z","Action":"pass","Package":"scopedesk","Test":"TestBudgetIsAtomic","Elapsed":0}
+{"Time":"2026-10-30T08:30:43.238432202Z","Action":"output","Package":"scopedesk","Output":"PASS\n"}
+{"Time":"2026-10-30T08:30:43.240839701Z","Action":"output","Package":"scopedesk","Output":"ok  \tscopedesk\t0.071s\n"}
+{"Time":"2026-10-30T08:30:43.240857437Z","Action":"pass","Package":"scopedesk","Elapsed":0.071}
