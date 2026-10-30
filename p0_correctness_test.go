@@ -125,7 +125,7 @@ func TestP0CharacterizeCDNRotation(t *testing.T) {
 	scope := insertScope(t, s, 1)
 	for _, ip := range []string{"1.1.1.1", "1.1.1.2", "1.1.1.3"} {
 		run := claimedRun(t, s, scope)
-		ob := Observation{Host: "api.example.com", IPs: []string{ip}, CNames: []string{}, Sources: []string{"fixture"}, DNSChecked: true, NetworkMeasured: true, IsCDN: true}
+		ob := Observation{Host: "api.example.com", IPs: []string{ip}, CNames: []string{}, Sources: []string{"fixture"}, DNSChecked: true, NetworkMeasured: true, NetworkEvidence: []NetworkEvidence{}, IsCDN: true}
 		if _, err := s.WriteResults(ctx, run, []Observation{ob}, false); err != nil {
 			t.Fatal("P0 CDN fixture write failed")
 		}
