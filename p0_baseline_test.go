@@ -89,7 +89,7 @@ INSERT INTO projects(id,workspace_id,owner,name,allow_active) SELECT i,100,100,'
 INSERT INTO scopes(id,owner,project_id,domain,policy,active) SELECT i,100,101+(i-1)%4,'s'||i||'.example.test','P0 synthetic; no target requests',false FROM generate_series(1,20)i;
 INSERT INTO monitor_plans(scope_id,enabled) SELECT id,false FROM scopes;`)
 	// Fixed anchor and arithmetic distribution make repeated fixtures identical.
-	// 10% wide titles, 5% dual-stack, 20% multiple IPv4; documentation IPs
+	// 10% wide titles, 5% dual-stack, 15% additional multiple IPv4; documentation IPs
 	// are stored as evidence only and are never passed to a network request.
 	p0Exec(t, s, `INSERT INTO assets(id,scope_id,host,ips,sources,title,is_alive,is_cdn,score,dns_at,first_seen,last_seen,plugin_evidence)
 SELECT i, sid, 'h'||i||'.s'||sid||'.example.test',

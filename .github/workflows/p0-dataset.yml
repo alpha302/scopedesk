@@ -1,0 +1,59 @@
+name: P0 item 1 dataset readiness
+on:
+  workflow_dispatch:
+  push:
+    branches: [batch-p0-p1]
+    paths:
+      - 'p0_dataset_test.go'
+      - 'p0_baseline_test.go'
+      - '.github/workflows/p0-dataset.yml'
+permissions:
+  contents: read
+jobs:
+  dataset:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    services:
+      postgres:
+        image: postgres:16-alpine@sha256:0cefaabd882e42bcb2a2f3dc56d3ce4770560ba62fd7f197f1a2e008fd5731ab
+        env:
+          POSTGRES_DB: scopedesk_p0
+          POSTGRES_USER: scopedesk_p0
+          POSTGRES_HOST_AUTH_METHOD: trust
+        ports: ['127.0.0.1:5432:5432']
+        options: >-
+          --cpus 2 --memory 1073741824
+          --health-cmd "pg_isready -U scopedesk_p0 -d scopedesk_p0"
+          --health-interval 5s --health-timeout 5s --health-retries 12
+    env:
+      DATABASE_URL: postgres://scopedesk_p0@127.0.0.1:5432/scopedesk_p0?sslmode=disable
+      P0_ISOLATED: ephemeral-ci
+      P0_ARTIFACT_DIR: ${{ github.workspace }}/p0-artifacts
+      GOMAXPROCS: '2'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+      - name: Prepare ephemeral fixture environment
+        shell: bash
+        run: |
+          key=$(openssl rand -base64 32)
+          echo "::add-mask::$key"
+          echo "RECON_MASTER_KEY=$key" >> "$GITHUB_ENV"
+          mkdir -p "$P0_ARTIFACT_DIR"
+          git rev-parse HEAD > "$P0_ARTIFACT_DIR/commit.txt"
+          sha256sum migrations/*.sql p0_*test.go > "$P0_ARTIFACT_DIR/source.sha256"
+          go version > "$P0_ARTIFACT_DIR/go.txt"
+      - name: Validate only P0 item 1
+        shell: bash
+        run: |
+          go test -json -count=1 -timeout=15m -run '^(TestP0DatabaseBoundary|TestP0DatasetV1|TestP0PositiveDNSHTTPFixture)$' . > "$P0_ARTIFACT_DIR/dataset-tests.jsonl"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: p0-item1-${{ github.sha }}
+          path: p0-artifacts/
+          retention-days: 14
+          if-no-files-found: error
