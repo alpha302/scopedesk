@@ -1,0 +1,70 @@
+name: P0 isolated baseline
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['codex/scopedesk-p0-*']
+
+permissions:
+  contents: read
+
+jobs:
+  baseline:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: scopedesk_p0
+          POSTGRES_USER: scopedesk_p0
+          POSTGRES_HOST_AUTH_METHOD: trust
+        ports: ['127.0.0.1:5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U scopedesk_p0 -d scopedesk_p0"
+          --health-interval 5s --health-timeout 5s --health-retries 12
+    env:
+      DATABASE_URL: postgres://scopedesk_p0@127.0.0.1:5432/scopedesk_p0?sslmode=disable
+      P0_ISOLATED: ephemeral-ci
+      P0_ARTIFACT_DIR: ${{ github.workspace }}/p0-artifacts
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+      - name: Generate disposable test key without displaying it
+        shell: bash
+        run: |
+          key=$(openssl rand -base64 32)
+          echo "::add-mask::$key"
+          echo "RECON_MASTER_KEY=$key" >> "$GITHUB_ENV"
+      - name: Record resource and source identity
+        shell: bash
+        run: |
+          mkdir -p "$P0_ARTIFACT_DIR"
+          git rev-parse HEAD > "$P0_ARTIFACT_DIR/commit.txt"
+          sha256sum migrations/*.sql p0_baseline_test.go p0_reproduction_test.go > "$P0_ARTIFACT_DIR/source.sha256"
+          lscpu > "$P0_ARTIFACT_DIR/cpu.txt"
+          free -b > "$P0_ARTIFACT_DIR/memory.txt"
+          go version > "$P0_ARTIFACT_DIR/go.txt"
+      - name: Compile all historical test sources
+        run: go test -c -o /tmp/scopedesk-tests .
+      - name: Existing offline safety regression
+        shell: bash
+        run: |
+          set -o pipefail
+          go test -json -count=1 -timeout=5m -run '^(TestScopeGuardBoundaries|TestBudgetIsAtomic|TestPipelineRejectsBeforeDNS|TestDNSPrivateAnswersNeverReachHTTP|TestPassiveCertificateCompletenessMarkers|TestPassiveProviderGuardAndHistory|TestPassiveRootQueryRespectsFreshBlacklist)$' . > "$P0_ARTIFACT_DIR/safety-tests.jsonl"
+      - name: Reproduce and measure current implementation
+        shell: bash
+        run: |
+          set -o pipefail
+          go test -json -count=1 -timeout=15m -run '^TestP0' . > "$P0_ARTIFACT_DIR/p0-tests.jsonl"
+      - name: Preserve evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p0-baseline-${{ github.sha }}
+          path: p0-artifacts/
+          retention-days: 14
+          if-no-files-found: error

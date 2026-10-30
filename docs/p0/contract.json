@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "started_at": "2026-10-30",
+  "timezone": "Asia/Shanghai",
+  "latest_calendar_deadline": "2026-11-13",
+  "deadline_rule": "earlier of tenth actual working day and two calendar weeks",
+  "status": "draft_performance_thresholds_pending_measurement_and_signoff",
+  "safety_thresholds": {
+    "unauthorized_target_requests": 0,
+    "blacklist_bypasses": 0,
+    "budget_oversells": 0,
+    "expired_lease_commits": 0,
+    "duplicate_logical_batch_events_or_missing_increments": 0
+  },
+  "read_fixture": {
+    "version": 1,
+    "anchor_utc": "2026-10-30T00:00:00Z",
+    "asset_counts": [1000, 10000],
+    "services_per_asset": 2,
+    "projects": 4,
+    "scopes": 20,
+    "candidate_multiplier": 1,
+    "history_days": 30,
+    "distributions": ["balanced", "90_percent_single_scope"],
+    "rounds": 3,
+    "production_distribution_verified": false
+  },
+  "metric_definitions": [
+    {"name":"handler_elapsed", "unit":"ms", "boundary":"handler entry to completion including response serialization", "statistic":"raw sample per round; not p95/p99", "load":"sequential single request, admin, page_size=50", "threshold":null},
+    {"name":"sql_round_trips", "unit":"queries/request", "boundary":"pgx QueryTracer start count around actual handler/store call; includes count and plan queries", "load":"same read fixture", "threshold":null},
+    {"name":"response_bytes", "unit":"bytes/request", "boundary":"uncompressed httptest response body", "load":"same read fixture", "threshold":null},
+    {"name":"assets_first_explain", "unit":"PG execution ms, blocks, SubPlan loops", "boundary":"EXPLAIN ANALYZE BUFFERS SETTINGS FORMAT JSON of mirrored current first-page SQL", "load":"same fixture after ANALYZE; cache temperature not forced", "threshold":null}
+  ],
+  "pending_metrics": ["list/dashboard p95 and p99 under defined mixed load and roles", "batch commit p99 and lock wait", "WAL bytes and HOT update ratio", "login mutex/block profiles and unrelated API latency", "DNS billed operations versus actual packets", "HTTP operations per host and PG round trips per operation", "idle worker queries/s and enqueue-to-claim p95", "multi-user overview polling CPU/blocks and freshness"],
+  "p0_exit_approved": false,
+  "production_deployed": false
+}
