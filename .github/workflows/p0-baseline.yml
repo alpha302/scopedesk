@@ -44,7 +44,8 @@ jobs:
         run: |
           mkdir -p "$P0_ARTIFACT_DIR"
           git rev-parse HEAD > "$P0_ARTIFACT_DIR/commit.txt"
-          sha256sum migrations/*.sql p0_baseline_test.go p0_reproduction_test.go > "$P0_ARTIFACT_DIR/source.sha256"
+          sha256sum migrations/*.sql p0_*test.go > "$P0_ARTIFACT_DIR/source.sha256"
+          docker image inspect postgres:16-alpine --format '{{json .RepoDigests}}' > "$P0_ARTIFACT_DIR/postgres-image.json"
           lscpu > "$P0_ARTIFACT_DIR/cpu.txt"
           free -b > "$P0_ARTIFACT_DIR/memory.txt"
           go version > "$P0_ARTIFACT_DIR/go.txt"

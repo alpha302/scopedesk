@@ -26,3 +26,5 @@
 !/docs/p0/
 !/docs/p0/*.md
 !/docs/p0/*.json
+!/docs/p0/evidence/
+!/docs/p0/evidence/**

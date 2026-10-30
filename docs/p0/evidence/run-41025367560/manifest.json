@@ -1,0 +1,21 @@
+{
+  "run_url": "https://github.com/alpha302/scopedesk/actions/runs/41025367560",
+  "tested_commit": "f7329c11478ec26eb2bc547ec354df3a90370b4f",
+  "sha256": {
+    "commit.txt": "2f639fb2d11a357e77a02dd6b6c7f3e9917864cba377517e78f62c62bbfe4d75",
+    "cpu.txt": "d893a2e1fe38c883e9c6304826742490a3e71cb4324cac80c4809870147219b4",
+    "go.txt": "81f9e73b1524e1dce78aa6f71509b33dbb1870728ea1d51d9bee5aca4e4a3645",
+    "memory.txt": "e482f28c4e7315b25e9e395eadb35e7999ce0c790d997ab29ac34256f51244ba",
+    "n1000-skewfalse.json": "8c9eb7eb90d48fea5f5e0b5aade73333f8f5e8daa6b1f2cdd6502204d96fe189",
+    "n1000-skewtrue.json": "11a9e7ee56079969b97b058e1d1f523bb54c595b418a89480a4a01b91a886895",
+    "n10000-skewfalse.json": "f1657532e9266a366f490ad5322d6b6eec8de5d281998ac1f627efcfe88456b9",
+    "n10000-skewtrue.json": "d2f4529e23ed0213aeef9d088fccbcf5e34c06c85ac9f56eae921cfe60a650b8",
+    "p0-tests.jsonl": "ba85c6e1d03a11c405c961e2b809318ae87a8c9c1fcb8087311402b1fcb87f2b",
+    "safety-tests.jsonl": "17b7aecbb311f29443006bc636df21ce55a0e796f71f76222a047c3e69bc4d31",
+    "scopes-0.json": "1893f9d3c527c8e0b1d3dcae4cad9f9167706791dce8ac88b43d3e47800c1a7c",
+    "scopes-1.json": "a270741d8e140a26821ab2b717fbf36cc45547c3793f2ccea1507c4c91330474",
+    "scopes-100.json": "0500ed0f0450bf0df852cd274bad3d386c89616b6359d423d3bac8a0d42da49e",
+    "scopes-1000.json": "fd6bf4083aee8444732a662b2397f3c43732b09ef3836daa6a6c055b536b421b",
+    "source.sha256": "d3d45aa337ad8bd9315d25dcf7d0c6c4553d8cb1d38b992973049ded47fddca2"
+  }
+}

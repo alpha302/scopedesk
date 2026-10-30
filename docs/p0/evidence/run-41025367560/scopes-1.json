@@ -1,0 +1,23 @@
+[
+  {
+    "case": "scopes",
+    "round": 1,
+    "sql_round_trips": 2,
+    "elapsed_ms": 5.268,
+    "response_bytes": 0
+  },
+  {
+    "case": "scopes",
+    "round": 2,
+    "sql_round_trips": 2,
+    "elapsed_ms": 0.846,
+    "response_bytes": 0
+  },
+  {
+    "case": "scopes",
+    "round": 3,
+    "sql_round_trips": 2,
+    "elapsed_ms": 0.8,
+    "response_bytes": 0
+  }
+]
