@@ -1,0 +1,54 @@
+name: W02 controlled boundary tests
+on:
+  workflow_dispatch:
+  push:
+    branches: [batch-p0-p1]
+    paths:
+      - 'w02_acceptance_test.go'
+      - '.github/workflows/w02-boundary.yml'
+permissions:
+  contents: read
+jobs:
+  boundary:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      W02_IMAGE: postgres:16-alpine@sha256:0cefaabd882e42bcb2a2f3dc56d3ce4770560ba62fd7f197f1a2e008fd5731ab
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+      - name: Build controlled test binary
+        run: CGO_ENABLED=0 go test -c -o /tmp/w02-tests .
+      - name: Create namespace with no external network
+        shell: bash
+        run: |
+          mkdir -p w02-artifacts
+          git rev-parse HEAD > w02-artifacts/commit.txt
+          sha256sum guard.go pipeline.go w02_acceptance_test.go > w02-artifacts/source.sha256
+          docker pull "$W02_IMAGE"
+          docker run -d --name scopedesk-w02 --network none --cap-add NET_ADMIN \
+            --sysctl net.ipv6.conf.all.disable_ipv6=0 --sysctl net.ipv6.conf.lo.disable_ipv6=0 \
+            --cpus 2 --memory 536870912 \
+            -v /tmp/w02-tests:/tmp/w02-tests:ro -v "$GITHUB_WORKSPACE/w02-artifacts:/evidence" \
+            --entrypoint /bin/sh "$W02_IMAGE" -c 'sleep 900'
+          for ip in 64:ff9b::7f00:1 64:ff9b::a00:1 2002:7f00:1::1 2002:a00:1::1; do
+            docker exec scopedesk-w02 /bin/busybox ip -6 addr add "$ip/128" dev lo
+          done
+          docker exec scopedesk-w02 /bin/busybox ip addr > w02-artifacts/interfaces.txt
+          docker exec scopedesk-w02 /bin/busybox ip -6 route show table all > w02-artifacts/routes.txt
+          docker inspect scopedesk-w02 --format '{"network":{{json .HostConfig.NetworkMode}},"image":{{json .Image}},"memory":{{.HostConfig.Memory}},"nano_cpus":{{.HostConfig.NanoCpus}}}' > w02-artifacts/isolation.json
+      - name: W02 acceptance (expected to fail until W02 is fixed)
+        run: docker exec -e W02_NETWORK_NONE=confirmed -e P0_ARTIFACT_DIR=/evidence -e GOMAXPROCS=2 scopedesk-w02 /tmp/w02-tests -test.v -test.timeout=3m -test.run='^TestW02' > w02-artifacts/tests.txt 2>&1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: w02-boundary-${{ github.sha }}
+          path: w02-artifacts/
+          retention-days: 14
+          if-no-files-found: error
+      - name: Remove controlled namespace
+        if: always()
+        run: docker rm -f scopedesk-w02
