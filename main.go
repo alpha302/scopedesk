@@ -107,7 +107,11 @@ type Server struct {
 	logMu      sync.Mutex
 	// Optional private dependency for deterministic hash-boundary tests. The
 	// default remains password(), with its unchanged PBKDF2 parameters.
-	loginHash func(string, string) string
+	loginHash       func(string, string) string
+	loginHashSlots  chan struct{}
+	loginAdmissions chan struct{}
+	loginPending    map[string]int
+	authVersions    map[int]uint64
 }
 
 var programs = []map[string]string{
@@ -262,6 +266,10 @@ func (s *Server) identity(r *http.Request) (User, Session, string) {
 	return User{}, Session{}, ""
 }
 func (s *Server) invalidate(id int) {
+	if s.authVersions == nil {
+		s.authVersions = map[int]uint64{}
+	}
+	s.authVersions[id]++
 	for key, v := range s.sessions {
 		if v.User == id {
 			delete(s.sessions, key)
@@ -560,59 +568,6 @@ func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	fail(w, 405, "接口不存在或请求方法错误")
-}
-func (s *Server) login(w http.ResponseWriter, r *http.Request) string {
-	var body struct {
-		Name     string `json:"name"`
-		Password string `json:"password"`
-	}
-	if !decode(w, r, &body) {
-		return "未登录"
-	}
-	ip := s.clientIP(r)
-	key := ip
-	s.mu.Lock()
-	defer s.mu.Unlock()
-	now := time.Now()
-	for k, a := range s.attempts {
-		if now.After(a.Until) {
-			delete(s.attempts, k)
-		}
-	}
-	a := s.attempts[key]
-	if a.Count >= 8 && now.Before(a.Until) {
-		fail(w, 429, "登录尝试过多，请 15 分钟后重试")
-		return "未登录"
-	}
-	var found User
-	for _, u := range s.data.Users {
-		if u.Name == body.Name {
-			found = u
-		}
-	}
-	hash := s.hashLoginPassword(body.Password, found.Salt)
-	if found.ID == 0 || found.Disabled || subtle.ConstantTimeCompare([]byte(hash), []byte(found.Hash)) != 1 {
-		a.Count++
-		if a.Until.IsZero() {
-			a.Until = now.Add(15 * time.Minute)
-		}
-		s.attempts[key] = a
-		fail(w, 401, "用户名或密码错误，或账户已停用")
-		return "未登录"
-	}
-	delete(s.attempts, key)
-	for k, v := range s.sessions {
-		if now.After(v.Expires) {
-			delete(s.sessions, k)
-		}
-	}
-	token := random()
-	digest := sha256.Sum256([]byte(token))
-	csrf := random()
-	s.sessions[hex.EncodeToString(digest[:])] = Session{found.ID, csrf, now.Add(12 * time.Hour)}
-	http.SetCookie(w, &http.Cookie{Name: "scopedesk", Value: token, Path: s.cookiePath(r), HttpOnly: true, Secure: s.secureRequest(r), SameSite: http.SameSiteStrictMode, MaxAge: 43200})
-	respond(w, 200, map[string]any{"user": public(found), "csrf": csrf})
-	return found.Name
 }
 
 var domainPattern = regexp.MustCompile(`^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$`)
