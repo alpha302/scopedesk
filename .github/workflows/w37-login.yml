@@ -1,0 +1,30 @@
+name: W37 durable single-instance account limits
+on:
+  push:
+    branches: [batch-p0-p1]
+    paths: ['main.go', 'login*.go', 'w37_login_test.go', '.github/workflows/w37-login.yml']
+permissions:
+  contents: read
+jobs:
+  login:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+      - name: Record identity
+        run: |
+          mkdir -p w37-artifacts
+          git rev-parse HEAD > w37-artifacts/commit.txt
+          go version > w37-artifacts/go.txt
+      - name: Account and existing authentication regressions
+        run: go test -race -json -count=1 -timeout=8m -run '^(TestW37.*|TestW03Hash.*|TestW03Limit.*|TestW03Credential.*|TestW03Queue.*|TestLoginLimitsAndHostValidation|TestIsolationAndPermissions|TestDisableRevokesSessionAndPersists|TestPasswordChangeAndAudit|TestHTTPSProxyTransportAndCookies|TestExplicitHTTPProxy)$' . > w37-artifacts/tests.jsonl
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: w37-login-${{ github.sha }}
+          path: w37-artifacts/
+          retention-days: 14
