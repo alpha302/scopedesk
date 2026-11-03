@@ -65,7 +65,7 @@ func (s *Store) WriteResults(ctx context.Context, run Run, observations []Observ
 		return nil, executionFailure("scope_denied", e.Error(), false)
 	}
 	sourceNew := map[string]int{}
-	summary := map[string]any{"new": 0, "updated": 0, "down": 0, "back": 0, "ip_changed": 0, "source_new_counts": sourceNew}
+	summary := map[string]any{"new": 0, "updated": 0, "down": 0, "back": 0, "ip_changed": 0, "source_new_counts": sourceNew, "absence_eligible": false, "coverage_complete": false, "absence_reason": "被动索引和分页完成不证明实时覆盖；本轮仅保留发现证据，不判定被动缺失或站点下线"}
 	freshCount := 0
 	seen := []int64{}
 	for _, ob := range groupObservations(observations) {
@@ -130,11 +130,8 @@ func (s *Store) WriteResults(ctx context.Context, run Run, observations []Observ
 				classifiedAt := time.Now().UTC()
 				current.NetworkClassifiedAt = &classifiedAt
 			}
-			if !ob.PreserveReachability {
-				current.Miss = 0
-			}
 		}
-		if ob.Alive != nil {
+		if ob.Alive != nil && !ob.EvidenceOnly {
 			if *ob.Alive {
 				current.Miss = 0
 				current.Alive = ob.Alive
@@ -168,9 +165,6 @@ func (s *Store) WriteResults(ctx context.Context, run Run, observations []Observ
 			if current.SecurityDeviceOverride != nil {
 				current.Security = false
 			}
-		}
-		if exists && old.Miss >= 3 && current.Miss == 0 && ob.Alive == nil {
-			current.Alive = nil
 		}
 		if current.ID == 0 {
 			e = tx.QueryRow(ctx, "INSERT INTO assets(scope_id,host)VALUES($1,$2)ON CONFLICT(scope_id,host)DO UPDATE SET host=excluded.host RETURNING id", run.ScopeID, current.Host).Scan(&current.ID)
@@ -208,7 +202,7 @@ func (s *Store) WriteResults(ctx context.Context, run Run, observations []Observ
 		}
 		if exists && old.Miss >= 3 && current.Miss == 0 {
 			summary["back"] = summary["back"].(int) + 1
-			if e = addEvent(ctx, tx, run.ScopeID, current.ID, run.ID, "ASSET_BACK", map[string]any{"host": current.Host, "evidence": "重新发现或 HTTP 响应恢复"}); e != nil {
+			if e = addEvent(ctx, tx, run.ScopeID, current.ID, run.ID, "ASSET_BACK", map[string]any{"host": current.Host, "evidence": "实际 HTTP 探测响应恢复"}); e != nil {
 				return nil, e
 			}
 		}
@@ -230,41 +224,9 @@ func (s *Store) WriteResults(ctx context.Context, run Run, observations []Observ
 			}
 		}
 	}
-	if complete {
-		rows, e := tx.Query(ctx, "SELECT id,host,miss_count FROM assets WHERE scope_id=$1 AND NOT(id=ANY($2::bigint[]))", run.ScopeID, seen)
-		if e != nil {
-			return nil, e
-		}
-		type missing struct {
-			id    int64
-			host  string
-			count int
-		}
-		list := []missing{}
-		for rows.Next() {
-			var v missing
-			if e = rows.Scan(&v.id, &v.host, &v.count); e != nil {
-				rows.Close()
-				return nil, e
-			}
-			list = append(list, v)
-		}
-		rows.Close()
-		for _, v := range list {
-			if _, e = guard.AllowHost(v.host); e != nil {
-				continue
-			}
-			if _, e = tx.Exec(ctx, "UPDATE assets SET miss_count=miss_count+1,is_alive=CASE WHEN miss_count+1>=3 THEN false ELSE is_alive END WHERE id=$1", v.id); e != nil {
-				return nil, e
-			}
-			if v.count == 2 {
-				summary["down"] = summary["down"].(int) + 1
-				if e = addEvent(ctx, tx, run.ScopeID, v.id, run.ID, "ASSET_DOWN", map[string]string{"host": v.host, "evidence": "连续 3 次完整来源查询未发现；被动记录缺失不等于站点下线"}); e != nil {
-					return nil, e
-				}
-			}
-		}
-	}
+	// Legacy complete reports processing completion, never authoritative absence
+	// coverage. Preserve legacy mixed miss_count/is_alive; do not guess its origin.
+
 	summary["new"] = freshCount
 	summary["updated"] = len(seen) - freshCount
 	if e = tx.Commit(ctx); e != nil {

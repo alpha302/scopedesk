@@ -156,7 +156,8 @@ func (c *CertificateCollector) CollectPassive(ctx context.Context, s ScopeV2) (r
 		// https://sslmate.com/help/reference/ct_search_api_v1#issuance-pagination
 		if len(rows) == 0 {
 			result.Complete = true
-			result.AbsenceUsable = true
+			// A terminal page establishes pagination completion, not live coverage.
+			result.AbsenceUsable = false
 			return result
 		}
 		for _, row := range rows {

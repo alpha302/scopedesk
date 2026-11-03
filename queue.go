@@ -435,7 +435,8 @@ func (e *Engine) execute(run Run) {
 				success++
 			}
 			st.Complete = err == nil
-			st.AbsenceUsable = err == nil
+			// No current collector proves authoritative live absence coverage.
+			st.AbsenceUsable = false
 			if builtinPassive(source) {
 				builtinFailed = builtinFailed || err != nil
 			} else {

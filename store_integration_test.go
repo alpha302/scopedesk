@@ -175,7 +175,7 @@ func TestPostgresDiffIdempotencyAndPartialFailure(t *testing.T) {
 	}
 	for range 3 {
 		r = claimedRun(t, s, scope)
-		if _, err := s.WriteResults(ctx, r, nil, true); err != nil {
+		if _, err := s.WriteResults(ctx, r, []Observation{{Host: o.Host, Alive: ptr(false)}}, true); err != nil {
 			t.Fatal(err)
 		}
 		closeRun(t, s, r)
@@ -186,6 +186,7 @@ func TestPostgresDiffIdempotencyAndPartialFailure(t *testing.T) {
 	}
 	r = claimedRun(t, s, scope)
 	o.IPs = []string{"9.9.9.9"}
+	o.Alive = ptr(true)
 	if _, err := s.WriteResults(ctx, r, []Observation{o}, true); err != nil {
 		t.Fatal(err)
 	}

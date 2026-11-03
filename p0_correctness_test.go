@@ -132,10 +132,10 @@ func TestP0CharacterizeSourceUnqualifiedMissing(t *testing.T) {
 	if err := s.DB.QueryRow(ctx, `SELECT count(*) FROM asset_events WHERE type='ASSET_DOWN'`).Scan(&events); err != nil {
 		t.Fatal("P0 event read failed")
 	}
-	if miss != 3 || alive || events != 1 {
-		t.Fatal("baseline changed; update W04 source-limited missing reproduction")
+	if miss != 0 || !alive || events != 0 {
+		t.Fatal("W04 passive absence changed live state")
 	}
-	t.Log("W04 writer-boundary reproduction: three complete CertSpotter runs mark manual/Hunter-only asset missing=3, is_alive=false, ASSET_DOWN=1; this test does not call collectors")
+	t.Log("W04 safety regression: three complete CertSpotter runs preserve manual/Hunter asset HTTP state; missing=0, alive=true, ASSET_DOWN=0")
 }
 
 func TestP0CharacterizeCDNRotation(t *testing.T) {

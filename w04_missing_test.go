@@ -72,3 +72,44 @@ func TestW04CertificatePaginationIsNotCoverage(t *testing.T) {
 		t.Fatal("W04: pagination completion grants unproven absence coverage")
 	}
 }
+
+func TestW04ActualHTTPFailureAndRecoveryRemain(t *testing.T) {
+	s, _ := p0Store(t)
+	ctx := context.Background()
+	scope := insertScope(t, s, 1)
+	p0Exec(t, s, `INSERT INTO assets(scope_id,host,sources,is_alive)VALUES($1,'api.example.com',ARRAY['manual'],true)`, scope.ID)
+	for i := 1; i <= 3; i++ {
+		run := claimedRun(t, s, scope)
+		summary, err := s.WriteResults(ctx, run, []Observation{{Host: "api.example.com", Alive: ptr(false)}}, false)
+		if err != nil {
+			t.Fatal(err)
+		}
+		closeRun(t, s, run)
+		if summary["absence_eligible"] != false || summary["coverage_complete"] != false || summary["absence_reason"] == "" {
+			t.Fatal("missing explicit absence explanation")
+		}
+		var miss int
+		if err = s.DB.QueryRow(ctx, `SELECT miss_count FROM assets WHERE host='api.example.com'`).Scan(&miss); err != nil || miss != i {
+			t.Fatal("actual HTTP failure counter changed")
+		}
+	}
+	run := claimedRun(t, s, scope)
+	if _, err := s.WriteResults(ctx, run, []Observation{{Host: "api.example.com", Alive: ptr(true), EvidenceOnly: true}}, false); err != nil {
+		t.Fatal(err)
+	}
+	closeRun(t, s, run)
+	var miss int
+	if err := s.DB.QueryRow(ctx, `SELECT miss_count FROM assets WHERE host='api.example.com'`).Scan(&miss); err != nil || miss != 3 {
+		t.Fatal("third-party evidence reset actual failure")
+	}
+	run = claimedRun(t, s, scope)
+	summary, err := s.WriteResults(ctx, run, []Observation{{Host: "api.example.com", Alive: ptr(true)}}, false)
+	if err != nil || summary["back"] != 1 {
+		t.Fatal("actual recovery suppressed")
+	}
+	closeRun(t, s, run)
+	var down, back int
+	if err = s.DB.QueryRow(ctx, `SELECT count(*)FILTER(WHERE type='ASSET_DOWN'),count(*)FILTER(WHERE type='ASSET_BACK')FROM asset_events`).Scan(&down, &back); err != nil || down != 1 || back != 1 {
+		t.Fatal("actual HTTP transitions changed")
+	}
+}
