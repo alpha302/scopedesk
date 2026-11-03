@@ -1,0 +1,32 @@
+{
+  "assets": 1000,
+  "candidates": 1000,
+  "cdn_marked": 200,
+  "dual_stack": 50,
+  "events": 1000,
+  "fixture_version": 1,
+  "history_days": 30,
+  "jobs": 600,
+  "largest_scope": 50,
+  "long_title": 100,
+  "multiple_ip_including_dual": 200,
+  "never_profiled": 250,
+  "projects": 4,
+  "scopes": 20,
+  "services": 2000,
+  "sha256": {
+    "assets": "90f9fe5020f2518eb8df2358bda676a9ab8d8bc9ca61776fcb186695e3833ce5",
+    "candidates": "0fb6e16e23f2f94b205c3d4ac0b53442faa189a31b2111573255b2a02776cd38",
+    "events": "6cc10bada11b3fa55a81389153f66b484e6512d297d0d736710b080d00d832ea",
+    "jobs": "a476fff6e02c2539fddda2b32fb869a9c2f65fb1a3be49d037b879dbd22e5a7f",
+    "projects": "1b4fa803c0c3149e15d6d790ca71d14c4e1562f53041756b2e8659bd8b4ae2e5",
+    "scopes": "a1dcef51f4f61da7ef3b471e609ba5270a2b6dbfc54b8de04748098c9c0fc9cd",
+    "services": "0a84dfabf53bfe7127ffb42806a7abb582bca6b6a024ecfc5b9efee283d1302d",
+    "snapshots": "db8bbcf037f4e1c8b4f4768929321b0b97ae3e2e34b4aadb15244ef87631d606",
+    "source_stats": "880f1c091de3cacbde8f78e7f488757daea123be3faf348bd55baec798602fd4"
+  },
+  "snapshots": 1000,
+  "synthetic": true,
+  "timings_or_performance_claims": false,
+  "wide_evidence": 10
+}

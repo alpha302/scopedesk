@@ -1,0 +1,283 @@
+{"Time":"2026-10-30T09:13:05.544867806Z","Action":"start","Package":"scopedesk"}
+{"Time":"2026-10-30T09:13:05.549433536Z","Action":"run","Package":"scopedesk","Test":"TestP0DatabaseBoundary"}
+{"Time":"2026-10-30T09:13:05.549450007Z","Action":"output","Package":"scopedesk","Test":"TestP0DatabaseBoundary","Output":"=== RUN   TestP0DatabaseBoundary\n"}
+{"Time":"2026-10-30T09:13:05.549673133Z","Action":"output","Package":"scopedesk","Test":"TestP0DatabaseBoundary","Output":"--- PASS: TestP0DatabaseBoundary (0.00s)\n"}
+{"Time":"2026-10-30T09:13:05.54968245Z","Action":"pass","Package":"scopedesk","Test":"TestP0DatabaseBoundary","Elapsed":0}
+{"Time":"2026-10-30T09:13:05.549688802Z","Action":"run","Package":"scopedesk","Test":"TestP0DatasetV1"}
+{"Time":"2026-10-30T09:13:05.549691657Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1","Output":"=== RUN   TestP0DatasetV1\n"}
+{"Time":"2026-10-30T09:13:05.549701004Z","Action":"run","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round1"}
+{"Time":"2026-10-30T09:13:05.549705483Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round1","Output":"=== RUN   TestP0DatasetV1/n1000-skewfalse-round1\n"}
+{"Time":"2026-10-30T09:13:05.679158215Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round1","Output":"2026/10/30 09:13:05 OK   00001_core.sql (103.79ms)\n"}
+{"Time":"2026-10-30T09:13:05.689547437Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round1","Output":"2026/10/30 09:13:05 OK   00002_security_rules.sql (10.09ms)\n"}
+{"Time":"2026-10-30T09:13:05.772624881Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round1","Output":"2026/10/30 09:13:05 OK   00003_discovery.sql (82.91ms)\n"}
+{"Time":"2026-10-30T09:13:05.783976276Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round1","Output":"2026/10/30 09:13:05 OK   00004_plugins.sql (11.32ms)\n"}
+{"Time":"2026-10-30T09:13:05.788843502Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round1","Output":"2026/10/30 09:13:05 OK   00005_remove_scope_expiry.sql (4.83ms)\n"}
+{"Time":"2026-10-30T09:13:05.795155911Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round1","Output":"2026/10/30 09:13:05 OK   00006_e3_scheduler_fixes.sql (6.28ms)\n"}
+{"Time":"2026-10-30T09:13:05.801343556Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round1","Output":"2026/10/30 09:13:05 OK   00007_plugin_evidence.sql (6.16ms)\n"}
+{"Time":"2026-10-30T09:13:05.808760619Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round1","Output":"2026/10/30 09:13:05 OK   00008_execution_policy.sql (7.38ms)\n"}
+{"Time":"2026-10-30T09:13:05.817858937Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round1","Output":"2026/10/30 09:13:05 OK   00009_favicon_hashes.sql (9.06ms)\n"}
+{"Time":"2026-10-30T09:13:05.854581822Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round1","Output":"2026/10/30 09:13:05 OK   00010_projects.sql (36.5ms)\n"}
+{"Time":"2026-10-30T09:13:05.858289802Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round1","Output":"2026/10/30 09:13:05 OK   00011_network_evidence.sql (3.71ms)\n"}
+{"Time":"2026-10-30T09:13:05.861758884Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round1","Output":"2026/10/30 09:13:05 OK   00012_fingerprint_evidence.sql (3.44ms)\n"}
+{"Time":"2026-10-30T09:13:05.883191417Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round1","Output":"2026/10/30 09:13:05 OK   00013_enterprise_exploration.sql (21.33ms)\n"}
+{"Time":"2026-10-30T09:13:05.917574514Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round1","Output":"2026/10/30 09:13:05 OK   00014_passive_sources.sql (34.22ms)\n"}
+{"Time":"2026-10-30T09:13:05.931650814Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round1","Output":"2026/10/30 09:13:05 OK   00015_passive_credits_only.sql (13.99ms)\n"}
+{"Time":"2026-10-30T09:13:05.931704624Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round1","Output":"2026/10/30 09:13:05 goose: successfully migrated database to version: 15\n"}
+{"Time":"2026-10-30T09:13:06.600404792Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round1","Output":"    p0_dataset_test.go:96: PASS fixture v1: assets=1000 services=2000 skew90=false round=1; 9 table fingerprints match\n"}
+{"Time":"2026-10-30T09:13:06.887291715Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round1","Output":"--- PASS: TestP0DatasetV1/n1000-skewfalse-round1 (1.34s)\n"}
+{"Time":"2026-10-30T09:13:06.887330327Z","Action":"pass","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round1","Elapsed":1.34}
+{"Time":"2026-10-30T09:13:06.887340446Z","Action":"run","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round2"}
+{"Time":"2026-10-30T09:13:06.887349382Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round2","Output":"=== RUN   TestP0DatasetV1/n1000-skewfalse-round2\n"}
+{"Time":"2026-10-30T09:13:06.994738907Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round2","Output":"2026/10/30 09:13:06 OK   00001_core.sql (91.74ms)\n"}
+{"Time":"2026-10-30T09:13:07.003999066Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round2","Output":"2026/10/30 09:13:07 OK   00002_security_rules.sql (9.2ms)\n"}
+{"Time":"2026-10-30T09:13:07.084199498Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round2","Output":"2026/10/30 09:13:07 OK   00003_discovery.sql (80.02ms)\n"}
+{"Time":"2026-10-30T09:13:07.095081739Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round2","Output":"2026/10/30 09:13:07 OK   00004_plugins.sql (10.85ms)\n"}
+{"Time":"2026-10-30T09:13:07.099687498Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round2","Output":"2026/10/30 09:13:07 OK   00005_remove_scope_expiry.sql (4.57ms)\n"}
+{"Time":"2026-10-30T09:13:07.105528501Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round2","Output":"2026/10/30 09:13:07 OK   00006_e3_scheduler_fixes.sql (5.81ms)\n"}
+{"Time":"2026-10-30T09:13:07.111718291Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round2","Output":"2026/10/30 09:13:07 OK   00007_plugin_evidence.sql (6.15ms)\n"}
+{"Time":"2026-10-30T09:13:07.120363592Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round2","Output":"2026/10/30 09:13:07 OK   00008_execution_policy.sql (8.61ms)\n"}
+{"Time":"2026-10-30T09:13:07.141920657Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round2","Output":"2026/10/30 09:13:07 OK   00009_favicon_hashes.sql (21.31ms)\n"}
+{"Time":"2026-10-30T09:13:07.196072807Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round2","Output":"2026/10/30 09:13:07 OK   00010_projects.sql (54.2ms)\n"}
+{"Time":"2026-10-30T09:13:07.200526176Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round2","Output":"2026/10/30 09:13:07 OK   00011_network_evidence.sql (4.43ms)\n"}
+{"Time":"2026-10-30T09:13:07.20673064Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round2","Output":"2026/10/30 09:13:07 OK   00012_fingerprint_evidence.sql (6.13ms)\n"}
+{"Time":"2026-10-30T09:13:07.229324139Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round2","Output":"2026/10/30 09:13:07 OK   00013_enterprise_exploration.sql (22.49ms)\n"}
+{"Time":"2026-10-30T09:13:07.262357221Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round2","Output":"2026/10/30 09:13:07 OK   00014_passive_sources.sql (32.91ms)\n"}
+{"Time":"2026-10-30T09:13:07.274479291Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round2","Output":"2026/10/30 09:13:07 OK   00015_passive_credits_only.sql (12.02ms)\n"}
+{"Time":"2026-10-30T09:13:07.274504267Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round2","Output":"2026/10/30 09:13:07 goose: successfully migrated database to version: 15\n"}
+{"Time":"2026-10-30T09:13:07.935432368Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round2","Output":"    p0_dataset_test.go:96: PASS fixture v1: assets=1000 services=2000 skew90=false round=2; 9 table fingerprints match\n"}
+{"Time":"2026-10-30T09:13:08.220815016Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round2","Output":"--- PASS: TestP0DatasetV1/n1000-skewfalse-round2 (1.33s)\n"}
+{"Time":"2026-10-30T09:13:08.220896588Z","Action":"pass","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round2","Elapsed":1.33}
+{"Time":"2026-10-30T09:13:08.220916936Z","Action":"run","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round3"}
+{"Time":"2026-10-30T09:13:08.220922686Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round3","Output":"=== RUN   TestP0DatasetV1/n1000-skewfalse-round3\n"}
+{"Time":"2026-10-30T09:13:08.339235131Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round3","Output":"2026/10/30 09:13:08 OK   00001_core.sql (93.79ms)\n"}
+{"Time":"2026-10-30T09:13:08.348621638Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round3","Output":"2026/10/30 09:13:08 OK   00002_security_rules.sql (9.35ms)\n"}
+{"Time":"2026-10-30T09:13:08.431264028Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round3","Output":"2026/10/30 09:13:08 OK   00003_discovery.sql (82.47ms)\n"}
+{"Time":"2026-10-30T09:13:08.44221277Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round3","Output":"2026/10/30 09:13:08 OK   00004_plugins.sql (10.91ms)\n"}
+{"Time":"2026-10-30T09:13:08.446781744Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round3","Output":"2026/10/30 09:13:08 OK   00005_remove_scope_expiry.sql (4.53ms)\n"}
+{"Time":"2026-10-30T09:13:08.453020785Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round3","Output":"2026/10/30 09:13:08 OK   00006_e3_scheduler_fixes.sql (6.2ms)\n"}
+{"Time":"2026-10-30T09:13:08.459182811Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round3","Output":"2026/10/30 09:13:08 OK   00007_plugin_evidence.sql (6.13ms)\n"}
+{"Time":"2026-10-30T09:13:08.466615806Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round3","Output":"2026/10/30 09:13:08 OK   00008_execution_policy.sql (7.4ms)\n"}
+{"Time":"2026-10-30T09:13:08.475322988Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round3","Output":"2026/10/30 09:13:08 OK   00009_favicon_hashes.sql (8.66ms)\n"}
+{"Time":"2026-10-30T09:13:08.510703312Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round3","Output":"2026/10/30 09:13:08 OK   00010_projects.sql (35.23ms)\n"}
+{"Time":"2026-10-30T09:13:08.514670469Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round3","Output":"2026/10/30 09:13:08 OK   00011_network_evidence.sql (3.94ms)\n"}
+{"Time":"2026-10-30T09:13:08.518242272Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round3","Output":"2026/10/30 09:13:08 OK   00012_fingerprint_evidence.sql (3.55ms)\n"}
+{"Time":"2026-10-30T09:13:08.53938749Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round3","Output":"2026/10/30 09:13:08 OK   00013_enterprise_exploration.sql (21.02ms)\n"}
+{"Time":"2026-10-30T09:13:08.572673496Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round3","Output":"2026/10/30 09:13:08 OK   00014_passive_sources.sql (33.18ms)\n"}
+{"Time":"2026-10-30T09:13:08.584659132Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round3","Output":"2026/10/30 09:13:08 OK   00015_passive_credits_only.sql (11.94ms)\n"}
+{"Time":"2026-10-30T09:13:08.584691212Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round3","Output":"2026/10/30 09:13:08 goose: successfully migrated database to version: 15\n"}
+{"Time":"2026-10-30T09:13:09.240755072Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round3","Output":"    p0_dataset_test.go:96: PASS fixture v1: assets=1000 services=2000 skew90=false round=3; 9 table fingerprints match\n"}
+{"Time":"2026-10-30T09:13:09.528743496Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round3","Output":"--- PASS: TestP0DatasetV1/n1000-skewfalse-round3 (1.31s)\n"}
+{"Time":"2026-10-30T09:13:09.528791806Z","Action":"pass","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewfalse-round3","Elapsed":1.31}
+{"Time":"2026-10-30T09:13:09.528807045Z","Action":"run","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round1"}
+{"Time":"2026-10-30T09:13:09.528813036Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round1","Output":"=== RUN   TestP0DatasetV1/n1000-skewtrue-round1\n"}
+{"Time":"2026-10-30T09:13:09.634844724Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round1","Output":"2026/10/30 09:13:09 OK   00001_core.sql (82.09ms)\n"}
+{"Time":"2026-10-30T09:13:09.64352329Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round1","Output":"2026/10/30 09:13:09 OK   00002_security_rules.sql (8.61ms)\n"}
+{"Time":"2026-10-30T09:13:09.726615178Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round1","Output":"2026/10/30 09:13:09 OK   00003_discovery.sql (82.96ms)\n"}
+{"Time":"2026-10-30T09:13:09.738047593Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round1","Output":"2026/10/30 09:13:09 OK   00004_plugins.sql (11.37ms)\n"}
+{"Time":"2026-10-30T09:13:09.742855797Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round1","Output":"2026/10/30 09:13:09 OK   00005_remove_scope_expiry.sql (4.77ms)\n"}
+{"Time":"2026-10-30T09:13:09.749137445Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round1","Output":"2026/10/30 09:13:09 OK   00006_e3_scheduler_fixes.sql (6.23ms)\n"}
+{"Time":"2026-10-30T09:13:09.755396224Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round1","Output":"2026/10/30 09:13:09 OK   00007_plugin_evidence.sql (6.21ms)\n"}
+{"Time":"2026-10-30T09:13:09.762879456Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round1","Output":"2026/10/30 09:13:09 OK   00008_execution_policy.sql (7.47ms)\n"}
+{"Time":"2026-10-30T09:13:09.771518594Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round1","Output":"2026/10/30 09:13:09 OK   00009_favicon_hashes.sql (8.56ms)\n"}
+{"Time":"2026-10-30T09:13:09.807558635Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round1","Output":"2026/10/30 09:13:09 OK   00010_projects.sql (35.97ms)\n"}
+{"Time":"2026-10-30T09:13:09.811482163Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round1","Output":"2026/10/30 09:13:09 OK   00011_network_evidence.sql (3.9ms)\n"}
+{"Time":"2026-10-30T09:13:09.815065417Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round1","Output":"2026/10/30 09:13:09 OK   00012_fingerprint_evidence.sql (3.57ms)\n"}
+{"Time":"2026-10-30T09:13:09.83626944Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round1","Output":"2026/10/30 09:13:09 OK   00013_enterprise_exploration.sql (21.14ms)\n"}
+{"Time":"2026-10-30T09:13:09.869934031Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round1","Output":"2026/10/30 09:13:09 OK   00014_passive_sources.sql (33.55ms)\n"}
+{"Time":"2026-10-30T09:13:09.88176518Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round1","Output":"2026/10/30 09:13:09 OK   00015_passive_credits_only.sql (11.78ms)\n"}
+{"Time":"2026-10-30T09:13:09.881792848Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round1","Output":"2026/10/30 09:13:09 goose: successfully migrated database to version: 15\n"}
+{"Time":"2026-10-30T09:13:10.557772373Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round1","Output":"    p0_dataset_test.go:96: PASS fixture v1: assets=1000 services=2000 skew90=true round=1; 9 table fingerprints match\n"}
+{"Time":"2026-10-30T09:13:10.842136267Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round1","Output":"--- PASS: TestP0DatasetV1/n1000-skewtrue-round1 (1.31s)\n"}
+{"Time":"2026-10-30T09:13:10.842200938Z","Action":"pass","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round1","Elapsed":1.31}
+{"Time":"2026-10-30T09:13:10.84221309Z","Action":"run","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round2"}
+{"Time":"2026-10-30T09:13:10.842220554Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round2","Output":"=== RUN   TestP0DatasetV1/n1000-skewtrue-round2\n"}
+{"Time":"2026-10-30T09:13:10.958348979Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round2","Output":"2026/10/30 09:13:10 OK   00001_core.sql (92.91ms)\n"}
+{"Time":"2026-10-30T09:13:10.967984059Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round2","Output":"2026/10/30 09:13:10 OK   00002_security_rules.sql (9.56ms)\n"}
+{"Time":"2026-10-30T09:13:11.051210402Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round2","Output":"2026/10/30 09:13:11 OK   00003_discovery.sql (83.08ms)\n"}
+{"Time":"2026-10-30T09:13:11.062548915Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round2","Output":"2026/10/30 09:13:11 OK   00004_plugins.sql (11.3ms)\n"}
+{"Time":"2026-10-30T09:13:11.067172909Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round2","Output":"2026/10/30 09:13:11 OK   00005_remove_scope_expiry.sql (4.6ms)\n"}
+{"Time":"2026-10-30T09:13:11.073060056Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round2","Output":"2026/10/30 09:13:11 OK   00006_e3_scheduler_fixes.sql (5.85ms)\n"}
+{"Time":"2026-10-30T09:13:11.079383898Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round2","Output":"2026/10/30 09:13:11 OK   00007_plugin_evidence.sql (6.29ms)\n"}
+{"Time":"2026-10-30T09:13:11.08677067Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round2","Output":"2026/10/30 09:13:11 OK   00008_execution_policy.sql (7.35ms)\n"}
+{"Time":"2026-10-30T09:13:11.095577483Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round2","Output":"2026/10/30 09:13:11 OK   00009_favicon_hashes.sql (8.77ms)\n"}
+{"Time":"2026-10-30T09:13:11.131541182Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round2","Output":"2026/10/30 09:13:11 OK   00010_projects.sql (35.87ms)\n"}
+{"Time":"2026-10-30T09:13:11.135374546Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round2","Output":"2026/10/30 09:13:11 OK   00011_network_evidence.sql (3.82ms)\n"}
+{"Time":"2026-10-30T09:13:11.139072584Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round2","Output":"2026/10/30 09:13:11 OK   00012_fingerprint_evidence.sql (3.65ms)\n"}
+{"Time":"2026-10-30T09:13:11.159233864Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round2","Output":"2026/10/30 09:13:11 OK   00013_enterprise_exploration.sql (20.1ms)\n"}
+{"Time":"2026-10-30T09:13:11.207339172Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round2","Output":"2026/10/30 09:13:11 OK   00014_passive_sources.sql (47.97ms)\n"}
+{"Time":"2026-10-30T09:13:11.21999906Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round2","Output":"2026/10/30 09:13:11 OK   00015_passive_credits_only.sql (12.57ms)\n"}
+{"Time":"2026-10-30T09:13:11.22002082Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round2","Output":"2026/10/30 09:13:11 goose: successfully migrated database to version: 15\n"}
+{"Time":"2026-10-30T09:13:11.874305855Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round2","Output":"    p0_dataset_test.go:96: PASS fixture v1: assets=1000 services=2000 skew90=true round=2; 9 table fingerprints match\n"}
+{"Time":"2026-10-30T09:13:12.160758565Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round2","Output":"--- PASS: TestP0DatasetV1/n1000-skewtrue-round2 (1.32s)\n"}
+{"Time":"2026-10-30T09:13:12.160801365Z","Action":"pass","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round2","Elapsed":1.32}
+{"Time":"2026-10-30T09:13:12.160816964Z","Action":"run","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round3"}
+{"Time":"2026-10-30T09:13:12.160826392Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round3","Output":"=== RUN   TestP0DatasetV1/n1000-skewtrue-round3\n"}
+{"Time":"2026-10-30T09:13:12.287926912Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round3","Output":"2026/10/30 09:13:12 OK   00001_core.sql (111.24ms)\n"}
+{"Time":"2026-10-30T09:13:12.303512823Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round3","Output":"2026/10/30 09:13:12 OK   00002_security_rules.sql (14.36ms)\n"}
+{"Time":"2026-10-30T09:13:12.445569158Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round3","Output":"2026/10/30 09:13:12 OK   00003_discovery.sql (143.05ms)\n"}
+{"Time":"2026-10-30T09:13:12.493482636Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round3","Output":"2026/10/30 09:13:12 OK   00004_plugins.sql (47.85ms)\n"}
+{"Time":"2026-10-30T09:13:12.500476276Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round3","Output":"2026/10/30 09:13:12 OK   00005_remove_scope_expiry.sql (6.95ms)\n"}
+{"Time":"2026-10-30T09:13:12.54168081Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round3","Output":"2026/10/30 09:13:12 OK   00006_e3_scheduler_fixes.sql (41.16ms)\n"}
+{"Time":"2026-10-30T09:13:12.548972041Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round3","Output":"2026/10/30 09:13:12 OK   00007_plugin_evidence.sql (7.25ms)\n"}
+{"Time":"2026-10-30T09:13:12.558099944Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round3","Output":"2026/10/30 09:13:12 OK   00008_execution_policy.sql (9.09ms)\n"}
+{"Time":"2026-10-30T09:13:12.639685656Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round3","Output":"2026/10/30 09:13:12 OK   00009_favicon_hashes.sql (81.51ms)\n"}
+{"Time":"2026-10-30T09:13:12.990350154Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round3","Output":"2026/10/30 09:13:12 OK   00010_projects.sql (350.55ms)\n"}
+{"Time":"2026-10-30T09:13:13.048869165Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round3","Output":"2026/10/30 09:13:13 OK   00011_network_evidence.sql (58.38ms)\n"}
+{"Time":"2026-10-30T09:13:13.053367193Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round3","Output":"2026/10/30 09:13:13 OK   00012_fingerprint_evidence.sql (4.47ms)\n"}
+{"Time":"2026-10-30T09:13:13.306194121Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round3","Output":"2026/10/30 09:13:13 OK   00013_enterprise_exploration.sql (252.7ms)\n"}
+{"Time":"2026-10-30T09:13:13.340713192Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round3","Output":"2026/10/30 09:13:13 OK   00014_passive_sources.sql (34.41ms)\n"}
+{"Time":"2026-10-30T09:13:13.35280047Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round3","Output":"2026/10/30 09:13:13 OK   00015_passive_credits_only.sql (12.05ms)\n"}
+{"Time":"2026-10-30T09:13:13.352844262Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round3","Output":"2026/10/30 09:13:13 goose: successfully migrated database to version: 15\n"}
+{"Time":"2026-10-30T09:13:14.021211569Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round3","Output":"    p0_dataset_test.go:96: PASS fixture v1: assets=1000 services=2000 skew90=true round=3; 9 table fingerprints match\n"}
+{"Time":"2026-10-30T09:13:14.308649572Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round3","Output":"--- PASS: TestP0DatasetV1/n1000-skewtrue-round3 (2.15s)\n"}
+{"Time":"2026-10-30T09:13:14.308711086Z","Action":"pass","Package":"scopedesk","Test":"TestP0DatasetV1/n1000-skewtrue-round3","Elapsed":2.15}
+{"Time":"2026-10-30T09:13:14.308722538Z","Action":"run","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round1"}
+{"Time":"2026-10-30T09:13:14.308727347Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round1","Output":"=== RUN   TestP0DatasetV1/n10000-skewfalse-round1\n"}
+{"Time":"2026-10-30T09:13:14.423036024Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round1","Output":"2026/10/30 09:13:14 OK   00001_core.sql (90.88ms)\n"}
+{"Time":"2026-10-30T09:13:14.432952148Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round1","Output":"2026/10/30 09:13:14 OK   00002_security_rules.sql (9.84ms)\n"}
+{"Time":"2026-10-30T09:13:14.517556053Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round1","Output":"2026/10/30 09:13:14 OK   00003_discovery.sql (84.47ms)\n"}
+{"Time":"2026-10-30T09:13:14.528953533Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round1","Output":"2026/10/30 09:13:14 OK   00004_plugins.sql (11.33ms)\n"}
+{"Time":"2026-10-30T09:13:14.533701558Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round1","Output":"2026/10/30 09:13:14 OK   00005_remove_scope_expiry.sql (4.71ms)\n"}
+{"Time":"2026-10-30T09:13:14.539887959Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round1","Output":"2026/10/30 09:13:14 OK   00006_e3_scheduler_fixes.sql (6.15ms)\n"}
+{"Time":"2026-10-30T09:13:14.546228608Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round1","Output":"2026/10/30 09:13:14 OK   00007_plugin_evidence.sql (6.3ms)\n"}
+{"Time":"2026-10-30T09:13:14.553839288Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round1","Output":"2026/10/30 09:13:14 OK   00008_execution_policy.sql (7.56ms)\n"}
+{"Time":"2026-10-30T09:13:14.563920551Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round1","Output":"2026/10/30 09:13:14 OK   00009_favicon_hashes.sql (10.04ms)\n"}
+{"Time":"2026-10-30T09:13:14.600555522Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round1","Output":"2026/10/30 09:13:14 OK   00010_projects.sql (36.49ms)\n"}
+{"Time":"2026-10-30T09:13:14.604597841Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round1","Output":"2026/10/30 09:13:14 OK   00011_network_evidence.sql (4ms)\n"}
+{"Time":"2026-10-30T09:13:14.608211267Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round1","Output":"2026/10/30 09:13:14 OK   00012_fingerprint_evidence.sql (3.6ms)\n"}
+{"Time":"2026-10-30T09:13:14.628779811Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round1","Output":"2026/10/30 09:13:14 OK   00013_enterprise_exploration.sql (20.48ms)\n"}
+{"Time":"2026-10-30T09:13:14.663275498Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round1","Output":"2026/10/30 09:13:14 OK   00014_passive_sources.sql (34.36ms)\n"}
+{"Time":"2026-10-30T09:13:14.675169539Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round1","Output":"2026/10/30 09:13:14 OK   00015_passive_credits_only.sql (11.87ms)\n"}
+{"Time":"2026-10-30T09:13:14.675190778Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round1","Output":"2026/10/30 09:13:14 goose: successfully migrated database to version: 15\n"}
+{"Time":"2026-10-30T09:13:18.529974841Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round1","Output":"    p0_dataset_test.go:96: PASS fixture v1: assets=10000 services=20000 skew90=false round=1; 9 table fingerprints match\n"}
+{"Time":"2026-10-30T09:13:18.824940381Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round1","Output":"--- PASS: TestP0DatasetV1/n10000-skewfalse-round1 (4.52s)\n"}
+{"Time":"2026-10-30T09:13:18.825003921Z","Action":"pass","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round1","Elapsed":4.52}
+{"Time":"2026-10-30T09:13:18.825011676Z","Action":"run","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round2"}
+{"Time":"2026-10-30T09:13:18.825015072Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round2","Output":"=== RUN   TestP0DatasetV1/n10000-skewfalse-round2\n"}
+{"Time":"2026-10-30T09:13:18.939362896Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round2","Output":"2026/10/30 09:13:18 OK   00001_core.sql (89.3ms)\n"}
+{"Time":"2026-10-30T09:13:18.948758673Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round2","Output":"2026/10/30 09:13:18 OK   00002_security_rules.sql (9.36ms)\n"}
+{"Time":"2026-10-30T09:13:19.033990518Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round2","Output":"2026/10/30 09:13:19 OK   00003_discovery.sql (84.74ms)\n"}
+{"Time":"2026-10-30T09:13:19.045285242Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round2","Output":"2026/10/30 09:13:19 OK   00004_plugins.sql (11.26ms)\n"}
+{"Time":"2026-10-30T09:13:19.049972987Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round2","Output":"2026/10/30 09:13:19 OK   00005_remove_scope_expiry.sql (4.56ms)\n"}
+{"Time":"2026-10-30T09:13:19.056099107Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round2","Output":"2026/10/30 09:13:19 OK   00006_e3_scheduler_fixes.sql (6.09ms)\n"}
+{"Time":"2026-10-30T09:13:19.062411882Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round2","Output":"2026/10/30 09:13:19 OK   00007_plugin_evidence.sql (6.28ms)\n"}
+{"Time":"2026-10-30T09:13:19.069679903Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round2","Output":"2026/10/30 09:13:19 OK   00008_execution_policy.sql (7.24ms)\n"}
+{"Time":"2026-10-30T09:13:19.078403587Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round2","Output":"2026/10/30 09:13:19 OK   00009_favicon_hashes.sql (8.67ms)\n"}
+{"Time":"2026-10-30T09:13:19.114130122Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round2","Output":"2026/10/30 09:13:19 OK   00010_projects.sql (35.61ms)\n"}
+{"Time":"2026-10-30T09:13:19.118173075Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round2","Output":"2026/10/30 09:13:19 OK   00011_network_evidence.sql (4.01ms)\n"}
+{"Time":"2026-10-30T09:13:19.1221463Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round2","Output":"2026/10/30 09:13:19 OK   00012_fingerprint_evidence.sql (3.95ms)\n"}
+{"Time":"2026-10-30T09:13:19.143271932Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round2","Output":"2026/10/30 09:13:19 OK   00013_enterprise_exploration.sql (21.03ms)\n"}
+{"Time":"2026-10-30T09:13:19.177318971Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round2","Output":"2026/10/30 09:13:19 OK   00014_passive_sources.sql (33.94ms)\n"}
+{"Time":"2026-10-30T09:13:19.190184743Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round2","Output":"2026/10/30 09:13:19 OK   00015_passive_credits_only.sql (12.8ms)\n"}
+{"Time":"2026-10-30T09:13:19.190249165Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round2","Output":"2026/10/30 09:13:19 goose: successfully migrated database to version: 15\n"}
+{"Time":"2026-10-30T09:13:22.855546794Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round2","Output":"    p0_dataset_test.go:96: PASS fixture v1: assets=10000 services=20000 skew90=false round=2; 9 table fingerprints match\n"}
+{"Time":"2026-10-30T09:13:23.146597486Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round2","Output":"--- PASS: TestP0DatasetV1/n10000-skewfalse-round2 (4.32s)\n"}
+{"Time":"2026-10-30T09:13:23.146631922Z","Action":"pass","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round2","Elapsed":4.32}
+{"Time":"2026-10-30T09:13:23.146642772Z","Action":"run","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round3"}
+{"Time":"2026-10-30T09:13:23.146647381Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round3","Output":"=== RUN   TestP0DatasetV1/n10000-skewfalse-round3\n"}
+{"Time":"2026-10-30T09:13:23.254744849Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round3","Output":"2026/10/30 09:13:23 OK   00001_core.sql (91.72ms)\n"}
+{"Time":"2026-10-30T09:13:23.264786088Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round3","Output":"2026/10/30 09:13:23 OK   00002_security_rules.sql (9.8ms)\n"}
+{"Time":"2026-10-30T09:13:23.351621622Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round3","Output":"2026/10/30 09:13:23 OK   00003_discovery.sql (86.69ms)\n"}
+{"Time":"2026-10-30T09:13:23.362891549Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round3","Output":"2026/10/30 09:13:23 OK   00004_plugins.sql (11.21ms)\n"}
+{"Time":"2026-10-30T09:13:23.367685297Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round3","Output":"2026/10/30 09:13:23 OK   00005_remove_scope_expiry.sql (4.71ms)\n"}
+{"Time":"2026-10-30T09:13:23.373726703Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round3","Output":"2026/10/30 09:13:23 OK   00006_e3_scheduler_fixes.sql (6.07ms)\n"}
+{"Time":"2026-10-30T09:13:23.380112765Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round3","Output":"2026/10/30 09:13:23 OK   00007_plugin_evidence.sql (6.34ms)\n"}
+{"Time":"2026-10-30T09:13:23.387530065Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round3","Output":"2026/10/30 09:13:23 OK   00008_execution_policy.sql (7.38ms)\n"}
+{"Time":"2026-10-30T09:13:23.396557647Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round3","Output":"2026/10/30 09:13:23 OK   00009_favicon_hashes.sql (8.99ms)\n"}
+{"Time":"2026-10-30T09:13:23.433111401Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round3","Output":"2026/10/30 09:13:23 OK   00010_projects.sql (36.46ms)\n"}
+{"Time":"2026-10-30T09:13:23.436949941Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round3","Output":"2026/10/30 09:13:23 OK   00011_network_evidence.sql (3.79ms)\n"}
+{"Time":"2026-10-30T09:13:23.440466769Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round3","Output":"2026/10/30 09:13:23 OK   00012_fingerprint_evidence.sql (3.5ms)\n"}
+{"Time":"2026-10-30T09:13:23.460352507Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round3","Output":"2026/10/30 09:13:23 OK   00013_enterprise_exploration.sql (19.79ms)\n"}
+{"Time":"2026-10-30T09:13:23.494824138Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round3","Output":"2026/10/30 09:13:23 OK   00014_passive_sources.sql (34.34ms)\n"}
+{"Time":"2026-10-30T09:13:23.507122878Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round3","Output":"2026/10/30 09:13:23 OK   00015_passive_credits_only.sql (12.26ms)\n"}
+{"Time":"2026-10-30T09:13:23.507157624Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round3","Output":"2026/10/30 09:13:23 goose: successfully migrated database to version: 15\n"}
+{"Time":"2026-10-30T09:13:27.382554628Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round3","Output":"    p0_dataset_test.go:96: PASS fixture v1: assets=10000 services=20000 skew90=false round=3; 9 table fingerprints match\n"}
+{"Time":"2026-10-30T09:13:27.669144132Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round3","Output":"--- PASS: TestP0DatasetV1/n10000-skewfalse-round3 (4.52s)\n"}
+{"Time":"2026-10-30T09:13:27.669202723Z","Action":"pass","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewfalse-round3","Elapsed":4.52}
+{"Time":"2026-10-30T09:13:27.66921691Z","Action":"run","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round1"}
+{"Time":"2026-10-30T09:13:27.669225326Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round1","Output":"=== RUN   TestP0DatasetV1/n10000-skewtrue-round1\n"}
+{"Time":"2026-10-30T09:13:27.772849697Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round1","Output":"2026/10/30 09:13:27 OK   00001_core.sql (85.38ms)\n"}
+{"Time":"2026-10-30T09:13:27.783781737Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round1","Output":"2026/10/30 09:13:27 OK   00002_security_rules.sql (10.9ms)\n"}
+{"Time":"2026-10-30T09:13:27.86730567Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round1","Output":"2026/10/30 09:13:27 OK   00003_discovery.sql (83ms)\n"}
+{"Time":"2026-10-30T09:13:27.87781451Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round1","Output":"2026/10/30 09:13:27 OK   00004_plugins.sql (10.44ms)\n"}
+{"Time":"2026-10-30T09:13:27.882599249Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round1","Output":"2026/10/30 09:13:27 OK   00005_remove_scope_expiry.sql (4.75ms)\n"}
+{"Time":"2026-10-30T09:13:27.888480188Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round1","Output":"2026/10/30 09:13:27 OK   00006_e3_scheduler_fixes.sql (5.76ms)\n"}
+{"Time":"2026-10-30T09:13:27.894851893Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round1","Output":"2026/10/30 09:13:27 OK   00007_plugin_evidence.sql (6.34ms)\n"}
+{"Time":"2026-10-30T09:13:27.902171029Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round1","Output":"2026/10/30 09:13:27 OK   00008_execution_policy.sql (7.29ms)\n"}
+{"Time":"2026-10-30T09:13:27.911305614Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round1","Output":"2026/10/30 09:13:27 OK   00009_favicon_hashes.sql (9.07ms)\n"}
+{"Time":"2026-10-30T09:13:27.946686579Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round1","Output":"2026/10/30 09:13:27 OK   00010_projects.sql (35.22ms)\n"}
+{"Time":"2026-10-30T09:13:27.950348206Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round1","Output":"2026/10/30 09:13:27 OK   00011_network_evidence.sql (3.7ms)\n"}
+{"Time":"2026-10-30T09:13:27.953828971Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round1","Output":"2026/10/30 09:13:27 OK   00012_fingerprint_evidence.sql (3.45ms)\n"}
+{"Time":"2026-10-30T09:13:27.974617389Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round1","Output":"2026/10/30 09:13:27 OK   00013_enterprise_exploration.sql (20.71ms)\n"}
+{"Time":"2026-10-30T09:13:28.008284913Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round1","Output":"2026/10/30 09:13:28 OK   00014_passive_sources.sql (33.54ms)\n"}
+{"Time":"2026-10-30T09:13:28.02509694Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round1","Output":"2026/10/30 09:13:28 OK   00015_passive_credits_only.sql (16.76ms)\n"}
+{"Time":"2026-10-30T09:13:28.025149069Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round1","Output":"2026/10/30 09:13:28 goose: successfully migrated database to version: 15\n"}
+{"Time":"2026-10-30T09:13:31.849544832Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round1","Output":"    p0_dataset_test.go:96: PASS fixture v1: assets=10000 services=20000 skew90=true round=1; 9 table fingerprints match\n"}
+{"Time":"2026-10-30T09:13:32.13788926Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round1","Output":"--- PASS: TestP0DatasetV1/n10000-skewtrue-round1 (4.47s)\n"}
+{"Time":"2026-10-30T09:13:32.137950576Z","Action":"pass","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round1","Elapsed":4.47}
+{"Time":"2026-10-30T09:13:32.137962839Z","Action":"run","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round2"}
+{"Time":"2026-10-30T09:13:32.13797362Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round2","Output":"=== RUN   TestP0DatasetV1/n10000-skewtrue-round2\n"}
+{"Time":"2026-10-30T09:13:32.247816778Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round2","Output":"2026/10/30 09:13:32 OK   00001_core.sql (90.33ms)\n"}
+{"Time":"2026-10-30T09:13:32.260935389Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round2","Output":"2026/10/30 09:13:32 OK   00002_security_rules.sql (10.5ms)\n"}
+{"Time":"2026-10-30T09:13:32.346247269Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round2","Output":"2026/10/30 09:13:32 OK   00003_discovery.sql (85.17ms)\n"}
+{"Time":"2026-10-30T09:13:32.35770393Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round2","Output":"2026/10/30 09:13:32 OK   00004_plugins.sql (11.41ms)\n"}
+{"Time":"2026-10-30T09:13:32.362353372Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round2","Output":"2026/10/30 09:13:32 OK   00005_remove_scope_expiry.sql (4.61ms)\n"}
+{"Time":"2026-10-30T09:13:32.368269237Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round2","Output":"2026/10/30 09:13:32 OK   00006_e3_scheduler_fixes.sql (5.88ms)\n"}
+{"Time":"2026-10-30T09:13:32.374483826Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round2","Output":"2026/10/30 09:13:32 OK   00007_plugin_evidence.sql (6.17ms)\n"}
+{"Time":"2026-10-30T09:13:32.382101566Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round2","Output":"2026/10/30 09:13:32 OK   00008_execution_policy.sql (7.58ms)\n"}
+{"Time":"2026-10-30T09:13:32.391043667Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round2","Output":"2026/10/30 09:13:32 OK   00009_favicon_hashes.sql (8.89ms)\n"}
+{"Time":"2026-10-30T09:13:32.429070648Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round2","Output":"2026/10/30 09:13:32 OK   00010_projects.sql (37.91ms)\n"}
+{"Time":"2026-10-30T09:13:32.43300491Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round2","Output":"2026/10/30 09:13:32 OK   00011_network_evidence.sql (3.91ms)\n"}
+{"Time":"2026-10-30T09:13:32.436495862Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round2","Output":"2026/10/30 09:13:32 OK   00012_fingerprint_evidence.sql (3.47ms)\n"}
+{"Time":"2026-10-30T09:13:32.458020891Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round2","Output":"2026/10/30 09:13:32 OK   00013_enterprise_exploration.sql (21.44ms)\n"}
+{"Time":"2026-10-30T09:13:32.492757037Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round2","Output":"2026/10/30 09:13:32 OK   00014_passive_sources.sql (34.62ms)\n"}
+{"Time":"2026-10-30T09:13:32.505153362Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round2","Output":"2026/10/30 09:13:32 OK   00015_passive_credits_only.sql (12.33ms)\n"}
+{"Time":"2026-10-30T09:13:32.505186876Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round2","Output":"2026/10/30 09:13:32 goose: successfully migrated database to version: 15\n"}
+{"Time":"2026-10-30T09:13:36.336222628Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round2","Output":"    p0_dataset_test.go:96: PASS fixture v1: assets=10000 services=20000 skew90=true round=2; 9 table fingerprints match\n"}
+{"Time":"2026-10-30T09:13:36.629912003Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round2","Output":"--- PASS: TestP0DatasetV1/n10000-skewtrue-round2 (4.49s)\n"}
+{"Time":"2026-10-30T09:13:36.629951427Z","Action":"pass","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round2","Elapsed":4.49}
+{"Time":"2026-10-30T09:13:36.629964271Z","Action":"run","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round3"}
+{"Time":"2026-10-30T09:13:36.629972958Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round3","Output":"=== RUN   TestP0DatasetV1/n10000-skewtrue-round3\n"}
+{"Time":"2026-10-30T09:13:36.746855281Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round3","Output":"2026/10/30 09:13:36 OK   00001_core.sql (91.78ms)\n"}
+{"Time":"2026-10-30T09:13:36.758520982Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round3","Output":"2026/10/30 09:13:36 OK   00002_security_rules.sql (9.47ms)\n"}
+{"Time":"2026-10-30T09:13:36.843773005Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round3","Output":"2026/10/30 09:13:36 OK   00003_discovery.sql (85.08ms)\n"}
+{"Time":"2026-10-30T09:13:36.854858471Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round3","Output":"2026/10/30 09:13:36 OK   00004_plugins.sql (11.05ms)\n"}
+{"Time":"2026-10-30T09:13:36.860082638Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round3","Output":"2026/10/30 09:13:36 OK   00005_remove_scope_expiry.sql (5.2ms)\n"}
+{"Time":"2026-10-30T09:13:36.866286001Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round3","Output":"2026/10/30 09:13:36 OK   00006_e3_scheduler_fixes.sql (6.17ms)\n"}
+{"Time":"2026-10-30T09:13:36.872624951Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round3","Output":"2026/10/30 09:13:36 OK   00007_plugin_evidence.sql (6.26ms)\n"}
+{"Time":"2026-10-30T09:13:36.880130174Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round3","Output":"2026/10/30 09:13:36 OK   00008_execution_policy.sql (7.47ms)\n"}
+{"Time":"2026-10-30T09:13:36.889075882Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round3","Output":"2026/10/30 09:13:36 OK   00009_favicon_hashes.sql (8.9ms)\n"}
+{"Time":"2026-10-30T09:13:36.925357136Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round3","Output":"2026/10/30 09:13:36 OK   00010_projects.sql (36.19ms)\n"}
+{"Time":"2026-10-30T09:13:36.929296158Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round3","Output":"2026/10/30 09:13:36 OK   00011_network_evidence.sql (3.92ms)\n"}
+{"Time":"2026-10-30T09:13:36.932753403Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round3","Output":"2026/10/30 09:13:36 OK   00012_fingerprint_evidence.sql (3.43ms)\n"}
+{"Time":"2026-10-30T09:13:36.953289421Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round3","Output":"2026/10/30 09:13:36 OK   00013_enterprise_exploration.sql (20.45ms)\n"}
+{"Time":"2026-10-30T09:13:36.988057368Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round3","Output":"2026/10/30 09:13:36 OK   00014_passive_sources.sql (34.63ms)\n"}
+{"Time":"2026-10-30T09:13:37.001685582Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round3","Output":"2026/10/30 09:13:37 OK   00015_passive_credits_only.sql (13.51ms)\n"}
+{"Time":"2026-10-30T09:13:37.001717111Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round3","Output":"2026/10/30 09:13:37 goose: successfully migrated database to version: 15\n"}
+{"Time":"2026-10-30T09:13:40.801154368Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round3","Output":"    p0_dataset_test.go:96: PASS fixture v1: assets=10000 services=20000 skew90=true round=3; 9 table fingerprints match\n"}
+{"Time":"2026-10-30T09:13:41.097901851Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round3","Output":"--- PASS: TestP0DatasetV1/n10000-skewtrue-round3 (4.47s)\n"}
+{"Time":"2026-10-30T09:13:41.097947557Z","Action":"pass","Package":"scopedesk","Test":"TestP0DatasetV1/n10000-skewtrue-round3","Elapsed":4.47}
+{"Time":"2026-10-30T09:13:41.097962435Z","Action":"output","Package":"scopedesk","Test":"TestP0DatasetV1","Output":"--- PASS: TestP0DatasetV1 (35.55s)\n"}
+{"Time":"2026-10-30T09:13:41.09797052Z","Action":"pass","Package":"scopedesk","Test":"TestP0DatasetV1","Elapsed":35.55}
+{"Time":"2026-10-30T09:13:41.097983895Z","Action":"run","Package":"scopedesk","Test":"TestP0PositiveDNSHTTPFixture"}
+{"Time":"2026-10-30T09:13:41.098020865Z","Action":"output","Package":"scopedesk","Test":"TestP0PositiveDNSHTTPFixture","Output":"=== RUN   TestP0PositiveDNSHTTPFixture\n"}
+{"Time":"2026-10-30T09:13:41.098029652Z","Action":"run","Package":"scopedesk","Test":"TestP0PositiveDNSHTTPFixture/round1"}
+{"Time":"2026-10-30T09:13:41.098038729Z","Action":"output","Package":"scopedesk","Test":"TestP0PositiveDNSHTTPFixture/round1","Output":"=== RUN   TestP0PositiveDNSHTTPFixture/round1\n"}
+{"Time":"2026-10-30T09:13:41.099565242Z","Action":"output","Package":"scopedesk","Test":"TestP0PositiveDNSHTTPFixture/round1","Output":"    p0_dataset_test.go:191: PASS controlled fixtures: dual-stack DNS, HTTP 200, same-origin redirect, favicon; loopback only; no product dial or performance claim\n"}
+{"Time":"2026-10-30T09:13:41.099706396Z","Action":"output","Package":"scopedesk","Test":"TestP0PositiveDNSHTTPFixture/round1","Output":"--- PASS: TestP0PositiveDNSHTTPFixture/round1 (0.00s)\n"}
+{"Time":"2026-10-30T09:13:41.099721995Z","Action":"pass","Package":"scopedesk","Test":"TestP0PositiveDNSHTTPFixture/round1","Elapsed":0}
+{"Time":"2026-10-30T09:13:41.099733838Z","Action":"run","Package":"scopedesk","Test":"TestP0PositiveDNSHTTPFixture/round2"}
+{"Time":"2026-10-30T09:13:41.099743456Z","Action":"output","Package":"scopedesk","Test":"TestP0PositiveDNSHTTPFixture/round2","Output":"=== RUN   TestP0PositiveDNSHTTPFixture/round2\n"}
+{"Time":"2026-10-30T09:13:41.100801524Z","Action":"output","Package":"scopedesk","Test":"TestP0PositiveDNSHTTPFixture/round2","Output":"    p0_dataset_test.go:191: PASS controlled fixtures: dual-stack DNS, HTTP 200, same-origin redirect, favicon; loopback only; no product dial or performance claim\n"}
+{"Time":"2026-10-30T09:13:41.101041337Z","Action":"output","Package":"scopedesk","Test":"TestP0PositiveDNSHTTPFixture/round2","Output":"--- PASS: TestP0PositiveDNSHTTPFixture/round2 (0.00s)\n"}
+{"Time":"2026-10-30T09:13:41.10106909Z","Action":"pass","Package":"scopedesk","Test":"TestP0PositiveDNSHTTPFixture/round2","Elapsed":0}
+{"Time":"2026-10-30T09:13:41.101075983Z","Action":"run","Package":"scopedesk","Test":"TestP0PositiveDNSHTTPFixture/round3"}
+{"Time":"2026-10-30T09:13:41.101080511Z","Action":"output","Package":"scopedesk","Test":"TestP0PositiveDNSHTTPFixture/round3","Output":"=== RUN   TestP0PositiveDNSHTTPFixture/round3\n"}
+{"Time":"2026-10-30T09:13:41.102143208Z","Action":"output","Package":"scopedesk","Test":"TestP0PositiveDNSHTTPFixture/round3","Output":"    p0_dataset_test.go:191: PASS controlled fixtures: dual-stack DNS, HTTP 200, same-origin redirect, favicon; loopback only; no product dial or performance claim\n"}
+{"Time":"2026-10-30T09:13:41.102254499Z","Action":"output","Package":"scopedesk","Test":"TestP0PositiveDNSHTTPFixture/round3","Output":"--- PASS: TestP0PositiveDNSHTTPFixture/round3 (0.00s)\n"}
+{"Time":"2026-10-30T09:13:41.102261502Z","Action":"pass","Package":"scopedesk","Test":"TestP0PositiveDNSHTTPFixture/round3","Elapsed":0}
+{"Time":"2026-10-30T09:13:41.10226581Z","Action":"output","Package":"scopedesk","Test":"TestP0PositiveDNSHTTPFixture","Output":"--- PASS: TestP0PositiveDNSHTTPFixture (0.00s)\n"}
+{"Time":"2026-10-30T09:13:41.102269226Z","Action":"pass","Package":"scopedesk","Test":"TestP0PositiveDNSHTTPFixture","Elapsed":0}
+{"Time":"2026-10-30T09:13:41.102323278Z","Action":"output","Package":"scopedesk","Output":"PASS\n"}
+{"Time":"2026-10-30T09:13:41.103676455Z","Action":"output","Package":"scopedesk","Output":"ok  \tscopedesk\t35.558s\n"}
+{"Time":"2026-10-30T09:13:41.103698797Z","Action":"pass","Package":"scopedesk","Elapsed":35.559}
