@@ -105,6 +105,9 @@ type Server struct {
 	started    time.Time
 	jobs       chan struct{}
 	logMu      sync.Mutex
+	// Optional private dependency for deterministic hash-boundary tests. The
+	// default remains password(), with its unchanged PBKDF2 parameters.
+	loginHash func(string, string) string
 }
 
 var programs = []map[string]string{
@@ -587,7 +590,7 @@ func (s *Server) login(w http.ResponseWriter, r *http.Request) string {
 			found = u
 		}
 	}
-	hash := password(body.Password, found.Salt)
+	hash := s.hashLoginPassword(body.Password, found.Salt)
 	if found.ID == 0 || found.Disabled || subtle.ConstantTimeCompare([]byte(hash), []byte(found.Hash)) != 1 {
 		a.Count++
 		if a.Until.IsZero() {

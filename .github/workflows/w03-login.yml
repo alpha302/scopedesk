@@ -1,0 +1,53 @@
+name: W03 single-user login isolation
+on:
+  workflow_dispatch:
+  push:
+    branches: [batch-p0-p1]
+    paths:
+      - 'main.go'
+      - 'login*.go'
+      - 'w03_login_test.go'
+      - '.github/workflows/w03-login.yml'
+permissions:
+  contents: read
+jobs:
+  login:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      P0_ARTIFACT_DIR: ${{ github.workspace }}/w03-artifacts
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+      - name: Record test identity
+        run: |
+          mkdir -p "$P0_ARTIFACT_DIR"
+          git rev-parse HEAD > "$P0_ARTIFACT_DIR/commit.txt"
+          sha256sum main.go login*.go w03_login_test.go > "$P0_ARTIFACT_DIR/source.sha256"
+          go version > "$P0_ARTIFACT_DIR/go.txt"
+          lscpu > "$P0_ARTIFACT_DIR/cpu.txt"
+      - name: W03 acceptance and existing auth regressions
+        run: go test -race -json -count=1 -timeout=5m -run '^(TestW03Hash.*|TestW03Limit.*|TestW03Credential.*|TestW03Queue.*|TestLoginLimitsAndHostValidation|TestIsolationAndPermissions|TestDisableRevokesSessionAndPersists|TestPasswordChangeAndAudit|TestHTTPSProxyTransportAndCookies|TestExplicitHTTPProxy)$' . > "$P0_ARTIFACT_DIR/auth-tests.jsonl"
+      - name: Single-user latency with real hash, three rounds
+        if: always()
+        env:
+          W03_MEASURE: '1'
+          GOMAXPROCS: '2'
+        run: go test -json -count=1 -timeout=5m -run '^TestW03SingleUserLatency$' . > "$P0_ARTIFACT_DIR/latency-tests.jsonl"
+      - name: Decode CPU and lock profiles
+        if: always()
+        run: |
+          for profile in "$P0_ARTIFACT_DIR"/*.pprof; do
+            [ -f "$profile" ] || continue
+            go tool pprof -raw "$profile" > "$profile.raw.txt"
+          done
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: w03-login-${{ github.sha }}
+          path: w03-artifacts/
+          retention-days: 14
+          if-no-files-found: error
