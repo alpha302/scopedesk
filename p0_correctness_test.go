@@ -168,12 +168,16 @@ func TestP0CharacterizeDistributedLoginAttempts(t *testing.T) {
 		r.RemoteAddr = fmt.Sprintf("192.0.2.%d:1234", i)
 		w := httptest.NewRecorder()
 		s.login(w, r)
-		if w.Code != 401 {
-			t.Fatal("baseline changed; update W37 distributed account-limit reproduction")
+		want := 401
+		if i == 9 {
+			want = 429
+		}
+		if w.Code != want {
+			t.Fatal("W37 distributed account-limit regression")
 		}
 	}
-	if len(s.attempts) != 9 {
-		t.Fatal("expected nine distinct current IP buckets")
+	if len(s.attempts) != 8 {
+		t.Fatal("expected eight verified failures; denied ninth IP must not retain a reservation")
 	}
-	t.Log("W37 reproduced: nine failures against one account from distinct fixture IPs all reach password verification; no account-level bucket, no real network requests")
+	t.Log("W37 fixed in single-instance mode: ninth distinct fixture IP is denied by the durable account bucket; no real network requests")
 }

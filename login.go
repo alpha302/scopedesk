@@ -107,6 +107,21 @@ func (s *Server) login(w http.ResponseWriter, r *http.Request) string {
 		}
 		<-admissions
 	}()
+	reservation, limited, err := s.accountLimits.reserve(body.Name)
+	if err != nil {
+		fail(w, 503, "登录处理繁忙，请稍后重试")
+		return "未登录"
+	}
+	if limited {
+		fail(w, 429, "登录尝试过多，请 15 分钟后重试")
+		return "未登录"
+	}
+	accountFinished := false
+	defer func() {
+		if !accountFinished {
+			_ = s.accountLimits.finish(reservation, false, false)
+		}
+	}()
 	select {
 	case compute <- struct{}{}:
 	case <-r.Context().Done():
@@ -131,6 +146,22 @@ func (s *Server) login(w http.ResponseWriter, r *http.Request) string {
 	}
 	valid := found.ID != 0 && !found.Disabled && matched && current.ID == found.ID && !current.Disabled &&
 		current.Hash == found.Hash && current.Salt == found.Salt && current.Name == found.Name && current.Role == found.Role && s.authVersions[found.ID] == version
+	s.mu.Unlock()
+	err = s.accountLimits.finish(reservation, !valid, valid && r.Context().Err() == nil)
+	accountFinished = true
+	if err != nil {
+		fail(w, 503, "登录处理繁忙，请稍后重试")
+		return "未登录"
+	}
+	s.mu.Lock()
+	// Persistence is outside the global mutex. Revalidate after that I/O too.
+	valid = false
+	for _, u := range s.data.Users {
+		if found.ID != 0 && u.ID == found.ID && !found.Disabled && !u.Disabled && matched && u.Hash == found.Hash && u.Salt == found.Salt && u.Name == found.Name && u.Role == found.Role && s.authVersions[found.ID] == version {
+			current = u
+			valid = true
+		}
+	}
 	s.finishLoginAttemptLocked(key, !valid)
 	finished = true
 	if !valid {

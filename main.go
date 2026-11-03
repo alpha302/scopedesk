@@ -112,6 +112,7 @@ type Server struct {
 	loginAdmissions chan struct{}
 	loginPending    map[string]int
 	authVersions    map[int]uint64
+	accountLimits   *accountLimits
 }
 
 var programs = []map[string]string{
@@ -165,6 +166,9 @@ func newServer(path string) (*Server, error) {
 		}
 	}
 	if e = s.save(); e != nil {
+		return nil, e
+	}
+	if s.accountLimits, e = openAccountLimits(path + ".login-limits.json"); e != nil {
 		return nil, e
 	}
 	f, e := os.Open(filepath.Join(filepath.Dir(path), "access.jsonl"))
@@ -559,7 +563,7 @@ func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		r.URL.Path = "/page/" + body.Page
 		respond(w, 200, map[string]bool{"ok": true})
 		return
-	case "/api/users", "/api/user/update", "/api/user/create", "/api/logs", "/api/status":
+	case "/api/users", "/api/user/update", "/api/user/create", "/api/user/login-unlock", "/api/logs", "/api/status":
 		if u.Role != "admin" {
 			fail(w, 403, "需要管理员权限")
 			return
@@ -762,6 +766,31 @@ func (s *Server) runJob(id int, scope Scope) {
 }
 func (s *Server) admin(w http.ResponseWriter, r *http.Request, u User) {
 	switch r.URL.Path {
+	case "/api/user/login-unlock":
+		if r.Method != "POST" {
+			break
+		}
+		var body struct {
+			ID int `json:"id"`
+		}
+		if !decode(w, r, &body) {
+			return
+		}
+		for _, target := range s.data.Users {
+			if target.ID != body.ID {
+				continue
+			}
+			if err := s.accountLimits.reset(target.Name); err != nil {
+				fail(w, 503, "无法保存登录限额，请稍后重试")
+				return
+			}
+			// Include only the target numeric ID in the existing access audit.
+			r.URL.Path = fmt.Sprintf("/api/user/login-unlock/%d", body.ID)
+			respond(w, 200, map[string]bool{"ok": true})
+			return
+		}
+		fail(w, 404, "用户不存在")
+		return
 	case "/api/users":
 		if r.Method != "GET" {
 			break
