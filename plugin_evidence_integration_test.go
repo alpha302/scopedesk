@@ -55,7 +55,7 @@ func TestPostgresPluginEvidenceDoesNotRecoverOrOverwriteLiveData(t *testing.T) {
 	ctx := context.Background()
 	scope := insertScope(t, s, 1)
 	run := claimedRun(t, s, scope)
-	live := Observation{Host: "api.example.com", IPs: []string{"8.8.8.8"}, DNSChecked: true, Port: 443, StatusCode: 200, Title: "verified title", Server: "verified server", IsCDN: true, Alive: ptr(true), Sources: []string{"crtsh"}, Redirects: []string{}, Fingerprints: []string{}}
+	live := Observation{Host: "api.example.com", IPs: []string{"8.8.8.8"}, DNSChecked: true, Port: 443, StatusCode: 200, Title: "verified title", Server: "verified server", IsCDN: true, NetworkMeasured: true, NetworkEvidence: []NetworkEvidence{}, Alive: ptr(true), Sources: []string{"crtsh"}, Redirects: []string{}, Fingerprints: []string{}}
 	if _, err := s.WriteResults(ctx, run, []Observation{live}, false); err != nil {
 		t.Fatal(err)
 	}
