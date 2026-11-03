@@ -11,9 +11,11 @@ import (
 )
 
 type AssetDoc struct {
-	SecurityDeviceOverride *bool `json:"security_device_override"`
-	ID                     int64 `json:"id"`
-	ScopeID                int64 `json:"scope_id"`
+	Classification         *Classification `json:"classification"`
+	CategoryOverride       *string         `json:"category_override"`
+	SecurityDeviceOverride *bool           `json:"security_device_override"`
+	ID                     int64           `json:"id"`
+	ScopeID                int64           `json:"scope_id"`
 	Observation
 	Category string     `json:"category"`
 	Score    int        `json:"score"`
@@ -75,10 +77,21 @@ func (s *Store) WriteResults(ctx context.Context, run Run, observations []Observ
 		var raw []byte
 		var old AssetDoc
 		exists := true
-		e = tx.QueryRow(ctx, "SELECT to_jsonb(a) FROM assets a WHERE scope_id=$1 AND host=$2 FOR UPDATE", run.ScopeID, ob.Host).Scan(&raw)
+		readAsset := func() error {
+			return tx.QueryRow(ctx, "SELECT to_jsonb(a) FROM assets a WHERE scope_id=$1 AND host=$2 FOR UPDATE", run.ScopeID, ob.Host).Scan(&raw)
+		}
+		e = readAsset()
 		if errors.Is(e, pgx.ErrNoRows) {
-			exists = false
-		} else if e != nil {
+			// Claim the unique row before deriving current state. A concurrent
+			// importer may have created and classified it after our first SELECT.
+			e = tx.QueryRow(ctx, "INSERT INTO assets(scope_id,host)VALUES($1,$2)ON CONFLICT(scope_id,host)DO NOTHING RETURNING id", run.ScopeID, ob.Host).Scan(&old.ID)
+			if errors.Is(e, pgx.ErrNoRows) {
+				e = readAsset()
+			} else if e == nil {
+				exists = false
+			}
+		}
+		if e != nil {
 			return nil, e
 		}
 		if exists {
@@ -96,7 +109,6 @@ func (s *Store) WriteResults(ctx context.Context, run Run, observations []Observ
 			current.First = current.Last
 			current.Status = "new"
 			current.Tags = []string{}
-			current.Category, current.Score = categoryScore(ob.Host, ob.Alive != nil && *ob.Alive, guard.Scope.Domain)
 			current.IPs = []string{}
 			current.CNames = []string{}
 			current.Sources = []string{}
@@ -169,11 +181,10 @@ func (s *Store) WriteResults(ctx context.Context, run Run, observations []Observ
 				current.Security = false
 			}
 		}
-		if current.ID == 0 {
-			e = tx.QueryRow(ctx, "INSERT INTO assets(scope_id,host)VALUES($1,$2)ON CONFLICT(scope_id,host)DO UPDATE SET host=excluded.host RETURNING id", run.ScopeID, current.Host).Scan(&current.ID)
-			if e != nil {
-				return nil, e
-			}
+		// Legacy provenance stays unknown until an explicit user opt-in. Provider
+		// evidence cannot refresh HTTP-derived score or change manual overrides.
+		if !exists || (old.Classification != nil && !ob.EvidenceOnly) {
+			refreshAssetCategory(&current, guard.Scope.Domain)
 		}
 		// JSON is used only for parameter transport; all searchable fields remain indexed columns.
 		if e = upsertServices(ctx, tx, current.ID, ob.Services, guard); e != nil {
@@ -186,7 +197,7 @@ func (s *Store) WriteResults(ctx context.Context, run Run, observations []Observ
 			return nil, e
 		}
 		payload, _ := json.Marshal(current)
-		_, e = tx.Exec(ctx, `UPDATE assets a SET dns_observation=x.dns_observation,fingerprint_evidence=x.fingerprint_evidence,network_evidence=x.network_evidence,network_classified_at=x.network_classified_at,plugin_evidence=x.plugin_evidence,ips=x.ips,cnames=x.cnames,sources=x.sources,port=x.port,status_code=x.status_code,title=x.title,server=x.server,response_length=x.response_length,redirects=x.redirects,fingerprints=x.fingerprints,tls_subject=x.tls_subject,tls_not_after=x.tls_not_after,favicon_hash=x.favicon_hash,favicon_mmh3=x.favicon_mmh3,favicon_sha256=x.favicon_sha256,category=x.category,score=x.score,status=x.status,tags=x.tags,note=x.note,assignee=x.assignee,is_cdn=x.is_cdn,is_security_device=x.is_security_device,security_rule=x.security_rule,security_matches=x.security_matches,security_device_override=x.security_device_override,is_alive=x.is_alive,miss_count=x.miss_count,first_seen=x.first_seen,last_seen=x.last_seen,dns_at=x.dns_at,observed_run=x.observed_run FROM jsonb_populate_record(NULL::assets,$2::jsonb)x WHERE a.id=$1`, current.ID, payload)
+		_, e = tx.Exec(ctx, `UPDATE assets a SET classification=x.classification,category_override=x.category_override,dns_observation=x.dns_observation,fingerprint_evidence=x.fingerprint_evidence,network_evidence=x.network_evidence,network_classified_at=x.network_classified_at,plugin_evidence=x.plugin_evidence,ips=x.ips,cnames=x.cnames,sources=x.sources,port=x.port,status_code=x.status_code,title=x.title,server=x.server,response_length=x.response_length,redirects=x.redirects,fingerprints=x.fingerprints,tls_subject=x.tls_subject,tls_not_after=x.tls_not_after,favicon_hash=x.favicon_hash,favicon_mmh3=x.favicon_mmh3,favicon_sha256=x.favicon_sha256,category=x.category,score=x.score,status=x.status,tags=x.tags,note=x.note,assignee=x.assignee,is_cdn=x.is_cdn,is_security_device=x.is_security_device,security_rule=x.security_rule,security_matches=x.security_matches,security_device_override=x.security_device_override,is_alive=x.is_alive,miss_count=x.miss_count,first_seen=x.first_seen,last_seen=x.last_seen,dns_at=x.dns_at,observed_run=x.observed_run FROM jsonb_populate_record(NULL::assets,$2::jsonb)x WHERE a.id=$1`, current.ID, payload)
 		if e != nil {
 			return nil, e
 		}
@@ -221,7 +232,7 @@ func (s *Store) WriteResults(ctx context.Context, run Run, observations []Observ
 				return nil, e
 			}
 		}
-		if !exists || observationKey(old.Observation) != observationKey(current.Observation) {
+		if !exists || observationKey(old.Observation) != observationKey(current.Observation) || old.Category != current.Category || old.Score != current.Score || !classificationEqual(old.Classification, current.Classification) {
 			if _, e = tx.Exec(ctx, "INSERT INTO asset_snapshots(asset_id,scope_id,job_id,payload)VALUES($1,$2,$3,$4)", current.ID, run.ScopeID, run.ID, payload); e != nil {
 				return nil, e
 			}

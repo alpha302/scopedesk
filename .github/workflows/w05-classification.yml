@@ -1,0 +1,76 @@
+name: W05 classification contract
+on:
+  workflow_dispatch:
+  push:
+    branches: [batch-p0-p1]
+    paths:
+      - 'classification.go'
+      - 'w05*test.go'
+      - 'pipeline.go'
+      - 'results.go'
+      - 'security_api.go'
+      - 'import.go'
+      - 'migrations/00018*'
+      - 'web/app.js'
+      - 'web/index.html'
+      - '.github/workflows/w05-classification.yml'
+permissions:
+  contents: read
+jobs:
+  classification:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:16-alpine@sha256:0cefaabd882e42bcb2a2f3dc56d3ce4770560ba62fd7f197f1a2e008fd5731ab
+        env:
+          POSTGRES_DB: scopedesk_p0
+          POSTGRES_USER: scopedesk_p0
+          POSTGRES_HOST_AUTH_METHOD: trust
+        ports: ['127.0.0.1:5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U scopedesk_p0 -d scopedesk_p0"
+          --health-interval 5s --health-timeout 5s --health-retries 12
+    env:
+      DATABASE_URL: postgres://scopedesk_p0@127.0.0.1:5432/scopedesk_p0?sslmode=disable
+      P0_ISOLATED: ephemeral-ci
+      P0_ARTIFACT_DIR: ${{ github.workspace }}/w05-artifacts
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+      - name: Isolated key and immutable source evidence
+        shell: bash
+        run: |
+          key=$(openssl rand -base64 32)
+          echo "::add-mask::$key"
+          echo "RECON_MASTER_KEY=$key" >> "$GITHUB_ENV"
+          mkdir -p "$P0_ARTIFACT_DIR"
+          git rev-parse HEAD > "$P0_ARTIFACT_DIR/commit.txt"
+          sha256sum classification.go results.go security_api.go import.go pipeline.go web/app.js web/index.html migrations/00018* w05*test.go > "$P0_ARTIFACT_DIR/source.sha256"
+      - name: Classification contract and migration with race detection
+        run: go test -race -json -count=1 -timeout=5m -run '^TestW05' . > "$P0_ARTIFACT_DIR/w05-tests.jsonl"
+      - name: Relevant state authorization and write regressions
+        run: go test -race -json -count=1 -timeout=5m -run '^(TestW04.*|TestW26PersistAndRecoverDNSWithoutChangingHTTP|TestPostgresCandidateSnapshotCannotAuthorizeProbeOrCommit|TestPostgresDiffIdempotencyAndPartialFailure|TestPostgresSecurityEvidenceOverrideAndRescan|TestPostgresSecurityRuleAPI|TestPostgresProjectMembershipAndRevocation|TestScopeGuardBoundaries|TestBudgetIsAtomic|TestDNSPrivateAnswersNeverReachHTTP|TestRedirectScopeAndPorts|TestW01LongDetailCommits|TestW01Migration15To16|TestPostgresQueueClaimsAndLeaseRecovery)$' . > "$P0_ARTIFACT_DIR/regression-tests.jsonl"
+      - name: Actual old v17 writer against v18 nullable schema
+        shell: bash
+        run: |
+          old_src="$RUNNER_TEMP/w05-old-writer"
+          mkdir -p "$old_src/migrations-v18"
+          git archive c8242e06a34e14188900a5d4f027567a0b3aa5c3 | tar -x -C "$old_src"
+          cp docs/p0/evidence/w05-contract-20261103/old-writer-fixture.go.txt "$old_src/w05_old_writer_fixture_test.go"
+          cp migrations/00018_asset_classification.sql "$old_src/migrations-v18/"
+          git rev-parse c8242e06a34e14188900a5d4f027567a0b3aa5c3 > "$P0_ARTIFACT_DIR/old-source-commit.txt"
+          cd "$old_src"
+          go test -race -json -count=1 -timeout=3m -run '^TestW05OldWriterKeepsNewColumns$' . > "$P0_ARTIFACT_DIR/old-writer-tests.jsonl"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: w05-classification-${{ github.sha }}
+          path: w05-artifacts/
+          retention-days: 14
+          if-no-files-found: error

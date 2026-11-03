@@ -82,6 +82,12 @@ func (e *Engine) importTargetsV2(w http.ResponseWriter, r *http.Request, u User)
 			}
 			if inserted {
 				newCount++
+				a := AssetDoc{ID: id, ScopeID: body.ScopeID, Observation: Observation{Host: h}}
+				refreshAssetCategory(&a, guard.Scope.Domain)
+				if err = storeAssetCategory(ctx, tx, a); err != nil {
+					apiError(w, err)
+					return
+				}
 				if err = addEvent(ctx, tx, body.ScopeID, id, 0, "NEW_ASSET", map[string]any{"host": h, "sources": []string{"manual"}}); err != nil {
 					apiError(w, err)
 					return

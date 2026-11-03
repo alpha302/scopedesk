@@ -7,6 +7,7 @@ import (
 	"slices"
 	"strconv"
 	"strings"
+	"unicode"
 
 	"github.com/jackc/pgx/v5"
 )
@@ -94,6 +95,7 @@ func (e *Engine) serveSecurityRules(w http.ResponseWriter, r *http.Request, u Us
 }
 
 type assetPatch struct {
+	CategoryOverride json.RawMessage `json:"category_override"`
 	IDs              []int64         `json:"ids"`
 	Status           string          `json:"status"`
 	Note             *string         `json:"note"`
@@ -135,6 +137,22 @@ func (e *Engine) saveAssetPatch(w http.ResponseWriter, r *http.Request, u User, 
 		fail(w, 400, "备注过长")
 		return
 	}
+	categorySet := len(body.CategoryOverride) > 0
+	var categoryOverride *string
+	if categorySet {
+		if err := json.Unmarshal(body.CategoryOverride, &categoryOverride); err != nil {
+			fail(w, 400, "分类仅允许非空文本或 null")
+			return
+		}
+		if categoryOverride != nil {
+			value := strings.TrimSpace(*categoryOverride)
+			if value == "" || len(value) > 128 || strings.IndexFunc(*categoryOverride, unicode.IsControl) >= 0 {
+				fail(w, 400, "分类需为 1–128 字节的单行文本")
+				return
+			}
+			categoryOverride = &value
+		}
+	}
 	overrideSet := len(body.SecurityOverride) > 0
 	var override *bool
 	if overrideSet {
@@ -153,16 +171,36 @@ func (e *Engine) saveAssetPatch(w http.ResponseWriter, r *http.Request, u User, 
 		return
 	}
 	defer tx.Rollback(ctx)
-	rows, err := tx.Query(ctx, "SELECT a.id FROM assets a JOIN scopes s ON s.id=a.scope_id WHERE a.id=ANY($1::bigint[])AND($2='admin'OR scope_access(s.id,$3,true)) ORDER BY a.id FOR UPDATE OF a", ids, u.Role, u.ID)
+	rows, err := tx.Query(ctx, "SELECT a.id,CASE WHEN $4 THEN to_jsonb(a) ELSE NULL END,s.domain FROM assets a JOIN scopes s ON s.id=a.scope_id WHERE a.id=ANY($1::bigint[])AND($2='admin'OR scope_access(s.id,$3,true)) ORDER BY a.id FOR UPDATE OF a", ids, u.Role, u.ID, categorySet)
 	if err != nil {
 		apiError(w, err)
 		return
 	}
 	count := 0
+	type categoryAsset struct {
+		asset AssetDoc
+		root  string
+	}
+	categoryAssets := []categoryAsset{}
 	for rows.Next() {
+		var id int64
+		var raw []byte
+		var root string
+		if err = rows.Scan(&id, &raw, &root); err != nil {
+			break
+		}
+		if categorySet {
+			var a AssetDoc
+			if err = json.Unmarshal(raw, &a); err != nil {
+				break
+			}
+			categoryAssets = append(categoryAssets, categoryAsset{a, root})
+		}
 		count++
 	}
-	err = rows.Err()
+	if err == nil {
+		err = rows.Err()
+	}
 	rows.Close()
 	if err != nil {
 		apiError(w, err)
@@ -188,11 +226,32 @@ func (e *Engine) saveAssetPatch(w http.ResponseWriter, r *http.Request, u User, 
 			return
 		}
 	}
+	if categorySet {
+		for _, item := range categoryAssets {
+			a := item.asset
+			a.CategoryOverride = categoryOverride
+			refreshAssetCategory(&a, item.root)
+			if item.asset.Category == a.Category && item.asset.Score == a.Score && classificationEqual(item.asset.Classification, a.Classification) && ((item.asset.CategoryOverride == nil && a.CategoryOverride == nil) || (item.asset.CategoryOverride != nil && a.CategoryOverride != nil && *item.asset.CategoryOverride == *a.CategoryOverride)) {
+				continue
+			}
+			if err = storeAssetCategory(ctx, tx, a); err != nil {
+				apiError(w, err)
+				return
+			}
+			if _, err = tx.Exec(ctx, `INSERT INTO asset_snapshots(asset_id,scope_id,payload) SELECT id,scope_id,to_jsonb(a) FROM assets a WHERE id=$1`, a.ID); err != nil {
+				apiError(w, err)
+				return
+			}
+		}
+	}
 	action := "assets.batch"
 	if overrideSet {
 		action = "assets.security_override"
 	}
-	target, _ := json.Marshal(map[string]any{"ids": ids, "security_device_override": body.SecurityOverride})
+	if categorySet {
+		action = "assets.category_override"
+	}
+	target, _ := json.Marshal(map[string]any{"ids": ids, "security_device_override": body.SecurityOverride, "category_override": body.CategoryOverride})
 	if _, err = tx.Exec(ctx, "INSERT INTO operation_logs(user_id,action,target)VALUES($1,$2,$3)", u.ID, action, string(target)); err != nil {
 		apiError(w, err)
 		return

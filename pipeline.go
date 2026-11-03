@@ -18,8 +18,6 @@ import (
 	"strconv"
 	"strings"
 	"time"
-
-	"golang.org/x/net/publicsuffix"
 )
 
 type Observation struct {
@@ -409,35 +407,12 @@ func observationKey(o Observation) string {
 	return hex.EncodeToString(sum[:])
 }
 func categoryScore(host string, active bool, scopeRoot ...string) (string, int) {
-	score := 10
-	category := "未分类"
-	// Only subdomain labels carry service hints. Never classify the registrable
-	// brand or a configured scope root, including private PSL suffixes.
-	labels := ""
-	if h, err := normalizeHost(host); err == nil {
-		if _, err := netip.ParseAddr(h); err != nil {
-			root, err := publicsuffix.EffectiveTLDPlusOne(h)
-			if err == nil {
-				if len(scopeRoot) > 0 {
-					if s, err := normalizeHost(scopeRoot[0]); err == nil && (s == root || strings.HasSuffix(s, "."+root)) && (h == s || strings.HasSuffix(h, "."+s)) {
-						root = s
-					}
-				}
-				labels = strings.TrimSuffix(h, root)
-			}
-		}
+	root := ""
+	if len(scopeRoot) > 0 {
+		root = scopeRoot[0]
 	}
-	for _, pair := range [][2]string{{"api", "API"}, {"sso", "认证 SSO"}, {"admin", "支撑平台"}, {"dev", "开发测试"}, {"test", "开发测试"}, {"uat", "开发测试"}} {
-		if categoryTokenMatch(labels, pair[0]) {
-			category = pair[1]
-			score += 20
-			break
-		}
-	}
-	if active {
-		score += 10
-	}
-	return category, score
+	c := evaluateCategory(host, active, root)
+	return c.AutomaticCategory, c.BasePoints + c.KeywordPoints + c.AlivePoints
 }
 
 func categoryTokenMatch(labels, keyword string) bool {
