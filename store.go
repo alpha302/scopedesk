@@ -229,8 +229,12 @@ func (s *Store) importLegacy(ctx context.Context, old State) error {
 	}
 	return tx.Commit(ctx)
 }
+
+const scopesListSQL = `SELECT s.id,s.owner,s.domain,s.mode,s.policy,s.confirmed,s.active,s.exclusions,s.expires_at,s.rps,s.concurrency,s.request_limit,s.window_start,s.window_end,s.created_at,(SELECT count(*) FROM assets a WHERE a.scope_id=s.id),s.project_id,p.name,p.workspace_id,jsonb_build_object('enabled',p.enabled,'allow_active',p.allow_active,'expires_at',p.expires_at,'rps_limit',p.rps_limit) FROM scopes s JOIN projects p ON p.id=s.project_id WHERE ($1='admin' OR scope_access(s.id,$2)) AND ($3=0 OR s.project_id=$3) ORDER BY s.id DESC`
+const scopePlansSQL = `SELECT scope_id,enabled,interval_hours,cron,collectors,next_run_at,last_run_at,schedule_error,retry_at,collection_mode FROM monitor_plans WHERE scope_id=ANY($1::bigint[])`
+
 func (s *Store) scopes(ctx context.Context, u User, filters ...urlQuery) ([]ScopeV2, error) {
-	rows, e := s.DB.Query(ctx, `SELECT s.id,s.owner,s.domain,s.mode,s.policy,s.confirmed,s.active,s.exclusions,s.expires_at,s.rps,s.concurrency,s.request_limit,s.window_start,s.window_end,s.created_at,(SELECT count(*) FROM assets a WHERE a.scope_id=s.id),s.project_id,p.name,p.workspace_id,jsonb_build_object('enabled',p.enabled,'allow_active',p.allow_active,'expires_at',p.expires_at,'rps_limit',p.rps_limit) FROM scopes s JOIN projects p ON p.id=s.project_id WHERE ($1='admin' OR scope_access(s.id,$2)) AND ($3=0 OR s.project_id=$3) ORDER BY s.id DESC`, u.Role, u.ID, projectFilter(filters...))
+	rows, e := s.DB.Query(ctx, scopesListSQL, u.Role, u.ID, projectFilter(filters...))
 	if e != nil {
 		return nil, e
 	}
@@ -251,13 +255,45 @@ func (s *Store) scopes(ctx context.Context, u User, filters ...urlQuery) ([]Scop
 	if e != nil {
 		return nil, e
 	}
+	if len(out) == 0 {
+		return out, nil
+	}
+	ids := make([]int64, len(out))
 	for i := range out {
-		p, e := s.plan(ctx, out[i].ID)
-		if e != nil {
-			return nil, e
+		ids[i] = out[i].ID
+	}
+	planRows, err := s.DB.Query(ctx, scopePlansSQL, ids)
+	if err != nil {
+		return nil, err
+	}
+	plans := map[int64]Plan{}
+	for planRows.Next() {
+		var id int64
+		var p Plan
+		var raw []byte
+		if err = planRows.Scan(&id, &p.Enabled, &p.Interval, &p.Cron, &raw, &p.Next, &p.Last, &p.ScheduleError, &p.RetryAt, &p.CollectionMode); err != nil {
+			planRows.Close()
+			return nil, err
+		}
+		if err = json.Unmarshal(raw, &p.Collectors); err != nil {
+			planRows.Close()
+			return nil, err
+		}
+		plans[id] = p
+	}
+	err = planRows.Err()
+	planRows.Close()
+	if err != nil {
+		return nil, err
+	}
+	for i := range out {
+		p, ok := plans[out[i].ID]
+		if !ok {
+			p = defaultMonitorPlan()
 		}
 		out[i].Plan = &p
 	}
+
 	return out, nil
 }
 func (s *Store) guard(ctx context.Context, id int64) (ScopeGuard, error) {
@@ -290,8 +326,11 @@ func (s *Store) scopesByID(ctx context.Context, id int64) (ScopeV2, error) {
 	return g.Scope, err
 }
 
+func defaultMonitorPlan() Plan {
+	return Plan{Interval: 24, Collectors: []string{"crtsh", "certspotter"}}
+}
 func (s *Store) plan(ctx context.Context, id int64) (Plan, error) {
-	p := Plan{Interval: 24, Collectors: []string{"crtsh", "certspotter"}}
+	p := defaultMonitorPlan()
 	var raw []byte
 	e := s.DB.QueryRow(ctx, "SELECT enabled,interval_hours,cron,collectors,next_run_at,last_run_at,schedule_error,retry_at,collection_mode FROM monitor_plans WHERE scope_id=$1", id).Scan(&p.Enabled, &p.Interval, &p.Cron, &raw, &p.Next, &p.Last, &p.ScheduleError, &p.RetryAt, &p.CollectionMode)
 	if errors.Is(e, pgx.ErrNoRows) {

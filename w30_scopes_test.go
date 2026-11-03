@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"net/url"
 	"reflect"
 	"testing"
 	"time"
@@ -37,17 +38,37 @@ func TestW30BoundedPlanQueries(t *testing.T) {
 
 // This intentionally retains the old independent per-scope reader as a
 // measurement/reference implementation, never a production fallback.
-func w30LegacyPlans(ctx context.Context, s *Store, out []ScopeV2) ([]ScopeV2, error) {
+func w30LegacyScopes(ctx context.Context, s *Store, u User, filters ...urlQuery) ([]ScopeV2, error) {
+	rows, e := s.DB.Query(ctx, `SELECT s.id,s.owner,s.domain,s.mode,s.policy,s.confirmed,s.active,s.exclusions,s.expires_at,s.rps,s.concurrency,s.request_limit,s.window_start,s.window_end,s.created_at,(SELECT count(*) FROM assets a WHERE a.scope_id=s.id),s.project_id,p.name,p.workspace_id,jsonb_build_object('enabled',p.enabled,'allow_active',p.allow_active,'expires_at',p.expires_at,'rps_limit',p.rps_limit) FROM scopes s JOIN projects p ON p.id=s.project_id WHERE ($1='admin' OR scope_access(s.id,$2)) AND ($3=0 OR s.project_id=$3) ORDER BY s.id DESC`, u.Role, u.ID, projectFilter(filters...))
+	if e != nil {
+		return nil, e
+	}
+	out := []ScopeV2{}
+	for rows.Next() {
+		var v ScopeV2
+		var exclusions, projectPolicy []byte
+		if e = rows.Scan(&v.ID, &v.Owner, &v.Domain, &v.Mode, &v.Policy, &v.Confirmed, &v.Active, &exclusions, &v.Expires, &v.RPS, &v.Concurrency, &v.RequestLimit, &v.WindowStart, &v.WindowEnd, &v.Created, &v.AssetCount, &v.ProjectID, &v.ProjectName, &v.WorkspaceID, &projectPolicy); e != nil {
+			rows.Close()
+			return nil, e
+		}
+		json.Unmarshal(exclusions, &v.Exclusions)
+		json.Unmarshal(projectPolicy, &v.ProjectPolicy)
+		out = append(out, v)
+	}
+	e = rows.Err()
+	rows.Close()
+	if e != nil {
+		return nil, e
+	}
 	for i := range out {
-		p, err := s.plan(ctx, out[i].ID)
-		if err != nil {
-			return nil, err
+		p, e := s.plan(ctx, out[i].ID)
+		if e != nil {
+			return nil, e
 		}
 		out[i].Plan = &p
 	}
 	return out, nil
 }
-
 func TestW30Measurements(t *testing.T) {
 	s, tr := p0Store(t)
 	ctx := context.Background()
@@ -72,25 +93,64 @@ INSERT INTO project_members(project_id,user_id,role)VALUES(101,200,'viewer');ANA
 			t.Fatal("scope authorization changed")
 		}
 	}
-	for round := 1; round <= 3; round++ {
-		values := []int64{}
-		counts := []int64{}
-		for request := 0; request < 20; request++ {
-			before := tr.queries.Load()
-			at := time.Now()
-			out, err := s.scopes(ctx, User{ID: 100, Role: "admin"})
-			elapsed := time.Since(at).Nanoseconds()
-			if err != nil || len(out) != 1000 {
-				t.Fatal("measured scope listing failed")
+	for _, u := range []User{{ID: 100, Role: "admin"}, {ID: 200, Role: "readonly"}, {ID: 300, Role: "user"}} {
+		for _, project := range []string{"", "101", "102", "999", "invalid"} {
+			filter := url.Values{}
+			if project != "" {
+				filter.Set("project_id", project)
 			}
-			values = append(values, elapsed)
-			counts = append(counts, tr.queries.Load()-before)
+			got, err := s.scopes(ctx, u, filter)
+			if err != nil {
+				t.Fatal(err)
+			}
+			want, err := w30LegacyScopes(ctx, s, u, filter)
+			if err != nil {
+				t.Fatal(err)
+			}
+			a, _ := json.Marshal(got)
+			b, _ := json.Marshal(want)
+			if string(a) != string(b) {
+				t.Fatal("scope JSON or project authorization changed")
+			}
 		}
-		p0Write(t, fmt.Sprintf("w30-round%d", round), map[string]any{"assets": 10000, "services": 20000, "scopes": 1000, "synthetic_ratio": 1, "elapsed_ns": values, "sql_round_trips": counts, "quantiles": w03Quantiles(values), "note": "shared runner; empirical p99 of 20 samples equals maximum; no production capacity claim"})
 	}
-	var plan json.RawMessage
-	if err := s.DB.QueryRow(ctx, `EXPLAIN(ANALYZE,BUFFERS,SETTINGS,FORMAT JSON)SELECT scope_id,enabled,interval_hours,cron,collectors,next_run_at,last_run_at,schedule_error,retry_at,collection_mode FROM monitor_plans WHERE scope_id=ANY(ARRAY(SELECT id FROM scopes))`).Scan(&plan); err != nil {
-		t.Fatal(err)
+	for round := 1; round <= 3; round++ {
+		for _, variant := range []string{"legacy", "current"} {
+			values := []int64{}
+			counts := []int64{}
+			for request := 0; request < 20; request++ {
+				before := tr.queries.Load()
+				at := time.Now()
+				var out []ScopeV2
+				var err error
+				if variant == "legacy" {
+					out, err = w30LegacyScopes(ctx, s, User{ID: 100, Role: "admin"})
+				} else {
+					out, err = s.scopes(ctx, User{ID: 100, Role: "admin"})
+				}
+				elapsed := time.Since(at).Nanoseconds()
+				if err != nil || len(out) != 1000 {
+					t.Fatal("measured scope listing failed")
+				}
+				values = append(values, elapsed)
+				counts = append(counts, tr.queries.Load()-before)
+			}
+			p0Write(t, fmt.Sprintf("w30-%s-round%d", variant, round), map[string]any{"assets": 10000, "services": 20000, "scopes": 1000, "synthetic_ratio": 1, "elapsed_ns": values, "sql_round_trips": counts, "quantiles": w03Quantiles(values), "note": "same fixture/runner/process; legacy reader copied from pre-fix source; sequential order; empirical p99 of 20 equals max, no production capacity claim"})
+		}
 	}
-	p0Write(t, "w30-plan-explain", json.RawMessage(plan))
+	ids := make([]int64, 1000)
+	for i := range ids {
+		ids[i] = int64(i + 1)
+	}
+	for name, query := range map[string]string{"scopes": scopesListSQL, "batched_plans": scopePlansSQL} {
+		var plan json.RawMessage
+		args := []any{ids}
+		if name == "scopes" {
+			args = []any{"admin", 100, int64(0)}
+		}
+		if err := s.DB.QueryRow(ctx, "EXPLAIN(ANALYZE,BUFFERS,SETTINGS,FORMAT JSON) "+query, args...).Scan(&plan); err != nil {
+			t.Fatal(err)
+		}
+		p0Write(t, "w30-"+name+"-explain", json.RawMessage(plan))
+	}
 }
