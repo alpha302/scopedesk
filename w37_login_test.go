@@ -197,6 +197,25 @@ func TestW37PersistenceFailureAndPrivacy(t *testing.T) {
 	}
 }
 
+func TestW37CompletionFailureDoesNotIssueSession(t *testing.T) {
+	s := fixture(t)
+	s.loginHash = func(string, string) string {
+		// Admission was durable; inject a later completion I/O failure.
+		s.accountLimits.path = t.TempDir()
+		return s.data.Users[0].Hash
+	}
+	w := <-w03StartLogin(s, context.Background(), "admin", "test-password-2026", "192.0.2.1")
+	if w.Code != 503 || len(w.Result().Cookies()) != 0 || len(s.sessions) != 0 {
+		t.Fatal("completion I/O failure issued a session")
+	}
+	s.accountLimits.mu.Lock()
+	defer s.accountLimits.mu.Unlock()
+	b := s.accountLimits.state.Buckets[accountBucketKey("admin")]
+	if b.Pending != 1 {
+		t.Fatal("completion failure discarded conservative reservation")
+	}
+}
+
 func TestW37AdminUnlockPermissionsAuditAndDurability(t *testing.T) {
 	s := fixture(t)
 	admin, csrf := signin(t, s, "admin")
