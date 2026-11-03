@@ -2,8 +2,10 @@ package main
 
 import (
 	"context"
+	"encoding/binary"
 	"encoding/json"
 	"errors"
+	"io"
 	"net"
 	"net/http"
 	"sync/atomic"
@@ -168,5 +170,59 @@ func TestW26ConflictingAndTruncatedRepliesStayUnknown(t *testing.T) {
 		if c.observation("api.example.com", errors.New("fixture")).State != "unknown" {
 			t.Fatal("uncertain response became NXDOMAIN")
 		}
+	}
+}
+
+func TestW26TCPFramingAndQuestionIdentity(t *testing.T) {
+	r := &net.Resolver{PreferGo: true, Dial: func(context.Context, string, string) (net.Conn, error) {
+		client, server := net.Pipe()
+		go func() {
+			defer server.Close()
+			var size [2]byte
+			if _, err := io.ReadFull(server, size[:]); err != nil {
+				return
+			}
+			raw := make([]byte, int(binary.BigEndian.Uint16(size[:])))
+			if _, err := io.ReadFull(server, raw); err != nil {
+				return
+			}
+			var q dnsmessage.Message
+			if q.Unpack(raw) != nil {
+				return
+			}
+			reply := dnsmessage.Message{Header: dnsmessage.Header{ID: q.ID, Response: true, RCode: dnsmessage.RCodeNameError}, Questions: q.Questions}
+			body, err := reply.Pack()
+			if err != nil {
+				return
+			}
+			binary.BigEndian.PutUint16(size[:], uint16(len(body)))
+			server.Write(size[:])
+			server.Write(body)
+		}()
+		return client, nil
+	}}
+	scope := sampleScope()
+	p := Pipeline{Resolver: r, Limit: immediateLimit{}, Guard: func(context.Context, int64) (ScopeGuard, error) { return ScopeGuard{Scope: scope}, nil }}
+	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
+	defer cancel()
+	o, err := p.Probe(ctx, scope, "api.example.com", []string{"fixture"}, &Budget{Limit: 100})
+	if err != nil || o.DNSObservation == nil || o.DNSObservation.State != "nxdomain_pending" {
+		t.Fatal("TCP framed DNS evidence missing")
+	}
+	c := &dnsCapture{}
+	wrapped := &dnsEvidenceConn{capture: c, queries: map[uint16]dnsmessage.Question{}}
+	q := dnsmessage.Question{Name: dnsmessage.MustNewName("api.example.com."), Type: dnsmessage.TypeA, Class: dnsmessage.ClassINET}
+	request := dnsmessage.Message{Header: dnsmessage.Header{ID: 1}, Questions: []dnsmessage.Question{q}}
+	raw, _ := request.Pack()
+	wrapped.inspect(raw, false)
+	response := dnsmessage.Message{Header: dnsmessage.Header{ID: 2, Response: true, RCode: dnsmessage.RCodeNameError}, Questions: []dnsmessage.Question{q}}
+	raw, _ = response.Pack()
+	wrapped.inspect(raw, true)
+	response.ID = 1
+	response.Questions[0].Name = dnsmessage.MustNewName("unrelated.example.com.")
+	raw, _ = response.Pack()
+	wrapped.inspect(raw, true)
+	if len(c.replies) != 0 {
+		t.Fatal("mismatched DNS reply accepted as evidence")
 	}
 }
