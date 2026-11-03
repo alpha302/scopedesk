@@ -1,0 +1,17 @@
+{
+  "run_url": "https://github.com/alpha302/scopedesk/actions/runs/41560265458",
+  "tested_commit": "c35b839aefa320071a6f92daf0a5bc945364fb81",
+  "conclusion": "failure: W02 acceptance reproduced; not fixed",
+  "sha256": {
+    "commit.txt": "26d82f09b32bb9e83e0b2b10fa013f04de8aaf474e6545b72ff586a91b0c278e",
+    "interfaces.txt": "bf6acf5bd6bcd6873ad02650a8ed7cf65240a25b68638680e0b127fa9b7f1e15",
+    "isolation.json": "1434f7ce0da629173b288ad3ad96d65d0d1b051f28f682d030b7d249e55da202",
+    "routes.txt": "24e12256dd716f2be7dcdff10d6dbb8a6158dc95492f010c5867856ca76c9097",
+    "source.sha256": "9c23fd49f4cf9384cc7c6ab56ba0c1c9f65093dbed94e14982b395e8f3789cc3",
+    "tests.txt": "7db6f49b3d4795e943b1c4fade45245fa2e6552f8d329bdf1e755897256040dd",
+    "w02-dial-1.json": "fe66b32e773527427b714e3c661ba612f1aa572b3d19b524c2be549004f35ab3",
+    "w02-dial-2.json": "ece5157164dbef396483f6efaf5ba33d60b9b112b51db07014b989d9a079f9e6",
+    "w02-dial-3.json": "0d7d9356dcffbe72b221570a435d0dfab94fd414058e13d869669ce6b298e31c",
+    "w02-dial-4.json": "8a385f175462f1cd641d0c842d69cd539fa679e1beac67e716f9a852d146f0c4"
+  }
+}

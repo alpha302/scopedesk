@@ -1,0 +1,32 @@
+{
+  "completed_at": "2026-11-03T01:32:43.182900+00:00",
+  "release_commit": "ecc0e03a7e57252bb26e66614b3b8d2d3b8bdf3f",
+  "backup": "/var/backups/scopedesk/before-w01-v16-20261103-013235",
+  "schema_before": 15,
+  "schema_after": 16,
+  "migration_counts_preserved": true,
+  "installed_source_files": 80,
+  "binary_sha256": "bc4fe42089c0f715c1d8b68cd57cc7125be4453453bd3f362de3a30ec2adc391",
+  "running_binary_verified": true,
+  "readiness": true,
+  "authentication_required": true,
+  "configuration_unchanged": true,
+  "plans_unchanged": true,
+  "provider_keys_imported": false,
+  "test_target_requests": 0,
+  "w02_deployed": false,
+  "postdeploy_verification": {
+    "services": {
+      "scopedesk": "active",
+      "docker": "active",
+      "caddy": "active"
+    },
+    "schema": 16,
+    "active_jobs": 0,
+    "enabled_plans": 1,
+    "source_hashes_match": true,
+    "next_scheduled_run": "2026-11-03 09:28:38.380424+00",
+    "proxy_home": 200,
+    "proxy_unauthenticated_settings": 401
+  }
+}

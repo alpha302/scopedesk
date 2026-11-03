@@ -1,0 +1,49 @@
+=== RUN   TestW02AddressBoundary
+=== RUN   TestW02AddressBoundary/1.1.1.1
+=== RUN   TestW02AddressBoundary/2606:4700:4700::1111
+=== RUN   TestW02AddressBoundary/127.0.0.1
+=== RUN   TestW02AddressBoundary/10.0.0.1
+=== RUN   TestW02AddressBoundary/169.254.169.254
+=== RUN   TestW02AddressBoundary/::1
+=== RUN   TestW02AddressBoundary/::ffff:127.0.0.1
+=== RUN   TestW02AddressBoundary/2001:db8::1
+=== RUN   TestW02AddressBoundary/64:ff9b::7f00:1
+    w02_acceptance_test.go:33: W02 address classification: allowed=true, expected=false
+=== RUN   TestW02AddressBoundary/64:ff9b::a00:1
+    w02_acceptance_test.go:33: W02 address classification: allowed=true, expected=false
+=== RUN   TestW02AddressBoundary/2002:7f00:1::1
+    w02_acceptance_test.go:33: W02 address classification: allowed=true, expected=false
+=== RUN   TestW02AddressBoundary/2002:a00:1::1
+    w02_acceptance_test.go:33: W02 address classification: allowed=true, expected=false
+--- FAIL: TestW02AddressBoundary (0.00s)
+    --- PASS: TestW02AddressBoundary/1.1.1.1 (0.00s)
+    --- PASS: TestW02AddressBoundary/2606:4700:4700::1111 (0.00s)
+    --- PASS: TestW02AddressBoundary/127.0.0.1 (0.00s)
+    --- PASS: TestW02AddressBoundary/10.0.0.1 (0.00s)
+    --- PASS: TestW02AddressBoundary/169.254.169.254 (0.00s)
+    --- PASS: TestW02AddressBoundary/::1 (0.00s)
+    --- PASS: TestW02AddressBoundary/::ffff:127.0.0.1 (0.00s)
+    --- PASS: TestW02AddressBoundary/2001:db8::1 (0.00s)
+    --- FAIL: TestW02AddressBoundary/64:ff9b::7f00:1 (0.00s)
+    --- FAIL: TestW02AddressBoundary/64:ff9b::a00:1 (0.00s)
+    --- FAIL: TestW02AddressBoundary/2002:7f00:1::1 (0.00s)
+    --- FAIL: TestW02AddressBoundary/2002:a00:1::1 (0.00s)
+=== RUN   TestW02ControlledDial
+=== RUN   TestW02ControlledDial/embedded-private-1
+    w02_acceptance_test.go:138: W02 local route: classifier_allowed=true http_requests=2 status=200 blacklist_prevents_additional_http=true
+    w02_acceptance_test.go:149: W02 acceptance failed: embedded-private IPv6 reached controlled HTTP fixture
+=== RUN   TestW02ControlledDial/embedded-private-2
+    w02_acceptance_test.go:138: W02 local route: classifier_allowed=true http_requests=2 status=200 blacklist_prevents_additional_http=true
+    w02_acceptance_test.go:149: W02 acceptance failed: embedded-private IPv6 reached controlled HTTP fixture
+=== RUN   TestW02ControlledDial/embedded-private-3
+    w02_acceptance_test.go:138: W02 local route: classifier_allowed=true http_requests=2 status=200 blacklist_prevents_additional_http=true
+    w02_acceptance_test.go:149: W02 acceptance failed: embedded-private IPv6 reached controlled HTTP fixture
+=== RUN   TestW02ControlledDial/embedded-private-4
+    w02_acceptance_test.go:138: W02 local route: classifier_allowed=true http_requests=2 status=200 blacklist_prevents_additional_http=true
+    w02_acceptance_test.go:149: W02 acceptance failed: embedded-private IPv6 reached controlled HTTP fixture
+--- FAIL: TestW02ControlledDial (9.61s)
+    --- FAIL: TestW02ControlledDial/embedded-private-1 (2.40s)
+    --- FAIL: TestW02ControlledDial/embedded-private-2 (2.40s)
+    --- FAIL: TestW02ControlledDial/embedded-private-3 (2.40s)
+    --- FAIL: TestW02ControlledDial/embedded-private-4 (2.40s)
+FAIL
