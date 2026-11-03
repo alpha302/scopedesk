@@ -20,10 +20,10 @@ func TestP0CharacterizeClassification(t *testing.T) {
 
 func TestP0CharacterizeEmbeddedIPv4(t *testing.T) {
 	for _, raw := range []string{"64:ff9b::7f00:1", "64:ff9b::a00:1", "2002:7f00:1::1", "2002:a00:1::1"} {
-		if !publicIP(netip.MustParseAddr(raw)) {
-			t.Fatal("baseline changed; update W02 classification reproduction status")
+		if publicIP(netip.MustParseAddr(raw)) {
+			t.Fatal("W02 regression: embedded private IPv4 must be refused")
 		}
-		t.Logf("W02 classifier accepts %s; actual NAT64/6to4 routing/dial impact remains unverified", raw)
+		t.Logf("W02 classifier refuses %s; no real translator tested", raw)
 	}
 }
 

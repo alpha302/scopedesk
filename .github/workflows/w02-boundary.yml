@@ -5,6 +5,9 @@ on:
     branches: [batch-p0-p1]
     paths:
       - 'w02_acceptance_test.go'
+      - 'w02_transition_test.go'
+      - 'guard.go'
+      - 'p0_reproduction_test.go'
       - '.github/workflows/w02-boundary.yml'
 permissions:
   contents: read
@@ -37,14 +40,16 @@ jobs:
           for ip in 64:ff9b::7f00:1 64:ff9b::a00:1 2002:7f00:1::1 2002:a00:1::1; do
             docker exec scopedesk-w02 /bin/busybox ip -6 addr add "$ip/128" dev lo
           done
+          docker exec scopedesk-w02 /bin/busybox ip addr add 1.1.1.1/32 dev lo
+          docker exec scopedesk-w02 /bin/busybox ip -6 addr add 2606:4700:4700::1111/128 dev lo
           docker exec scopedesk-w02 /bin/busybox ip addr > w02-artifacts/interfaces.txt
           docker exec scopedesk-w02 /bin/busybox ip -6 route show table all > w02-artifacts/routes.txt
           docker inspect scopedesk-w02 --format '{"network":{{json .HostConfig.NetworkMode}},"image":{{json .Image}},"memory":{{.HostConfig.Memory}},"nano_cpus":{{.HostConfig.NanoCpus}}}' > w02-artifacts/isolation.json
-      - name: W02 acceptance (expected to fail until W02 is fixed)
+      - name: W02 acceptance and existing egress/budget checks
         shell: bash
         run: |
           set -o pipefail
-          docker exec -e W02_NETWORK_NONE=confirmed -e P0_ARTIFACT_DIR=/evidence -e GOMAXPROCS=2 scopedesk-w02 /tmp/w02-tests -test.v -test.timeout=3m -test.run='^TestW02' 2>&1 | tee w02-artifacts/tests.txt
+          docker exec -e W02_NETWORK_NONE=confirmed -e P0_ARTIFACT_DIR=/evidence -e GOMAXPROCS=2 scopedesk-w02 /tmp/w02-tests -test.v -test.timeout=3m -test.run='^(TestW02.*|TestP0CharacterizeEmbeddedIPv4|TestScopeGuardBoundaries|TestBudgetIsAtomic|TestDNSPrivateAnswersNeverReachHTTP|TestRedirectScopeAndPorts|TestFaviconRequestsFallbackRedirectAndScope)$' 2>&1 | tee w02-artifacts/tests.txt
       - name: Make synthetic fixture evidence readable by runner
         if: always()
         run: docker exec scopedesk-w02 chmod -R a+rX /evidence

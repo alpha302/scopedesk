@@ -26,6 +26,12 @@ func TestW02AddressBoundary(t *testing.T) {
 		{"::1", false}, {"::ffff:127.0.0.1", false}, {"2001:db8::1", false},
 		{"64:ff9b::7f00:1", false}, {"64:ff9b::a00:1", false},
 		{"2002:7f00:1::1", false}, {"2002:a00:1::1", false},
+		{"64:ff9b::101:101", true}, {"2002:101:101::1", true},
+		{"64:ff9b::6440:1", false}, {"2002:c000:201::1", false},
+		{"64:ff9b:1::101:101", false}, {"100::1", false},
+		{"100:0:0:1::1", false}, {"2001::1", false},
+		{"::1.1.1.1", false}, {"3fff::1", false},
+		{"2001:1::1", true}, {"2606:4700:4700::1111%eth0", false},
 	} {
 		t.Run(tc.ip, func(t *testing.T) {
 			got := publicIP(netip.MustParseAddr(tc.ip))
@@ -33,6 +39,24 @@ func TestW02AddressBoundary(t *testing.T) {
 				t.Errorf("W02 address classification: allowed=%t, expected=%t", got, tc.allow)
 			}
 		})
+	}
+}
+
+func TestW02EmbeddedBlacklist(t *testing.T) {
+	for _, ip := range []string{"64:ff9b::101:101", "2002:101:101::1"} {
+		g := ScopeGuard{Scope: sampleScope()}
+		if err := g.AllowIP(ip); err != nil {
+			t.Fatal("public embedded IPv4 must not be blanket blocked")
+		}
+		g.Blacklist = []string{"1.1.1.0/24"}
+		if g.AllowIP(ip) == nil {
+			t.Fatal("embedded IPv4 must obey blacklist")
+		}
+		g.Blacklist = nil
+		g.Scope.Exclusions = []string{"1.1.1.1"}
+		if g.AllowIP(ip) == nil {
+			t.Fatal("embedded IPv4 must obey scope exclusion")
+		}
 	}
 }
 

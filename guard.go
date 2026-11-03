@@ -180,7 +180,7 @@ func (g ScopeGuard) AllowHost(raw string) (string, error) {
 }
 func publicIP(ip netip.Addr) bool {
 	ip = ip.Unmap()
-	if !ip.IsValid() || !ip.IsGlobalUnicast() || ip.IsPrivate() || ip.IsLoopback() || ip.IsLinkLocalUnicast() {
+	if !ip.IsValid() || ip.Zone() != "" || !ip.IsGlobalUnicast() || ip.IsPrivate() || ip.IsLoopback() || ip.IsLinkLocalUnicast() {
 		return false
 	}
 	for _, cidr := range []string{"0.0.0.0/8", "100.64.0.0/10", "192.0.0.0/24", "192.0.2.0/24", "198.18.0.0/15", "198.51.100.0/24", "203.0.113.0/24", "224.0.0.0/4", "240.0.0.0/4", "2001:db8::/32"} {
@@ -189,7 +189,37 @@ func publicIP(ip netip.Addr) bool {
 			return false
 		}
 	}
+	if ip.Is6() {
+		// Non-global or ambiguous transition formats are never an implicit
+		// authorization. Do not blanket-block public NAT64/6to4 addresses.
+		for _, cidr := range []string{"::/96", "64:ff9b:1::/48", "100::/64", "100:0:0:1::/64", "2001::/32", "3fff::/20"} {
+			if netip.MustParsePrefix(cidr).Contains(ip) {
+				return false
+			}
+		}
+		if embedded, ok := embeddedIPv4(ip); ok && !publicIP(embedded) {
+			return false
+		}
+	}
 	return true
+}
+
+// RFC 6052's well-known /96 uses the low 32 bits; RFC 3056's 6to4
+// prefix uses the 32 bits immediately following 2002. Network-specific
+// translation prefixes are not inferred from an arbitrary IPv6 address.
+func embeddedIPv4(ip netip.Addr) (netip.Addr, bool) {
+	ip = ip.Unmap()
+	if !ip.Is6() || ip.Zone() != "" {
+		return netip.Addr{}, false
+	}
+	b := ip.As16()
+	if netip.MustParsePrefix("64:ff9b::/96").Contains(ip) {
+		return netip.AddrFrom4([4]byte{b[12], b[13], b[14], b[15]}), true
+	}
+	if netip.MustParsePrefix("2002::/16").Contains(ip) {
+		return netip.AddrFrom4([4]byte{b[2], b[3], b[4], b[5]}), true
+	}
+	return netip.Addr{}, false
 }
 func (g ScopeGuard) AllowIP(raw string) error {
 	if e := g.Valid(); e != nil {
@@ -199,9 +229,15 @@ func (g ScopeGuard) AllowIP(raw string) error {
 	if e != nil || !publicIP(ip) {
 		return errors.New("拒绝内网、保留或无效 IP")
 	}
+	addresses := []string{ip.Unmap().String()}
+	if embedded, ok := embeddedIPv4(ip); ok {
+		addresses = append(addresses, embedded.String())
+	}
 	for _, p := range append(append([]string{}, g.Blacklist...), g.Scope.Exclusions...) {
-		if matchPattern(ip.Unmap().String(), p, false) {
-			return errors.New("IP 命中黑名单或范围排除")
+		for _, address := range addresses {
+			if matchPattern(address, p, false) {
+				return errors.New("IP 命中黑名单或范围排除")
+			}
 		}
 	}
 	if g.Scope.Mode == "cidr" && !matchPattern(ip.String(), g.Scope.Domain, false) {
