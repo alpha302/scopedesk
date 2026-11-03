@@ -1,0 +1,114 @@
+{"Time":"2026-11-03T11:53:39.034475127+08:00","Action":"start","Package":"scopedesk"}
+{"Time":"2026-11-03T11:53:39.063742782+08:00","Action":"run","Package":"scopedesk","Test":"TestRedirectScopeAndPorts"}
+{"Time":"2026-11-03T11:53:39.06393675+08:00","Action":"output","Package":"scopedesk","Test":"TestRedirectScopeAndPorts","Output":"=== RUN   TestRedirectScopeAndPorts\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.064598275+08:00","Action":"output","Package":"scopedesk","Test":"TestRedirectScopeAndPorts","Output":"--- PASS: TestRedirectScopeAndPorts (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.064661318+08:00","Action":"pass","Package":"scopedesk","Test":"TestRedirectScopeAndPorts","Elapsed":0}
+{"Time":"2026-11-03T11:53:39.064709661+08:00","Action":"run","Package":"scopedesk","Test":"TestDNSPrivateAnswersNeverReachHTTP"}
+{"Time":"2026-11-03T11:53:39.064717901+08:00","Action":"output","Package":"scopedesk","Test":"TestDNSPrivateAnswersNeverReachHTTP","Output":"=== RUN   TestDNSPrivateAnswersNeverReachHTTP\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.733703527+08:00","Action":"output","Package":"scopedesk","Test":"TestDNSPrivateAnswersNeverReachHTTP","Output":"--- PASS: TestDNSPrivateAnswersNeverReachHTTP (0.67s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.733805215+08:00","Action":"pass","Package":"scopedesk","Test":"TestDNSPrivateAnswersNeverReachHTTP","Elapsed":0.67}
+{"Time":"2026-11-03T11:53:39.734172826+08:00","Action":"run","Package":"scopedesk","Test":"TestP0CharacterizeClassification"}
+{"Time":"2026-11-03T11:53:39.734217768+08:00","Action":"output","Package":"scopedesk","Test":"TestP0CharacterizeClassification","Output":"=== RUN   TestP0CharacterizeClassification\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.734594139+08:00","Action":"output","Package":"scopedesk","Test":"TestP0CharacterizeClassification","Output":"    p0_reproduction_test.go:17: W05 boundary regression: host=contest.example.test category=未分类 score=10\n"}
+{"Time":"2026-11-03T11:53:39.73472417+08:00","Action":"output","Package":"scopedesk","Test":"TestP0CharacterizeClassification","Output":"    p0_reproduction_test.go:17: W05 boundary regression: host=capital.example.test category=未分类 score=10\n"}
+{"Time":"2026-11-03T11:53:39.734861345+08:00","Action":"output","Package":"scopedesk","Test":"TestP0CharacterizeClassification","Output":"--- PASS: TestP0CharacterizeClassification (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.734906035+08:00","Action":"pass","Package":"scopedesk","Test":"TestP0CharacterizeClassification","Elapsed":0}
+{"Time":"2026-11-03T11:53:39.735410377+08:00","Action":"run","Package":"scopedesk","Test":"TestScopeGuardBoundaries"}
+{"Time":"2026-11-03T11:53:39.735444589+08:00","Action":"output","Package":"scopedesk","Test":"TestScopeGuardBoundaries","Output":"=== RUN   TestScopeGuardBoundaries\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.738465327+08:00","Action":"output","Package":"scopedesk","Test":"TestScopeGuardBoundaries","Output":"--- PASS: TestScopeGuardBoundaries (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.738552075+08:00","Action":"pass","Package":"scopedesk","Test":"TestScopeGuardBoundaries","Elapsed":0}
+{"Time":"2026-11-03T11:53:39.738572719+08:00","Action":"run","Package":"scopedesk","Test":"TestBudgetIsAtomic"}
+{"Time":"2026-11-03T11:53:39.738579104+08:00","Action":"output","Package":"scopedesk","Test":"TestBudgetIsAtomic","Output":"=== RUN   TestBudgetIsAtomic\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.740660284+08:00","Action":"output","Package":"scopedesk","Test":"TestBudgetIsAtomic","Output":"--- PASS: TestBudgetIsAtomic (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.740753742+08:00","Action":"pass","Package":"scopedesk","Test":"TestBudgetIsAtomic","Elapsed":0}
+{"Time":"2026-11-03T11:53:39.74102286+08:00","Action":"run","Package":"scopedesk","Test":"TestW05CategoryBoundaries"}
+{"Time":"2026-11-03T11:53:39.741094882+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries","Output":"=== RUN   TestW05CategoryBoundaries\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.741179262+08:00","Action":"run","Package":"scopedesk","Test":"TestW05CategoryBoundaries/contest.example.com"}
+{"Time":"2026-11-03T11:53:39.741202391+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/contest.example.com","Output":"=== RUN   TestW05CategoryBoundaries/contest.example.com\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.741479619+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/contest.example.com","Output":"--- PASS: TestW05CategoryBoundaries/contest.example.com (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.741512524+08:00","Action":"pass","Package":"scopedesk","Test":"TestW05CategoryBoundaries/contest.example.com","Elapsed":0}
+{"Time":"2026-11-03T11:53:39.741554211+08:00","Action":"run","Package":"scopedesk","Test":"TestW05CategoryBoundaries/capital.example.com"}
+{"Time":"2026-11-03T11:53:39.741560447+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/capital.example.com","Output":"=== RUN   TestW05CategoryBoundaries/capital.example.com\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.741988897+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/capital.example.com","Output":"--- PASS: TestW05CategoryBoundaries/capital.example.com (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.742087578+08:00","Action":"pass","Package":"scopedesk","Test":"TestW05CategoryBoundaries/capital.example.com","Elapsed":0}
+{"Time":"2026-11-03T11:53:39.742102139+08:00","Action":"run","Package":"scopedesk","Test":"TestW05CategoryBoundaries/api.com"}
+{"Time":"2026-11-03T11:53:39.742106933+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/api.com","Output":"=== RUN   TestW05CategoryBoundaries/api.com\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.742501135+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/api.com","Output":"--- PASS: TestW05CategoryBoundaries/api.com (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.742547747+08:00","Action":"pass","Package":"scopedesk","Test":"TestW05CategoryBoundaries/api.com","Elapsed":0}
+{"Time":"2026-11-03T11:53:39.742563092+08:00","Action":"run","Package":"scopedesk","Test":"TestW05CategoryBoundaries/www.test.com"}
+{"Time":"2026-11-03T11:53:39.742568393+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/www.test.com","Output":"=== RUN   TestW05CategoryBoundaries/www.test.com\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.742930845+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/www.test.com","Output":"--- PASS: TestW05CategoryBoundaries/www.test.com (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.742990259+08:00","Action":"pass","Package":"scopedesk","Test":"TestW05CategoryBoundaries/www.test.com","Elapsed":0}
+{"Time":"2026-11-03T11:53:39.743043511+08:00","Action":"run","Package":"scopedesk","Test":"TestW05CategoryBoundaries/API.Example.COM."}
+{"Time":"2026-11-03T11:53:39.743050742+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/API.Example.COM.","Output":"=== RUN   TestW05CategoryBoundaries/API.Example.COM.\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.743429173+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/API.Example.COM.","Output":"--- PASS: TestW05CategoryBoundaries/API.Example.COM. (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.743477341+08:00","Action":"pass","Package":"scopedesk","Test":"TestW05CategoryBoundaries/API.Example.COM.","Elapsed":0}
+{"Time":"2026-11-03T11:53:39.74355109+08:00","Action":"run","Package":"scopedesk","Test":"TestW05CategoryBoundaries/api2.example.com"}
+{"Time":"2026-11-03T11:53:39.743559972+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/api2.example.com","Output":"=== RUN   TestW05CategoryBoundaries/api2.example.com\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.744016787+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/api2.example.com","Output":"--- PASS: TestW05CategoryBoundaries/api2.example.com (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.744103409+08:00","Action":"pass","Package":"scopedesk","Test":"TestW05CategoryBoundaries/api2.example.com","Elapsed":0}
+{"Time":"2026-11-03T11:53:39.744153585+08:00","Action":"run","Package":"scopedesk","Test":"TestW05CategoryBoundaries/2api.example.com"}
+{"Time":"2026-11-03T11:53:39.744159716+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/2api.example.com","Output":"=== RUN   TestW05CategoryBoundaries/2api.example.com\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.744402165+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/2api.example.com","Output":"--- PASS: TestW05CategoryBoundaries/2api.example.com (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.744432009+08:00","Action":"pass","Package":"scopedesk","Test":"TestW05CategoryBoundaries/2api.example.com","Elapsed":0}
+{"Time":"2026-11-03T11:53:39.744509348+08:00","Action":"run","Package":"scopedesk","Test":"TestW05CategoryBoundaries/api-v2.example.com"}
+{"Time":"2026-11-03T11:53:39.744518754+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/api-v2.example.com","Output":"=== RUN   TestW05CategoryBoundaries/api-v2.example.com\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.744847172+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/api-v2.example.com","Output":"--- PASS: TestW05CategoryBoundaries/api-v2.example.com (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.744908215+08:00","Action":"pass","Package":"scopedesk","Test":"TestW05CategoryBoundaries/api-v2.example.com","Elapsed":0}
+{"Time":"2026-11-03T11:53:39.744933047+08:00","Action":"run","Package":"scopedesk","Test":"TestW05CategoryBoundaries/my-api.example.com"}
+{"Time":"2026-11-03T11:53:39.744938203+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/my-api.example.com","Output":"=== RUN   TestW05CategoryBoundaries/my-api.example.com\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.745226828+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/my-api.example.com","Output":"--- PASS: TestW05CategoryBoundaries/my-api.example.com (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.745315126+08:00","Action":"pass","Package":"scopedesk","Test":"TestW05CategoryBoundaries/my-api.example.com","Elapsed":0}
+{"Time":"2026-11-03T11:53:39.745396202+08:00","Action":"run","Package":"scopedesk","Test":"TestW05CategoryBoundaries/myapi.example.com"}
+{"Time":"2026-11-03T11:53:39.745408963+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/myapi.example.com","Output":"=== RUN   TestW05CategoryBoundaries/myapi.example.com\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.74592132+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/myapi.example.com","Output":"--- PASS: TestW05CategoryBoundaries/myapi.example.com (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.746039179+08:00","Action":"pass","Package":"scopedesk","Test":"TestW05CategoryBoundaries/myapi.example.com","Elapsed":0}
+{"Time":"2026-11-03T11:53:39.746054187+08:00","Action":"run","Package":"scopedesk","Test":"TestW05CategoryBoundaries/devops.example.com"}
+{"Time":"2026-11-03T11:53:39.746058969+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/devops.example.com","Output":"=== RUN   TestW05CategoryBoundaries/devops.example.com\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.74635001+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/devops.example.com","Output":"--- PASS: TestW05CategoryBoundaries/devops.example.com (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.746389949+08:00","Action":"pass","Package":"scopedesk","Test":"TestW05CategoryBoundaries/devops.example.com","Elapsed":0}
+{"Time":"2026-11-03T11:53:39.746440049+08:00","Action":"run","Package":"scopedesk","Test":"TestW05CategoryBoundaries/test123.example.com"}
+{"Time":"2026-11-03T11:53:39.746446295+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/test123.example.com","Output":"=== RUN   TestW05CategoryBoundaries/test123.example.com\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.746689689+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/test123.example.com","Output":"--- PASS: TestW05CategoryBoundaries/test123.example.com (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.746722154+08:00","Action":"pass","Package":"scopedesk","Test":"TestW05CategoryBoundaries/test123.example.com","Elapsed":0}
+{"Time":"2026-11-03T11:53:39.746793683+08:00","Action":"run","Package":"scopedesk","Test":"TestW05CategoryBoundaries/api.sso.example.co.uk"}
+{"Time":"2026-11-03T11:53:39.746803085+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/api.sso.example.co.uk","Output":"=== RUN   TestW05CategoryBoundaries/api.sso.example.co.uk\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.747383594+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/api.sso.example.co.uk","Output":"--- PASS: TestW05CategoryBoundaries/api.sso.example.co.uk (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.747468591+08:00","Action":"pass","Package":"scopedesk","Test":"TestW05CategoryBoundaries/api.sso.example.co.uk","Elapsed":0}
+{"Time":"2026-11-03T11:53:39.747482338+08:00","Action":"run","Package":"scopedesk","Test":"TestW05CategoryBoundaries/sso.example.com"}
+{"Time":"2026-11-03T11:53:39.747486751+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/sso.example.com","Output":"=== RUN   TestW05CategoryBoundaries/sso.example.com\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.747789664+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/sso.example.com","Output":"--- PASS: TestW05CategoryBoundaries/sso.example.com (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.747879345+08:00","Action":"pass","Package":"scopedesk","Test":"TestW05CategoryBoundaries/sso.example.com","Elapsed":0}
+{"Time":"2026-11-03T11:53:39.747942178+08:00","Action":"run","Package":"scopedesk","Test":"TestW05CategoryBoundaries/admin.example.com"}
+{"Time":"2026-11-03T11:53:39.747953265+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/admin.example.com","Output":"=== RUN   TestW05CategoryBoundaries/admin.example.com\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.748253153+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/admin.example.com","Output":"--- PASS: TestW05CategoryBoundaries/admin.example.com (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.7483105+08:00","Action":"pass","Package":"scopedesk","Test":"TestW05CategoryBoundaries/admin.example.com","Elapsed":0}
+{"Time":"2026-11-03T11:53:39.748336454+08:00","Action":"run","Package":"scopedesk","Test":"TestW05CategoryBoundaries/uat.example.com"}
+{"Time":"2026-11-03T11:53:39.748342782+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/uat.example.com","Output":"=== RUN   TestW05CategoryBoundaries/uat.example.com\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.748651887+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/uat.example.com","Output":"--- PASS: TestW05CategoryBoundaries/uat.example.com (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.748696028+08:00","Action":"pass","Package":"scopedesk","Test":"TestW05CategoryBoundaries/uat.example.com","Elapsed":0}
+{"Time":"2026-11-03T11:53:39.748805723+08:00","Action":"run","Package":"scopedesk","Test":"TestW05CategoryBoundaries/api.例子.公司.cn"}
+{"Time":"2026-11-03T11:53:39.74886766+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/api.例子.公司.cn","Output":"=== RUN   TestW05CategoryBoundaries/api.例子.公司.cn\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.749320186+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/api.例子.公司.cn","Output":"--- PASS: TestW05CategoryBoundaries/api.例子.公司.cn (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.749381489+08:00","Action":"pass","Package":"scopedesk","Test":"TestW05CategoryBoundaries/api.例子.公司.cn","Elapsed":0}
+{"Time":"2026-11-03T11:53:39.749449757+08:00","Action":"run","Package":"scopedesk","Test":"TestW05CategoryBoundaries/127.0.0.1"}
+{"Time":"2026-11-03T11:53:39.749460778+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/127.0.0.1","Output":"=== RUN   TestW05CategoryBoundaries/127.0.0.1\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.749630978+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/127.0.0.1","Output":"--- PASS: TestW05CategoryBoundaries/127.0.0.1 (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.749660691+08:00","Action":"pass","Package":"scopedesk","Test":"TestW05CategoryBoundaries/127.0.0.1","Elapsed":0}
+{"Time":"2026-11-03T11:53:39.74975296+08:00","Action":"run","Package":"scopedesk","Test":"TestW05CategoryBoundaries/bad..api.com"}
+{"Time":"2026-11-03T11:53:39.749776805+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/bad..api.com","Output":"=== RUN   TestW05CategoryBoundaries/bad..api.com\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.750126916+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/bad..api.com","Output":"--- PASS: TestW05CategoryBoundaries/bad..api.com (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.750197853+08:00","Action":"pass","Package":"scopedesk","Test":"TestW05CategoryBoundaries/bad..api.com","Elapsed":0}
+{"Time":"2026-11-03T11:53:39.750212+08:00","Action":"run","Package":"scopedesk","Test":"TestW05CategoryBoundaries/xn--api-test.example.com"}
+{"Time":"2026-11-03T11:53:39.750216563+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/xn--api-test.example.com","Output":"=== RUN   TestW05CategoryBoundaries/xn--api-test.example.com\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.750439224+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries/xn--api-test.example.com","Output":"--- PASS: TestW05CategoryBoundaries/xn--api-test.example.com (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.750465856+08:00","Action":"pass","Package":"scopedesk","Test":"TestW05CategoryBoundaries/xn--api-test.example.com","Elapsed":0}
+{"Time":"2026-11-03T11:53:39.750525256+08:00","Action":"output","Package":"scopedesk","Test":"TestW05CategoryBoundaries","Output":"--- PASS: TestW05CategoryBoundaries (0.01s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.750536572+08:00","Action":"pass","Package":"scopedesk","Test":"TestW05CategoryBoundaries","Elapsed":0.01}
+{"Time":"2026-11-03T11:53:39.750654151+08:00","Action":"run","Package":"scopedesk","Test":"TestW05ScopeRoot"}
+{"Time":"2026-11-03T11:53:39.750669809+08:00","Action":"output","Package":"scopedesk","Test":"TestW05ScopeRoot","Output":"=== RUN   TestW05ScopeRoot\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.751654095+08:00","Action":"output","Package":"scopedesk","Test":"TestW05ScopeRoot","Output":"--- PASS: TestW05ScopeRoot (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:39.751719855+08:00","Action":"pass","Package":"scopedesk","Test":"TestW05ScopeRoot","Elapsed":0}
+{"Time":"2026-11-03T11:53:39.751915529+08:00","Action":"output","Package":"scopedesk","Output":"PASS\n","OutputType":"frame"}
+{"Time":"2026-11-03T11:53:40.759784974+08:00","Action":"output","Package":"scopedesk","Output":"ok  \tscopedesk\t1.725s\n"}
+{"Time":"2026-11-03T11:53:40.759939748+08:00","Action":"pass","Package":"scopedesk","Elapsed":1.725}

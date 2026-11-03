@@ -1,6 +1,41 @@
 package main
 
-import "testing"
+import (
+	"context"
+	"testing"
+)
+
+func TestW05NewAssetsAndLegacyClassification(t *testing.T) {
+	s, _ := p0Store(t)
+	ctx := context.Background()
+	scope := insertScope(t, s, 1)
+	p0Exec(t, s, `INSERT INTO assets(scope_id,host,category,score)VALUES($1,'test.example.com','人工分类',77),($1,'legacy.example.com','API',30)`, scope.ID)
+	run := claimedRun(t, s, scope)
+	obs := []Observation{}
+	for _, host := range []string{"contest.example.com", "capital.example.com", "api2.example.com", "test.example.com", "legacy.example.com"} {
+		obs = append(obs, Observation{Host: host, Sources: []string{"fixture"}})
+	}
+	if _, err := s.WriteResults(ctx, run, obs, false); err != nil {
+		t.Fatal(err)
+	}
+	closeRun(t, s, run)
+	for host, want := range map[string]struct {
+		category string
+		score    int
+	}{
+		"contest.example.com": {"未分类", 10}, "capital.example.com": {"未分类", 10},
+		"api2.example.com": {"API", 30}, "test.example.com": {"人工分类", 77}, "legacy.example.com": {"API", 30},
+	} {
+		var category string
+		var score int
+		if err := s.DB.QueryRow(ctx, `SELECT category,score FROM assets WHERE scope_id=$1 AND host=$2`, scope.ID, host).Scan(&category, &score); err != nil {
+			t.Fatal(err)
+		}
+		if category != want.category || score != want.score {
+			t.Fatalf("%s: got %s/%d want %s/%d", host, category, score, want.category, want.score)
+		}
+	}
+}
 
 func TestW05CategoryBoundaries(t *testing.T) {
 	for _, tc := range []struct{ host, want string }{
