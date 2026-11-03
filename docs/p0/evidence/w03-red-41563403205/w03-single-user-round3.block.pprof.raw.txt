@@ -1,0 +1,38 @@
+PeriodType: contentions count
+Period: 1
+Time: 2026-11-03 02:02:43.764956206 +0000 UTC
+Samples:
+contentions/count delay/nanoseconds
+         60 6476125494: 1 2 3 4 5 
+          3    4358644: 6 7 8 4 5 
+         60    1097205: 6 9 4 5 
+          2       4317: 6 10 11 12 13 14 15 16 17 18 19 20 
+Locations
+     1: 0xa98caf M=1 sync.(*Mutex).Lock /opt/hostedtoolcache/go/1.26.0/x64/src/sync/mutex.go:46:0 s=45
+             scopedesk.(*Server).ServeHTTP /home/runner/work/scopedesk/scopedesk/main.go:398:0 s=339
+     2: 0xb22816 M=1 scopedesk.call /home/runner/work/scopedesk/scopedesk/main_test.go:42:0 s=32
+     3: 0xb8b9e5 M=1 scopedesk.TestW03SingleUserLatency /home/runner/work/scopedesk/scopedesk/w03_login_test.go:123:0 s=76
+     4: 0x55ee29 M=1 testing.tRunner /opt/hostedtoolcache/go/1.26.0/x64/src/testing/testing.go:2036:0 s=1876
+     5: 0x55ffba M=1 testing.(*T).Run.gowrap1 /opt/hostedtoolcache/go/1.26.0/x64/src/testing/testing.go:2101:0 s=2101
+     6: 0x41e531 M=1 runtime.chanrecv1 /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/chan.go:509:0 s=508
+     7: 0x5fdd72 M=1 runtime/pprof.StopCPUProfile /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/pprof/pprof.go:959:0 s=950
+     8: 0xb8bbdb M=1 scopedesk.TestW03SingleUserLatency /home/runner/work/scopedesk/scopedesk/w03_login_test.go:130:0 s=76
+     9: 0xb8b986 M=1 scopedesk.TestW03SingleUserLatency /home/runner/work/scopedesk/scopedesk/w03_login_test.go:120:0 s=76
+    10: 0x433473 M=1 runtime.gcBgMarkStartWorkers /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/mgc.go:1705:0 s=1672
+    11: 0x43134e M=1 runtime.gcStart /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/mgc.go:817:0 s=733
+    12: 0x427ba6 M=1 runtime.mallocgcLarge /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/malloc.go:1807:0 s=1739
+    13: 0x48ced2 M=1 runtime.mallocgc /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/malloc.go:1208:0 s=1119
+    14: 0x427fc4 M=1 runtime.newobject /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/malloc.go:2209:0 s=2208
+    15: 0x5f8a53 M=1 compress/flate.NewWriter /opt/hostedtoolcache/go/1.26.0/x64/src/compress/flate/deflate.go:665:0 s=664
+             compress/gzip.(*Writer).Write /opt/hostedtoolcache/go/1.26.0/x64/src/compress/gzip/gzip.go:191:0 s=139
+    16: 0x5fe6c7 M=1 runtime/pprof.(*profileBuilder).flush /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/pprof/proto.go:146:0 s=143
+    17: 0x5fedd6 M=1 runtime/pprof.(*profileBuilder).pbSample /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/pprof/proto.go:168:0 s=160
+    18: 0x601a84 M=1 runtime/pprof.(*profileBuilder).build /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/pprof/proto.go:378:0 s=348
+    19: 0x5fdc64 M=1 runtime/pprof.profileWriter /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/pprof/pprof.go:943:0 s=922
+    20: 0x5fdb5a M=1 runtime/pprof.StartCPUProfile.gowrap2 /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/pprof/pprof.go:911:0 s=911
+Mappings
+1: 0x400000/0xc09000/0x0 /tmp/go-build4087487177/b001/scopedesk.test 11b0b5a9893de694d3ed4ede712be18085fb36db [FN]
+2: 0x7f69cc628000/0x7f69cc7b1000/0x28000 /usr/lib/x86_64-linux-gnu/libc.so.6 a4a7992a8e66555c8141ab2a08a8465ff6e0ea65 
+3: 0x7f69cc99f000/0x7f69cc9a1000/0x0 [vdso]  
+4: 0x7f69cc9a2000/0x7f69cc9cd000/0x1000 /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 0d77dbd4379bf0b5af3e05be7fb6af1e4cea7c96 
+5: 0xffffffffff600000/0xffffffffff601000/0x0 [vsyscall]  

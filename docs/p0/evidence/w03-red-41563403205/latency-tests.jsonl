@@ -1,0 +1,8 @@
+{"Time":"2026-11-03T02:02:36.680582548Z","Action":"start","Package":"scopedesk"}
+{"Time":"2026-11-03T02:02:36.684960974Z","Action":"run","Package":"scopedesk","Test":"TestW03SingleUserLatency"}
+{"Time":"2026-11-03T02:02:36.684981332Z","Action":"output","Package":"scopedesk","Test":"TestW03SingleUserLatency","Output":"=== RUN   TestW03SingleUserLatency\n"}
+{"Time":"2026-11-03T02:02:43.765859286Z","Action":"output","Package":"scopedesk","Test":"TestW03SingleUserLatency","Output":"--- PASS: TestW03SingleUserLatency (7.08s)\n"}
+{"Time":"2026-11-03T02:02:43.765889854Z","Action":"pass","Package":"scopedesk","Test":"TestW03SingleUserLatency","Elapsed":7.08}
+{"Time":"2026-11-03T02:02:43.765905503Z","Action":"output","Package":"scopedesk","Output":"PASS\n"}
+{"Time":"2026-11-03T02:02:43.766992818Z","Action":"output","Package":"scopedesk","Output":"ok  \tscopedesk\t7.086s\n"}
+{"Time":"2026-11-03T02:02:43.767011834Z","Action":"pass","Package":"scopedesk","Elapsed":7.086}

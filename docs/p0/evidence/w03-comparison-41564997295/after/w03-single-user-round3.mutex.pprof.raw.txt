@@ -1,0 +1,41 @@
+PeriodType: contentions count
+Period: 1
+Time: 2026-11-03 02:16:25.680755804 +0000 UTC
+Samples:
+contentions/count delay/nanoseconds
+          1     243538: 1 2 3 4 5 6 
+          1      11052: 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 
+          1        272: 23 
+Locations
+     1: 0x45b35e M=1 runtime.unlock /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/lock_spinbit.go:261:0 s=260
+             runtime.startTheWorldWithSema /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/proc.go:1782:0 s=1760
+     2: 0x4332c4 M=1 runtime.gcMarkTermination.func3 /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/mgc.go:1515:0 s=1500
+     3: 0x4956c9 M=1 runtime.systemstack /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/asm_amd64.s:562:0 s=520
+     4: 0x432804 M=1 runtime.gcMarkTermination /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/mgc.go:1500:0 s=1344
+     5: 0x431c1d M=1 runtime.gcMarkDone /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/mgc.go:1173:0 s=1015
+     6: 0x433847 M=1 runtime.gcBgMarkWorker /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/mgc.go:1912:0 s=1750
+     7: 0x44f075 M=1 runtime.unlock /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/lock_spinbit.go:261:0 s=260
+             runtime.(*spanSet).push /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/mspanset.go:140:0 s=83
+     8: 0x440544 M=1 runtime.(*sweepLocked).sweep /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/mgcsweep.go:795:0 s=505
+     9: 0x43f9bc M=1 runtime.sweepone /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/mgcsweep.go:396:0 s=359
+    10: 0x44134c M=1 runtime.deductSweepCredit /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/mgcsweep.go:951:0 s=913
+    11: 0x42a886 M=1 runtime.(*mcache).allocLarge /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/mcache.go:254:0 s=242
+    12: 0x427a98 M=1 runtime.mallocgcLarge /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/malloc.go:1755:0 s=1739
+    13: 0x48ced2 M=1 runtime.mallocgc /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/malloc.go:1208:0 s=1119
+    14: 0x427fc4 M=1 runtime.newobject /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/malloc.go:2209:0 s=2208
+    15: 0x5f8a53 M=1 compress/flate.NewWriter /opt/hostedtoolcache/go/1.26.0/x64/src/compress/flate/deflate.go:665:0 s=664
+             compress/gzip.(*Writer).Write /opt/hostedtoolcache/go/1.26.0/x64/src/compress/gzip/gzip.go:191:0 s=139
+    16: 0x601c4d M=1 runtime/pprof.(*profileBuilder).build /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/pprof/proto.go:390:0 s=348
+    17: 0x5fac8b M=1 runtime/pprof.printCountCycleProfile /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/pprof/pprof.go:486:0 s=464
+    18: 0x5fe2cc M=1 runtime/pprof.writeProfileInternal /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/pprof/pprof.go:1002:0 s=985
+    19: 0x5fdeaf M=1 runtime/pprof.writeBlock /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/pprof/pprof.go:976:0 s=975
+    20: 0x5fa468 M=1 runtime/pprof.(*Profile).WriteTo /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/pprof/pprof.go:408:0 s=403
+    21: 0xb8ff84 M=1 scopedesk.TestW03SingleUserLatency /home/runner/work/_temp/w03-after/w03_login_test.go:339:0 s=278
+    22: 0x55ee29 M=1 testing.tRunner /opt/hostedtoolcache/go/1.26.0/x64/src/testing/testing.go:2036:0 s=1876
+    23: 0x463060 M=1 runtime._LostContendedRuntimeLock /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/proc.go:5741:0 s=5741
+Mappings
+1: 0x400000/0xc0d000/0x0 /tmp/go-build1855787553/b001/scopedesk.test a9857c3bbb26fcbff02d1bbeebdecf0df5933fd3 [FN]
+2: 0x7ff483828000/0x7ff4839b1000/0x28000 /usr/lib/x86_64-linux-gnu/libc.so.6 a4a7992a8e66555c8141ab2a08a8465ff6e0ea65 
+3: 0x7ff483c19000/0x7ff483c1b000/0x0 [vdso]  
+4: 0x7ff483c1c000/0x7ff483c47000/0x1000 /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 0d77dbd4379bf0b5af3e05be7fb6af1e4cea7c96 
+5: 0xffffffffff600000/0xffffffffff601000/0x0 [vsyscall]  

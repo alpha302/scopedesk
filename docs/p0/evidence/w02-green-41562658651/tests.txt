@@ -1,0 +1,115 @@
+=== RUN   TestRedirectScopeAndPorts
+--- PASS: TestRedirectScopeAndPorts (0.00s)
+=== RUN   TestDNSPrivateAnswersNeverReachHTTP
+--- PASS: TestDNSPrivateAnswersNeverReachHTTP (0.08s)
+=== RUN   TestFaviconRequestsFallbackRedirectAndScope
+=== RUN   TestFaviconRequestsFallbackRedirectAndScope/declared
+=== RUN   TestFaviconRequestsFallbackRedirectAndScope/fallback
+=== RUN   TestFaviconRequestsFallbackRedirectAndScope/no-declaration
+=== RUN   TestFaviconRequestsFallbackRedirectAndScope/cross-host
+=== RUN   TestFaviconRequestsFallbackRedirectAndScope/upgrade
+=== RUN   TestFaviconRequestsFallbackRedirectAndScope/chain-limit
+=== RUN   TestFaviconRequestsFallbackRedirectAndScope/revoked
+=== RUN   TestFaviconRequestsFallbackRedirectAndScope/oversized
+=== RUN   TestFaviconRequestsFallbackRedirectAndScope/budget
+=== RUN   TestFaviconRequestsFallbackRedirectAndScope/html-image-type
+--- PASS: TestFaviconRequestsFallbackRedirectAndScope (0.00s)
+    --- PASS: TestFaviconRequestsFallbackRedirectAndScope/declared (0.00s)
+    --- PASS: TestFaviconRequestsFallbackRedirectAndScope/fallback (0.00s)
+    --- PASS: TestFaviconRequestsFallbackRedirectAndScope/no-declaration (0.00s)
+    --- PASS: TestFaviconRequestsFallbackRedirectAndScope/cross-host (0.00s)
+    --- PASS: TestFaviconRequestsFallbackRedirectAndScope/upgrade (0.00s)
+    --- PASS: TestFaviconRequestsFallbackRedirectAndScope/chain-limit (0.00s)
+    --- PASS: TestFaviconRequestsFallbackRedirectAndScope/revoked (0.00s)
+    --- PASS: TestFaviconRequestsFallbackRedirectAndScope/oversized (0.00s)
+    --- PASS: TestFaviconRequestsFallbackRedirectAndScope/budget (0.00s)
+    --- PASS: TestFaviconRequestsFallbackRedirectAndScope/html-image-type (0.00s)
+=== RUN   TestP0CharacterizeEmbeddedIPv4
+    p0_reproduction_test.go:26: W02 classifier refuses 64:ff9b::7f00:1; no real translator tested
+    p0_reproduction_test.go:26: W02 classifier refuses 64:ff9b::a00:1; no real translator tested
+    p0_reproduction_test.go:26: W02 classifier refuses 2002:7f00:1::1; no real translator tested
+    p0_reproduction_test.go:26: W02 classifier refuses 2002:a00:1::1; no real translator tested
+--- PASS: TestP0CharacterizeEmbeddedIPv4 (0.00s)
+=== RUN   TestScopeGuardBoundaries
+--- PASS: TestScopeGuardBoundaries (0.00s)
+=== RUN   TestBudgetIsAtomic
+--- PASS: TestBudgetIsAtomic (0.00s)
+=== RUN   TestW02AddressBoundary
+=== RUN   TestW02AddressBoundary/1.1.1.1
+=== RUN   TestW02AddressBoundary/2606:4700:4700::1111
+=== RUN   TestW02AddressBoundary/127.0.0.1
+=== RUN   TestW02AddressBoundary/10.0.0.1
+=== RUN   TestW02AddressBoundary/169.254.169.254
+=== RUN   TestW02AddressBoundary/::1
+=== RUN   TestW02AddressBoundary/::ffff:127.0.0.1
+=== RUN   TestW02AddressBoundary/2001:db8::1
+=== RUN   TestW02AddressBoundary/64:ff9b::7f00:1
+=== RUN   TestW02AddressBoundary/64:ff9b::a00:1
+=== RUN   TestW02AddressBoundary/2002:7f00:1::1
+=== RUN   TestW02AddressBoundary/2002:a00:1::1
+=== RUN   TestW02AddressBoundary/64:ff9b::101:101
+=== RUN   TestW02AddressBoundary/2002:101:101::1
+=== RUN   TestW02AddressBoundary/64:ff9b::6440:1
+=== RUN   TestW02AddressBoundary/2002:c000:201::1
+=== RUN   TestW02AddressBoundary/64:ff9b:1::101:101
+=== RUN   TestW02AddressBoundary/100::1
+=== RUN   TestW02AddressBoundary/100:0:0:1::1
+=== RUN   TestW02AddressBoundary/2001::1
+=== RUN   TestW02AddressBoundary/::1.1.1.1
+=== RUN   TestW02AddressBoundary/3fff::1
+=== RUN   TestW02AddressBoundary/2001:1::1
+=== RUN   TestW02AddressBoundary/2606:4700:4700::1111%eth0
+--- PASS: TestW02AddressBoundary (0.00s)
+    --- PASS: TestW02AddressBoundary/1.1.1.1 (0.00s)
+    --- PASS: TestW02AddressBoundary/2606:4700:4700::1111 (0.00s)
+    --- PASS: TestW02AddressBoundary/127.0.0.1 (0.00s)
+    --- PASS: TestW02AddressBoundary/10.0.0.1 (0.00s)
+    --- PASS: TestW02AddressBoundary/169.254.169.254 (0.00s)
+    --- PASS: TestW02AddressBoundary/::1 (0.00s)
+    --- PASS: TestW02AddressBoundary/::ffff:127.0.0.1 (0.00s)
+    --- PASS: TestW02AddressBoundary/2001:db8::1 (0.00s)
+    --- PASS: TestW02AddressBoundary/64:ff9b::7f00:1 (0.00s)
+    --- PASS: TestW02AddressBoundary/64:ff9b::a00:1 (0.00s)
+    --- PASS: TestW02AddressBoundary/2002:7f00:1::1 (0.00s)
+    --- PASS: TestW02AddressBoundary/2002:a00:1::1 (0.00s)
+    --- PASS: TestW02AddressBoundary/64:ff9b::101:101 (0.00s)
+    --- PASS: TestW02AddressBoundary/2002:101:101::1 (0.00s)
+    --- PASS: TestW02AddressBoundary/64:ff9b::6440:1 (0.00s)
+    --- PASS: TestW02AddressBoundary/2002:c000:201::1 (0.00s)
+    --- PASS: TestW02AddressBoundary/64:ff9b:1::101:101 (0.00s)
+    --- PASS: TestW02AddressBoundary/100::1 (0.00s)
+    --- PASS: TestW02AddressBoundary/100:0:0:1::1 (0.00s)
+    --- PASS: TestW02AddressBoundary/2001::1 (0.00s)
+    --- PASS: TestW02AddressBoundary/::1.1.1.1 (0.00s)
+    --- PASS: TestW02AddressBoundary/3fff::1 (0.00s)
+    --- PASS: TestW02AddressBoundary/2001:1::1 (0.00s)
+    --- PASS: TestW02AddressBoundary/2606:4700:4700::1111%eth0 (0.00s)
+=== RUN   TestW02EmbeddedBlacklist
+--- PASS: TestW02EmbeddedBlacklist (0.00s)
+=== RUN   TestW02ControlledDial
+=== RUN   TestW02ControlledDial/embedded-private-1
+    w02_acceptance_test.go:162: W02 local route: classifier_allowed=false http_requests=0 status=0 blacklist_prevents_additional_http=true
+=== RUN   TestW02ControlledDial/embedded-private-2
+    w02_acceptance_test.go:162: W02 local route: classifier_allowed=false http_requests=0 status=0 blacklist_prevents_additional_http=true
+=== RUN   TestW02ControlledDial/embedded-private-3
+    w02_acceptance_test.go:162: W02 local route: classifier_allowed=false http_requests=0 status=0 blacklist_prevents_additional_http=true
+=== RUN   TestW02ControlledDial/embedded-private-4
+    w02_acceptance_test.go:162: W02 local route: classifier_allowed=false http_requests=0 status=0 blacklist_prevents_additional_http=true
+--- PASS: TestW02ControlledDial (2.41s)
+    --- PASS: TestW02ControlledDial/embedded-private-1 (0.60s)
+    --- PASS: TestW02ControlledDial/embedded-private-2 (0.60s)
+    --- PASS: TestW02ControlledDial/embedded-private-3 (0.60s)
+    --- PASS: TestW02ControlledDial/embedded-private-4 (0.60s)
+=== RUN   TestW02ControlledTransitions
+=== RUN   TestW02ControlledTransitions/native-ipv6
+=== RUN   TestW02ControlledTransitions/dual-stack
+=== RUN   TestW02ControlledTransitions/rebind
+=== RUN   TestW02ControlledTransitions/redirect
+=== RUN   TestW02ControlledTransitions/revoke
+--- PASS: TestW02ControlledTransitions (7.81s)
+    --- PASS: TestW02ControlledTransitions/native-ipv6 (2.00s)
+    --- PASS: TestW02ControlledTransitions/dual-stack (2.00s)
+    --- PASS: TestW02ControlledTransitions/rebind (1.40s)
+    --- PASS: TestW02ControlledTransitions/redirect (2.00s)
+    --- PASS: TestW02ControlledTransitions/revoke (0.40s)
+PASS

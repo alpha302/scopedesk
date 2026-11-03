@@ -1,0 +1,20 @@
+PeriodType: contentions count
+Period: 1
+Time: 2026-11-03 02:16:21.171649774 +0000 UTC
+Samples:
+contentions/count delay/nanoseconds
+          1     243538: 1 2 3 4 5 6 
+Locations
+     1: 0x45b35e M=1 runtime.unlock /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/lock_spinbit.go:261:0 s=260
+             runtime.startTheWorldWithSema /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/proc.go:1782:0 s=1760
+     2: 0x4332c4 M=1 runtime.gcMarkTermination.func3 /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/mgc.go:1515:0 s=1500
+     3: 0x4956c9 M=1 runtime.systemstack /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/asm_amd64.s:562:0 s=520
+     4: 0x432804 M=1 runtime.gcMarkTermination /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/mgc.go:1500:0 s=1344
+     5: 0x431c1d M=1 runtime.gcMarkDone /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/mgc.go:1173:0 s=1015
+     6: 0x433847 M=1 runtime.gcBgMarkWorker /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/mgc.go:1912:0 s=1750
+Mappings
+1: 0x400000/0xc0d000/0x0 /tmp/go-build1855787553/b001/scopedesk.test a9857c3bbb26fcbff02d1bbeebdecf0df5933fd3 [FN]
+2: 0x7ff483828000/0x7ff4839b1000/0x28000 /usr/lib/x86_64-linux-gnu/libc.so.6 a4a7992a8e66555c8141ab2a08a8465ff6e0ea65 
+3: 0x7ff483c19000/0x7ff483c1b000/0x0 [vdso]  
+4: 0x7ff483c1c000/0x7ff483c47000/0x1000 /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 0d77dbd4379bf0b5af3e05be7fb6af1e4cea7c96 
+5: 0xffffffffff600000/0xffffffffff601000/0x0 [vsyscall]  

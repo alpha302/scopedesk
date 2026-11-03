@@ -1,0 +1,6 @@
+# Preserve archived evidence bytes so SHA-256 manifests survive checkout.
+docs/p0/evidence/w02-green-41562658651/** -text
+docs/p0/evidence/w03-red-41563403205/** -text
+docs/p0/evidence/w03-green-41564060579/** -text
+docs/p0/evidence/w03-comparison-41564997295/** -text
+docs/p0/evidence/production-w02-20261103/** -text

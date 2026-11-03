@@ -1,0 +1,20 @@
+{
+  "completed_at": "2026-11-03T01:59:12.050235+00:00",
+  "release_commit": "4fd0f416e9ec77574c6994462930a739776fefd4",
+  "backup": "/var/backups/scopedesk/before-w02-v16-20261103-015904",
+  "schema_before": 16,
+  "schema_after": 16,
+  "counts_preserved": true,
+  "binary_sha256": "4502e351ccc861f889077e0118bc561fb8c671c756864cf42304b4525229816e",
+  "running_binary_verified": true,
+  "source_files_verified": 80,
+  "configuration_unchanged": true,
+  "plans_unchanged": true,
+  "readiness": true,
+  "authentication_required": true,
+  "test_target_requests": 0,
+  "w03_deployed": false,
+  "verified_running_sha256": "4502e351ccc861f889077e0118bc561fb8c671c756864cf42304b4525229816e",
+  "proxy_home": 200,
+  "proxy_protected_settings": 401
+}

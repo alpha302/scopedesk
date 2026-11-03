@@ -1,0 +1,27 @@
+PeriodType: contentions count
+Period: 1
+Time: 2026-11-03 02:02:41.55258399 +0000 UTC
+Samples:
+contentions/count delay/nanoseconds
+         40 4316206984: 1 2 3 
+          1      17353: 4 5 6 7 8 9 10 11 
+Locations
+     1: 0xa9ceb2 M=1 sync.(*Mutex).Unlock /opt/hostedtoolcache/go/1.26.0/x64/src/sync/mutex.go:65:0 s=64
+     2: 0xa9cdd7 M=1 scopedesk.(*Server).login /home/runner/work/scopedesk/scopedesk/main.go:615:0 s=564
+     3: 0xb8c630 M=1 scopedesk.TestW03SingleUserLatency.func1 /home/runner/work/scopedesk/scopedesk/w03_login_test.go:116:0 s=109
+     4: 0x45996e M=1 runtime.unlock /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/lock_spinbit.go:261:0 s=260
+             runtime.mcommoninit /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/proc.go:1030:0 s=998
+     5: 0x45bea4 M=1 runtime.allocm /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/proc.go:2326:0 s=2269
+     6: 0x45c9b4 M=1 runtime.newm /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/proc.go:2870:0 s=2857
+     7: 0x45d06f M=1 runtime.startm /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/proc.go:3096:0 s=3035
+     8: 0x48f82b M=1 runtime.wakep /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/proc.go:3243:0 s=3212
+     9: 0x46021c M=1 runtime.goschedImpl /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/proc.go:4342:0 s=4307
+    10: 0x4728b9 M=1 runtime.gopreempt_m /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/proc.go:4362:0 s=4361
+             runtime.newstack /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/stack.go:1145:0 s=1026
+    11: 0x4957dc M=1 runtime.morestack /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/asm_amd64.s:681:0 s=628
+Mappings
+1: 0x400000/0xc09000/0x0 /tmp/go-build4087487177/b001/scopedesk.test 11b0b5a9893de694d3ed4ede712be18085fb36db [FN]
+2: 0x7f69cc628000/0x7f69cc7b1000/0x28000 /usr/lib/x86_64-linux-gnu/libc.so.6 a4a7992a8e66555c8141ab2a08a8465ff6e0ea65 
+3: 0x7f69cc99f000/0x7f69cc9a1000/0x0 [vdso]  
+4: 0x7f69cc9a2000/0x7f69cc9cd000/0x1000 /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 0d77dbd4379bf0b5af3e05be7fb6af1e4cea7c96 
+5: 0xffffffffff600000/0xffffffffff601000/0x0 [vsyscall]  

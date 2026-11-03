@@ -1,0 +1,11 @@
+64:ff9b::a00:1 dev lo  metric 256 
+64:ff9b::7f00:1 dev lo  metric 256 
+2002:a00:1::1 dev lo  metric 256 
+2002:7f00:1::1 dev lo  metric 256 
+2606:4700:4700::1111 dev lo  metric 256 
+local ::1 dev lo table local  metric 0 
+local 64:ff9b::a00:1 dev lo table local  metric 0 
+local 64:ff9b::7f00:1 dev lo table local  metric 0 
+local 2002:a00:1::1 dev lo table local  metric 0 
+local 2002:7f00:1::1 dev lo table local  metric 0 
+local 2606:4700:4700::1111 dev lo table local  metric 0 

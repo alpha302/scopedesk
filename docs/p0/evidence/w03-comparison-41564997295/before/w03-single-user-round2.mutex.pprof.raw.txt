@@ -1,0 +1,44 @@
+PeriodType: contentions count
+Period: 1
+Time: 2026-11-03 02:16:07.322003165 +0000 UTC
+Samples:
+contentions/count delay/nanoseconds
+         40 4291982426: 1 2 3 
+          1      30864: 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 
+          1        794: 20 21 22 23 24 
+Locations
+     1: 0xa9ceb2 M=1 sync.(*Mutex).Unlock /opt/hostedtoolcache/go/1.26.0/x64/src/sync/mutex.go:65:0 s=64
+     2: 0xa9cdd7 M=1 scopedesk.(*Server).login /home/runner/work/_temp/w03-before/main.go:615:0 s=564
+     3: 0xb8c630 M=1 scopedesk.TestW03SingleUserLatency.func1 /home/runner/work/_temp/w03-before/w03_login_test.go:116:0 s=109
+     4: 0x45b35e M=1 runtime.unlock /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/lock_spinbit.go:261:0 s=260
+             runtime.startTheWorldWithSema /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/proc.go:1782:0 s=1760
+     5: 0x4332c4 M=1 runtime.gcMarkTermination.func3 /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/mgc.go:1515:0 s=1500
+     6: 0x4956c9 M=1 runtime.systemstack /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/asm_amd64.s:562:0 s=520
+     7: 0x432804 M=1 runtime.gcMarkTermination /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/mgc.go:1500:0 s=1344
+     8: 0x431c1d M=1 runtime.gcMarkDone /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/mgc.go:1173:0 s=1015
+     9: 0x436415 M=1 runtime.gcAssistAlloc /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/mgcmark.go:647:0 s=499
+    10: 0x427ee5 M=1 runtime.deductAssistCredit /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/malloc.go:1913:0 s=1899
+    11: 0x48ce66 M=1 runtime.mallocgc /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/malloc.go:1165:0 s=1119
+    12: 0x491dc8 M=1 runtime.makeslice /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/slice.go:117:0 s=102
+    13: 0x5eddd6 M=1 compress/flate.newDeflateFast /opt/hostedtoolcache/go/1.26.0/x64/src/compress/flate/deflatefast.go:64:0 s=63
+             compress/flate.(*compressor).init /opt/hostedtoolcache/go/1.26.0/x64/src/compress/flate/deflate.go:588:0 s=571
+    14: 0x5f8a6c M=1 compress/flate.NewWriter /opt/hostedtoolcache/go/1.26.0/x64/src/compress/flate/deflate.go:666:0 s=664
+             compress/gzip.(*Writer).Write /opt/hostedtoolcache/go/1.26.0/x64/src/compress/gzip/gzip.go:191:0 s=139
+    15: 0x5fe6c7 M=1 runtime/pprof.(*profileBuilder).flush /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/pprof/proto.go:146:0 s=143
+    16: 0x604344 M=1 runtime/pprof.(*profileBuilder).emitLocation /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/pprof/proto.go:658:0 s=589
+    17: 0x6025b9 M=1 runtime/pprof.(*profileBuilder).appendLocsForStack /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/pprof/proto.go:470:0 s=406
+    18: 0x601a46 M=1 runtime/pprof.(*profileBuilder).build /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/pprof/proto.go:376:0 s=348
+    19: 0x5fdc64 M=1 runtime/pprof.profileWriter /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/pprof/pprof.go:943:0 s=922
+    20: 0x45dd12 M=1 runtime.unlock /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/lock_spinbit.go:261:0 s=260
+             runtime.findRunnable /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/proc.go:3446:0 s=3389
+    21: 0x45fb90 M=1 runtime.schedule /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/proc.go:4164:0 s=4135
+    22: 0x460224 M=1 runtime.goschedImpl /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/proc.go:4345:0 s=4307
+    23: 0x4728b9 M=1 runtime.gopreempt_m /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/proc.go:4362:0 s=4361
+             runtime.newstack /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/stack.go:1145:0 s=1026
+    24: 0x4957dc M=1 runtime.morestack /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/asm_amd64.s:681:0 s=628
+Mappings
+1: 0x400000/0xc09000/0x0 /tmp/go-build4108119073/b001/scopedesk.test a94e39fd545151813d651717cf033b22e4673902 [FN]
+2: 0x7f0f64a28000/0x7f0f64bb1000/0x28000 /usr/lib/x86_64-linux-gnu/libc.so.6 a4a7992a8e66555c8141ab2a08a8465ff6e0ea65 
+3: 0x7f0f64dc8000/0x7f0f64dca000/0x0 [vdso]  
+4: 0x7f0f64dcb000/0x7f0f64df6000/0x1000 /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 0d77dbd4379bf0b5af3e05be7fb6af1e4cea7c96 
+5: 0xffffffffff600000/0xffffffffff601000/0x0 [vsyscall]  

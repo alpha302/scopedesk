@@ -1,0 +1,68 @@
+{"Time":"2026-11-03T02:07:30.29110475Z","Action":"start","Package":"scopedesk"}
+{"Time":"2026-11-03T02:07:30.304994193Z","Action":"run","Package":"scopedesk","Test":"TestIsolationAndPermissions"}
+{"Time":"2026-11-03T02:07:30.30501908Z","Action":"output","Package":"scopedesk","Test":"TestIsolationAndPermissions","Output":"=== RUN   TestIsolationAndPermissions\n"}
+{"Time":"2026-11-03T02:07:35.732552628Z","Action":"output","Package":"scopedesk","Test":"TestIsolationAndPermissions","Output":"--- PASS: TestIsolationAndPermissions (5.43s)\n"}
+{"Time":"2026-11-03T02:07:35.732587893Z","Action":"pass","Package":"scopedesk","Test":"TestIsolationAndPermissions","Elapsed":5.43}
+{"Time":"2026-11-03T02:07:35.732593512Z","Action":"run","Package":"scopedesk","Test":"TestDisableRevokesSessionAndPersists"}
+{"Time":"2026-11-03T02:07:35.732596186Z","Action":"output","Package":"scopedesk","Test":"TestDisableRevokesSessionAndPersists","Output":"=== RUN   TestDisableRevokesSessionAndPersists\n"}
+{"Time":"2026-11-03T02:07:41.07720199Z","Action":"output","Package":"scopedesk","Test":"TestDisableRevokesSessionAndPersists","Output":"--- PASS: TestDisableRevokesSessionAndPersists (5.34s)\n"}
+{"Time":"2026-11-03T02:07:41.077235951Z","Action":"pass","Package":"scopedesk","Test":"TestDisableRevokesSessionAndPersists","Elapsed":5.34}
+{"Time":"2026-11-03T02:07:41.077242201Z","Action":"run","Package":"scopedesk","Test":"TestPasswordChangeAndAudit"}
+{"Time":"2026-11-03T02:07:41.077245225Z","Action":"output","Package":"scopedesk","Test":"TestPasswordChangeAndAudit","Output":"=== RUN   TestPasswordChangeAndAudit\n"}
+{"Time":"2026-11-03T02:07:47.422362032Z","Action":"output","Package":"scopedesk","Test":"TestPasswordChangeAndAudit","Output":"--- PASS: TestPasswordChangeAndAudit (6.35s)\n"}
+{"Time":"2026-11-03T02:07:47.422392838Z","Action":"pass","Package":"scopedesk","Test":"TestPasswordChangeAndAudit","Elapsed":6.35}
+{"Time":"2026-11-03T02:07:47.422404646Z","Action":"run","Package":"scopedesk","Test":"TestLoginLimitsAndHostValidation"}
+{"Time":"2026-11-03T02:07:47.422409122Z","Action":"output","Package":"scopedesk","Test":"TestLoginLimitsAndHostValidation","Output":"=== RUN   TestLoginLimitsAndHostValidation\n"}
+{"Time":"2026-11-03T02:07:59.051256165Z","Action":"output","Package":"scopedesk","Test":"TestLoginLimitsAndHostValidation","Output":"--- PASS: TestLoginLimitsAndHostValidation (11.63s)\n"}
+{"Time":"2026-11-03T02:07:59.051290456Z","Action":"pass","Package":"scopedesk","Test":"TestLoginLimitsAndHostValidation","Elapsed":11.63}
+{"Time":"2026-11-03T02:07:59.051299881Z","Action":"run","Package":"scopedesk","Test":"TestHTTPSProxyTransportAndCookies"}
+{"Time":"2026-11-03T02:07:59.051303616Z","Action":"output","Package":"scopedesk","Test":"TestHTTPSProxyTransportAndCookies","Output":"=== RUN   TestHTTPSProxyTransportAndCookies\n"}
+{"Time":"2026-11-03T02:08:03.242048616Z","Action":"output","Package":"scopedesk","Test":"TestHTTPSProxyTransportAndCookies","Output":"--- PASS: TestHTTPSProxyTransportAndCookies (4.19s)\n"}
+{"Time":"2026-11-03T02:08:03.2420845Z","Action":"pass","Package":"scopedesk","Test":"TestHTTPSProxyTransportAndCookies","Elapsed":4.19}
+{"Time":"2026-11-03T02:08:03.242093063Z","Action":"run","Package":"scopedesk","Test":"TestExplicitHTTPProxy"}
+{"Time":"2026-11-03T02:08:03.242097009Z","Action":"output","Package":"scopedesk","Test":"TestExplicitHTTPProxy","Output":"=== RUN   TestExplicitHTTPProxy\n"}
+{"Time":"2026-11-03T02:08:07.377653281Z","Action":"output","Package":"scopedesk","Test":"TestExplicitHTTPProxy","Output":"--- PASS: TestExplicitHTTPProxy (4.14s)\n"}
+{"Time":"2026-11-03T02:08:07.3776864Z","Action":"pass","Package":"scopedesk","Test":"TestExplicitHTTPProxy","Elapsed":4.14}
+{"Time":"2026-11-03T02:08:07.378029235Z","Action":"run","Package":"scopedesk","Test":"TestW03CredentialChangesDuringHash"}
+{"Time":"2026-11-03T02:08:07.378037648Z","Action":"output","Package":"scopedesk","Test":"TestW03CredentialChangesDuringHash","Output":"=== RUN   TestW03CredentialChangesDuringHash\n"}
+{"Time":"2026-11-03T02:08:07.378088083Z","Action":"run","Package":"scopedesk","Test":"TestW03CredentialChangesDuringHash/disable"}
+{"Time":"2026-11-03T02:08:07.378103967Z","Action":"output","Package":"scopedesk","Test":"TestW03CredentialChangesDuringHash/disable","Output":"=== RUN   TestW03CredentialChangesDuringHash/disable\n"}
+{"Time":"2026-11-03T02:08:12.664500982Z","Action":"output","Package":"scopedesk","Test":"TestW03CredentialChangesDuringHash/disable","Output":"--- PASS: TestW03CredentialChangesDuringHash/disable (5.29s)\n"}
+{"Time":"2026-11-03T02:08:12.66453262Z","Action":"pass","Package":"scopedesk","Test":"TestW03CredentialChangesDuringHash/disable","Elapsed":5.29}
+{"Time":"2026-11-03T02:08:12.664541173Z","Action":"run","Package":"scopedesk","Test":"TestW03CredentialChangesDuringHash/password"}
+{"Time":"2026-11-03T02:08:12.664544327Z","Action":"output","Package":"scopedesk","Test":"TestW03CredentialChangesDuringHash/password","Output":"=== RUN   TestW03CredentialChangesDuringHash/password\n"}
+{"Time":"2026-11-03T02:08:19.018712945Z","Action":"output","Package":"scopedesk","Test":"TestW03CredentialChangesDuringHash/password","Output":"--- PASS: TestW03CredentialChangesDuringHash/password (6.35s)\n"}
+{"Time":"2026-11-03T02:08:19.018750782Z","Action":"pass","Package":"scopedesk","Test":"TestW03CredentialChangesDuringHash/password","Elapsed":6.35}
+{"Time":"2026-11-03T02:08:19.018759095Z","Action":"run","Package":"scopedesk","Test":"TestW03CredentialChangesDuringHash/role"}
+{"Time":"2026-11-03T02:08:19.018762139Z","Action":"output","Package":"scopedesk","Test":"TestW03CredentialChangesDuringHash/role","Output":"=== RUN   TestW03CredentialChangesDuringHash/role\n"}
+{"Time":"2026-11-03T02:08:24.254682833Z","Action":"output","Package":"scopedesk","Test":"TestW03CredentialChangesDuringHash/role","Output":"--- PASS: TestW03CredentialChangesDuringHash/role (5.24s)\n"}
+{"Time":"2026-11-03T02:08:24.254715342Z","Action":"pass","Package":"scopedesk","Test":"TestW03CredentialChangesDuringHash/role","Elapsed":5.24}
+{"Time":"2026-11-03T02:08:24.254729954Z","Action":"run","Package":"scopedesk","Test":"TestW03CredentialChangesDuringHash/disable-reenable"}
+{"Time":"2026-11-03T02:08:24.254732758Z","Action":"output","Package":"scopedesk","Test":"TestW03CredentialChangesDuringHash/disable-reenable","Output":"=== RUN   TestW03CredentialChangesDuringHash/disable-reenable\n"}
+{"Time":"2026-11-03T02:08:29.411734967Z","Action":"output","Package":"scopedesk","Test":"TestW03CredentialChangesDuringHash/disable-reenable","Output":"--- PASS: TestW03CredentialChangesDuringHash/disable-reenable (5.16s)\n"}
+{"Time":"2026-11-03T02:08:29.411770441Z","Action":"pass","Package":"scopedesk","Test":"TestW03CredentialChangesDuringHash/disable-reenable","Elapsed":5.16}
+{"Time":"2026-11-03T02:08:29.411781718Z","Action":"output","Package":"scopedesk","Test":"TestW03CredentialChangesDuringHash","Output":"--- PASS: TestW03CredentialChangesDuringHash (22.03s)\n"}
+{"Time":"2026-11-03T02:08:29.411785904Z","Action":"pass","Package":"scopedesk","Test":"TestW03CredentialChangesDuringHash","Elapsed":22.03}
+{"Time":"2026-11-03T02:08:29.411820396Z","Action":"run","Package":"scopedesk","Test":"TestW03LimitReservations"}
+{"Time":"2026-11-03T02:08:29.41182359Z","Action":"output","Package":"scopedesk","Test":"TestW03LimitReservations","Output":"=== RUN   TestW03LimitReservations\n"}
+{"Time":"2026-11-03T02:08:34.714930014Z","Action":"output","Package":"scopedesk","Test":"TestW03LimitReservations","Output":"--- PASS: TestW03LimitReservations (5.30s)\n"}
+{"Time":"2026-11-03T02:08:34.714964376Z","Action":"pass","Package":"scopedesk","Test":"TestW03LimitReservations","Elapsed":5.3}
+{"Time":"2026-11-03T02:08:34.714972478Z","Action":"run","Package":"scopedesk","Test":"TestW03QueueBoundCancellationAndRecovery"}
+{"Time":"2026-11-03T02:08:34.714976103Z","Action":"output","Package":"scopedesk","Test":"TestW03QueueBoundCancellationAndRecovery","Output":"=== RUN   TestW03QueueBoundCancellationAndRecovery\n"}
+{"Time":"2026-11-03T02:08:40.023893865Z","Action":"output","Package":"scopedesk","Test":"TestW03QueueBoundCancellationAndRecovery","Output":"--- PASS: TestW03QueueBoundCancellationAndRecovery (5.31s)\n"}
+{"Time":"2026-11-03T02:08:40.023939444Z","Action":"pass","Package":"scopedesk","Test":"TestW03QueueBoundCancellationAndRecovery","Elapsed":5.31}
+{"Time":"2026-11-03T02:08:40.02395004Z","Action":"run","Package":"scopedesk","Test":"TestW03QueueActiveCancellationDoesNotIssueSession"}
+{"Time":"2026-11-03T02:08:40.023952754Z","Action":"output","Package":"scopedesk","Test":"TestW03QueueActiveCancellationDoesNotIssueSession","Output":"=== RUN   TestW03QueueActiveCancellationDoesNotIssueSession\n"}
+{"Time":"2026-11-03T02:08:44.216219078Z","Action":"output","Package":"scopedesk","Test":"TestW03QueueActiveCancellationDoesNotIssueSession","Output":"--- PASS: TestW03QueueActiveCancellationDoesNotIssueSession (4.19s)\n"}
+{"Time":"2026-11-03T02:08:44.216259749Z","Action":"pass","Package":"scopedesk","Test":"TestW03QueueActiveCancellationDoesNotIssueSession","Elapsed":4.19}
+{"Time":"2026-11-03T02:08:44.216270966Z","Action":"run","Package":"scopedesk","Test":"TestW03HashUnknownAndDisabledUsers"}
+{"Time":"2026-11-03T02:08:44.216276364Z","Action":"output","Package":"scopedesk","Test":"TestW03HashUnknownAndDisabledUsers","Output":"=== RUN   TestW03HashUnknownAndDisabledUsers\n"}
+{"Time":"2026-11-03T02:08:50.425941428Z","Action":"output","Package":"scopedesk","Test":"TestW03HashUnknownAndDisabledUsers","Output":"--- PASS: TestW03HashUnknownAndDisabledUsers (6.21s)\n"}
+{"Time":"2026-11-03T02:08:50.425978303Z","Action":"pass","Package":"scopedesk","Test":"TestW03HashUnknownAndDisabledUsers","Elapsed":6.21}
+{"Time":"2026-11-03T02:08:50.425992314Z","Action":"run","Package":"scopedesk","Test":"TestW03HashDoesNotBlockExistingSession"}
+{"Time":"2026-11-03T02:08:50.425998063Z","Action":"output","Package":"scopedesk","Test":"TestW03HashDoesNotBlockExistingSession","Output":"=== RUN   TestW03HashDoesNotBlockExistingSession\n"}
+{"Time":"2026-11-03T02:08:55.653049631Z","Action":"output","Package":"scopedesk","Test":"TestW03HashDoesNotBlockExistingSession","Output":"--- PASS: TestW03HashDoesNotBlockExistingSession (5.23s)\n"}
+{"Time":"2026-11-03T02:08:55.653080758Z","Action":"pass","Package":"scopedesk","Test":"TestW03HashDoesNotBlockExistingSession","Elapsed":5.23}
+{"Time":"2026-11-03T02:08:55.653089331Z","Action":"output","Package":"scopedesk","Output":"PASS\n"}
+{"Time":"2026-11-03T02:08:56.65660988Z","Action":"output","Package":"scopedesk","Output":"ok  \tscopedesk\t86.365s\n"}
+{"Time":"2026-11-03T02:08:56.656653185Z","Action":"pass","Package":"scopedesk","Elapsed":86.366}

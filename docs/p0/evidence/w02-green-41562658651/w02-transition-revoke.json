@@ -1,0 +1,12 @@
+{
+  "billed_operations": 3,
+  "controlled_change_applied": true,
+  "forbidden_http_requests": 0,
+  "mode": "revoke",
+  "native_v6_http_requests": 0,
+  "network": "none",
+  "probe_error": false,
+  "scope_rps": 5,
+  "status_code": 0,
+  "v4_http_requests": 0
+}

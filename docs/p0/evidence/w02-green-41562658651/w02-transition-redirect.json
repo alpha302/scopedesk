@@ -1,0 +1,12 @@
+{
+  "billed_operations": 11,
+  "controlled_change_applied": false,
+  "forbidden_http_requests": 0,
+  "mode": "redirect",
+  "native_v6_http_requests": 0,
+  "network": "none",
+  "probe_error": false,
+  "scope_rps": 5,
+  "status_code": 0,
+  "v4_http_requests": 1
+}

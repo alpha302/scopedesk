@@ -1,0 +1,16 @@
+{
+  "billed_operations": 2,
+  "blacklist_no_additional_http": true,
+  "blacklist_probe_returned_error": false,
+  "classifier_allowed": false,
+  "destination": "2002:a00:1::1",
+  "dns_udp_requests": 10,
+  "http_requests": 0,
+  "limiter": "unchanged LocalRateLimiter, platform 5 RPS, scope 5 RPS",
+  "meaning": "locally routed IPv6 address; NOT a deployed NAT64/6to4 translator or proof of reaching embedded IPv4",
+  "network": "none",
+  "owned_by_loopback": true,
+  "probe_returned_error": false,
+  "scopeguard_checks": 8,
+  "status_code": 0
+}

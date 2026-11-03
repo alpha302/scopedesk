@@ -1,0 +1,283 @@
+PeriodType: cpu nanoseconds
+Period: 10000000
+Time: 2026-11-03 02:02:39.332370656 +0000 UTC
+Duration: 2.21
+Samples:
+samples/count cpu/nanoseconds
+          2   20000000: 1 2 3 4 5 6 7 
+          3   30000000: 8 9 10 11 12 13 14 3 4 5 6 7 
+          1   10000000: 15 9 10 11 12 16 14 3 4 5 6 7 
+          4   40000000: 17 18 16 14 3 4 5 6 7 
+          4   40000000: 19 20 11 12 13 14 3 4 5 6 7 
+          3   30000000: 21 16 14 3 4 5 6 7 
+          2   20000000: 22 9 10 11 12 16 14 3 4 5 6 7 
+          2   20000000: 23 14 3 4 5 6 7 
+          2   20000000: 24 9 10 11 12 13 14 3 4 5 6 7 
+          1   10000000: 25 14 3 4 5 6 7 
+          2   20000000: 26 9 10 11 12 16 14 3 4 5 6 7 
+          2   20000000: 27 9 10 11 12 13 14 3 4 5 6 7 
+          2   20000000: 28 9 10 11 12 13 14 3 4 5 6 7 
+          1   10000000: 29 9 10 11 12 13 14 3 4 5 6 7 
+          4   40000000: 30 3 4 5 6 7 
+          1   10000000: 31 32 13 14 3 4 5 6 7 
+          7   70000000: 33 12 13 14 3 4 5 6 7 
+          5   50000000: 34 9 10 11 12 13 14 3 4 5 6 7 
+          1   10000000: 35 32 13 14 3 4 5 6 7 
+          1   10000000: 36 9 10 11 12 13 14 3 4 5 6 7 
+          1   10000000: 37 9 10 11 12 16 14 3 4 5 6 7 
+          1   10000000: 38 39 2 3 4 5 6 7 
+          1   10000000: 37 9 10 11 12 13 14 3 4 5 6 7 
+          2   20000000: 40 9 10 11 12 13 14 3 4 5 6 7 
+          2   20000000: 41 12 13 14 3 4 5 6 7 
+          4   40000000: 19 20 11 12 16 14 3 4 5 6 7 
+          5   50000000: 42 12 13 14 3 4 5 6 7 
+          3   30000000: 43 9 10 11 12 13 14 3 4 5 6 7 
+          1   10000000: 44 20 11 12 13 14 3 4 5 6 7 
+          2   20000000: 45 9 10 11 12 16 14 3 4 5 6 7 
+          1   10000000: 46 9 10 11 12 16 14 3 4 5 6 7 
+          2   20000000: 47 9 10 11 12 13 14 3 4 5 6 7 
+          2   20000000: 48 9 10 11 12 13 14 3 4 5 6 7 
+          2   20000000: 49 9 10 11 12 13 14 3 4 5 6 7 
+          3   30000000: 27 9 10 11 12 16 14 3 4 5 6 7 
+          1   10000000: 50 51 52 14 3 4 5 6 7 
+          7   70000000: 33 12 16 14 3 4 5 6 7 
+          1   10000000: 53 54 14 3 4 5 6 7 
+          3   30000000: 55 9 10 11 12 13 14 3 4 5 6 7 
+          4   40000000: 42 12 16 14 3 4 5 6 7 
+          1   10000000: 44 56 39 2 3 4 5 6 7 
+          1   10000000: 57 52 14 3 4 5 6 7 
+          1   10000000: 24 9 10 11 12 16 14 3 4 5 6 7 
+          2   20000000: 8 9 10 11 12 16 14 3 4 5 6 7 
+          3   30000000: 58 12 16 14 3 4 5 6 7 
+          1   10000000: 59 3 4 5 6 7 
+          1   10000000: 15 9 10 11 12 13 14 3 4 5 6 7 
+          1   10000000: 60 9 10 11 12 13 14 3 4 5 6 7 
+          1   10000000: 61 39 2 3 4 5 6 7 
+          1   10000000: 62 11 12 13 14 3 4 5 6 7 
+          3   30000000: 50 20 11 12 13 14 3 4 5 6 7 
+          2   20000000: 63 9 10 11 12 16 14 3 4 5 6 7 
+          2   20000000: 64 2 3 4 5 6 7 
+          3   30000000: 65 9 10 11 12 16 14 3 4 5 6 7 
+          1   10000000: 41 12 16 14 3 4 5 6 7 
+          2   20000000: 66 2 3 4 5 6 7 
+          3   30000000: 67 9 10 11 12 16 14 3 4 5 6 7 
+          2   20000000: 26 9 10 11 12 13 14 3 4 5 6 7 
+          1   10000000: 28 9 10 11 12 16 14 3 4 5 6 7 
+          1   10000000: 68 13 14 3 4 5 6 7 
+          1   10000000: 69 3 4 5 6 7 
+          1   10000000: 70 54 14 3 4 5 6 7 
+          1   10000000: 71 2 3 4 5 6 7 
+          1   10000000: 72 9 10 11 12 16 14 3 4 5 6 7 
+          2   20000000: 19 32 13 14 3 4 5 6 7 
+          3   30000000: 73 9 10 11 12 16 14 3 4 5 6 7 
+          2   20000000: 74 9 10 11 12 16 14 3 4 5 6 7 
+          1   10000000: 75 9 10 11 12 16 14 3 4 5 6 7 
+          1   10000000: 76 11 12 16 14 3 4 5 6 7 
+          1   10000000: 35 20 11 12 16 14 3 4 5 6 7 
+          1   10000000: 77 9 10 11 12 16 14 3 4 5 6 7 
+          1   10000000: 78 12 13 14 3 4 5 6 7 
+          1   10000000: 79 9 10 11 12 13 14 3 4 5 6 7 
+          1   10000000: 50 32 16 14 3 4 5 6 7 
+          2   20000000: 80 9 10 11 12 13 14 3 4 5 6 7 
+          6   60000000: 81 3 4 5 6 7 
+          1   10000000: 82 9 10 11 12 16 14 3 4 5 6 7 
+          1   10000000: 55 9 10 11 12 16 14 3 4 5 6 7 
+          2   20000000: 83 9 10 11 12 13 14 3 4 5 6 7 
+          1   10000000: 84 39 2 3 4 5 6 7 
+          1   10000000: 85 16 14 3 4 5 6 7 
+          2   20000000: 86 39 2 3 4 5 6 7 
+          1   10000000: 87 12 13 14 3 4 5 6 7 
+          1   10000000: 88 9 10 11 12 13 14 3 4 5 6 7 
+          1   10000000: 89 14 3 4 5 6 7 
+          1   10000000: 90 9 10 11 12 13 14 3 4 5 6 7 
+          1   10000000: 91 13 14 3 4 5 6 7 
+          2   20000000: 92 93 3 4 5 6 7 
+          3   30000000: 94 9 10 11 12 13 14 3 4 5 6 7 
+          1   10000000: 95 14 3 4 5 6 7 
+          1   10000000: 96 9 10 11 12 16 14 3 4 5 6 7 
+          1   10000000: 97 13 14 3 4 5 6 7 
+          2   20000000: 98 13 14 3 4 5 6 7 
+          1   10000000: 57 93 3 4 5 6 7 
+          1   10000000: 83 9 10 11 12 16 14 3 4 5 6 7 
+          1   10000000: 99 39 2 3 4 5 6 7 
+          2   20000000: 100 9 10 11 12 16 14 3 4 5 6 7 
+          2   20000000: 50 20 11 12 16 14 3 4 5 6 7 
+          1   10000000: 101 12 13 14 3 4 5 6 7 
+          1   10000000: 102 10 11 12 16 14 3 4 5 6 7 
+          1   10000000: 73 9 10 11 12 13 14 3 4 5 6 7 
+          1   10000000: 103 18 13 14 3 4 5 6 7 
+          1   10000000: 104 16 14 3 4 5 6 7 
+          1   10000000: 105 14 3 4 5 6 7 
+          1   10000000: 106 12 13 14 3 4 5 6 7 
+          1   10000000: 107 12 13 14 3 4 5 6 7 
+          1   10000000: 90 9 10 11 12 16 14 3 4 5 6 7 
+          2   20000000: 108 12 16 14 3 4 5 6 7 
+          1   10000000: 109 3 4 5 6 7 
+          1   10000000: 110 12 13 14 3 4 5 6 7 
+          1   10000000: 111 11 12 13 14 3 4 5 6 7 
+          1   10000000: 112 20 11 12 16 14 3 4 5 6 7 
+          1   10000000: 113 3 4 5 6 7 
+          1   10000000: 114 93 3 4 5 6 7 
+          1   10000000: 115 9 10 11 12 16 14 3 4 5 6 7 
+          1   10000000: 72 9 10 11 12 13 14 3 4 5 6 7 
+          1   10000000: 116 9 10 11 12 16 14 3 4 5 6 7 
+          1   10000000: 117 93 3 4 5 6 7 
+          2   20000000: 36 9 10 11 12 16 14 3 4 5 6 7 
+          2   20000000: 118 9 10 11 12 13 14 3 4 5 6 7 
+          1   10000000: 119 3 4 5 6 7 
+          1   10000000: 19 32 16 14 3 4 5 6 7 
+          1   10000000: 120 12 13 14 3 4 5 6 7 
+          1   10000000: 121 3 4 5 6 7 
+          1   10000000: 67 9 10 11 12 13 14 3 4 5 6 7 
+          1   10000000: 122 9 10 11 12 13 14 3 4 5 6 7 
+          1   10000000: 60 9 10 11 12 16 14 3 4 5 6 7 
+          1   10000000: 123 3 4 5 6 7 
+          1   10000000: 124 9 10 11 12 13 14 3 4 5 6 7 
+          1   10000000: 63 9 10 11 12 13 14 3 4 5 6 7 
+Locations
+     1: 0xba8032 M=1 crypto/internal/fips140/hmac.(*HMAC).Reset /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/hmac/hmac.go:84:0 s=82
+     2: 0xc07c37 M=1 crypto/internal/fips140/pbkdf2.Key[go.shape.interface { BlockSize int; Reset; Size int; Sum []uint8; Write  }] /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/pbkdf2/pbkdf2.go:59:0 s=23(crypto/internal/fips140/pbkdf2.Key[go.shape.interface { BlockSize() int; Reset(); Size() int; Sum([]uint8) []uint8; Write([]uint8) (int, error) }])
+     3: 0x98f8d7 M=1 crypto/pbkdf2.Key[go.shape.interface { BlockSize int; Reset; Size int; Sum []uint8; Write  }] /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/pbkdf2/pbkdf2.go:53:0 s=40(crypto/pbkdf2.Key[go.shape.interface { BlockSize() int; Reset(); Size() int; Sum([]uint8) []uint8; Write([]uint8) (int, error) }])
+     4: 0xa95fd3 M=1 scopedesk.password /home/runner/work/scopedesk/scopedesk/main.go:129:0 s=128
+     5: 0xa9224d M=1 scopedesk.(*Server).hashLoginPassword /home/runner/work/scopedesk/scopedesk/login_hash.go:7:0 s=3
+     6: 0xa9c4f8 M=1 scopedesk.(*Server).login /home/runner/work/scopedesk/scopedesk/main.go:593:0 s=564
+     7: 0xb8c630 M=1 scopedesk.TestW03SingleUserLatency.func1 /home/runner/work/scopedesk/scopedesk/w03_login_test.go:116:0 s=109
+     8: 0xb9e19d M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1384:0 s=1291
+     9: 0xb9cd6a M=1 crypto/internal/fips140/sha256.block /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.go:30:0 s=28
+    10: 0xb9c376 M=1 crypto/internal/fips140/sha256.(*Digest).Write /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:179:0 s=172
+    11: 0xb9c855 M=1 crypto/internal/fips140/sha256.(*Digest).checkSum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:227:0 s=211
+    12: 0xb9c5fe M=1 crypto/internal/fips140/sha256.(*Digest).Sum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:204:0 s=200
+    13: 0xba7e4a M=1 crypto/internal/fips140/hmac.(*HMAC).Sum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/hmac/hmac.go:72:0 s=47
+    14: 0xc07c84 M=1 crypto/internal/fips140/pbkdf2.Key[go.shape.interface { BlockSize int; Reset; Size int; Sum []uint8; Write  }] /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/pbkdf2/pbkdf2.go:62:0 s=23(crypto/internal/fips140/pbkdf2.Key[go.shape.interface { BlockSize() int; Reset(); Size() int; Sum([]uint8) []uint8; Write([]uint8) (int, error) }])
+    15: 0xb9e13f M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1364:0 s=1291
+    16: 0xba7d71 M=1 crypto/internal/fips140/hmac.(*HMAC).Sum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/hmac/hmac.go:61:0 s=47
+    17: 0xb9b953 M=1 crypto/internal/fips140.RecordApproved /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/indicator.go:53:0 s=52
+    18: 0xb9c59e M=1 crypto/internal/fips140/sha256.(*Digest).Sum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:201:0 s=200
+    19: 0x497ba9 M=1 runtime.memmove /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/memmove_amd64.s:200:0 s=35
+    20: 0xb9c33a M=1 crypto/internal/fips140/sha256.(*Digest).Write /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:176:0 s=172
+    21: 0xb9c60b M=1 crypto/internal/fips140/sha256.(*Digest).Sum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:204:0 s=200
+    22: 0xb9e0fc M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1350:0 s=1291
+    23: 0xba7e29 M=1 crypto/internal/fips140/hmac.(*HMAC).Sum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/hmac/hmac.go:72:0 s=47
+    24: 0xb9e024 M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1300:0 s=1291
+    25: 0xba7d32 M=1 crypto/internal/fips140/hmac.(*HMAC).Sum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/hmac/hmac.go:54:0 s=47
+    26: 0xb9e12b M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1360:0 s=1291
+    27: 0xb9e189 M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1380:0 s=1291
+    28: 0xb9e316 M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1468:0 s=1291
+    29: 0xb9e31b M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1469:0 s=1291
+    30: 0xc07caa M=1 crypto/internal/fips140/pbkdf2.Key[go.shape.interface { BlockSize int; Reset; Size int; Sum []uint8; Write  }] /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/pbkdf2/pbkdf2.go:63:0 s=23(crypto/internal/fips140/pbkdf2.Key[go.shape.interface { BlockSize() int; Reset(); Size() int; Sum([]uint8) []uint8; Write([]uint8) (int, error) }])
+    31: 0x497bb3 M=1 runtime.memmove /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/memmove_amd64.s:202:0 s=35
+    32: 0xb9c739 M=1 crypto/internal/fips140/sha256.(*Digest).Sum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:208:0 s=200
+    33: 0xb9c8de M=1 crypto/internal/fips140/sha256.(*Digest).checkSum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:246:0 s=211
+    34: 0xb9e0e1 M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1344:0 s=1291
+    35: 0x497bb9 M=1 runtime.memmove /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/memmove_amd64.s:203:0 s=35
+    36: 0xb9e2fd M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1461:0 s=1291
+    37: 0xb9e2d2 M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1450:0 s=1291
+    38: 0xb9c04a M=1 crypto/internal/fips140/sha256.(*Digest).UnmarshalBinary /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:105:0 s=89
+    39: 0xba82be M=1 crypto/internal/fips140/hmac.(*HMAC).Reset /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/hmac/hmac.go:84:0 s=82
+    40: 0xb9e110 M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1354:0 s=1291
+    41: 0xb9c80d M=1 crypto/internal/fips140/sha256.(*Digest).checkSum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:225:0 s=211
+    42: 0xb9c849 M=1 crypto/internal/fips140/sha256.(*Digest).checkSum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:227:0 s=211
+    43: 0xb9e0bc M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1336:0 s=1291
+    44: 0x497a7c M=1 runtime.memmove /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/memmove_amd64.s:64:0 s=35
+    45: 0xb9e0a0 M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1330:0 s=1291
+    46: 0xb9e0b8 M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1335:0 s=1291
+    47: 0xb9e185 M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1379:0 s=1291
+    48: 0xb9e22a M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1414:0 s=1291
+    49: 0xb9e274 M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1430:0 s=1291
+    50: 0x497baf M=1 runtime.memmove /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/memmove_amd64.s:201:0 s=35
+    51: 0xb9c3f4 M=1 crypto/internal/fips140/sha256.(*Digest).Write /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:195:0 s=172
+    52: 0xba7e28 M=1 crypto/internal/fips140/hmac.(*HMAC).Sum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/hmac/hmac.go:71:0 s=47
+    53: 0xb9bf8b M=1 crypto/internal/fips140/sha256.(*Digest).UnmarshalBinary /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:89:0 s=89
+    54: 0xba7eaf M=1 crypto/internal/fips140/hmac.(*HMAC).Sum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/hmac/hmac.go:64:0 s=47
+    55: 0xb9e2a3 M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1440:0 s=1291
+    56: 0xb9c065 M=1 crypto/internal/fips140/sha256.(*Digest).UnmarshalBinary /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:105:0 s=89
+    57: 0xb9c2d7 M=1 crypto/internal/fips140/sha256.(*Digest).Write /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:175:0 s=172
+    58: 0xb9c7cf M=1 crypto/internal/fips140/sha256.(*Digest).checkSum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:214:0 s=211
+    59: 0xc07ca0 M=1 crypto/internal/fips140/pbkdf2.Key[go.shape.interface { BlockSize int; Reset; Size int; Sum []uint8; Write  }] /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/pbkdf2/pbkdf2.go:64:0 s=23(crypto/internal/fips140/pbkdf2.Key[go.shape.interface { BlockSize() int; Reset(); Size() int; Sum([]uint8) []uint8; Write([]uint8) (int, error) }])
+    60: 0xb9e15a M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1370:0 s=1291
+    61: 0xb9c012 M=1 crypto/internal/fips140deps/byteorder.BEUint32 /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140deps/byteorder/byteorder.go:14:0 s=13
+             crypto/internal/fips140/sha256.consumeUint32 /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:116:0 s=115
+             crypto/internal/fips140/sha256.(*Digest).UnmarshalBinary /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:99:0 s=89
+    62: 0xb9c39b M=1 crypto/internal/fips140/sha256.(*Digest).Write /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:182:0 s=172
+    63: 0xb9e16e M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1374:0 s=1291
+    64: 0xba8274 M=1 crypto/internal/fips140/hmac.(*HMAC).Reset /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/hmac/hmac.go:84:0 s=82
+    65: 0xb9e288 M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1434:0 s=1291
+    66: 0xba803f M=1 crypto/internal/fips140/hmac.(*HMAC).Reset /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/hmac/hmac.go:84:0 s=82
+    67: 0xb9e2e2 M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1453:0 s=1291
+    68: 0xb9c60f M=1 crypto/internal/fips140/sha256.(*Digest).Sum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:204:0 s=200
+    69: 0xc07c74 M=1 crypto/internal/fips140/pbkdf2.Key[go.shape.interface { BlockSize int; Reset; Size int; Sum []uint8; Write  }] /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/pbkdf2/pbkdf2.go:62:0 s=23(crypto/internal/fips140/pbkdf2.Key[go.shape.interface { BlockSize() int; Reset(); Size() int; Sum([]uint8) []uint8; Write([]uint8) (int, error) }])
+    70: 0xb9c030 M=1 crypto/internal/fips140deps/byteorder.BEUint32 /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140deps/byteorder/byteorder.go:14:0 s=13
+             crypto/internal/fips140/sha256.consumeUint32 /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:116:0 s=115
+             crypto/internal/fips140/sha256.(*Digest).UnmarshalBinary /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:102:0 s=89
+    71: 0xba801d M=1 crypto/internal/fips140/hmac.(*HMAC).Reset /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/hmac/hmac.go:84:0 s=82
+    72: 0xb9e216 M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1410:0 s=1291
+    73: 0xb9e259 M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1424:0 s=1291
+    74: 0xb9e1cc M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1394:0 s=1291
+    75: 0xb9e04f M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1308:0 s=1291
+    76: 0xb9c2ce M=1 crypto/internal/fips140/sha256.(*Digest).Write /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:172:0 s=172
+    77: 0xb9e1b4 M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1389:0 s=1291
+    78: 0xb9c8e2 M=1 crypto/internal/fips140/sha256.(*Digest).checkSum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:246:0 s=211
+    79: 0xb9e09c M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1329:0 s=1291
+    80: 0xb9e2f9 M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1458:0 s=1291
+    81: 0xc07ca7 M=1 crypto/internal/fips140/pbkdf2.Key[go.shape.interface { BlockSize int; Reset; Size int; Sum []uint8; Write  }] /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/pbkdf2/pbkdf2.go:63:0 s=23(crypto/internal/fips140/pbkdf2.Key[go.shape.interface { BlockSize() int; Reset(); Size() int; Sum([]uint8) []uint8; Write([]uint8) (int, error) }])
+    82: 0xb9e30d M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1464:0 s=1291
+    83: 0xb9e2b7 M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1444:0 s=1291
+    84: 0xb9c075 M=1 crypto/internal/fips140/sha256.(*Digest).UnmarshalBinary /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:105:0 s=89
+    85: 0xb9c75a M=1 crypto/internal/fips140/sha256.(*Digest).Sum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:208:0 s=200
+    86: 0xb9bff9 M=1 internal/byteorder.BEUint32 /opt/hostedtoolcache/go/1.26.0/x64/src/internal/byteorder/byteorder.go:100:0 s=98
+             crypto/internal/fips140deps/byteorder.BEUint32 /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140deps/byteorder/byteorder.go:14:0 s=13
+             crypto/internal/fips140/sha256.consumeUint32 /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:116:0 s=115
+             crypto/internal/fips140/sha256.(*Digest).UnmarshalBinary /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:97:0 s=89
+    87: 0xb9c7fe M=1 crypto/internal/fips140/sha256.(*Digest).checkSum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:220:0 s=211
+    88: 0xb9e245 M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1420:0 s=1291
+    89: 0xba7cae M=1 crypto/internal/fips140/hmac.(*HMAC).Sum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/hmac/hmac.go:47:0 s=47
+    90: 0xb9e0c5 M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1338:0 s=1291
+    91: 0xb9c619 M=1 crypto/internal/fips140/sha256.(*Digest).Sum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:205:0 s=200
+    92: 0xb9c3f5 M=1 crypto/internal/fips140/sha256.(*Digest).Write /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:195:0 s=172
+    93: 0xc07c63 M=1 crypto/internal/fips140/hmac.(*HMAC).Write /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/hmac/hmac.go:76:0 s=75
+             crypto/internal/fips140/pbkdf2.Key[go.shape.interface { BlockSize int; Reset; Size int; Sum []uint8; Write  }] /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/pbkdf2/pbkdf2.go:60:0 s=23(crypto/internal/fips140/pbkdf2.Key[go.shape.interface { BlockSize() int; Reset(); Size() int; Sum([]uint8) []uint8; Write([]uint8) (int, error) }])
+    94: 0xb9e076 M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1321:0 s=1291
+    95: 0xba7ccb M=1 crypto/internal/fips140/hmac.(*HMAC).Sum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/hmac/hmac.go:51:0 s=47
+    96: 0xb9e347 M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1482:0 s=1291
+    97: 0xb9c614 M=1 crypto/internal/fips140/sha256.(*Digest).Sum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:204:0 s=200
+    98: 0xb9c5eb M=1 crypto/internal/fips140/sha256.(*Digest).Sum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:203:0 s=200
+    99: 0xb9c008 M=1 crypto/internal/fips140deps/byteorder.BEUint32 /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140deps/byteorder/byteorder.go:14:0 s=13
+             crypto/internal/fips140/sha256.consumeUint32 /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:116:0 s=115
+             crypto/internal/fips140/sha256.(*Digest).UnmarshalBinary /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:98:0 s=89
+   100: 0xb9e1e7 M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1400:0 s=1291
+   101: 0xb9c869 M=1 crypto/internal/fips140/sha256.(*Digest).checkSum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:233:0 s=211
+   102: 0xb9cd00 M=1 crypto/internal/fips140/sha256.block /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.go:28:0 s=28
+   103: 0xb9b944 M=1 crypto/internal/fips140.RecordApproved /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/indicator.go:52:0 s=52
+   104: 0xb9c5a4 M=1 crypto/internal/fips140/sha256.(*Digest).Sum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:203:0 s=200
+   105: 0xba7e11 M=1 crypto/internal/fips140/hmac.(*HMAC).Sum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/hmac/hmac.go:71:0 s=47
+   106: 0xb9c8e7 M=1 crypto/internal/fips140/sha256.(*Digest).checkSum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:246:0 s=211
+   107: 0xb9c88f M=1 crypto/internal/fips140deps/byteorder.BEPutUint32 /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140deps/byteorder/byteorder.go:30:0 s=29
+             crypto/internal/fips140/sha256.(*Digest).checkSum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:237:0 s=211
+   108: 0xb9c885 M=1 crypto/internal/fips140deps/byteorder.BEPutUint32 /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140deps/byteorder/byteorder.go:30:0 s=29
+             crypto/internal/fips140/sha256.(*Digest).checkSum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:236:0 s=211
+   109: 0xc07c19 M=1 crypto/internal/fips140/pbkdf2.Key[go.shape.interface { BlockSize int; Reset; Size int; Sum []uint8; Write  }] /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/pbkdf2/pbkdf2.go:58:0 s=23(crypto/internal/fips140/pbkdf2.Key[go.shape.interface { BlockSize() int; Reset(); Size() int; Sum([]uint8) []uint8; Write([]uint8) (int, error) }])
+   110: 0xb9c840 M=1 internal/byteorder.BEPutUint64 /opt/hostedtoolcache/go/1.26.0/x64/src/internal/byteorder/byteorder.go:135:0 s=126
+             crypto/internal/fips140deps/byteorder.BEPutUint64 /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140deps/byteorder/byteorder.go:34:0 s=33
+             crypto/internal/fips140/sha256.(*Digest).checkSum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:226:0 s=211
+   111: 0xb9c38e M=1 crypto/internal/fips140/sha256.(*Digest).Write /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:182:0 s=172
+   112: 0x497a6c M=1 runtime.memmove /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/memmove_amd64.s:61:0 s=35
+   113: 0xc07c44 M=1 crypto/internal/fips140/hmac.(*HMAC).Write /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/hmac/hmac.go:76:0 s=75
+             crypto/internal/fips140/pbkdf2.Key[go.shape.interface { BlockSize int; Reset; Size int; Sum []uint8; Write  }] /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/pbkdf2/pbkdf2.go:60:0 s=23(crypto/internal/fips140/pbkdf2.Key[go.shape.interface { BlockSize() int; Reset(); Size() int; Sum([]uint8) []uint8; Write([]uint8) (int, error) }])
+   114: 0xb9c40f M=1 crypto/internal/fips140/sha256.(*Digest).Write /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:197:0 s=172
+   115: 0xb9e1b8 M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1390:0 s=1291
+   116: 0xb9e000 M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1292:0 s=1291
+   117: 0xb9c3ff M=1 crypto/internal/fips140/sha256.(*Digest).Write /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:195:0 s=172
+   118: 0xb9e1fb M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1404:0 s=1291
+   119: 0xc07cad M=1 crypto/internal/fips140/pbkdf2.Key[go.shape.interface { BlockSize int; Reset; Size int; Sum []uint8; Write  }] /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/pbkdf2/pbkdf2.go:63:0 s=23(crypto/internal/fips140/pbkdf2.Key[go.shape.interface { BlockSize() int; Reset(); Size() int; Sum([]uint8) []uint8; Write([]uint8) (int, error) }])
+   120: 0xb9c8b7 M=1 crypto/internal/fips140deps/byteorder.BEPutUint32 /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140deps/byteorder/byteorder.go:30:0 s=29
+             crypto/internal/fips140/sha256.(*Digest).checkSum /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256.go:241:0 s=211
+   121: 0xc07c9b M=1 crypto/internal/fips140/pbkdf2.Key[go.shape.interface { BlockSize int; Reset; Size int; Sum []uint8; Write  }] /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/pbkdf2/pbkdf2.go:64:0 s=23(crypto/internal/fips140/pbkdf2.Key[go.shape.interface { BlockSize() int; Reset(); Size() int; Sum([]uint8) []uint8; Write([]uint8) (int, error) }])
+   122: 0xb9e29f M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1439:0 s=1291
+   123: 0xc07cb6 M=1 crypto/internal/fips140/pbkdf2.Key[go.shape.interface { BlockSize int; Reset; Size int; Sum []uint8; Write  }] /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/pbkdf2/pbkdf2.go:64:0 s=23(crypto/internal/fips140/pbkdf2.Key[go.shape.interface { BlockSize() int; Reset(); Size() int; Sum([]uint8) []uint8; Write([]uint8) (int, error) }])
+   124: 0xb9e2ce M=1 crypto/internal/fips140/sha256.blockSHANI /opt/hostedtoolcache/go/1.26.0/x64/src/crypto/internal/fips140/sha256/sha256block_amd64.s:1449:0 s=1291
+Mappings
+1: 0x400000/0xc09000/0x0 /tmp/go-build4087487177/b001/scopedesk.test 11b0b5a9893de694d3ed4ede712be18085fb36db [FN]
+2: 0x7f69cc628000/0x7f69cc7b1000/0x28000 /usr/lib/x86_64-linux-gnu/libc.so.6 a4a7992a8e66555c8141ab2a08a8465ff6e0ea65 
+3: 0x7f69cc99f000/0x7f69cc9a1000/0x0 [vdso]  
+4: 0x7f69cc9a2000/0x7f69cc9cd000/0x1000 /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 0d77dbd4379bf0b5af3e05be7fb6af1e4cea7c96 
+5: 0xffffffffff600000/0xffffffffff601000/0x0 [vsyscall]  

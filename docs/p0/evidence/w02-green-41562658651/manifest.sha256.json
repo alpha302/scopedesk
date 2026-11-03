@@ -1,0 +1,17 @@
+{
+  "commit.txt": "5afb5478f931b8ee6f24c5696e97db5e16427c8e09fbf4d2b411a58b621249ec",
+  "interfaces.txt": "238f570cb2ac35cdd95eb04f76a57e002245701ac8d067d8ea81dc905015090f",
+  "isolation.json": "1434f7ce0da629173b288ad3ad96d65d0d1b051f28f682d030b7d249e55da202",
+  "routes.txt": "42dba4a056aaf11944269a861a58c675bc9ca86b0d9ba2094219de6ba68de3c6",
+  "source.sha256": "d9f92b41b9cd00879434052f8c96979990a174ba4227b1b9079d0935112db5e8",
+  "tests.txt": "4215e572cc829c3e18217faee3021f7681a837f1aee70f5eaf59e1b6c6b9eef3",
+  "w02-dial-1.json": "dd0501dca993694346eff80abe97c7492726bf78f99602e9ebbd16b9bf0b349f",
+  "w02-dial-2.json": "c837d092e07d712bd00e1917c171a54de184e783798a32f3ec3b96194ef86e7d",
+  "w02-dial-3.json": "c23740e3cd8fb85bcd90edd14c5bac561e59d372206bfb7b0fdac3b29a48b7f7",
+  "w02-dial-4.json": "e389e32a667f3a5d4acf7b191e57c0f9eee2d661be5ba3fe78d6ae1073fd869b",
+  "w02-transition-dual-stack.json": "7cfd693eaf097da387904c3e43110d2690f94bd17a1c2ed025da480c16c6d972",
+  "w02-transition-native-ipv6.json": "ee01b2b9d3ee24443a94336692bebbdc69f14efc2558156666752715b73a5b12",
+  "w02-transition-rebind.json": "b65ff5c6fe537fe51417296a97ecde0589dfaf51cad4a52c1e11560aa1ae641e",
+  "w02-transition-redirect.json": "104483050c6b0311041aaf65b412ed881bb123f784ea7e2ab1127e3d1b4dad88",
+  "w02-transition-revoke.json": "8058684ba4eb09b7b757eb646117b5156094751817b9da588db504c5d7a8da82"
+}

@@ -1,0 +1,26 @@
+PeriodType: contentions count
+Period: 1
+Time: 2026-11-03 02:09:01.821120082 +0000 UTC
+Samples:
+contentions/count delay/nanoseconds
+          1     103991: 1 2 3 4 5 6 
+          1       2573: 7 8 9 
+Locations
+     1: 0x45b35e M=1 runtime.unlock /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/lock_spinbit.go:261:0 s=260
+             runtime.startTheWorldWithSema /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/proc.go:1782:0 s=1760
+     2: 0x4332c4 M=1 runtime.gcMarkTermination.func3 /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/mgc.go:1515:0 s=1500
+     3: 0x4956c9 M=1 runtime.systemstack /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/asm_amd64.s:562:0 s=520
+     4: 0x432804 M=1 runtime.gcMarkTermination /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/mgc.go:1500:0 s=1344
+     5: 0x431c1d M=1 runtime.gcMarkDone /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/mgc.go:1173:0 s=1015
+     6: 0x433847 M=1 runtime.gcBgMarkWorker /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/mgc.go:1912:0 s=1750
+     7: 0x460202 M=1 runtime.unlock /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/lock_spinbit.go:261:0 s=260
+             runtime.goschedImpl /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/proc.go:4338:0 s=4307
+     8: 0x4728b9 M=1 runtime.gopreempt_m /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/proc.go:4362:0 s=4361
+             runtime.newstack /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/stack.go:1145:0 s=1026
+     9: 0x4957dc M=1 runtime.morestack /opt/hostedtoolcache/go/1.26.0/x64/src/runtime/asm_amd64.s:681:0 s=628
+Mappings
+1: 0x400000/0xc0d000/0x0 /tmp/go-build15614777/b001/scopedesk.test b136bd0ca154fed1b9cf03d1a0ff2fab4cbb977e [FN]
+2: 0x7f0cbdc28000/0x7f0cbddb1000/0x28000 /usr/lib/x86_64-linux-gnu/libc.so.6 a4a7992a8e66555c8141ab2a08a8465ff6e0ea65 
+3: 0x7f0cbdfa2000/0x7f0cbdfa4000/0x0 [vdso]  
+4: 0x7f0cbdfa5000/0x7f0cbdfd0000/0x1000 /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 0d77dbd4379bf0b5af3e05be7fb6af1e4cea7c96 
+5: 0xffffffffff600000/0xffffffffff601000/0x0 [vsyscall]  

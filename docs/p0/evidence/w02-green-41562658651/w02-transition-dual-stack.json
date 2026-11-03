@@ -1,0 +1,12 @@
+{
+  "billed_operations": 11,
+  "controlled_change_applied": false,
+  "forbidden_http_requests": 0,
+  "mode": "dual-stack",
+  "native_v6_http_requests": 0,
+  "network": "none",
+  "probe_error": false,
+  "scope_rps": 5,
+  "status_code": 200,
+  "v4_http_requests": 2
+}
