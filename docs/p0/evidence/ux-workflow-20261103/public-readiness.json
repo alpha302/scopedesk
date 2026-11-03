@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-11-03T09:46:40.288865+00:00",
+  "release_commit": "4e0bfae2b871d2ab7279628b41918f4a6d9d3358",
+  "public_entry": "http://47.103.214.77:8080/",
+  "checks": [
+    {
+      "route": "/",
+      "status": 200,
+      "exact_release_content": true
+    },
+    {
+      "route": "/app.js",
+      "status": 200,
+      "exact_release_content": true
+    },
+    {
+      "route": "/style.css",
+      "status": 200,
+      "exact_release_content": true
+    },
+    {
+      "route": "/api/state",
+      "status": 401,
+      "login_required": true
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+Browser tab: 2, Title: "ScopeDesk · 持续资产监控", URL: "http://127.0.0.1:18769/".
+1 AXWebArea ScopeDesk · 持续资产监控, URL: 127.0.0.1:18769/
+	2 container app
+		3 container
+			4 text S ScopeDesk 持续资产监控 / v0.3
+			5 button ◈ 概览
+				6 text ◈
+				7 text 概览
+			8 button ▦ 资产
+				9 text ▦
+				10 text 资产
+			11 button ◎ 目标
+				12 text ◎
+				13 text 目标
+			14 button ⌕ 发现
+				15 text ⌕
+				16 text 发现
+			17 button ⚙ 设置
+				18 text ⚙
+				19 text 设置
+			20 text F fixture-admin 管理员
+			21 button 退出登录
+		22 container
+			23 text ScopeDesk  /  资产 PostgreSQL · 管理员
+			24 heading 资产, Value: 1
+				57 text 资产
+			26 text 授权范围 → 发现 → 画像 → 变化 → 通知
+			27 button 刷新
+			58 container 资产页面
+				59 button 资产列表
+				60 button 变更事件
+			61 heading 变更时间线, Value: 2
+				62 text 变更时间线
+			63 pop up button (collapsed, settable) Description: 筛选事件目标, Value: example.com, Secondary Actions: Expand
+				64 menu
+					65 全部目标
+					66 (selected) example.com
+			67 pop up button (collapsed, settable) Value: 全部事件, Secondary Actions: Expand
+				68 menu
+					69 (selected) 全部事件
+					70 新增资产
+					71 状态异常记录
+					72 恢复记录
+					73 IP 变化
+			74 text 当前被动索引缺失不会判定 HTTP 下线。历史事件保留原始证据；未记录独立 HTTP 依据的记录明确标为历史状态变化。相同事件按天去重。
+			75 table
+				76 row
+					77 cell
+						78 text 事件
+					79 cell
+						80 text 资产 / 范围
+					81 cell
+						82 text 详情
+					83 cell
+						84 text 执行 / 时间
+				85 row
+					86 cell
+						87 text 新增资产
+					88 cell
+						89 text example.com
+						90 text example.com
+					91 cell
+						92 text 新增资产 example.com（来源：certspotter）
+						93 button (collapsed) 查看原始证据, Secondary Actions: Expand
+							94 text 查看原始证据
+					95 cell
+						96 text 未关联运行
+						97 text 2026/11/3 16:00:00
+				98 row
+					99 cell
+						100 text 状态异常记录
+					101 cell
+						102 text example.com
+						103 text example.com
+					104 cell
+						105 text example.com：历史状态变化，未记录独立 HTTP 实测依据；不据此认定站点下线。
+						106 button (collapsed) 查看原始证据, Secondary Actions: Expand
+							107 text 查看原始证据
+					108 cell
+						109 text 未关联运行
+						110 text 2026/11/2 16:00:00
+			56 text ScopeDesk · Go + Vue 3 / PostgreSQL 授权 → 发现 → 变化 → 通知
+
+The focused UI element is 1 AXWebArea ScopeDesk · 持续资产监控, URL: 127.0.0.1:18769/

@@ -19,7 +19,7 @@ docker_env=os.environ.copy();docker_env['POSTGRES_PASSWORD']=secret
 try:
  run(['docker','run','-d','--pull=never','--name',name,'--memory','384m','--tmpfs','/var/lib/postgresql/data','-e','POSTGRES_PASSWORD','-e','POSTGRES_DB=scopedesk_p0','-p','127.0.0.1::5432','postgres:16-alpine'],env=docker_env,stdout=subprocess.DEVNULL,stderr=subprocess.PIPE)
  for _ in range(90):
-  if subprocess.run(['docker','exec',name,'pg_isready','-U','postgres','-d','scopedesk_p0'],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL).returncode==0:break
+  if subprocess.run(['docker','exec',name,'pg_isready','-h','127.0.0.1','-U','postgres','-d','scopedesk_p0'],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL).returncode==0:break
   time.sleep(.5)
  else:raise RuntimeError('Temporary PostgreSQL did not start')
  port=run(['docker','port',name,'5432/tcp'],capture_output=True,text=True).stdout.strip().rsplit(':',1)[1]

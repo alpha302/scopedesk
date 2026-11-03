@@ -1,0 +1,42 @@
+[
+  {
+    "conclusion": "success",
+    "databaseId": 41613011529,
+    "headSha": "4e0bfae2b871d2ab7279628b41918f4a6d9d3358",
+    "name": "W05 classification contract",
+    "status": "completed",
+    "url": "https://github.com/alpha302/scopedesk/actions/runs/41613011529"
+  },
+  {
+    "conclusion": "success",
+    "databaseId": 41613011467,
+    "headSha": "4e0bfae2b871d2ab7279628b41918f4a6d9d3358",
+    "name": "W26 passive absence safety",
+    "status": "completed",
+    "url": "https://github.com/alpha302/scopedesk/actions/runs/41613011467"
+  },
+  {
+    "conclusion": "success",
+    "databaseId": 41613011434,
+    "headSha": "4e0bfae2b871d2ab7279628b41918f4a6d9d3358",
+    "name": "W04 passive absence safety",
+    "status": "completed",
+    "url": "https://github.com/alpha302/scopedesk/actions/runs/41613011434"
+  },
+  {
+    "conclusion": "success",
+    "databaseId": 41613011575,
+    "headSha": "4e0bfae2b871d2ab7279628b41918f4a6d9d3358",
+    "name": "Target workflow acceptance",
+    "status": "completed",
+    "url": "https://github.com/alpha302/scopedesk/actions/runs/41613011575"
+  },
+  {
+    "conclusion": "success",
+    "databaseId": 41613011448,
+    "headSha": "4e0bfae2b871d2ab7279628b41918f4a6d9d3358",
+    "name": "W37 durable single-instance account limits",
+    "status": "completed",
+    "url": "https://github.com/alpha302/scopedesk/actions/runs/41613011448"
+  }
+]

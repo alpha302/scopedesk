@@ -23,6 +23,7 @@
 - 浏览器使用本地合成数据，核对五入口、基础/高级表单、资产四筛选、IP 展开、视图保存后刷新、企业带入、设置和目标历史。390px 窄屏菜单无重复、页面无水平溢出。浏览器截图不是生产资产数据。
 - 首次临时 PG 测试因测试样例缺少 `asset_events.dedupe_key` 失败；已补齐样例后重跑，原始失败日志保留。未为此修改事件数据合同。
 - 企业真实 API 新验收发现原导入接口遗漏 `scopes.policy` 必填字段，导致创建失败。接口现在明确保存空备注，保留精确范围、权限、幂等与关闭探测/计划的行为；修复前日志保存为 `enterprise-red.log`。
+- 最终临时 PG 复核遇到一次容器初始化就绪检测竞态，Unix socket 已接受连接但最终 TCP 服务仍在重启。测试启动检查改为等待容器内 TCP 就绪后，准确发布源码的 12 个 UX/来源 PASS 结果与 41 个相关回归 PASS 结果全部通过，0 FAIL/SKIP；该环境失败日志也保留。
 - GitHub Actions 使用临时 PG16 与 race detection，按准确提交验收后才允许线上切换。实际 CI 和部署证据在 `evidence/ux-workflow-20261103/`。
 
 ## 发布约束
@@ -33,4 +34,11 @@
 
 ## 实际发布记录
 
-待验收完成后补充准确提交、CI 与服务器校验结果。
+2026-11-03 17:46（Asia/Shanghai）完成上线。
+
+- 运行源码提交：[4e0bfae2b871d2ab7279628b41918f4a6d9d3358](https://github.com/alpha302/scopedesk/commit/4e0bfae2b871d2ab7279628b41918f4a6d9d3358)，分支 `batch-p0-p1`。后续证据提交仅更新文档，不改变运行源码。
+- 五项 CI 全部成功：[目标流程验收](https://github.com/alpha302/scopedesk/actions/runs/41613011575)、[W04](https://github.com/alpha302/scopedesk/actions/runs/41613011434)、[W05](https://github.com/alpha302/scopedesk/actions/runs/41613011529)、[W26](https://github.com/alpha302/scopedesk/actions/runs/41613011467)、[登录回归](https://github.com/alpha302/scopedesk/actions/runs/41613011448)。目标流程产物含 23 项 UI、12 个 UX/来源 PASS 结果（3 个 API 测试及 8 组来源组合、父测试）与 41 个相关回归 PASS 结果，0 FAIL/SKIP。
+- 实际运行二进制 SHA-256：`9adf09e398b6f85d89d5b70e71089f9a9f5c4e58f66006a71db5c87ea9371079`。替换 9 个运行源码文件，无数据库迁移。
+- 备份：服务器 `/var/backups/scopedesk/before-ux-20261103-094558`，含旧程序/源码、配置、状态及可列出的数据库备份。切换前后核对用户表完整逻辑值与条数一致；配置、计划与授权未改变。没有通过测试触发生产采集或供应商请求。
+- 服务运行正常，内部及公网首页、脚本、样式都与提交内容的摘要一致；未登录 API 仍返回 401。[访问 ScopeDesk](http://47.103.214.77:8080/)。
+- 证据包括 `deployment-result.json`、`public-readiness.json`、`verification-result.json`、`release-manifest.json`、完整 CI 目标流程产物与本地页面截图。截图使用合成数据，实际生产服务通过嵌入页面及运行文件摘要验明。

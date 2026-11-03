@@ -1,0 +1,148 @@
+TAP version 13
+# Subtest: an ended job with a failed source is partial rather than successful
+ok 1 - an ended job with a failed source is partial rather than successful
+  ---
+  duration_ms: 3.517866
+  type: 'test'
+  ...
+# Subtest: all sources failing without retained results is a failed result
+ok 2 - all sources failing without retained results is a failed result
+  ---
+  duration_ms: 0.352888
+  type: 'test'
+  ...
+# Subtest: absence eligibility and evidence-only mode do not mean collection failed
+ok 3 - absence eligibility and evidence-only mode do not mean collection failed
+  ---
+  duration_ms: 1.119098
+  type: 'test'
+  ...
+# Subtest: old ended jobs without result evidence are explicitly unknown
+ok 4 - old ended jobs without result evidence are explicitly unknown
+  ---
+  duration_ms: 0.217991
+  type: 'test'
+  ...
+# Subtest: cancelled and running jobs keep their actual execution status
+ok 5 - cancelled and running jobs keep their actual execution status
+  ---
+  duration_ms: 0.344651
+  type: 'test'
+  ...
+# Subtest: HTTP permission is described separately from actual observations
+ok 6 - HTTP permission is described separately from actual observations
+  ---
+  duration_ms: 0.496609
+  type: 'test'
+  ...
+# Subtest: exact targets cannot enqueue subfinder and changing scope never expands authorization
+ok 7 - exact targets cannot enqueue subfinder and changing scope never expands authorization
+  ---
+  duration_ms: 0.642004
+  type: 'test'
+  ...
+# Subtest: source compatibility also respects evidence-only and custom manifest modes
+ok 8 - source compatibility also respects evidence-only and custom manifest modes
+  ---
+  duration_ms: 0.249384
+  type: 'test'
+  ...
+# Subtest: events use readable summaries and do not invent HTTP evidence for old records
+ok 9 - events use readable summaries and do not invent HTTP evidence for old records
+  ---
+  duration_ms: 0.626122
+  type: 'test'
+  ...
+# Subtest: same target issue streaks ignore other targets and keep changed runs visible
+ok 10 - same target issue streaks ignore other targets and keep changed runs visible
+  ---
+  duration_ms: 1.160352
+  type: 'test'
+  ...
+# Subtest: an old incompatible plan can still be disabled without widening its scope
+ok 11 - an old incompatible plan can still be disabled without widening its scope
+  ---
+  duration_ms: 1.720767
+  type: 'test'
+  ...
+# Subtest: source cleanup preserves compatible choices and reports unsaved plan changes
+ok 12 - source cleanup preserves compatible choices and reports unsaved plan changes
+  ---
+  duration_ms: 0.292257
+  type: 'test'
+  ...
+# Subtest: primary navigation has five entries and old pages remain grouped
+ok 13 - primary navigation has five entries and old pages remain grouped
+  ---
+  duration_ms: 0.36222
+  type: 'test'
+  ...
+# Subtest: manual runs use saved target defaults and block unsaved source changes
+ok 14 - manual runs use saved target defaults and block unsaved source changes
+  ---
+  duration_ms: 0.477988
+  type: 'test'
+  ...
+# Subtest: selecting targets never aliases or rewrites saved source configuration
+ok 15 - selecting targets never aliases or rewrites saved source configuration
+  ---
+  duration_ms: 7.752436
+  type: 'test'
+  ...
+# Subtest: editing a scope keeps limits and requires authorization confirmation again
+ok 16 - editing a scope keeps limits and requires authorization confirmation again
+  ---
+  duration_ms: 0.381339
+  type: 'test'
+  ...
+# Subtest: presets stay within project rate limits and apply only on selection
+ok 17 - presets stay within project rate limits and apply only on selection
+  ---
+  duration_ms: 0.39389
+  type: 'test'
+  ...
+# Subtest: batch target creation keeps failed domains for explicit retry
+ok 18 - batch target creation keeps failed domains for explicit retry
+  ---
+  duration_ms: 0.927243
+  type: 'test'
+  ...
+# Subtest: enterprise handoff carries project and domain without creating or probing
+ok 19 - enterprise handoff carries project and domain without creating or probing
+  ---
+  duration_ms: 0.473421
+  type: 'test'
+  ...
+# Subtest: target history requests a server-side scope filter rather than filtering a truncated global list
+ok 20 - target history requests a server-side scope filter rather than filtering a truncated global list
+  ---
+  duration_ms: 0.276544
+  type: 'test'
+  ...
+# Subtest: saved views whitelist filter keys and partition by account and project
+ok 21 - saved views whitelist filter keys and partition by account and project
+  ---
+  duration_ms: 0.282519
+  type: 'test'
+  ...
+# Subtest: confirming enterprise ownership immediately opens the prefilled target form
+ok 22 - confirming enterprise ownership immediately opens the prefilled target form
+  ---
+  duration_ms: 0.314483
+  type: 'test'
+  ...
+# Subtest: target-specific history groups repeated issues even when global recent jobs exclude them
+ok 23 - target-specific history groups repeated issues even when global recent jobs exclude them
+  ---
+  duration_ms: 0.28172
+  type: 'test'
+  ...
+1..23
+# tests 23
+# suites 0
+# pass 23
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 259.982186

@@ -1,0 +1,31 @@
+{
+  "completed_at": "2026-11-03T09:46:10.071120+00:00",
+  "release_commit": "4e0bfae2b871d2ab7279628b41918f4a6d9d3358",
+  "ci_run": "https://github.com/alpha302/scopedesk/actions/runs/41613011575",
+  "ci_passed": true,
+  "backup": "/var/backups/scopedesk/before-ux-20261103-094558",
+  "schema_before": 18,
+  "schema_after": 18,
+  "user_table_counts_preserved": true,
+  "user_table_values_preserved": true,
+  "configuration_unchanged": true,
+  "plans_unchanged": true,
+  "authorization_unchanged": true,
+  "binary_sha256": "9adf09e398b6f85d89d5b70e71089f9a9f5c4e58f66006a71db5c87ea9371079",
+  "running_binary_verified": true,
+  "embedded_ui_verified": true,
+  "readiness": true,
+  "authentication_required": true,
+  "test_target_requests": 0,
+  "changed_runtime_files": [
+    "api_v2.go",
+    "enterprise_api.go",
+    "plugin_api.go",
+    "queue.go",
+    "source_capabilities.go",
+    "source_policy.go",
+    "web/app.js",
+    "web/index.html",
+    "web/style.css"
+  ]
+}

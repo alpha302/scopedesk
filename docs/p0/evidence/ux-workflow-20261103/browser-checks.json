@@ -1,0 +1,25 @@
+{
+  "synthetic_local_data": true,
+  "main_navigation_count": 5,
+  "main_navigation_unique": true,
+  "target_tabs": [
+    "规则",
+    "数据源",
+    "计划",
+    "运行历史"
+  ],
+  "basic_asset_filters": 4,
+  "additional_ip_expansion_verified": true,
+  "saved_view_survived_reload": true,
+  "enterprise_domain_and_project_prefilled": true,
+  "enterprise_auth_confirmation_unchecked": true,
+  "exact_subfinder_disabled": true,
+  "repeated_issue_fold_verified": true,
+  "single_workspace_management_collapsed": true,
+  "mobile": {
+    "width": 390,
+    "document_width": 390,
+    "menu_count": 5
+  },
+  "target_event_filter_verified": true
+}

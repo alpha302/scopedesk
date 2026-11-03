@@ -1,0 +1,109 @@
+{"Time":"2026-11-03T09:42:03.285709553Z","Action":"start","Package":"scopedesk"}
+{"Time":"2026-11-03T09:42:03.300676443Z","Action":"run","Package":"scopedesk","Test":"TestSourcePolicyCombinations"}
+{"Time":"2026-11-03T09:42:03.300702477Z","Action":"output","Package":"scopedesk","Test":"TestSourcePolicyCombinations","Output":"=== RUN   TestSourcePolicyCombinations\n"}
+{"Time":"2026-11-03T09:42:03.300750612Z","Action":"run","Package":"scopedesk","Test":"TestSourcePolicyCombinations/exact_subfinder"}
+{"Time":"2026-11-03T09:42:03.300757703Z","Action":"output","Package":"scopedesk","Test":"TestSourcePolicyCombinations/exact_subfinder","Output":"=== RUN   TestSourcePolicyCombinations/exact_subfinder\n"}
+{"Time":"2026-11-03T09:42:03.3008558Z","Action":"output","Package":"scopedesk","Test":"TestSourcePolicyCombinations/exact_subfinder","Output":"--- PASS: TestSourcePolicyCombinations/exact_subfinder (0.00s)\n"}
+{"Time":"2026-11-03T09:42:03.300870185Z","Action":"pass","Package":"scopedesk","Test":"TestSourcePolicyCombinations/exact_subfinder","Elapsed":0}
+{"Time":"2026-11-03T09:42:03.300901133Z","Action":"run","Package":"scopedesk","Test":"TestSourcePolicyCombinations/subdomain_subfinder"}
+{"Time":"2026-11-03T09:42:03.300903638Z","Action":"output","Package":"scopedesk","Test":"TestSourcePolicyCombinations/subdomain_subfinder","Output":"=== RUN   TestSourcePolicyCombinations/subdomain_subfinder\n"}
+{"Time":"2026-11-03T09:42:03.300965329Z","Action":"output","Package":"scopedesk","Test":"TestSourcePolicyCombinations/subdomain_subfinder","Output":"--- PASS: TestSourcePolicyCombinations/subdomain_subfinder (0.00s)\n"}
+{"Time":"2026-11-03T09:42:03.300972784Z","Action":"pass","Package":"scopedesk","Test":"TestSourcePolicyCombinations/subdomain_subfinder","Elapsed":0}
+{"Time":"2026-11-03T09:42:03.301031029Z","Action":"run","Package":"scopedesk","Test":"TestSourcePolicyCombinations/evidence_subfinder"}
+{"Time":"2026-11-03T09:42:03.301034148Z","Action":"output","Package":"scopedesk","Test":"TestSourcePolicyCombinations/evidence_subfinder","Output":"=== RUN   TestSourcePolicyCombinations/evidence_subfinder\n"}
+{"Time":"2026-11-03T09:42:03.301089672Z","Action":"output","Package":"scopedesk","Test":"TestSourcePolicyCombinations/evidence_subfinder","Output":"--- PASS: TestSourcePolicyCombinations/evidence_subfinder (0.00s)\n"}
+{"Time":"2026-11-03T09:42:03.301096125Z","Action":"pass","Package":"scopedesk","Test":"TestSourcePolicyCombinations/evidence_subfinder","Elapsed":0}
+{"Time":"2026-11-03T09:42:03.30116947Z","Action":"run","Package":"scopedesk","Test":"TestSourcePolicyCombinations/builtin_exact"}
+{"Time":"2026-11-03T09:42:03.301173174Z","Action":"output","Package":"scopedesk","Test":"TestSourcePolicyCombinations/builtin_exact","Output":"=== RUN   TestSourcePolicyCombinations/builtin_exact\n"}
+{"Time":"2026-11-03T09:42:03.301221531Z","Action":"output","Package":"scopedesk","Test":"TestSourcePolicyCombinations/builtin_exact","Output":"--- PASS: TestSourcePolicyCombinations/builtin_exact (0.00s)\n"}
+{"Time":"2026-11-03T09:42:03.301225694Z","Action":"pass","Package":"scopedesk","Test":"TestSourcePolicyCombinations/builtin_exact","Elapsed":0}
+{"Time":"2026-11-03T09:42:03.301260704Z","Action":"run","Package":"scopedesk","Test":"TestSourcePolicyCombinations/builtin_cidr"}
+{"Time":"2026-11-03T09:42:03.301263693Z","Action":"output","Package":"scopedesk","Test":"TestSourcePolicyCombinations/builtin_cidr","Output":"=== RUN   TestSourcePolicyCombinations/builtin_cidr\n"}
+{"Time":"2026-11-03T09:42:03.301316696Z","Action":"output","Package":"scopedesk","Test":"TestSourcePolicyCombinations/builtin_cidr","Output":"--- PASS: TestSourcePolicyCombinations/builtin_cidr (0.00s)\n"}
+{"Time":"2026-11-03T09:42:03.301332016Z","Action":"pass","Package":"scopedesk","Test":"TestSourcePolicyCombinations/builtin_cidr","Elapsed":0}
+{"Time":"2026-11-03T09:42:03.301376682Z","Action":"run","Package":"scopedesk","Test":"TestSourcePolicyCombinations/custom_declared"}
+{"Time":"2026-11-03T09:42:03.301379966Z","Action":"output","Package":"scopedesk","Test":"TestSourcePolicyCombinations/custom_declared","Output":"=== RUN   TestSourcePolicyCombinations/custom_declared\n"}
+{"Time":"2026-11-03T09:42:03.301432852Z","Action":"output","Package":"scopedesk","Test":"TestSourcePolicyCombinations/custom_declared","Output":"--- PASS: TestSourcePolicyCombinations/custom_declared (0.00s)\n"}
+{"Time":"2026-11-03T09:42:03.3014377Z","Action":"pass","Package":"scopedesk","Test":"TestSourcePolicyCombinations/custom_declared","Elapsed":0}
+{"Time":"2026-11-03T09:42:03.301471034Z","Action":"run","Package":"scopedesk","Test":"TestSourcePolicyCombinations/custom_unrestricted"}
+{"Time":"2026-11-03T09:42:03.301474406Z","Action":"output","Package":"scopedesk","Test":"TestSourcePolicyCombinations/custom_unrestricted","Output":"=== RUN   TestSourcePolicyCombinations/custom_unrestricted\n"}
+{"Time":"2026-11-03T09:42:03.301514941Z","Action":"output","Package":"scopedesk","Test":"TestSourcePolicyCombinations/custom_unrestricted","Output":"--- PASS: TestSourcePolicyCombinations/custom_unrestricted (0.00s)\n"}
+{"Time":"2026-11-03T09:42:03.301521256Z","Action":"pass","Package":"scopedesk","Test":"TestSourcePolicyCombinations/custom_unrestricted","Elapsed":0}
+{"Time":"2026-11-03T09:42:03.301554725Z","Action":"run","Package":"scopedesk","Test":"TestSourcePolicyCombinations/disabled"}
+{"Time":"2026-11-03T09:42:03.301557649Z","Action":"output","Package":"scopedesk","Test":"TestSourcePolicyCombinations/disabled","Output":"=== RUN   TestSourcePolicyCombinations/disabled\n"}
+{"Time":"2026-11-03T09:42:03.301598976Z","Action":"output","Package":"scopedesk","Test":"TestSourcePolicyCombinations/disabled","Output":"--- PASS: TestSourcePolicyCombinations/disabled (0.00s)\n"}
+{"Time":"2026-11-03T09:42:03.301603258Z","Action":"pass","Package":"scopedesk","Test":"TestSourcePolicyCombinations/disabled","Elapsed":0}
+{"Time":"2026-11-03T09:42:03.301651594Z","Action":"output","Package":"scopedesk","Test":"TestSourcePolicyCombinations","Output":"--- PASS: TestSourcePolicyCombinations (0.00s)\n"}
+{"Time":"2026-11-03T09:42:03.301657457Z","Action":"pass","Package":"scopedesk","Test":"TestSourcePolicyCombinations","Elapsed":0}
+{"Time":"2026-11-03T09:42:03.301711819Z","Action":"run","Package":"scopedesk","Test":"TestUXIncompatibleSourcesNeverCreateJobs"}
+{"Time":"2026-11-03T09:42:03.301715279Z","Action":"output","Package":"scopedesk","Test":"TestUXIncompatibleSourcesNeverCreateJobs","Output":"=== RUN   TestUXIncompatibleSourcesNeverCreateJobs\n"}
+{"Time":"2026-11-03T09:42:03.422748166Z","Action":"output","Package":"scopedesk","Test":"TestUXIncompatibleSourcesNeverCreateJobs","Output":"2026/11/03 09:42:03 OK   00001_core.sql (90.84ms)\n"}
+{"Time":"2026-11-03T09:42:03.435004177Z","Action":"output","Package":"scopedesk","Test":"TestUXIncompatibleSourcesNeverCreateJobs","Output":"2026/11/03 09:42:03 OK   00002_security_rules.sql (8.77ms)\n"}
+{"Time":"2026-11-03T09:42:03.526651372Z","Action":"output","Package":"scopedesk","Test":"TestUXIncompatibleSourcesNeverCreateJobs","Output":"2026/11/03 09:42:03 OK   00003_discovery.sql (74.16ms)\n"}
+{"Time":"2026-11-03T09:42:03.540856055Z","Action":"output","Package":"scopedesk","Test":"TestUXIncompatibleSourcesNeverCreateJobs","Output":"2026/11/03 09:42:03 OK   00004_plugins.sql (10.38ms)\n"}
+{"Time":"2026-11-03T09:42:03.546554158Z","Action":"output","Package":"scopedesk","Test":"TestUXIncompatibleSourcesNeverCreateJobs","Output":"2026/11/03 09:42:03 OK   00005_remove_scope_expiry.sql (4.54ms)\n"}
+{"Time":"2026-11-03T09:42:03.553604548Z","Action":"output","Package":"scopedesk","Test":"TestUXIncompatibleSourcesNeverCreateJobs","Output":"2026/11/03 09:42:03 OK   00006_e3_scheduler_fixes.sql (6.52ms)\n"}
+{"Time":"2026-11-03T09:42:03.561621379Z","Action":"output","Package":"scopedesk","Test":"TestUXIncompatibleSourcesNeverCreateJobs","Output":"2026/11/03 09:42:03 OK   00007_plugin_evidence.sql (5.6ms)\n"}
+{"Time":"2026-11-03T09:42:03.569834584Z","Action":"output","Package":"scopedesk","Test":"TestUXIncompatibleSourcesNeverCreateJobs","Output":"2026/11/03 09:42:03 OK   00008_execution_policy.sql (6.59ms)\n"}
+{"Time":"2026-11-03T09:42:03.582272558Z","Action":"output","Package":"scopedesk","Test":"TestUXIncompatibleSourcesNeverCreateJobs","Output":"2026/11/03 09:42:03 OK   00009_favicon_hashes.sql (8.89ms)\n"}
+{"Time":"2026-11-03T09:42:03.618378035Z","Action":"output","Package":"scopedesk","Test":"TestUXIncompatibleSourcesNeverCreateJobs","Output":"2026/11/03 09:42:03 OK   00010_projects.sql (33.58ms)\n"}
+{"Time":"2026-11-03T09:42:03.622358987Z","Action":"output","Package":"scopedesk","Test":"TestUXIncompatibleSourcesNeverCreateJobs","Output":"2026/11/03 09:42:03 OK   00011_network_evidence.sql (3.87ms)\n"}
+{"Time":"2026-11-03T09:42:03.629423198Z","Action":"output","Package":"scopedesk","Test":"TestUXIncompatibleSourcesNeverCreateJobs","Output":"2026/11/03 09:42:03 OK   00012_fingerprint_evidence.sql (3.53ms)\n"}
+{"Time":"2026-11-03T09:42:03.655914974Z","Action":"output","Package":"scopedesk","Test":"TestUXIncompatibleSourcesNeverCreateJobs","Output":"2026/11/03 09:42:03 OK   00013_enterprise_exploration.sql (19.11ms)\n"}
+{"Time":"2026-11-03T09:42:03.704302482Z","Action":"output","Package":"scopedesk","Test":"TestUXIncompatibleSourcesNeverCreateJobs","Output":"2026/11/03 09:42:03 OK   00014_passive_sources.sql (30.52ms)\n"}
+{"Time":"2026-11-03T09:42:03.717695046Z","Action":"output","Package":"scopedesk","Test":"TestUXIncompatibleSourcesNeverCreateJobs","Output":"2026/11/03 09:42:03 OK   00015_passive_credits_only.sql (10.75ms)\n"}
+{"Time":"2026-11-03T09:42:03.723259881Z","Action":"output","Package":"scopedesk","Test":"TestUXIncompatibleSourcesNeverCreateJobs","Output":"2026/11/03 09:42:03 OK   00016_event_dedupe_legacy_lookup.sql (2.96ms)\n"}
+{"Time":"2026-11-03T09:42:03.728104536Z","Action":"output","Package":"scopedesk","Test":"TestUXIncompatibleSourcesNeverCreateJobs","Output":"2026/11/03 09:42:03 OK   00017_dns_observation.sql (2.32ms)\n"}
+{"Time":"2026-11-03T09:42:03.732609528Z","Action":"output","Package":"scopedesk","Test":"TestUXIncompatibleSourcesNeverCreateJobs","Output":"2026/11/03 09:42:03 OK   00018_asset_classification.sql (3.49ms)\n"}
+{"Time":"2026-11-03T09:42:03.732630788Z","Action":"output","Package":"scopedesk","Test":"TestUXIncompatibleSourcesNeverCreateJobs","Output":"2026/11/03 09:42:03 goose: successfully migrated database to version: 18\n"}
+{"Time":"2026-11-03T09:42:04.021333955Z","Action":"output","Package":"scopedesk","Test":"TestUXIncompatibleSourcesNeverCreateJobs","Output":"--- PASS: TestUXIncompatibleSourcesNeverCreateJobs (0.72s)\n"}
+{"Time":"2026-11-03T09:42:04.021385126Z","Action":"pass","Package":"scopedesk","Test":"TestUXIncompatibleSourcesNeverCreateJobs","Elapsed":0.72}
+{"Time":"2026-11-03T09:42:04.021404765Z","Action":"run","Package":"scopedesk","Test":"TestUXSavedDefaultsAndTargetHistory"}
+{"Time":"2026-11-03T09:42:04.021409349Z","Action":"output","Package":"scopedesk","Test":"TestUXSavedDefaultsAndTargetHistory","Output":"=== RUN   TestUXSavedDefaultsAndTargetHistory\n"}
+{"Time":"2026-11-03T09:42:04.129966819Z","Action":"output","Package":"scopedesk","Test":"TestUXSavedDefaultsAndTargetHistory","Output":"2026/11/03 09:42:04 OK   00001_core.sql (81.81ms)\n"}
+{"Time":"2026-11-03T09:42:04.143671983Z","Action":"output","Package":"scopedesk","Test":"TestUXSavedDefaultsAndTargetHistory","Output":"2026/11/03 09:42:04 OK   00002_security_rules.sql (9.36ms)\n"}
+{"Time":"2026-11-03T09:42:04.235124157Z","Action":"output","Package":"scopedesk","Test":"TestUXSavedDefaultsAndTargetHistory","Output":"2026/11/03 09:42:04 OK   00003_discovery.sql (77.88ms)\n"}
+{"Time":"2026-11-03T09:42:04.249234379Z","Action":"output","Package":"scopedesk","Test":"TestUXSavedDefaultsAndTargetHistory","Output":"2026/11/03 09:42:04 OK   00004_plugins.sql (10.92ms)\n"}
+{"Time":"2026-11-03T09:42:04.256727178Z","Action":"output","Package":"scopedesk","Test":"TestUXSavedDefaultsAndTargetHistory","Output":"2026/11/03 09:42:04 OK   00005_remove_scope_expiry.sql (4.75ms)\n"}
+{"Time":"2026-11-03T09:42:04.267305233Z","Action":"output","Package":"scopedesk","Test":"TestUXSavedDefaultsAndTargetHistory","Output":"2026/11/03 09:42:04 OK   00006_e3_scheduler_fixes.sql (6.89ms)\n"}
+{"Time":"2026-11-03T09:42:04.277373434Z","Action":"output","Package":"scopedesk","Test":"TestUXSavedDefaultsAndTargetHistory","Output":"2026/11/03 09:42:04 OK   00007_plugin_evidence.sql (6.47ms)\n"}
+{"Time":"2026-11-03T09:42:04.28739689Z","Action":"output","Package":"scopedesk","Test":"TestUXSavedDefaultsAndTargetHistory","Output":"2026/11/03 09:42:04 OK   00008_execution_policy.sql (6.78ms)\n"}
+{"Time":"2026-11-03T09:42:04.298395489Z","Action":"output","Package":"scopedesk","Test":"TestUXSavedDefaultsAndTargetHistory","Output":"2026/11/03 09:42:04 OK   00009_favicon_hashes.sql (9.52ms)\n"}
+{"Time":"2026-11-03T09:42:04.335805096Z","Action":"output","Package":"scopedesk","Test":"TestUXSavedDefaultsAndTargetHistory","Output":"2026/11/03 09:42:04 OK   00010_projects.sql (35.03ms)\n"}
+{"Time":"2026-11-03T09:42:04.34040729Z","Action":"output","Package":"scopedesk","Test":"TestUXSavedDefaultsAndTargetHistory","Output":"2026/11/03 09:42:04 OK   00011_network_evidence.sql (4ms)\n"}
+{"Time":"2026-11-03T09:42:04.344159653Z","Action":"output","Package":"scopedesk","Test":"TestUXSavedDefaultsAndTargetHistory","Output":"2026/11/03 09:42:04 OK   00012_fingerprint_evidence.sql (3.6ms)\n"}
+{"Time":"2026-11-03T09:42:04.367354124Z","Action":"output","Package":"scopedesk","Test":"TestUXSavedDefaultsAndTargetHistory","Output":"2026/11/03 09:42:04 OK   00013_enterprise_exploration.sql (20.14ms)\n"}
+{"Time":"2026-11-03T09:42:04.407212242Z","Action":"output","Package":"scopedesk","Test":"TestUXSavedDefaultsAndTargetHistory","Output":"2026/11/03 09:42:04 OK   00014_passive_sources.sql (30.59ms)\n"}
+{"Time":"2026-11-03T09:42:04.420153966Z","Action":"output","Package":"scopedesk","Test":"TestUXSavedDefaultsAndTargetHistory","Output":"2026/11/03 09:42:04 OK   00015_passive_credits_only.sql (11.15ms)\n"}
+{"Time":"2026-11-03T09:42:04.423721838Z","Action":"output","Package":"scopedesk","Test":"TestUXSavedDefaultsAndTargetHistory","Output":"2026/11/03 09:42:04 OK   00016_event_dedupe_legacy_lookup.sql (2.99ms)\n"}
+{"Time":"2026-11-03T09:42:04.42836655Z","Action":"output","Package":"scopedesk","Test":"TestUXSavedDefaultsAndTargetHistory","Output":"2026/11/03 09:42:04 OK   00017_dns_observation.sql (2.52ms)\n"}
+{"Time":"2026-11-03T09:42:04.434085195Z","Action":"output","Package":"scopedesk","Test":"TestUXSavedDefaultsAndTargetHistory","Output":"2026/11/03 09:42:04 OK   00018_asset_classification.sql (3.36ms)\n"}
+{"Time":"2026-11-03T09:42:04.434105879Z","Action":"output","Package":"scopedesk","Test":"TestUXSavedDefaultsAndTargetHistory","Output":"2026/11/03 09:42:04 goose: successfully migrated database to version: 18\n"}
+{"Time":"2026-11-03T09:42:04.733373171Z","Action":"output","Package":"scopedesk","Test":"TestUXSavedDefaultsAndTargetHistory","Output":"--- PASS: TestUXSavedDefaultsAndTargetHistory (0.71s)\n"}
+{"Time":"2026-11-03T09:42:04.733427191Z","Action":"pass","Package":"scopedesk","Test":"TestUXSavedDefaultsAndTargetHistory","Elapsed":0.71}
+{"Time":"2026-11-03T09:42:04.733443555Z","Action":"run","Package":"scopedesk","Test":"TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent"}
+{"Time":"2026-11-03T09:42:04.733448125Z","Action":"output","Package":"scopedesk","Test":"TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent","Output":"=== RUN   TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent\n"}
+{"Time":"2026-11-03T09:42:04.844593233Z","Action":"output","Package":"scopedesk","Test":"TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent","Output":"2026/11/03 09:42:04 OK   00001_core.sql (82.31ms)\n"}
+{"Time":"2026-11-03T09:42:04.8568212Z","Action":"output","Package":"scopedesk","Test":"TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent","Output":"2026/11/03 09:42:04 OK   00002_security_rules.sql (8.7ms)\n"}
+{"Time":"2026-11-03T09:42:04.944848016Z","Action":"output","Package":"scopedesk","Test":"TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent","Output":"2026/11/03 09:42:04 OK   00003_discovery.sql (74.33ms)\n"}
+{"Time":"2026-11-03T09:42:04.957404933Z","Action":"output","Package":"scopedesk","Test":"TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent","Output":"2026/11/03 09:42:04 OK   00004_plugins.sql (10.13ms)\n"}
+{"Time":"2026-11-03T09:42:04.966228925Z","Action":"output","Package":"scopedesk","Test":"TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent","Output":"2026/11/03 09:42:04 OK   00005_remove_scope_expiry.sql (4.76ms)\n"}
+{"Time":"2026-11-03T09:42:04.973951293Z","Action":"output","Package":"scopedesk","Test":"TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent","Output":"2026/11/03 09:42:04 OK   00006_e3_scheduler_fixes.sql (6.54ms)\n"}
+{"Time":"2026-11-03T09:42:04.980215466Z","Action":"output","Package":"scopedesk","Test":"TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent","Output":"2026/11/03 09:42:04 OK   00007_plugin_evidence.sql (5.73ms)\n"}
+{"Time":"2026-11-03T09:42:04.987538804Z","Action":"output","Package":"scopedesk","Test":"TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent","Output":"2026/11/03 09:42:04 OK   00008_execution_policy.sql (6.87ms)\n"}
+{"Time":"2026-11-03T09:42:04.999770442Z","Action":"output","Package":"scopedesk","Test":"TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent","Output":"2026/11/03 09:42:04 OK   00009_favicon_hashes.sql (9.11ms)\n"}
+{"Time":"2026-11-03T09:42:05.036989242Z","Action":"output","Package":"scopedesk","Test":"TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent","Output":"2026/11/03 09:42:05 OK   00010_projects.sql (34.1ms)\n"}
+{"Time":"2026-11-03T09:42:05.041359821Z","Action":"output","Package":"scopedesk","Test":"TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent","Output":"2026/11/03 09:42:05 OK   00011_network_evidence.sql (3.89ms)\n"}
+{"Time":"2026-11-03T09:42:05.047313419Z","Action":"output","Package":"scopedesk","Test":"TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent","Output":"2026/11/03 09:42:05 OK   00012_fingerprint_evidence.sql (3.53ms)\n"}
+{"Time":"2026-11-03T09:42:05.075683257Z","Action":"output","Package":"scopedesk","Test":"TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent","Output":"2026/11/03 09:42:05 OK   00013_enterprise_exploration.sql (19.41ms)\n"}
+{"Time":"2026-11-03T09:42:05.117566303Z","Action":"output","Package":"scopedesk","Test":"TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent","Output":"2026/11/03 09:42:05 OK   00014_passive_sources.sql (31.16ms)\n"}
+{"Time":"2026-11-03T09:42:05.132471602Z","Action":"output","Package":"scopedesk","Test":"TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent","Output":"2026/11/03 09:42:05 OK   00015_passive_credits_only.sql (11.5ms)\n"}
+{"Time":"2026-11-03T09:42:05.135640373Z","Action":"output","Package":"scopedesk","Test":"TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent","Output":"2026/11/03 09:42:05 OK   00016_event_dedupe_legacy_lookup.sql (2.7ms)\n"}
+{"Time":"2026-11-03T09:42:05.13861143Z","Action":"output","Package":"scopedesk","Test":"TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent","Output":"2026/11/03 09:42:05 OK   00017_dns_observation.sql (2.47ms)\n"}
+{"Time":"2026-11-03T09:42:05.144976174Z","Action":"output","Package":"scopedesk","Test":"TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent","Output":"2026/11/03 09:42:05 OK   00018_asset_classification.sql (3.51ms)\n"}
+{"Time":"2026-11-03T09:42:05.14499944Z","Action":"output","Package":"scopedesk","Test":"TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent","Output":"2026/11/03 09:42:05 goose: successfully migrated database to version: 18\n"}
+{"Time":"2026-11-03T09:42:05.492107697Z","Action":"output","Package":"scopedesk","Test":"TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent","Output":"--- PASS: TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent (0.76s)\n"}
+{"Time":"2026-11-03T09:42:05.492158667Z","Action":"pass","Package":"scopedesk","Test":"TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent","Elapsed":0.76}
+{"Time":"2026-11-03T09:42:05.492351444Z","Action":"output","Package":"scopedesk","Output":"PASS\n"}
+{"Time":"2026-11-03T09:42:06.496471152Z","Action":"output","Package":"scopedesk","Output":"ok  \tscopedesk\t3.211s\n"}
+{"Time":"2026-11-03T09:42:06.496534276Z","Action":"pass","Package":"scopedesk","Elapsed":3.211}
