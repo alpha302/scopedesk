@@ -2,14 +2,8 @@ package main
 
 import (
 	"context"
-	"crypto/sha256"
-	"errors"
-	"fmt"
 	"net/netip"
-	"strings"
 	"testing"
-
-	"github.com/jackc/pgx/v5/pgconn"
 )
 
 // Characterization, not acceptance tests. Remove the old expectation when the
@@ -41,15 +35,12 @@ func TestP0LongEventKey(t *testing.T) {
 		t.Fatal("P0 transaction failed")
 	}
 	defer tx.Rollback(ctx)
-	var detail strings.Builder
-	for i := 0; i < 1024; i++ {
-		sum := sha256.Sum256([]byte(fmt.Sprintf("p0-long-evidence-%d", i)))
-		fmt.Fprintf(&detail, "%x", sum)
+	scope := insertScope(t, s, 1)
+	if err = addEvent(ctx, tx, scope.ID, 1, 0, "IP_CHANGED", w01LongDetail()); err != nil {
+		t.Fatal("W01 regression: legal 64KiB event must succeed")
 	}
-	err = addEvent(ctx, tx, 1, 1, 0, "IP_CHANGED", map[string]string{"evidence": detail.String()})
-	var pgErr *pgconn.PgError
-	if !errors.As(err, &pgErr) || pgErr.Code != "54000" {
-		t.Fatal("expected current oversized B-tree key failure; investigate and update W01 reproduction")
+	if err = tx.Commit(ctx); err != nil {
+		t.Fatal("W01 regression: transaction must commit")
 	}
-	t.Log("W01 reproduced: addEvent rejected 64KiB synthetic detail with SQLSTATE 54000; transaction rolled back")
+	t.Log("W01 fixed: legal 64KiB event commits; old failing reproduction is archived with the red acceptance run")
 }

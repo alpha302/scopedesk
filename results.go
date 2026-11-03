@@ -4,7 +4,6 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
-	"fmt"
 	"slices"
 	"time"
 
@@ -32,16 +31,6 @@ type ResultWriter interface {
 	WriteResults(context.Context, Run, []Observation, bool) (map[string]any, error)
 }
 
-func addEvent(ctx context.Context, tx pgx.Tx, scope, asset, job int64, kind string, detail any) error {
-	raw, _ := json.Marshal(detail)
-	key := fmt.Sprintf("%d:%s:%s:%x", asset, kind, time.Now().In(shanghai).Format("2006-01-02"), raw)
-	tag, e := tx.Exec(ctx, "INSERT INTO event_dedupes(key)VALUES($1)ON CONFLICT DO NOTHING", key)
-	if e != nil || tag.RowsAffected() == 0 {
-		return e
-	}
-	_, e = tx.Exec(ctx, "INSERT INTO asset_events(scope_id,asset_id,job_id,type,detail,dedupe_key)VALUES($1,$2,$3,$4,$5,$6)", scope, asset, job, kind, raw, key)
-	return e
-}
 func (s *Store) WriteResults(ctx context.Context, run Run, observations []Observation, complete bool) (map[string]any, error) {
 	tx, e := s.DB.Begin(ctx)
 	if e != nil {
