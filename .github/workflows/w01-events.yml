@@ -1,0 +1,58 @@
+name: W01 event key acceptance
+on:
+  workflow_dispatch:
+  push:
+    branches: [batch-p0-p1]
+    paths:
+      - 'event_dedupe*.go'
+      - 'results.go'
+      - 'p0_reproduction_test.go'
+      - 'migrations/00016*'
+      - '.github/workflows/w01-events.yml'
+permissions:
+  contents: read
+jobs:
+  events:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:16-alpine@sha256:0cefaabd882e42bcb2a2f3dc56d3ce4770560ba62fd7f197f1a2e008fd5731ab
+        env:
+          POSTGRES_DB: scopedesk_p0
+          POSTGRES_USER: scopedesk_p0
+          POSTGRES_HOST_AUTH_METHOD: trust
+        ports: ['127.0.0.1:5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U scopedesk_p0 -d scopedesk_p0"
+          --health-interval 5s --health-timeout 5s --health-retries 12
+    env:
+      DATABASE_URL: postgres://scopedesk_p0@127.0.0.1:5432/scopedesk_p0?sslmode=disable
+      P0_ISOLATED: ephemeral-ci
+      P0_ARTIFACT_DIR: ${{ github.workspace }}/w01-artifacts
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+      - name: Prepare isolated key and evidence
+        shell: bash
+        run: |
+          key=$(openssl rand -base64 32)
+          echo "::add-mask::$key"
+          echo "RECON_MASTER_KEY=$key" >> "$GITHUB_ENV"
+          mkdir -p "$P0_ARTIFACT_DIR"
+          git rev-parse HEAD > "$P0_ARTIFACT_DIR/commit.txt"
+          sha256sum migrations/*.sql results.go event_dedupe*.go > "$P0_ARTIFACT_DIR/source.sha256"
+      - name: W01 acceptance with race detection
+        run: go test -race -json -count=1 -timeout=8m -run '^TestW01' . > "$P0_ARTIFACT_DIR/w01-tests.jsonl"
+      - name: Relevant safety and write regressions
+        run: go test -race -json -count=1 -timeout=5m -run '^(TestP0DatabaseBoundary|TestScopeGuardBoundaries|TestBudgetIsAtomic|TestPostgresDiffIdempotencyAndPartialFailure|TestPostgresQueueClaimsAndLeaseRecovery|TestPostgresCrossWorkerRateAndEncryptedSettings|TestPostgresCandidateSnapshotCannotAuthorizeProbeOrCommit)$' . > "$P0_ARTIFACT_DIR/regression-tests.jsonl"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: w01-events-${{ github.sha }}
+          path: w01-artifacts/
+          retention-days: 14
+          if-no-files-found: error
