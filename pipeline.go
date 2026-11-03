@@ -18,6 +18,8 @@ import (
 	"strconv"
 	"strings"
 	"time"
+
+	"golang.org/x/net/publicsuffix"
 )
 
 type Observation struct {
@@ -406,11 +408,27 @@ func observationKey(o Observation) string {
 	sum := sha256.Sum256(raw)
 	return hex.EncodeToString(sum[:])
 }
-func categoryScore(host string, active bool) (string, int) {
+func categoryScore(host string, active bool, scopeRoot ...string) (string, int) {
 	score := 10
 	category := "未分类"
+	// Only subdomain labels carry service hints. Never classify the registrable
+	// brand or a configured scope root, including private PSL suffixes.
+	labels := ""
+	if h, err := normalizeHost(host); err == nil {
+		if _, err := netip.ParseAddr(h); err != nil {
+			root, err := publicsuffix.EffectiveTLDPlusOne(h)
+			if err == nil {
+				if len(scopeRoot) > 0 {
+					if s, err := normalizeHost(scopeRoot[0]); err == nil && (s == root || strings.HasSuffix(s, "."+root)) && (h == s || strings.HasSuffix(h, "."+s)) {
+						root = s
+					}
+				}
+				labels = strings.TrimSuffix(h, root)
+			}
+		}
+	}
 	for _, pair := range [][2]string{{"api", "API"}, {"sso", "认证 SSO"}, {"admin", "支撑平台"}, {"dev", "开发测试"}, {"test", "开发测试"}, {"uat", "开发测试"}} {
-		if strings.Contains(strings.ToLower(host), pair[0]) {
+		if categoryTokenMatch(labels, pair[0]) {
 			category = pair[1]
 			score += 20
 			break
@@ -420,6 +438,25 @@ func categoryScore(host string, active bool) (string, int) {
 		score += 10
 	}
 	return category, score
+}
+
+func categoryTokenMatch(labels, keyword string) bool {
+	for _, label := range strings.Split(labels, ".") {
+		// Punycode payload is encoded text, not a sequence of service words.
+		if strings.HasPrefix(label, "xn--") {
+			continue
+		}
+		for _, token := range strings.Split(label, "-") {
+			if !strings.HasPrefix(token, keyword) {
+				continue
+			}
+			suffix := strings.TrimPrefix(token, keyword)
+			if strings.Trim(suffix, "0123456789") == "" {
+				return true
+			}
+		}
+	}
+	return false
 }
 func intParam(raw string, fallback, minValue, maxValue int) int {
 	v, e := strconv.Atoi(raw)

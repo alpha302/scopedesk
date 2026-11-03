@@ -96,7 +96,7 @@ func (s *Store) WriteResults(ctx context.Context, run Run, observations []Observ
 			current.First = current.Last
 			current.Status = "new"
 			current.Tags = []string{}
-			current.Category, current.Score = categoryScore(ob.Host, ob.Alive != nil && *ob.Alive)
+			current.Category, current.Score = categoryScore(ob.Host, ob.Alive != nil && *ob.Alive, guard.Scope.Domain)
 			current.IPs = []string{}
 			current.CNames = []string{}
 			current.Sources = []string{}

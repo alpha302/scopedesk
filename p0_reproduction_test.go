@@ -11,10 +11,10 @@ import (
 func TestP0CharacterizeClassification(t *testing.T) {
 	for _, host := range []string{"contest.example.test", "capital.example.test"} {
 		category, score := categoryScore(host, false)
-		if category == "未分类" {
-			t.Fatalf("baseline changed for %s; update W05 reproduction status", host)
+		if category != "未分类" || score != 10 {
+			t.Fatalf("W05 regression for %s: %s/%d", host, category, score)
 		}
-		t.Logf("W05 current false-positive fixture: host=%s category=%s score=%d", host, category, score)
+		t.Logf("W05 boundary regression: host=%s category=%s score=%d", host, category, score)
 	}
 }
 
