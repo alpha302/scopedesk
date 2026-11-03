@@ -1,0 +1,88 @@
+{"Time":"2026-11-03T03:19:54.033723274Z","Action":"start","Package":"scopedesk"}
+{"Time":"2026-11-03T03:19:54.047424471Z","Action":"run","Package":"scopedesk","Test":"TestW04PassiveAbsenceNeverChangesLiveState"}
+{"Time":"2026-11-03T03:19:54.047448497Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveAbsenceNeverChangesLiveState","Output":"=== RUN   TestW04PassiveAbsenceNeverChangesLiveState\n"}
+{"Time":"2026-11-03T03:19:54.185182006Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveAbsenceNeverChangesLiveState","Output":"2026/11/03 03:19:54 OK   00001_core.sql (105.51ms)\n"}
+{"Time":"2026-11-03T03:19:54.197355536Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveAbsenceNeverChangesLiveState","Output":"2026/11/03 03:19:54 OK   00002_security_rules.sql (8.02ms)\n"}
+{"Time":"2026-11-03T03:19:54.275058857Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveAbsenceNeverChangesLiveState","Output":"2026/11/03 03:19:54 OK   00003_discovery.sql (67.89ms)\n"}
+{"Time":"2026-11-03T03:19:54.286126898Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveAbsenceNeverChangesLiveState","Output":"2026/11/03 03:19:54 OK   00004_plugins.sql (9.65ms)\n"}
+{"Time":"2026-11-03T03:19:54.291038678Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveAbsenceNeverChangesLiveState","Output":"2026/11/03 03:19:54 OK   00005_remove_scope_expiry.sql (4.03ms)\n"}
+{"Time":"2026-11-03T03:19:54.299575083Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveAbsenceNeverChangesLiveState","Output":"2026/11/03 03:19:54 OK   00006_e3_scheduler_fixes.sql (5.83ms)\n"}
+{"Time":"2026-11-03T03:19:54.3070929Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveAbsenceNeverChangesLiveState","Output":"2026/11/03 03:19:54 OK   00007_plugin_evidence.sql (5.64ms)\n"}
+{"Time":"2026-11-03T03:19:54.313488632Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveAbsenceNeverChangesLiveState","Output":"2026/11/03 03:19:54 OK   00008_execution_policy.sql (6.3ms)\n"}
+{"Time":"2026-11-03T03:19:54.324494558Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveAbsenceNeverChangesLiveState","Output":"2026/11/03 03:19:54 OK   00009_favicon_hashes.sql (8.14ms)\n"}
+{"Time":"2026-11-03T03:19:54.357536063Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveAbsenceNeverChangesLiveState","Output":"2026/11/03 03:19:54 OK   00010_projects.sql (31.71ms)\n"}
+{"Time":"2026-11-03T03:19:54.361953936Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveAbsenceNeverChangesLiveState","Output":"2026/11/03 03:19:54 OK   00011_network_evidence.sql (3.62ms)\n"}
+{"Time":"2026-11-03T03:19:54.376344144Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveAbsenceNeverChangesLiveState","Output":"2026/11/03 03:19:54 OK   00012_fingerprint_evidence.sql (14.05ms)\n"}
+{"Time":"2026-11-03T03:19:54.402083277Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveAbsenceNeverChangesLiveState","Output":"2026/11/03 03:19:54 OK   00013_enterprise_exploration.sql (19.25ms)\n"}
+{"Time":"2026-11-03T03:19:54.437227633Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveAbsenceNeverChangesLiveState","Output":"2026/11/03 03:19:54 OK   00014_passive_sources.sql (29.47ms)\n"}
+{"Time":"2026-11-03T03:19:54.448782308Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveAbsenceNeverChangesLiveState","Output":"2026/11/03 03:19:54 OK   00015_passive_credits_only.sql (10.5ms)\n"}
+{"Time":"2026-11-03T03:19:54.450827007Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveAbsenceNeverChangesLiveState","Output":"2026/11/03 03:19:54 OK   00016_event_dedupe_legacy_lookup.sql (1.96ms)\n"}
+{"Time":"2026-11-03T03:19:54.450842461Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveAbsenceNeverChangesLiveState","Output":"2026/11/03 03:19:54 goose: successfully migrated database to version: 16\n"}
+{"Time":"2026-11-03T03:19:54.766686691Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveAbsenceNeverChangesLiveState","Output":"--- PASS: TestW04PassiveAbsenceNeverChangesLiveState (0.72s)\n"}
+{"Time":"2026-11-03T03:19:54.766739762Z","Action":"pass","Package":"scopedesk","Test":"TestW04PassiveAbsenceNeverChangesLiveState","Elapsed":0.72}
+{"Time":"2026-11-03T03:19:54.766759592Z","Action":"run","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures"}
+{"Time":"2026-11-03T03:19:54.766765671Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"=== RUN   TestW04PassiveDiscoveryCannotResetHTTPFailures\n"}
+{"Time":"2026-11-03T03:19:54.93636046Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:19:54 OK   00001_core.sql (144.62ms)\n"}
+{"Time":"2026-11-03T03:19:54.965154708Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:19:54 OK   00002_security_rules.sql (23.49ms)\n"}
+{"Time":"2026-11-03T03:19:55.479590132Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:19:55 OK   00003_discovery.sql (503.62ms)\n"}
+{"Time":"2026-11-03T03:19:55.517816529Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:19:55 OK   00004_plugins.sql (35.2ms)\n"}
+{"Time":"2026-11-03T03:19:55.556440611Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:19:55 OK   00005_remove_scope_expiry.sql (38.5ms)\n"}
+{"Time":"2026-11-03T03:19:55.590989948Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:19:55 OK   00006_e3_scheduler_fixes.sql (32.3ms)\n"}
+{"Time":"2026-11-03T03:19:55.599478798Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:19:55 OK   00007_plugin_evidence.sql (5.83ms)\n"}
+{"Time":"2026-11-03T03:19:55.607148078Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:19:55 OK   00008_execution_policy.sql (6.8ms)\n"}
+{"Time":"2026-11-03T03:19:55.639727554Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:19:55 OK   00009_favicon_hashes.sql (30.39ms)\n"}
+{"Time":"2026-11-03T03:19:55.820649549Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:19:55 OK   00010_projects.sql (178.29ms)\n"}
+{"Time":"2026-11-03T03:19:55.830260007Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:19:55 OK   00011_network_evidence.sql (9.51ms)\n"}
+{"Time":"2026-11-03T03:19:55.837130201Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:19:55 OK   00012_fingerprint_evidence.sql (3.98ms)\n"}
+{"Time":"2026-11-03T03:19:55.938988384Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:19:55 OK   00013_enterprise_exploration.sql (95.49ms)\n"}
+{"Time":"2026-11-03T03:19:56.308544495Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:19:56 OK   00014_passive_sources.sql (359.71ms)\n"}
+{"Time":"2026-11-03T03:19:56.468878519Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:19:56 OK   00015_passive_credits_only.sql (157.94ms)\n"}
+{"Time":"2026-11-03T03:19:56.523176815Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:19:56 OK   00016_event_dedupe_legacy_lookup.sql (50.83ms)\n"}
+{"Time":"2026-11-03T03:19:56.523203966Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:19:56 goose: successfully migrated database to version: 16\n"}
+{"Time":"2026-11-03T03:19:59.81841883Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:19:59 OK   00001_core.sql (2.63s)\n"}
+{"Time":"2026-11-03T03:20:00.200170844Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:20:00 OK   00002_security_rules.sql (379.57ms)\n"}
+{"Time":"2026-11-03T03:20:00.449590611Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:20:00 OK   00003_discovery.sql (241.74ms)\n"}
+{"Time":"2026-11-03T03:20:00.466450746Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:20:00 OK   00004_plugins.sql (15.74ms)\n"}
+{"Time":"2026-11-03T03:20:00.475249651Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:20:00 OK   00005_remove_scope_expiry.sql (5.49ms)\n"}
+{"Time":"2026-11-03T03:20:00.48677192Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:20:00 OK   00006_e3_scheduler_fixes.sql (7ms)\n"}
+{"Time":"2026-11-03T03:20:00.495723115Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:20:00 OK   00007_plugin_evidence.sql (6.97ms)\n"}
+{"Time":"2026-11-03T03:20:00.504678686Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:20:00 OK   00008_execution_policy.sql (8.38ms)\n"}
+{"Time":"2026-11-03T03:20:00.518592377Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:20:00 OK   00009_favicon_hashes.sql (10.17ms)\n"}
+{"Time":"2026-11-03T03:20:00.569504697Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:20:00 OK   00010_projects.sql (49.09ms)\n"}
+{"Time":"2026-11-03T03:20:00.574398981Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:20:00 OK   00011_network_evidence.sql (4.35ms)\n"}
+{"Time":"2026-11-03T03:20:00.578089466Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:20:00 OK   00012_fingerprint_evidence.sql (3.38ms)\n"}
+{"Time":"2026-11-03T03:20:00.599907549Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:20:00 OK   00013_enterprise_exploration.sql (19.86ms)\n"}
+{"Time":"2026-11-03T03:20:00.641477715Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:20:00 OK   00014_passive_sources.sql (34.96ms)\n"}
+{"Time":"2026-11-03T03:20:00.658271445Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:20:00 OK   00015_passive_credits_only.sql (12.08ms)\n"}
+{"Time":"2026-11-03T03:20:00.675457316Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:20:00 OK   00016_event_dedupe_legacy_lookup.sql (17.12ms)\n"}
+{"Time":"2026-11-03T03:20:00.675489024Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"2026/11/03 03:20:00 goose: successfully migrated database to version: 16\n"}
+{"Time":"2026-11-03T03:20:01.321170218Z","Action":"output","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Output":"--- PASS: TestW04PassiveDiscoveryCannotResetHTTPFailures (6.55s)\n"}
+{"Time":"2026-11-03T03:20:01.321212051Z","Action":"pass","Package":"scopedesk","Test":"TestW04PassiveDiscoveryCannotResetHTTPFailures","Elapsed":6.55}
+{"Time":"2026-11-03T03:20:01.321221075Z","Action":"run","Package":"scopedesk","Test":"TestW04CertificatePaginationIsNotCoverage"}
+{"Time":"2026-11-03T03:20:01.321235456Z","Action":"output","Package":"scopedesk","Test":"TestW04CertificatePaginationIsNotCoverage","Output":"=== RUN   TestW04CertificatePaginationIsNotCoverage\n"}
+{"Time":"2026-11-03T03:20:01.321578133Z","Action":"output","Package":"scopedesk","Test":"TestW04CertificatePaginationIsNotCoverage","Output":"--- PASS: TestW04CertificatePaginationIsNotCoverage (0.00s)\n"}
+{"Time":"2026-11-03T03:20:01.321590171Z","Action":"pass","Package":"scopedesk","Test":"TestW04CertificatePaginationIsNotCoverage","Elapsed":0}
+{"Time":"2026-11-03T03:20:01.321599525Z","Action":"run","Package":"scopedesk","Test":"TestW04ActualHTTPFailureAndRecoveryRemain"}
+{"Time":"2026-11-03T03:20:01.321603291Z","Action":"output","Package":"scopedesk","Test":"TestW04ActualHTTPFailureAndRecoveryRemain","Output":"=== RUN   TestW04ActualHTTPFailureAndRecoveryRemain\n"}
+{"Time":"2026-11-03T03:20:01.517319745Z","Action":"output","Package":"scopedesk","Test":"TestW04ActualHTTPFailureAndRecoveryRemain","Output":"2026/11/03 03:20:01 OK   00001_core.sql (164.07ms)\n"}
+{"Time":"2026-11-03T03:20:01.528803705Z","Action":"output","Package":"scopedesk","Test":"TestW04ActualHTTPFailureAndRecoveryRemain","Output":"2026/11/03 03:20:01 OK   00002_security_rules.sql (9.84ms)\n"}
+{"Time":"2026-11-03T03:20:01.629294586Z","Action":"output","Package":"scopedesk","Test":"TestW04ActualHTTPFailureAndRecoveryRemain","Output":"2026/11/03 03:20:01 OK   00003_discovery.sql (84.49ms)\n"}
+{"Time":"2026-11-03T03:20:01.641347799Z","Action":"output","Package":"scopedesk","Test":"TestW04ActualHTTPFailureAndRecoveryRemain","Output":"2026/11/03 03:20:01 OK   00004_plugins.sql (11.34ms)\n"}
+{"Time":"2026-11-03T03:20:01.647804441Z","Action":"output","Package":"scopedesk","Test":"TestW04ActualHTTPFailureAndRecoveryRemain","Output":"2026/11/03 03:20:01 OK   00005_remove_scope_expiry.sql (4.36ms)\n"}
+{"Time":"2026-11-03T03:20:01.654432887Z","Action":"output","Package":"scopedesk","Test":"TestW04ActualHTTPFailureAndRecoveryRemain","Output":"2026/11/03 03:20:01 OK   00006_e3_scheduler_fixes.sql (5.5ms)\n"}
+{"Time":"2026-11-03T03:20:01.662445358Z","Action":"output","Package":"scopedesk","Test":"TestW04ActualHTTPFailureAndRecoveryRemain","Output":"2026/11/03 03:20:01 OK   00007_plugin_evidence.sql (5.54ms)\n"}
+{"Time":"2026-11-03T03:20:01.670980216Z","Action":"output","Package":"scopedesk","Test":"TestW04ActualHTTPFailureAndRecoveryRemain","Output":"2026/11/03 03:20:01 OK   00008_execution_policy.sql (6.69ms)\n"}
+{"Time":"2026-11-03T03:20:01.681396808Z","Action":"output","Package":"scopedesk","Test":"TestW04ActualHTTPFailureAndRecoveryRemain","Output":"2026/11/03 03:20:01 OK   00009_favicon_hashes.sql (8.78ms)\n"}
+{"Time":"2026-11-03T03:20:01.725321812Z","Action":"output","Package":"scopedesk","Test":"TestW04ActualHTTPFailureAndRecoveryRemain","Output":"2026/11/03 03:20:01 OK   00010_projects.sql (43ms)\n"}
+{"Time":"2026-11-03T03:20:01.731668838Z","Action":"output","Package":"scopedesk","Test":"TestW04ActualHTTPFailureAndRecoveryRemain","Output":"2026/11/03 03:20:01 OK   00011_network_evidence.sql (3.95ms)\n"}
+{"Time":"2026-11-03T03:20:01.741946792Z","Action":"output","Package":"scopedesk","Test":"TestW04ActualHTTPFailureAndRecoveryRemain","Output":"2026/11/03 03:20:01 OK   00012_fingerprint_evidence.sql (9.95ms)\n"}
+{"Time":"2026-11-03T03:20:01.783256656Z","Action":"output","Package":"scopedesk","Test":"TestW04ActualHTTPFailureAndRecoveryRemain","Output":"2026/11/03 03:20:01 OK   00013_enterprise_exploration.sql (31.45ms)\n"}
+{"Time":"2026-11-03T03:20:01.83055102Z","Action":"output","Package":"scopedesk","Test":"TestW04ActualHTTPFailureAndRecoveryRemain","Output":"2026/11/03 03:20:01 OK   00014_passive_sources.sql (36.36ms)\n"}
+{"Time":"2026-11-03T03:20:01.843656378Z","Action":"output","Package":"scopedesk","Test":"TestW04ActualHTTPFailureAndRecoveryRemain","Output":"2026/11/03 03:20:01 OK   00015_passive_credits_only.sql (10.84ms)\n"}
+{"Time":"2026-11-03T03:20:01.846015663Z","Action":"output","Package":"scopedesk","Test":"TestW04ActualHTTPFailureAndRecoveryRemain","Output":"2026/11/03 03:20:01 OK   00016_event_dedupe_legacy_lookup.sql (2.11ms)\n"}
+{"Time":"2026-11-03T03:20:01.846036394Z","Action":"output","Package":"scopedesk","Test":"TestW04ActualHTTPFailureAndRecoveryRemain","Output":"2026/11/03 03:20:01 goose: successfully migrated database to version: 16\n"}
+{"Time":"2026-11-03T03:20:02.189900857Z","Action":"output","Package":"scopedesk","Test":"TestW04ActualHTTPFailureAndRecoveryRemain","Output":"--- PASS: TestW04ActualHTTPFailureAndRecoveryRemain (0.87s)\n"}
+{"Time":"2026-11-03T03:20:02.189938974Z","Action":"pass","Package":"scopedesk","Test":"TestW04ActualHTTPFailureAndRecoveryRemain","Elapsed":0.87}
+{"Time":"2026-11-03T03:20:02.190013266Z","Action":"output","Package":"scopedesk","Output":"PASS\n"}
+{"Time":"2026-11-03T03:20:03.196556657Z","Action":"output","Package":"scopedesk","Output":"ok  \tscopedesk\t9.163s\n"}
+{"Time":"2026-11-03T03:20:03.196603388Z","Action":"pass","Package":"scopedesk","Elapsed":9.163}
