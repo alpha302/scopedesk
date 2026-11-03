@@ -56,7 +56,7 @@ jobs:
       - name: W26 acceptance with race detection
         run: go test -race -json -count=1 -timeout=8m -run '^TestW26' . > "$P0_ARTIFACT_DIR/w26-tests.jsonl"
       - name: Relevant safety and write regressions
-        run: go test -race -json -count=1 -timeout=5m -run '^(TestP0CharacterizeSourceUnqualifiedMissing|TestPassiveCertificateCompletenessMarkers|TestPassiveCertificateKeepsEarlierPages|TestPostgresPluginEvidenceDoesNotRecoverOrOverwriteLiveData|TestP0DatabaseBoundary|TestScopeGuardBoundaries|TestBudgetIsAtomic|TestPostgresDiffIdempotencyAndPartialFailure|TestPostgresQueueClaimsAndLeaseRecovery|TestPostgresCrossWorkerRateAndEncryptedSettings|TestPostgresCandidateSnapshotCannotAuthorizeProbeOrCommit)$' . > "$P0_ARTIFACT_DIR/regression-tests.jsonl"
+        run: go test -race -json -count=1 -timeout=5m -run '^(TestW04.*|TestP0DNSNegativeEvidence|TestDNSPrivateAnswersNeverReachHTTP|TestRedirectScopeAndPorts|TestP0CharacterizeSourceUnqualifiedMissing|TestPassiveCertificateCompletenessMarkers|TestPassiveCertificateKeepsEarlierPages|TestPostgresPluginEvidenceDoesNotRecoverOrOverwriteLiveData|TestP0DatabaseBoundary|TestScopeGuardBoundaries|TestBudgetIsAtomic|TestPostgresDiffIdempotencyAndPartialFailure|TestPostgresQueueClaimsAndLeaseRecovery|TestPostgresCrossWorkerRateAndEncryptedSettings|TestPostgresCandidateSnapshotCannotAuthorizeProbeOrCommit)$' . > "$P0_ARTIFACT_DIR/regression-tests.jsonl"
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -38,6 +38,25 @@ type dnsEvidenceConn struct {
 	queries           map[uint16]dnsmessage.Question
 	readBuf, writeBuf []byte
 }
+type dnsEvidencePacketConn struct {
+	*dnsEvidenceConn
+	packet net.PacketConn
+}
+
+func (c *dnsEvidencePacketConn) ReadFrom(b []byte) (int, net.Addr, error) {
+	n, a, e := c.packet.ReadFrom(b)
+	if n > 0 {
+		c.feed(b[:n], true)
+	}
+	return n, a, e
+}
+func (c *dnsEvidencePacketConn) WriteTo(b []byte, a net.Addr) (int, error) {
+	n, e := c.packet.WriteTo(b, a)
+	if n > 0 {
+		c.feed(b[:n], false)
+	}
+	return n, e
+}
 
 func (c *dnsEvidenceConn) inspect(raw []byte, response bool) {
 	var m dnsmessage.Message
@@ -116,7 +135,7 @@ func captureResolver(base *net.Resolver) (*net.Resolver, *dnsCapture) {
 	if base == nil {
 		base = net.DefaultResolver
 	}
-	r := *base
+	r := net.Resolver{PreferGo: true, StrictErrors: base.StrictErrors, Dial: base.Dial}
 	capture := &dnsCapture{}
 	dial := r.Dial
 	r.PreferGo = true
@@ -131,7 +150,12 @@ func captureResolver(base *net.Resolver) (*net.Resolver, *dnsCapture) {
 		if err != nil {
 			return nil, err
 		}
-		return &dnsEvidenceConn{Conn: conn, capture: capture, tcp: strings.HasPrefix(network, "tcp"), queries: map[uint16]dnsmessage.Question{}}, nil
+		packet, isPacket := conn.(net.PacketConn)
+		wrapped := &dnsEvidenceConn{Conn: conn, capture: capture, tcp: !isPacket, queries: map[uint16]dnsmessage.Question{}}
+		if isPacket {
+			return &dnsEvidencePacketConn{dnsEvidenceConn: wrapped, packet: packet}, nil
+		}
+		return wrapped, nil
 	}
 	return &r, capture
 }
@@ -155,7 +179,7 @@ func (c *dnsCapture) observation(host string, lookupErr error) *DNSObservation {
 			o.State = "answer"
 			return o
 		}
-		if r.RCode == 3 {
+		if r.RCode == 3 && !r.Alias {
 			if r.Type == 1 {
 				aNX = true
 			} else {

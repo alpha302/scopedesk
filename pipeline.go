@@ -21,6 +21,8 @@ import (
 )
 
 type Observation struct {
+	DNSObservation       *DNSObservation      `json:"dns_observation,omitempty"`
+	DNSObserved          bool                 `json:"-"`
 	EvidenceOnly         bool                 `json:"evidence_only,omitempty"`
 	PreserveReachability bool                 `json:"-"`
 	PluginEvidence       []PluginEvidence     `json:"plugin_evidence"`
@@ -72,53 +74,61 @@ type Pipeline struct {
 }
 
 func (p *Pipeline) dns(ctx context.Context, scope int64, host string, b *Budget) ([]string, []string, error) {
+	ips, cnames, _, err := p.dnsEvidence(ctx, scope, host, b)
+	return ips, cnames, err
+}
+func (p *Pipeline) dnsEvidence(ctx context.Context, scope int64, host string, b *Budget) (ipsOut []string, namesOut []string, evidence *DNSObservation, resultErr error) {
+	resolver, capture := captureResolver(p.Resolver)
+	attempted := false
+	defer func() {
+		if attempted {
+			evidence = capture.observation(host, resultErr)
+		}
+	}()
 	g, e := p.Guard(ctx, scope)
 	if e != nil {
-		return nil, nil, e
+		return nil, nil, nil, e
 	}
 	if _, e = g.AllowHost(host); e != nil {
-		return nil, nil, e
+		return nil, nil, nil, e
 	}
 	if e = b.Take(); e != nil {
-		return nil, nil, e
+		return nil, nil, nil, e
 	}
 	if e = p.Limit.Wait(ctx, scope, g.Scope.RPS); e != nil {
-		return nil, nil, e
+		return nil, nil, nil, e
 	}
 	g, e = p.fresh(ctx, scope, host, false)
 	if e != nil {
-		return nil, nil, e
-	}
-	resolver := p.Resolver
-	if resolver == nil {
-		resolver = net.DefaultResolver
+		return nil, nil, nil, e
 	}
 	ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
 	defer cancel()
 	cnames := []string{}
+	attempted = true
 	canonical, e := resolver.LookupCNAME(ctx, host)
 	if e == nil {
 		canonical = strings.TrimSuffix(strings.ToLower(canonical), ".")
 		if canonical != host {
 			cnames = append(cnames, canonical)
 			if _, e = g.AllowHost(canonical); e != nil {
-				return nil, cnames, errors.New("CNAME 指向范围外域名，未继续解析")
+				return nil, cnames, nil, errors.New("CNAME 指向范围外域名，未继续解析")
 			}
 		}
 	}
 	if e = b.Take(); e != nil {
-		return nil, cnames, e
+		return nil, cnames, nil, e
 	}
 	if e = p.Limit.Wait(ctx, scope, g.Scope.RPS); e != nil {
-		return nil, cnames, e
+		return nil, cnames, nil, e
 	}
 	g, e = p.fresh(ctx, scope, host, false)
 	if e != nil {
-		return nil, cnames, e
+		return nil, cnames, nil, e
 	}
 	ips, e := resolver.LookupIPAddr(ctx, host)
 	if e != nil {
-		return nil, cnames, e
+		return nil, cnames, nil, e
 	}
 	out := []string{}
 	for _, item := range ips {
@@ -128,7 +138,7 @@ func (p *Pipeline) dns(ctx context.Context, scope int64, host string, b *Budget)
 		}
 	}
 	slices.Sort(out)
-	return slices.Compact(out), cnames, nil
+	return slices.Compact(out), cnames, nil, nil
 }
 
 var titlePattern = regexp.MustCompile(`(?is)<title[^>]*>(.*?)</title>`)
@@ -175,7 +185,9 @@ func (p *Pipeline) Probe(ctx context.Context, scope ScopeV2, host string, source
 	if _, e := p.fresh(ctx, scope.ID, host, false); e != nil {
 		return o, e
 	}
-	ips, cnames, dnsErr := p.dns(ctx, scope.ID, host, b)
+	ips, cnames, evidence, dnsErr := p.dnsEvidence(ctx, scope.ID, host, b)
+	o.DNSObservation = evidence
+	o.DNSObserved = evidence != nil
 	o.IPs = ips
 	o.CNames = cnames
 	o.DNSChecked = dnsErr == nil

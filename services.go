@@ -130,6 +130,11 @@ func groupObservations(input []Observation) []Observation {
 			current.PreserveReachability = saved.PreserveReachability
 			current.PluginEvidence = saved.PluginEvidence
 			current.NetworkEvidence, current.NetworkMeasured, current.IsCDN = saved.NetworkEvidence, saved.NetworkMeasured, saved.IsCDN
+			current.DNSObservation, current.DNSObserved = saved.DNSObservation, saved.DNSObserved
+		}
+		if o.DNSObserved && !o.EvidenceOnly {
+			current.DNSObservation = o.DNSObservation
+			current.DNSObserved = true
 		}
 		if o.NetworkMeasured {
 			current.NetworkMeasured = true

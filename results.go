@@ -114,6 +114,9 @@ func (s *Store) WriteResults(ctx context.Context, run Run, observations []Observ
 		slices.Sort(current.Sources)
 		current.Sources = slices.Compact(current.Sources)
 		current.PluginEvidence = mergePluginEvidence(old.PluginEvidence, ob.PluginEvidence)
+		if ob.DNSObserved && !ob.EvidenceOnly && ob.DNSObservation != nil {
+			current.DNSObservation = ob.DNSObservation
+		}
 		if ob.DNSChecked {
 			current.IPs = ob.IPs
 			current.CNames = ob.CNames
@@ -183,7 +186,7 @@ func (s *Store) WriteResults(ctx context.Context, run Run, observations []Observ
 			return nil, e
 		}
 		payload, _ := json.Marshal(current)
-		_, e = tx.Exec(ctx, `UPDATE assets a SET fingerprint_evidence=x.fingerprint_evidence,network_evidence=x.network_evidence,network_classified_at=x.network_classified_at,plugin_evidence=x.plugin_evidence,ips=x.ips,cnames=x.cnames,sources=x.sources,port=x.port,status_code=x.status_code,title=x.title,server=x.server,response_length=x.response_length,redirects=x.redirects,fingerprints=x.fingerprints,tls_subject=x.tls_subject,tls_not_after=x.tls_not_after,favicon_hash=x.favicon_hash,favicon_mmh3=x.favicon_mmh3,favicon_sha256=x.favicon_sha256,category=x.category,score=x.score,status=x.status,tags=x.tags,note=x.note,assignee=x.assignee,is_cdn=x.is_cdn,is_security_device=x.is_security_device,security_rule=x.security_rule,security_matches=x.security_matches,security_device_override=x.security_device_override,is_alive=x.is_alive,miss_count=x.miss_count,first_seen=x.first_seen,last_seen=x.last_seen,dns_at=x.dns_at,observed_run=x.observed_run FROM jsonb_populate_record(NULL::assets,$2::jsonb)x WHERE a.id=$1`, current.ID, payload)
+		_, e = tx.Exec(ctx, `UPDATE assets a SET dns_observation=x.dns_observation,fingerprint_evidence=x.fingerprint_evidence,network_evidence=x.network_evidence,network_classified_at=x.network_classified_at,plugin_evidence=x.plugin_evidence,ips=x.ips,cnames=x.cnames,sources=x.sources,port=x.port,status_code=x.status_code,title=x.title,server=x.server,response_length=x.response_length,redirects=x.redirects,fingerprints=x.fingerprints,tls_subject=x.tls_subject,tls_not_after=x.tls_not_after,favicon_hash=x.favicon_hash,favicon_mmh3=x.favicon_mmh3,favicon_sha256=x.favicon_sha256,category=x.category,score=x.score,status=x.status,tags=x.tags,note=x.note,assignee=x.assignee,is_cdn=x.is_cdn,is_security_device=x.is_security_device,security_rule=x.security_rule,security_matches=x.security_matches,security_device_override=x.security_device_override,is_alive=x.is_alive,miss_count=x.miss_count,first_seen=x.first_seen,last_seen=x.last_seen,dns_at=x.dns_at,observed_run=x.observed_run FROM jsonb_populate_record(NULL::assets,$2::jsonb)x WHERE a.id=$1`, current.ID, payload)
 		if e != nil {
 			return nil, e
 		}
