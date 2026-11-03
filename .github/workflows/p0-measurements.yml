@@ -39,10 +39,10 @@ jobs:
             -v "$GITHUB_WORKSPACE:/workspace" -v /tmp/scopedesk-p0-measurements:/tmp/p0-tests:ro \
             "$P0_IMAGE" > p0-artifacts/container-id.txt
           for i in $(seq 1 40); do
-            if docker exec scopedesk-p0-item2 pg_isready -U scopedesk_p0 -d scopedesk_p0; then break; fi
+            if docker exec scopedesk-p0-item2 pg_isready -h 127.0.0.1 -U scopedesk_p0 -d scopedesk_p0; then break; fi
             sleep 1
           done
-          docker exec scopedesk-p0-item2 pg_isready -U scopedesk_p0 -d scopedesk_p0
+          docker exec scopedesk-p0-item2 pg_isready -h 127.0.0.1 -U scopedesk_p0 -d scopedesk_p0
           docker exec scopedesk-p0-item2 /bin/busybox ip addr add 1.1.1.1/32 dev lo
           docker exec scopedesk-p0-item2 /bin/busybox ip addr > p0-artifacts/interfaces.txt
           docker exec scopedesk-p0-item2 /bin/busybox ip route show table all > p0-artifacts/routes.txt
