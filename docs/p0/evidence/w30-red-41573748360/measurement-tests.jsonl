@@ -1,0 +1,26 @@
+{"Time":"2026-11-03T03:43:00.741343479Z","Action":"start","Package":"scopedesk"}
+{"Time":"2026-11-03T03:43:00.746397077Z","Action":"run","Package":"scopedesk","Test":"TestW30Measurements"}
+{"Time":"2026-11-03T03:43:00.746415195Z","Action":"output","Package":"scopedesk","Test":"TestW30Measurements","Output":"=== RUN   TestW30Measurements\n"}
+{"Time":"2026-11-03T03:43:00.853450691Z","Action":"output","Package":"scopedesk","Test":"TestW30Measurements","Output":"2026/11/03 03:43:00 OK   00001_core.sql (83.94ms)\n"}
+{"Time":"2026-11-03T03:43:00.86319512Z","Action":"output","Package":"scopedesk","Test":"TestW30Measurements","Output":"2026/11/03 03:43:00 OK   00002_security_rules.sql (9.4ms)\n"}
+{"Time":"2026-11-03T03:43:00.950954069Z","Action":"output","Package":"scopedesk","Test":"TestW30Measurements","Output":"2026/11/03 03:43:00 OK   00003_discovery.sql (87.6ms)\n"}
+{"Time":"2026-11-03T03:43:00.961158813Z","Action":"output","Package":"scopedesk","Test":"TestW30Measurements","Output":"2026/11/03 03:43:00 OK   00004_plugins.sql (10.16ms)\n"}
+{"Time":"2026-11-03T03:43:00.965533566Z","Action":"output","Package":"scopedesk","Test":"TestW30Measurements","Output":"2026/11/03 03:43:00 OK   00005_remove_scope_expiry.sql (4.33ms)\n"}
+{"Time":"2026-11-03T03:43:00.971276136Z","Action":"output","Package":"scopedesk","Test":"TestW30Measurements","Output":"2026/11/03 03:43:00 OK   00006_e3_scheduler_fixes.sql (5.61ms)\n"}
+{"Time":"2026-11-03T03:43:00.977150275Z","Action":"output","Package":"scopedesk","Test":"TestW30Measurements","Output":"2026/11/03 03:43:00 OK   00007_plugin_evidence.sql (5.84ms)\n"}
+{"Time":"2026-11-03T03:43:00.984198408Z","Action":"output","Package":"scopedesk","Test":"TestW30Measurements","Output":"2026/11/03 03:43:00 OK   00008_execution_policy.sql (7.02ms)\n"}
+{"Time":"2026-11-03T03:43:00.992404091Z","Action":"output","Package":"scopedesk","Test":"TestW30Measurements","Output":"2026/11/03 03:43:00 OK   00009_favicon_hashes.sql (8.13ms)\n"}
+{"Time":"2026-11-03T03:43:01.026665969Z","Action":"output","Package":"scopedesk","Test":"TestW30Measurements","Output":"2026/11/03 03:43:01 OK   00010_projects.sql (34.17ms)\n"}
+{"Time":"2026-11-03T03:43:01.030223671Z","Action":"output","Package":"scopedesk","Test":"TestW30Measurements","Output":"2026/11/03 03:43:01 OK   00011_network_evidence.sql (3.56ms)\n"}
+{"Time":"2026-11-03T03:43:01.033570139Z","Action":"output","Package":"scopedesk","Test":"TestW30Measurements","Output":"2026/11/03 03:43:01 OK   00012_fingerprint_evidence.sql (3.32ms)\n"}
+{"Time":"2026-11-03T03:43:01.052669899Z","Action":"output","Package":"scopedesk","Test":"TestW30Measurements","Output":"2026/11/03 03:43:01 OK   00013_enterprise_exploration.sql (19ms)\n"}
+{"Time":"2026-11-03T03:43:01.084826144Z","Action":"output","Package":"scopedesk","Test":"TestW30Measurements","Output":"2026/11/03 03:43:01 OK   00014_passive_sources.sql (31.94ms)\n"}
+{"Time":"2026-11-03T03:43:01.096220156Z","Action":"output","Package":"scopedesk","Test":"TestW30Measurements","Output":"2026/11/03 03:43:01 OK   00015_passive_credits_only.sql (11.42ms)\n"}
+{"Time":"2026-11-03T03:43:01.098355584Z","Action":"output","Package":"scopedesk","Test":"TestW30Measurements","Output":"2026/11/03 03:43:01 OK   00016_event_dedupe_legacy_lookup.sql (2.12ms)\n"}
+{"Time":"2026-11-03T03:43:01.100355186Z","Action":"output","Package":"scopedesk","Test":"TestW30Measurements","Output":"2026/11/03 03:43:01 OK   00017_dns_observation.sql (1.98ms)\n"}
+{"Time":"2026-11-03T03:43:01.100372652Z","Action":"output","Package":"scopedesk","Test":"TestW30Measurements","Output":"2026/11/03 03:43:01 goose: successfully migrated database to version: 17\n"}
+{"Time":"2026-11-03T03:43:17.225618181Z","Action":"output","Package":"scopedesk","Test":"TestW30Measurements","Output":"--- PASS: TestW30Measurements (16.48s)\n"}
+{"Time":"2026-11-03T03:43:17.225661436Z","Action":"pass","Package":"scopedesk","Test":"TestW30Measurements","Elapsed":16.48}
+{"Time":"2026-11-03T03:43:17.225680024Z","Action":"output","Package":"scopedesk","Output":"PASS\n"}
+{"Time":"2026-11-03T03:43:17.228047633Z","Action":"output","Package":"scopedesk","Output":"ok  \tscopedesk\t16.486s\n"}
+{"Time":"2026-11-03T03:43:17.228074894Z","Action":"pass","Package":"scopedesk","Elapsed":16.487}

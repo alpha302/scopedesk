@@ -1,0 +1,129 @@
+{"Time":"2026-11-03T03:35:21.946410797Z","Action":"start","Package":"scopedesk"}
+{"Time":"2026-11-03T03:35:21.962571895Z","Action":"run","Package":"scopedesk","Test":"TestW01KeyContract"}
+{"Time":"2026-11-03T03:35:21.96259589Z","Action":"output","Package":"scopedesk","Test":"TestW01KeyContract","Output":"=== RUN   TestW01KeyContract\n"}
+{"Time":"2026-11-03T03:35:21.963867406Z","Action":"output","Package":"scopedesk","Test":"TestW01KeyContract","Output":"--- PASS: TestW01KeyContract (0.00s)\n"}
+{"Time":"2026-11-03T03:35:21.963888767Z","Action":"pass","Package":"scopedesk","Test":"TestW01KeyContract","Elapsed":0}
+{"Time":"2026-11-03T03:35:21.963947669Z","Action":"run","Package":"scopedesk","Test":"TestW01EvidenceValidation"}
+{"Time":"2026-11-03T03:35:21.963975502Z","Action":"output","Package":"scopedesk","Test":"TestW01EvidenceValidation","Output":"=== RUN   TestW01EvidenceValidation\n"}
+{"Time":"2026-11-03T03:35:22.053271019Z","Action":"output","Package":"scopedesk","Test":"TestW01EvidenceValidation","Output":"--- PASS: TestW01EvidenceValidation (0.09s)\n"}
+{"Time":"2026-11-03T03:35:22.053295947Z","Action":"pass","Package":"scopedesk","Test":"TestW01EvidenceValidation","Elapsed":0.09}
+{"Time":"2026-11-03T03:35:22.053305274Z","Action":"run","Package":"scopedesk","Test":"TestW01LegacyAndDayCompatibility"}
+{"Time":"2026-11-03T03:35:22.053309993Z","Action":"output","Package":"scopedesk","Test":"TestW01LegacyAndDayCompatibility","Output":"=== RUN   TestW01LegacyAndDayCompatibility\n"}
+{"Time":"2026-11-03T03:35:22.20718053Z","Action":"output","Package":"scopedesk","Test":"TestW01LegacyAndDayCompatibility","Output":"2026/11/03 03:35:22 OK   00001_core.sql (119.53ms)\n"}
+{"Time":"2026-11-03T03:35:22.228677201Z","Action":"output","Package":"scopedesk","Test":"TestW01LegacyAndDayCompatibility","Output":"2026/11/03 03:35:22 OK   00002_security_rules.sql (10ms)\n"}
+{"Time":"2026-11-03T03:35:22.346717503Z","Action":"output","Package":"scopedesk","Test":"TestW01LegacyAndDayCompatibility","Output":"2026/11/03 03:35:22 OK   00003_discovery.sql (90.67ms)\n"}
+{"Time":"2026-11-03T03:35:22.361377527Z","Action":"output","Package":"scopedesk","Test":"TestW01LegacyAndDayCompatibility","Output":"2026/11/03 03:35:22 OK   00004_plugins.sql (11.83ms)\n"}
+{"Time":"2026-11-03T03:35:22.368145447Z","Action":"output","Package":"scopedesk","Test":"TestW01LegacyAndDayCompatibility","Output":"2026/11/03 03:35:22 OK   00005_remove_scope_expiry.sql (5.22ms)\n"}
+{"Time":"2026-11-03T03:35:22.375120514Z","Action":"output","Package":"scopedesk","Test":"TestW01LegacyAndDayCompatibility","Output":"2026/11/03 03:35:22 OK   00006_e3_scheduler_fixes.sql (6.6ms)\n"}
+{"Time":"2026-11-03T03:35:22.386433498Z","Action":"output","Package":"scopedesk","Test":"TestW01LegacyAndDayCompatibility","Output":"2026/11/03 03:35:22 OK   00007_plugin_evidence.sql (7.41ms)\n"}
+{"Time":"2026-11-03T03:35:22.39619652Z","Action":"output","Package":"scopedesk","Test":"TestW01LegacyAndDayCompatibility","Output":"2026/11/03 03:35:22 OK   00008_execution_policy.sql (8.03ms)\n"}
+{"Time":"2026-11-03T03:35:22.406118324Z","Action":"output","Package":"scopedesk","Test":"TestW01LegacyAndDayCompatibility","Output":"2026/11/03 03:35:22 OK   00009_favicon_hashes.sql (9.51ms)\n"}
+{"Time":"2026-11-03T03:35:22.447634734Z","Action":"output","Package":"scopedesk","Test":"TestW01LegacyAndDayCompatibility","Output":"2026/11/03 03:35:22 OK   00010_projects.sql (38.13ms)\n"}
+{"Time":"2026-11-03T03:35:22.454480382Z","Action":"output","Package":"scopedesk","Test":"TestW01LegacyAndDayCompatibility","Output":"2026/11/03 03:35:22 OK   00011_network_evidence.sql (4.19ms)\n"}
+{"Time":"2026-11-03T03:35:22.460065786Z","Action":"output","Package":"scopedesk","Test":"TestW01LegacyAndDayCompatibility","Output":"2026/11/03 03:35:22 OK   00012_fingerprint_evidence.sql (3.99ms)\n"}
+{"Time":"2026-11-03T03:35:22.489187433Z","Action":"output","Package":"scopedesk","Test":"TestW01LegacyAndDayCompatibility","Output":"2026/11/03 03:35:22 OK   00013_enterprise_exploration.sql (21.89ms)\n"}
+{"Time":"2026-11-03T03:35:22.535150753Z","Action":"output","Package":"scopedesk","Test":"TestW01LegacyAndDayCompatibility","Output":"2026/11/03 03:35:22 OK   00014_passive_sources.sql (35.01ms)\n"}
+{"Time":"2026-11-03T03:35:22.55286841Z","Action":"output","Package":"scopedesk","Test":"TestW01LegacyAndDayCompatibility","Output":"2026/11/03 03:35:22 OK   00015_passive_credits_only.sql (13.59ms)\n"}
+{"Time":"2026-11-03T03:35:22.555407204Z","Action":"output","Package":"scopedesk","Test":"TestW01LegacyAndDayCompatibility","Output":"2026/11/03 03:35:22 OK   00016_event_dedupe_legacy_lookup.sql (2.47ms)\n"}
+{"Time":"2026-11-03T03:35:22.560066157Z","Action":"output","Package":"scopedesk","Test":"TestW01LegacyAndDayCompatibility","Output":"2026/11/03 03:35:22 OK   00017_dns_observation.sql (2.69ms)\n"}
+{"Time":"2026-11-03T03:35:22.560081617Z","Action":"output","Package":"scopedesk","Test":"TestW01LegacyAndDayCompatibility","Output":"2026/11/03 03:35:22 goose: successfully migrated database to version: 17\n"}
+{"Time":"2026-11-03T03:35:22.911266903Z","Action":"output","Package":"scopedesk","Test":"TestW01LegacyAndDayCompatibility","Output":"--- PASS: TestW01LegacyAndDayCompatibility (0.86s)\n"}
+{"Time":"2026-11-03T03:35:22.911304835Z","Action":"pass","Package":"scopedesk","Test":"TestW01LegacyAndDayCompatibility","Elapsed":0.86}
+{"Time":"2026-11-03T03:35:22.911316928Z","Action":"run","Package":"scopedesk","Test":"TestW01ConcurrentReplayAndRollback"}
+{"Time":"2026-11-03T03:35:22.911321026Z","Action":"output","Package":"scopedesk","Test":"TestW01ConcurrentReplayAndRollback","Output":"=== RUN   TestW01ConcurrentReplayAndRollback\n"}
+{"Time":"2026-11-03T03:35:23.028788219Z","Action":"output","Package":"scopedesk","Test":"TestW01ConcurrentReplayAndRollback","Output":"2026/11/03 03:35:23 OK   00001_core.sql (95.06ms)\n"}
+{"Time":"2026-11-03T03:35:23.041057363Z","Action":"output","Package":"scopedesk","Test":"TestW01ConcurrentReplayAndRollback","Output":"2026/11/03 03:35:23 OK   00002_security_rules.sql (9.87ms)\n"}
+{"Time":"2026-11-03T03:35:23.142385458Z","Action":"output","Package":"scopedesk","Test":"TestW01ConcurrentReplayAndRollback","Output":"2026/11/03 03:35:23 OK   00003_discovery.sql (85.49ms)\n"}
+{"Time":"2026-11-03T03:35:23.156273518Z","Action":"output","Package":"scopedesk","Test":"TestW01ConcurrentReplayAndRollback","Output":"2026/11/03 03:35:23 OK   00004_plugins.sql (11.58ms)\n"}
+{"Time":"2026-11-03T03:35:23.164867932Z","Action":"output","Package":"scopedesk","Test":"TestW01ConcurrentReplayAndRollback","Output":"2026/11/03 03:35:23 OK   00005_remove_scope_expiry.sql (8.14ms)\n"}
+{"Time":"2026-11-03T03:35:23.173140261Z","Action":"output","Package":"scopedesk","Test":"TestW01ConcurrentReplayAndRollback","Output":"2026/11/03 03:35:23 OK   00006_e3_scheduler_fixes.sql (6.4ms)\n"}
+{"Time":"2026-11-03T03:35:23.184367816Z","Action":"output","Package":"scopedesk","Test":"TestW01ConcurrentReplayAndRollback","Output":"2026/11/03 03:35:23 OK   00007_plugin_evidence.sql (6.69ms)\n"}
+{"Time":"2026-11-03T03:35:23.192820805Z","Action":"output","Package":"scopedesk","Test":"TestW01ConcurrentReplayAndRollback","Output":"2026/11/03 03:35:23 OK   00008_execution_policy.sql (8.1ms)\n"}
+{"Time":"2026-11-03T03:35:23.205780832Z","Action":"output","Package":"scopedesk","Test":"TestW01ConcurrentReplayAndRollback","Output":"2026/11/03 03:35:23 OK   00009_favicon_hashes.sql (9.91ms)\n"}
+{"Time":"2026-11-03T03:35:23.24551759Z","Action":"output","Package":"scopedesk","Test":"TestW01ConcurrentReplayAndRollback","Output":"2026/11/03 03:35:23 OK   00010_projects.sql (37.39ms)\n"}
+{"Time":"2026-11-03T03:35:23.249667766Z","Action":"output","Package":"scopedesk","Test":"TestW01ConcurrentReplayAndRollback","Output":"2026/11/03 03:35:23 OK   00011_network_evidence.sql (4.04ms)\n"}
+{"Time":"2026-11-03T03:35:23.257749827Z","Action":"output","Package":"scopedesk","Test":"TestW01ConcurrentReplayAndRollback","Output":"2026/11/03 03:35:23 OK   00012_fingerprint_evidence.sql (3.92ms)\n"}
+{"Time":"2026-11-03T03:35:23.287497293Z","Action":"output","Package":"scopedesk","Test":"TestW01ConcurrentReplayAndRollback","Output":"2026/11/03 03:35:23 OK   00013_enterprise_exploration.sql (25.71ms)\n"}
+{"Time":"2026-11-03T03:35:23.33815431Z","Action":"output","Package":"scopedesk","Test":"TestW01ConcurrentReplayAndRollback","Output":"2026/11/03 03:35:23 OK   00014_passive_sources.sql (36.01ms)\n"}
+{"Time":"2026-11-03T03:35:23.356983048Z","Action":"output","Package":"scopedesk","Test":"TestW01ConcurrentReplayAndRollback","Output":"2026/11/03 03:35:23 OK   00015_passive_credits_only.sql (13.92ms)\n"}
+{"Time":"2026-11-03T03:35:23.362695032Z","Action":"output","Package":"scopedesk","Test":"TestW01ConcurrentReplayAndRollback","Output":"2026/11/03 03:35:23 OK   00016_event_dedupe_legacy_lookup.sql (2.45ms)\n"}
+{"Time":"2026-11-03T03:35:23.365097958Z","Action":"output","Package":"scopedesk","Test":"TestW01ConcurrentReplayAndRollback","Output":"2026/11/03 03:35:23 OK   00017_dns_observation.sql (2.31ms)\n"}
+{"Time":"2026-11-03T03:35:23.365117275Z","Action":"output","Package":"scopedesk","Test":"TestW01ConcurrentReplayAndRollback","Output":"2026/11/03 03:35:23 goose: successfully migrated database to version: 17\n"}
+{"Time":"2026-11-03T03:35:23.879213707Z","Action":"output","Package":"scopedesk","Test":"TestW01ConcurrentReplayAndRollback","Output":"--- PASS: TestW01ConcurrentReplayAndRollback (0.97s)\n"}
+{"Time":"2026-11-03T03:35:23.879258553Z","Action":"pass","Package":"scopedesk","Test":"TestW01ConcurrentReplayAndRollback","Elapsed":0.97}
+{"Time":"2026-11-03T03:35:23.879273701Z","Action":"run","Package":"scopedesk","Test":"TestW01WholeResultTransaction"}
+{"Time":"2026-11-03T03:35:23.87928338Z","Action":"output","Package":"scopedesk","Test":"TestW01WholeResultTransaction","Output":"=== RUN   TestW01WholeResultTransaction\n"}
+{"Time":"2026-11-03T03:35:24.00366984Z","Action":"output","Package":"scopedesk","Test":"TestW01WholeResultTransaction","Output":"2026/11/03 03:35:24 OK   00001_core.sql (94.49ms)\n"}
+{"Time":"2026-11-03T03:35:24.01551569Z","Action":"output","Package":"scopedesk","Test":"TestW01WholeResultTransaction","Output":"2026/11/03 03:35:24 OK   00002_security_rules.sql (9.51ms)\n"}
+{"Time":"2026-11-03T03:35:24.114718156Z","Action":"output","Package":"scopedesk","Test":"TestW01WholeResultTransaction","Output":"2026/11/03 03:35:24 OK   00003_discovery.sql (90.02ms)\n"}
+{"Time":"2026-11-03T03:35:24.129168424Z","Action":"output","Package":"scopedesk","Test":"TestW01WholeResultTransaction","Output":"2026/11/03 03:35:24 OK   00004_plugins.sql (11.48ms)\n"}
+{"Time":"2026-11-03T03:35:24.13720765Z","Action":"output","Package":"scopedesk","Test":"TestW01WholeResultTransaction","Output":"2026/11/03 03:35:24 OK   00005_remove_scope_expiry.sql (5.2ms)\n"}
+{"Time":"2026-11-03T03:35:24.144852036Z","Action":"output","Package":"scopedesk","Test":"TestW01WholeResultTransaction","Output":"2026/11/03 03:35:24 OK   00006_e3_scheduler_fixes.sql (6.82ms)\n"}
+{"Time":"2026-11-03T03:35:24.154927565Z","Action":"output","Package":"scopedesk","Test":"TestW01WholeResultTransaction","Output":"2026/11/03 03:35:24 OK   00007_plugin_evidence.sql (6.67ms)\n"}
+{"Time":"2026-11-03T03:35:24.164393993Z","Action":"output","Package":"scopedesk","Test":"TestW01WholeResultTransaction","Output":"2026/11/03 03:35:24 OK   00008_execution_policy.sql (8.14ms)\n"}
+{"Time":"2026-11-03T03:35:24.174941706Z","Action":"output","Package":"scopedesk","Test":"TestW01WholeResultTransaction","Output":"2026/11/03 03:35:24 OK   00009_favicon_hashes.sql (10.35ms)\n"}
+{"Time":"2026-11-03T03:35:24.21833528Z","Action":"output","Package":"scopedesk","Test":"TestW01WholeResultTransaction","Output":"2026/11/03 03:35:24 OK   00010_projects.sql (38.57ms)\n"}
+{"Time":"2026-11-03T03:35:24.223738098Z","Action":"output","Package":"scopedesk","Test":"TestW01WholeResultTransaction","Output":"2026/11/03 03:35:24 OK   00011_network_evidence.sql (4.64ms)\n"}
+{"Time":"2026-11-03T03:35:24.227779263Z","Action":"output","Package":"scopedesk","Test":"TestW01WholeResultTransaction","Output":"2026/11/03 03:35:24 OK   00012_fingerprint_evidence.sql (3.93ms)\n"}
+{"Time":"2026-11-03T03:35:24.253157702Z","Action":"output","Package":"scopedesk","Test":"TestW01WholeResultTransaction","Output":"2026/11/03 03:35:24 OK   00013_enterprise_exploration.sql (21.58ms)\n"}
+{"Time":"2026-11-03T03:35:24.304244383Z","Action":"output","Package":"scopedesk","Test":"TestW01WholeResultTransaction","Output":"2026/11/03 03:35:24 OK   00014_passive_sources.sql (36.46ms)\n"}
+{"Time":"2026-11-03T03:35:24.321130136Z","Action":"output","Package":"scopedesk","Test":"TestW01WholeResultTransaction","Output":"2026/11/03 03:35:24 OK   00015_passive_credits_only.sql (14.35ms)\n"}
+{"Time":"2026-11-03T03:35:24.32386194Z","Action":"output","Package":"scopedesk","Test":"TestW01WholeResultTransaction","Output":"2026/11/03 03:35:24 OK   00016_event_dedupe_legacy_lookup.sql (2.49ms)\n"}
+{"Time":"2026-11-03T03:35:24.326602777Z","Action":"output","Package":"scopedesk","Test":"TestW01WholeResultTransaction","Output":"2026/11/03 03:35:24 OK   00017_dns_observation.sql (2.3ms)\n"}
+{"Time":"2026-11-03T03:35:24.32662005Z","Action":"output","Package":"scopedesk","Test":"TestW01WholeResultTransaction","Output":"2026/11/03 03:35:24 goose: successfully migrated database to version: 17\n"}
+{"Time":"2026-11-03T03:35:24.747717128Z","Action":"output","Package":"scopedesk","Test":"TestW01WholeResultTransaction","Output":"--- PASS: TestW01WholeResultTransaction (0.87s)\n"}
+{"Time":"2026-11-03T03:35:24.74777156Z","Action":"pass","Package":"scopedesk","Test":"TestW01WholeResultTransaction","Elapsed":0.87}
+{"Time":"2026-11-03T03:35:24.747783794Z","Action":"run","Package":"scopedesk","Test":"TestW01Migration15To16"}
+{"Time":"2026-11-03T03:35:24.747789344Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"=== RUN   TestW01Migration15To16\n"}
+{"Time":"2026-11-03T03:35:24.930209213Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"2026/11/03 03:35:24 OK   00001_core.sql (150.58ms)\n"}
+{"Time":"2026-11-03T03:35:25.019327096Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"2026/11/03 03:35:25 OK   00002_security_rules.sql (88.62ms)\n"}
+{"Time":"2026-11-03T03:35:25.29939621Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"2026/11/03 03:35:25 OK   00003_discovery.sql (259.07ms)\n"}
+{"Time":"2026-11-03T03:35:25.313154565Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"2026/11/03 03:35:25 OK   00004_plugins.sql (11.39ms)\n"}
+{"Time":"2026-11-03T03:35:25.318471967Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"2026/11/03 03:35:25 OK   00005_remove_scope_expiry.sql (4.95ms)\n"}
+{"Time":"2026-11-03T03:35:25.325305799Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"2026/11/03 03:35:25 OK   00006_e3_scheduler_fixes.sql (6.42ms)\n"}
+{"Time":"2026-11-03T03:35:25.333541204Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"2026/11/03 03:35:25 OK   00007_plugin_evidence.sql (6.84ms)\n"}
+{"Time":"2026-11-03T03:35:25.342402416Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"2026/11/03 03:35:25 OK   00008_execution_policy.sql (8.4ms)\n"}
+{"Time":"2026-11-03T03:35:25.357437339Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"2026/11/03 03:35:25 OK   00009_favicon_hashes.sql (9.35ms)\n"}
+{"Time":"2026-11-03T03:35:25.404812154Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"2026/11/03 03:35:25 OK   00010_projects.sql (44.48ms)\n"}
+{"Time":"2026-11-03T03:35:25.410215117Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"2026/11/03 03:35:25 OK   00011_network_evidence.sql (4.34ms)\n"}
+{"Time":"2026-11-03T03:35:25.416154288Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"2026/11/03 03:35:25 OK   00012_fingerprint_evidence.sql (4ms)\n"}
+{"Time":"2026-11-03T03:35:25.446839573Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"2026/11/03 03:35:25 OK   00013_enterprise_exploration.sql (22.57ms)\n"}
+{"Time":"2026-11-03T03:35:25.487633431Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"2026/11/03 03:35:25 OK   00014_passive_sources.sql (36.26ms)\n"}
+{"Time":"2026-11-03T03:35:25.502451727Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"2026/11/03 03:35:25 OK   00015_passive_credits_only.sql (12.63ms)\n"}
+{"Time":"2026-11-03T03:35:25.505821109Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"2026/11/03 03:35:25 OK   00016_event_dedupe_legacy_lookup.sql (3.08ms)\n"}
+{"Time":"2026-11-03T03:35:25.510778321Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"2026/11/03 03:35:25 OK   00017_dns_observation.sql (2.75ms)\n"}
+{"Time":"2026-11-03T03:35:25.510797297Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"2026/11/03 03:35:25 goose: successfully migrated database to version: 17\n"}
+{"Time":"2026-11-03T03:35:25.569115646Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"2026/11/03 03:35:25 OK   00017_dns_observation.sql (4.65ms)\n"}
+{"Time":"2026-11-03T03:35:25.572247221Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"2026/11/03 03:35:25 OK   00016_event_dedupe_legacy_lookup.sql (2.19ms)\n"}
+{"Time":"2026-11-03T03:35:25.572664365Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"2026/11/03 03:35:25 goose: no migrations to run. current version: 15\n"}
+{"Time":"2026-11-03T03:35:25.589480986Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"2026/11/03 03:35:25 OK   00016_event_dedupe_legacy_lookup.sql (5.25ms)\n"}
+{"Time":"2026-11-03T03:35:25.593295133Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"2026/11/03 03:35:25 OK   00017_dns_observation.sql (3.32ms)\n"}
+{"Time":"2026-11-03T03:35:25.593313638Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"2026/11/03 03:35:25 goose: successfully migrated database to version: 17\n"}
+{"Time":"2026-11-03T03:35:25.593835711Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"    event_dedupe_test.go:211: expected migration 16\n"}
+{"Time":"2026-11-03T03:35:25.87403619Z","Action":"output","Package":"scopedesk","Test":"TestW01Migration15To16","Output":"--- FAIL: TestW01Migration15To16 (1.13s)\n"}
+{"Time":"2026-11-03T03:35:25.874085583Z","Action":"fail","Package":"scopedesk","Test":"TestW01Migration15To16","Elapsed":1.13}
+{"Time":"2026-11-03T03:35:25.874152248Z","Action":"run","Package":"scopedesk","Test":"TestW01LongDetailCommits"}
+{"Time":"2026-11-03T03:35:25.874167316Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"=== RUN   TestW01LongDetailCommits\n"}
+{"Time":"2026-11-03T03:35:25.99009873Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 03:35:25 OK   00001_core.sql (92.64ms)\n"}
+{"Time":"2026-11-03T03:35:26.002360542Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 03:35:26 OK   00002_security_rules.sql (9.89ms)\n"}
+{"Time":"2026-11-03T03:35:26.105010017Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 03:35:26 OK   00003_discovery.sql (91.41ms)\n"}
+{"Time":"2026-11-03T03:35:26.121315369Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 03:35:26 OK   00004_plugins.sql (12.19ms)\n"}
+{"Time":"2026-11-03T03:35:26.127952321Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 03:35:26 OK   00005_remove_scope_expiry.sql (5.06ms)\n"}
+{"Time":"2026-11-03T03:35:26.138513054Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 03:35:26 OK   00006_e3_scheduler_fixes.sql (9.01ms)\n"}
+{"Time":"2026-11-03T03:35:26.146863177Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 03:35:26 OK   00007_plugin_evidence.sql (6.67ms)\n"}
+{"Time":"2026-11-03T03:35:26.156211983Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 03:35:26 OK   00008_execution_policy.sql (8.12ms)\n"}
+{"Time":"2026-11-03T03:35:26.167988805Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 03:35:26 OK   00009_favicon_hashes.sql (10.33ms)\n"}
+{"Time":"2026-11-03T03:35:26.210397907Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 03:35:26 OK   00010_projects.sql (38.65ms)\n"}
+{"Time":"2026-11-03T03:35:26.215470008Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 03:35:26 OK   00011_network_evidence.sql (4.04ms)\n"}
+{"Time":"2026-11-03T03:35:26.220108405Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 03:35:26 OK   00012_fingerprint_evidence.sql (3.86ms)\n"}
+{"Time":"2026-11-03T03:35:26.254655729Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 03:35:26 OK   00013_enterprise_exploration.sql (26.7ms)\n"}
+{"Time":"2026-11-03T03:35:26.301103158Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 03:35:26 OK   00014_passive_sources.sql (35.71ms)\n"}
+{"Time":"2026-11-03T03:35:26.320668945Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 03:35:26 OK   00015_passive_credits_only.sql (12.89ms)\n"}
+{"Time":"2026-11-03T03:35:26.323772534Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 03:35:26 OK   00016_event_dedupe_legacy_lookup.sql (2.71ms)\n"}
+{"Time":"2026-11-03T03:35:26.327398619Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 03:35:26 OK   00017_dns_observation.sql (2.46ms)\n"}
+{"Time":"2026-11-03T03:35:26.327416573Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 03:35:26 goose: successfully migrated database to version: 17\n"}
+{"Time":"2026-11-03T03:35:26.714823569Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"--- PASS: TestW01LongDetailCommits (0.84s)\n"}
+{"Time":"2026-11-03T03:35:26.714878624Z","Action":"pass","Package":"scopedesk","Test":"TestW01LongDetailCommits","Elapsed":0.84}
+{"Time":"2026-11-03T03:35:26.715525915Z","Action":"output","Package":"scopedesk","Output":"FAIL\n"}
+{"Time":"2026-11-03T03:35:26.72286819Z","Action":"output","Package":"scopedesk","Output":"FAIL\tscopedesk\t4.776s\n"}
+{"Time":"2026-11-03T03:35:26.722886425Z","Action":"fail","Package":"scopedesk","Elapsed":4.776}

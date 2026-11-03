@@ -1,0 +1,25 @@
+=== RUN   TestW03HashDoesNotBlockExistingSession
+--- PASS: TestW03HashDoesNotBlockExistingSession (1.67s)
+=== RUN   TestW37AccountAcrossIPs
+=== RUN   TestW37AccountAcrossIPs/admin
+=== RUN   TestW37AccountAcrossIPs/nonexistent
+--- PASS: TestW37AccountAcrossIPs (1.97s)
+    --- PASS: TestW37AccountAcrossIPs/admin (0.99s)
+    --- PASS: TestW37AccountAcrossIPs/nonexistent (0.99s)
+=== RUN   TestW37AccountSurvivesRestart
+--- PASS: TestW37AccountSurvivesRestart (0.99s)
+=== RUN   TestW37CanonicalBucketPreservesIdentity
+--- PASS: TestW37CanonicalBucketPreservesIdentity (0.99s)
+=== RUN   TestW37ExactIdentityAndIPLimitRemain
+--- PASS: TestW37ExactIdentityAndIPLimitRemain (1.70s)
+=== RUN   TestW37ReservationsRecoveryAndReset
+--- PASS: TestW37ReservationsRecoveryAndReset (0.00s)
+=== RUN   TestW37PersistenceFailureAndPrivacy
+--- PASS: TestW37PersistenceFailureAndPrivacy (0.99s)
+=== RUN   TestW37CompletionFailureDoesNotIssueSession
+--- PASS: TestW37CompletionFailureDoesNotIssueSession (0.99s)
+=== RUN   TestW37AdminUnlockPermissionsAuditAndDurability
+--- PASS: TestW37AdminUnlockPermissionsAuditAndDurability (1.65s)
+=== RUN   TestW37BucketCapacityBound
+--- PASS: TestW37BucketCapacityBound (0.02s)
+PASS

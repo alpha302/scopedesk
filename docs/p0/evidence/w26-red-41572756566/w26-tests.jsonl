@@ -1,0 +1,28 @@
+{"Time":"2026-11-03T03:32:56.067391626Z","Action":"start","Package":"scopedesk"}
+{"Time":"2026-11-03T03:32:56.08399185Z","Action":"run","Package":"scopedesk","Test":"TestW26WireNegativeEvidence"}
+{"Time":"2026-11-03T03:32:56.084022067Z","Action":"output","Package":"scopedesk","Test":"TestW26WireNegativeEvidence","Output":"=== RUN   TestW26WireNegativeEvidence\n"}
+{"Time":"2026-11-03T03:32:56.084072513Z","Action":"run","Package":"scopedesk","Test":"TestW26WireNegativeEvidence/NXDOMAIN"}
+{"Time":"2026-11-03T03:32:56.084081239Z","Action":"output","Package":"scopedesk","Test":"TestW26WireNegativeEvidence/NXDOMAIN","Output":"=== RUN   TestW26WireNegativeEvidence/NXDOMAIN\n"}
+{"Time":"2026-11-03T03:32:56.596804424Z","Action":"output","Package":"scopedesk","Test":"TestW26WireNegativeEvidence/NXDOMAIN","Output":"    w26_dns_test.go:42: W26: independent wire DNS evidence missing or misclassified\n"}
+{"Time":"2026-11-03T03:32:56.596868254Z","Action":"output","Package":"scopedesk","Test":"TestW26WireNegativeEvidence/NXDOMAIN","Output":"--- FAIL: TestW26WireNegativeEvidence/NXDOMAIN (0.51s)\n"}
+{"Time":"2026-11-03T03:32:56.59694564Z","Action":"fail","Package":"scopedesk","Test":"TestW26WireNegativeEvidence/NXDOMAIN","Elapsed":0.51}
+{"Time":"2026-11-03T03:32:56.596962421Z","Action":"run","Package":"scopedesk","Test":"TestW26WireNegativeEvidence/NODATA"}
+{"Time":"2026-11-03T03:32:56.596969625Z","Action":"output","Package":"scopedesk","Test":"TestW26WireNegativeEvidence/NODATA","Output":"=== RUN   TestW26WireNegativeEvidence/NODATA\n"}
+{"Time":"2026-11-03T03:32:56.599090875Z","Action":"output","Package":"scopedesk","Test":"TestW26WireNegativeEvidence/NODATA","Output":"    w26_dns_test.go:42: W26: independent wire DNS evidence missing or misclassified\n"}
+{"Time":"2026-11-03T03:32:56.599182227Z","Action":"output","Package":"scopedesk","Test":"TestW26WireNegativeEvidence/NODATA","Output":"--- FAIL: TestW26WireNegativeEvidence/NODATA (0.00s)\n"}
+{"Time":"2026-11-03T03:32:56.599259092Z","Action":"fail","Package":"scopedesk","Test":"TestW26WireNegativeEvidence/NODATA","Elapsed":0}
+{"Time":"2026-11-03T03:32:56.599304228Z","Action":"run","Package":"scopedesk","Test":"TestW26WireNegativeEvidence/SERVFAIL"}
+{"Time":"2026-11-03T03:32:56.599312704Z","Action":"output","Package":"scopedesk","Test":"TestW26WireNegativeEvidence/SERVFAIL","Output":"=== RUN   TestW26WireNegativeEvidence/SERVFAIL\n"}
+{"Time":"2026-11-03T03:32:56.602426113Z","Action":"output","Package":"scopedesk","Test":"TestW26WireNegativeEvidence/SERVFAIL","Output":"    w26_dns_test.go:42: W26: independent wire DNS evidence missing or misclassified\n"}
+{"Time":"2026-11-03T03:32:56.602510412Z","Action":"output","Package":"scopedesk","Test":"TestW26WireNegativeEvidence/SERVFAIL","Output":"--- FAIL: TestW26WireNegativeEvidence/SERVFAIL (0.00s)\n"}
+{"Time":"2026-11-03T03:32:56.602557551Z","Action":"fail","Package":"scopedesk","Test":"TestW26WireNegativeEvidence/SERVFAIL","Elapsed":0}
+{"Time":"2026-11-03T03:32:56.602602826Z","Action":"run","Package":"scopedesk","Test":"TestW26WireNegativeEvidence/REFUSED"}
+{"Time":"2026-11-03T03:32:56.602610661Z","Action":"output","Package":"scopedesk","Test":"TestW26WireNegativeEvidence/REFUSED","Output":"=== RUN   TestW26WireNegativeEvidence/REFUSED\n"}
+{"Time":"2026-11-03T03:32:56.605588025Z","Action":"output","Package":"scopedesk","Test":"TestW26WireNegativeEvidence/REFUSED","Output":"    w26_dns_test.go:42: W26: independent wire DNS evidence missing or misclassified\n"}
+{"Time":"2026-11-03T03:32:56.60565941Z","Action":"output","Package":"scopedesk","Test":"TestW26WireNegativeEvidence/REFUSED","Output":"--- FAIL: TestW26WireNegativeEvidence/REFUSED (0.00s)\n"}
+{"Time":"2026-11-03T03:32:56.605675771Z","Action":"fail","Package":"scopedesk","Test":"TestW26WireNegativeEvidence/REFUSED","Elapsed":0}
+{"Time":"2026-11-03T03:32:56.605718912Z","Action":"output","Package":"scopedesk","Test":"TestW26WireNegativeEvidence","Output":"--- FAIL: TestW26WireNegativeEvidence (0.52s)\n"}
+{"Time":"2026-11-03T03:32:56.605726767Z","Action":"fail","Package":"scopedesk","Test":"TestW26WireNegativeEvidence","Elapsed":0.52}
+{"Time":"2026-11-03T03:32:56.605886759Z","Action":"output","Package":"scopedesk","Output":"FAIL\n"}
+{"Time":"2026-11-03T03:32:56.615918256Z","Action":"output","Package":"scopedesk","Output":"FAIL\tscopedesk\t0.548s\n"}
+{"Time":"2026-11-03T03:32:56.615940338Z","Action":"fail","Package":"scopedesk","Elapsed":0.549}

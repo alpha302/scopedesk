@@ -1,0 +1,15 @@
+{
+  "commit.txt": "393bce8d489c5273ff130812b7401e4c5d913db068aeaba015f48702a2adc5bd",
+  "measurement-tests.jsonl": "fc9895434a19b687f73525cc24846448802f8fe6bcab32273dd4002f5cafb47e",
+  "regression-tests.jsonl": "e579aca6ec2d21ca0ba72c4bc11611aa4c6789800a33dc5174c2cba74f6395b0",
+  "source.sha256": "e02499847def300bd80de0e1b0c418795d0df2c944f04d5a5b9a177f89fa198c",
+  "w30-batched_plans-explain.json": "12b2843b50db3d6d93f48e4076ff759ab93df77e0f8d687ff440b0bf11d7fb76",
+  "w30-current-round1.json": "c12270a0748d7e0e3aaa2d0b97c1c7663befc704823970a0cf9c15de4b7a0234",
+  "w30-current-round2.json": "516891543e1cecc32446f1f80474dd485036d87a271a75bc5bfede13990a327a",
+  "w30-current-round3.json": "1f40c4371246db968fbbb7bc86f649a8dcd7f5f8fa2342cd25256171fa6da14a",
+  "w30-legacy-round1.json": "482c8c1cb04fef13150e73df881df3f02f22e6d0982512856370101c601ac8d8",
+  "w30-legacy-round2.json": "974543f44258f514d8040952caa9080ac5c672982298cf98372693491bebfa97",
+  "w30-legacy-round3.json": "0b8f32928a3bac6b78a20cc7ce91c81de3909c69c80d34cb1537e5c8ffa4c7c0",
+  "w30-scopes-explain.json": "c7278734fe82e82621f99b1ddca466f95c02acebd8a43b48ae8c77c2695ce56c",
+  "w30-tests.jsonl": "cb6b3206bc8c726e60865e1a134f9849f3ffff03d796c003bfdbeae0547e5a95"
+}
