@@ -1,0 +1,49 @@
+name: W03 same-runner latency comparison
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+      - name: Measure both immutable revisions on this runner
+        env:
+          W03_MEASURE: '1'
+          GOMAXPROCS: '2'
+        run: |
+          mkdir -p "$GITHUB_WORKSPACE/comparison"
+          lscpu > comparison/cpu.txt
+          go version > comparison/go.txt
+          free -b > comparison/memory.txt
+          for variant in before after; do
+            if [ "$variant" = before ]; then
+              revision=b50eaf33fd27c0d9aa3d244340bd2392ef18b0b3
+            else
+              revision=0cb97208e5773c3ca55433f4dd31c01107db9e11
+            fi
+            checkout="$RUNNER_TEMP/w03-$variant"
+            export P0_ARTIFACT_DIR="$GITHUB_WORKSPACE/comparison/$variant"
+            mkdir -p "$P0_ARTIFACT_DIR"
+            git worktree add --detach "$checkout" "$revision"
+            git -C "$checkout" rev-parse HEAD > "$P0_ARTIFACT_DIR/commit.txt"
+            (cd "$checkout" && go test -json -count=1 -timeout=5m -run '^TestW03SingleUserLatency$' .) > "$P0_ARTIFACT_DIR/latency-tests.jsonl"
+            for profile in "$P0_ARTIFACT_DIR"/*.pprof; do
+              go tool pprof -raw "$profile" > "$profile.raw.txt"
+            done
+          done
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: w03-same-runner-comparison
+          path: comparison/
+          retention-days: 14
+          if-no-files-found: error
