@@ -203,7 +203,7 @@ func TestW01Migration15To16(t *testing.T) {
 	legacy := fmt.Sprintf("1:NEW_ASSET:%s:%x", at.In(shanghai).Format("2006-01-02"), raw)
 	p0Exec(t, s, `INSERT INTO event_dedupes(key)VALUES($1)`, legacy)
 	p0Exec(t, s, `INSERT INTO asset_events(scope_id,asset_id,type,detail,dedupe_key,created_at)VALUES($1,1,'NEW_ASSET',$2,$3,$4)`, scope.ID, raw, legacy, at)
-	if err := goose.UpContext(ctx, db, "migrations"); err != nil {
+	if err := goose.UpToContext(ctx, db, "migrations", 16); err != nil {
 		t.Fatal("isolated v15 to v16 migration failed")
 	}
 	version, err := goose.GetDBVersionContext(ctx, db)
@@ -228,7 +228,7 @@ func TestW01Migration15To16(t *testing.T) {
 	if err := goose.DownToContext(ctx, db, "migrations", 15); err != nil {
 		t.Fatal("migration 16 index rollback failed")
 	}
-	if err := goose.UpContext(ctx, db, "migrations"); err != nil {
+	if err := goose.UpToContext(ctx, db, "migrations", 16); err != nil {
 		t.Fatal("migration 16 reapply failed")
 	}
 }
