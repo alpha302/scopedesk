@@ -69,7 +69,7 @@ func TestW05OldWriterKeepsNewColumns(t *testing.T) {
 	run := claimedRun(t, old, scope)
 	// Supply an observed HTTP response directly to the old writer. This exercises
 	// its normal successful-HTTP update path without making any network request.
-	if _, err := old.WriteResults(ctx, run, []Observation{{Host: host, Sources: []string{"fixture-http"}, Alive: ptr(true), Port: 443, StatusCode: 200, Title: "synthetic rollback fixture", Server: "fixture"}}, false); err != nil {
+	if _, err := old.WriteResults(ctx, run, []Observation{{Host: host, Sources: []string{"fixture-http"}, Alive: ptr(true), Port: 443, StatusCode: 200, Title: "synthetic rollback fixture", Server: "fixture", Fingerprints: []string{}, Redirects: []string{}}}, false); err != nil {
 		t.Fatal("old writer failed against schema 18 (connection details suppressed)")
 	}
 	closeRun(t, old, run)

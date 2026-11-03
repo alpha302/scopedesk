@@ -14,6 +14,7 @@ on:
       - 'web/app.js'
       - 'web/index.html'
       - '.github/workflows/w05-classification.yml'
+      - 'docs/p0/evidence/w05-contract-20261103/old-writer-fixture.go.txt'
 permissions:
   contents: read
 jobs:
