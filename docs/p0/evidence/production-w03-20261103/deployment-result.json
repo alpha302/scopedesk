@@ -1,0 +1,17 @@
+{
+  "completed_at": "2026-11-03T02:27:10.043476+00:00",
+  "release_commit": "0cb97208e5773c3ca55433f4dd31c01107db9e11",
+  "backup": "/var/backups/scopedesk/before-w03-v16-20261103-022702",
+  "schema_before": 16,
+  "schema_after": 16,
+  "counts_preserved": true,
+  "binary_sha256": "23f281e284441ef01ed4ceb2af737d1f24e3a2dfdb8d86a8ce4783c425476bff",
+  "running_binary_verified": true,
+  "source_files_verified": 81,
+  "configuration_unchanged": true,
+  "plans_unchanged": true,
+  "readiness": true,
+  "authentication_required": true,
+  "test_target_requests": 0,
+  "w03_deployed": true
+}
