@@ -8,9 +8,12 @@ on:
       - 'collectors.go'
       - 'queue.go'
       - 'results.go'
-      - 'p0_reproduction_test.go'
+      - 'p0_correctness_test.go'
+      - 'plugin_evidence_integration_test.go'
+      - 'store_integration_test.go'
+      - 'web/index.html'
       - 'migrations/00016*'
-      - '.github/workflows/w01-events.yml'
+      - '.github/workflows/w04-safety.yml'
 permissions:
   contents: read
 jobs:
