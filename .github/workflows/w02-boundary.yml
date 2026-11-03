@@ -41,7 +41,13 @@ jobs:
           docker exec scopedesk-w02 /bin/busybox ip -6 route show table all > w02-artifacts/routes.txt
           docker inspect scopedesk-w02 --format '{"network":{{json .HostConfig.NetworkMode}},"image":{{json .Image}},"memory":{{.HostConfig.Memory}},"nano_cpus":{{.HostConfig.NanoCpus}}}' > w02-artifacts/isolation.json
       - name: W02 acceptance (expected to fail until W02 is fixed)
-        run: docker exec -e W02_NETWORK_NONE=confirmed -e P0_ARTIFACT_DIR=/evidence -e GOMAXPROCS=2 scopedesk-w02 /tmp/w02-tests -test.v -test.timeout=3m -test.run='^TestW02' > w02-artifacts/tests.txt 2>&1
+        shell: bash
+        run: |
+          set -o pipefail
+          docker exec -e W02_NETWORK_NONE=confirmed -e P0_ARTIFACT_DIR=/evidence -e GOMAXPROCS=2 scopedesk-w02 /tmp/w02-tests -test.v -test.timeout=3m -test.run='^TestW02' 2>&1 | tee w02-artifacts/tests.txt
+      - name: Make synthetic fixture evidence readable by runner
+        if: always()
+        run: docker exec scopedesk-w02 chmod -R a+rX /evidence
       - uses: actions/upload-artifact@v4
         if: always()
         with:
