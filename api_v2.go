@@ -221,9 +221,22 @@ func (e *Engine) serve(w http.ResponseWriter, r *http.Request, u User) {
 				Sources        []string `json:"sources"`
 				PluginStrategy string   `json:"plugin_strategy"`
 				CollectionMode string   `json:"collection_mode"`
+				UseSavedConfig bool     `json:"use_saved_config"`
 			}
 			if !decode(w, r, &body) {
 				return
+			}
+			if body.UseSavedConfig {
+				if body.Sources != nil || body.CollectionMode != "" || body.PluginStrategy != "" {
+					fail(w, 400, "使用目标默认配置时不能同时覆盖数据源或处理方式")
+					return
+				}
+				p, err := e.Store.plan(ctx, id)
+				if err != nil {
+					apiError(w, err)
+					return
+				}
+				body.Sources, body.CollectionMode = p.Collectors, p.CollectionMode
 			}
 			e.enqueue(w, r, u, scope, body.Sources, body.PluginStrategy, body.CollectionMode)
 			return
@@ -315,7 +328,7 @@ func (e *Engine) serve(w http.ResponseWriter, r *http.Request, u User) {
 		respond(w, 200, map[string]bool{"ok": true})
 		return
 	case path == "/api/events" && r.Method == "GET":
-		list, err := queryJSON(ctx, e.Store.DB, `SELECT to_jsonb(v) FROM(SELECT ev.*,a.host,s.domain,s.project_id FROM asset_events ev JOIN scopes s ON s.id=ev.scope_id LEFT JOIN assets a ON a.id=ev.asset_id WHERE ($1='admin' OR scope_access(s.id,$2))AND ($3='' OR ev.type=$3) AND ($4=0 OR s.project_id=$4)ORDER BY ev.created_at DESC LIMIT 200)v`, u.Role, u.ID, r.URL.Query().Get("type"), projectFilter(r.URL.Query()))
+		list, err := queryJSON(ctx, e.Store.DB, `SELECT to_jsonb(v) FROM(SELECT ev.*,a.host,s.domain,s.project_id FROM asset_events ev JOIN scopes s ON s.id=ev.scope_id LEFT JOIN assets a ON a.id=ev.asset_id WHERE ($1='admin' OR scope_access(s.id,$2))AND ($3='' OR ev.type=$3) AND ($4=0 OR s.project_id=$4) AND ($5=0 OR s.id=$5)ORDER BY ev.created_at DESC LIMIT 200)v`, u.Role, u.ID, r.URL.Query().Get("type"), projectFilter(r.URL.Query()), scopeFilter(r.URL.Query()))
 		if err != nil {
 			apiError(w, err)
 			return
@@ -685,7 +698,18 @@ func (e *Engine) saveScope(w http.ResponseWriter, r *http.Request, u User, id in
 	respond(w, 200, map[string]any{"id": id, "ok": true})
 }
 func (e *Engine) jobList(ctx context.Context, u User, filters ...urlQuery) ([]json.RawMessage, error) {
-	return queryJSON(ctx, e.Store.DB, `SELECT to_jsonb(v)FROM(SELECT j.*,s.domain,s.project_id,(j.status IN('queued','retrying') AND j.created_at<now()-interval '5 minutes' AND NOT EXISTS(SELECT 1 FROM workers w WHERE w.heartbeat_at>now()-interval '2 minutes' AND j.required_labels <@ w.labels)) AS waiting_for_worker,coalesce((SELECT jsonb_agg(to_jsonb(ss))FROM job_source_stats ss WHERE ss.job_id=j.id),'[]')AS source_stats FROM jobs j JOIN scopes s ON s.id=j.scope_id WHERE($1='admin' OR scope_access(s.id,$2)) AND($3=0 OR s.project_id=$3)ORDER BY j.id DESC LIMIT 100)v`, u.Role, u.ID, projectFilter(filters...))
+	return queryJSON(ctx, e.Store.DB, `SELECT to_jsonb(v)FROM(SELECT j.*,s.domain,s.project_id,(j.status IN('queued','retrying') AND j.created_at<now()-interval '5 minutes' AND NOT EXISTS(SELECT 1 FROM workers w WHERE w.heartbeat_at>now()-interval '2 minutes' AND j.required_labels <@ w.labels)) AS waiting_for_worker,coalesce((SELECT jsonb_agg(to_jsonb(ss))FROM job_source_stats ss WHERE ss.job_id=j.id),'[]')AS source_stats FROM jobs j JOIN scopes s ON s.id=j.scope_id WHERE($1='admin' OR scope_access(s.id,$2)) AND($3=0 OR s.project_id=$3) AND($4=0 OR s.id=$4)ORDER BY j.id DESC LIMIT 100)v`, u.Role, u.ID, projectFilter(filters...), scopeFilter(filters...))
+}
+
+func scopeFilter(q ...urlQuery) int64 {
+	if len(q) == 0 || q[0] == nil || q[0].Get("scope_id") == "" {
+		return 0
+	}
+	n, err := strconv.ParseInt(q[0].Get("scope_id"), 10, 64)
+	if err != nil || n < 1 {
+		return -1
+	}
+	return n
 }
 func (e *Engine) assets(w http.ResponseWriter, r *http.Request, u User, export bool) {
 	if err := validateFaviconQuery(r.URL.Query()); err != nil {

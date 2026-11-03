@@ -1,0 +1,84 @@
+=== RUN   TestSourcePolicyCombinations
+=== RUN   TestSourcePolicyCombinations/exact_subfinder
+=== RUN   TestSourcePolicyCombinations/subdomain_subfinder
+=== RUN   TestSourcePolicyCombinations/evidence_subfinder
+=== RUN   TestSourcePolicyCombinations/builtin_exact
+=== RUN   TestSourcePolicyCombinations/builtin_cidr
+=== RUN   TestSourcePolicyCombinations/custom_declared
+=== RUN   TestSourcePolicyCombinations/custom_unrestricted
+=== RUN   TestSourcePolicyCombinations/disabled
+--- PASS: TestSourcePolicyCombinations (0.00s)
+    --- PASS: TestSourcePolicyCombinations/exact_subfinder (0.00s)
+    --- PASS: TestSourcePolicyCombinations/subdomain_subfinder (0.00s)
+    --- PASS: TestSourcePolicyCombinations/evidence_subfinder (0.00s)
+    --- PASS: TestSourcePolicyCombinations/builtin_exact (0.00s)
+    --- PASS: TestSourcePolicyCombinations/builtin_cidr (0.00s)
+    --- PASS: TestSourcePolicyCombinations/custom_declared (0.00s)
+    --- PASS: TestSourcePolicyCombinations/custom_unrestricted (0.00s)
+    --- PASS: TestSourcePolicyCombinations/disabled (0.00s)
+=== RUN   TestUXIncompatibleSourcesNeverCreateJobs
+2026/11/03 17:36:08 OK   00001_core.sql (142.51ms)
+2026/11/03 17:36:08 OK   00002_security_rules.sql (15.52ms)
+2026/11/03 17:36:08 OK   00003_discovery.sql (104.03ms)
+2026/11/03 17:36:08 OK   00004_plugins.sql (16.32ms)
+2026/11/03 17:36:08 OK   00005_remove_scope_expiry.sql (7.14ms)
+2026/11/03 17:36:08 OK   00006_e3_scheduler_fixes.sql (9.76ms)
+2026/11/03 17:36:08 OK   00007_plugin_evidence.sql (10.89ms)
+2026/11/03 17:36:08 OK   00008_execution_policy.sql (14.93ms)
+2026/11/03 17:36:08 OK   00009_favicon_hashes.sql (16.73ms)
+2026/11/03 17:36:08 OK   00010_projects.sql (52.06ms)
+2026/11/03 17:36:08 OK   00011_network_evidence.sql (6.61ms)
+2026/11/03 17:36:08 OK   00012_fingerprint_evidence.sql (5.61ms)
+2026/11/03 17:36:08 OK   00013_enterprise_exploration.sql (28.73ms)
+2026/11/03 17:36:08 OK   00014_passive_sources.sql (44.03ms)
+2026/11/03 17:36:08 OK   00015_passive_credits_only.sql (16.32ms)
+2026/11/03 17:36:08 OK   00016_event_dedupe_legacy_lookup.sql (3.2ms)
+2026/11/03 17:36:08 OK   00017_dns_observation.sql (3.68ms)
+2026/11/03 17:36:08 OK   00018_asset_classification.sql (5.94ms)
+2026/11/03 17:36:08 goose: successfully migrated database to version: 18
+--- PASS: TestUXIncompatibleSourcesNeverCreateJobs (1.00s)
+=== RUN   TestUXSavedDefaultsAndTargetHistory
+2026/11/03 17:36:09 OK   00001_core.sql (121ms)
+2026/11/03 17:36:09 OK   00002_security_rules.sql (14.38ms)
+2026/11/03 17:36:09 OK   00003_discovery.sql (109.54ms)
+2026/11/03 17:36:09 OK   00004_plugins.sql (16.68ms)
+2026/11/03 17:36:09 OK   00005_remove_scope_expiry.sql (7.22ms)
+2026/11/03 17:36:09 OK   00006_e3_scheduler_fixes.sql (9.42ms)
+2026/11/03 17:36:09 OK   00007_plugin_evidence.sql (10.76ms)
+2026/11/03 17:36:09 OK   00008_execution_policy.sql (12.63ms)
+2026/11/03 17:36:09 OK   00009_favicon_hashes.sql (15.55ms)
+2026/11/03 17:36:09 OK   00010_projects.sql (50.01ms)
+2026/11/03 17:36:09 OK   00011_network_evidence.sql (6.95ms)
+2026/11/03 17:36:09 OK   00012_fingerprint_evidence.sql (5.85ms)
+2026/11/03 17:36:09 OK   00013_enterprise_exploration.sql (25.02ms)
+2026/11/03 17:36:09 OK   00014_passive_sources.sql (42.09ms)
+2026/11/03 17:36:09 OK   00015_passive_credits_only.sql (17.03ms)
+2026/11/03 17:36:09 OK   00016_event_dedupe_legacy_lookup.sql (4.47ms)
+2026/11/03 17:36:09 OK   00017_dns_observation.sql (4.01ms)
+2026/11/03 17:36:09 OK   00018_asset_classification.sql (6.11ms)
+2026/11/03 17:36:09 goose: successfully migrated database to version: 18
+--- PASS: TestUXSavedDefaultsAndTargetHistory (1.03s)
+=== RUN   TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent
+2026/11/03 17:36:10 OK   00001_core.sql (117.94ms)
+2026/11/03 17:36:10 OK   00002_security_rules.sql (12.76ms)
+2026/11/03 17:36:10 OK   00003_discovery.sql (104.98ms)
+2026/11/03 17:36:10 OK   00004_plugins.sql (17.05ms)
+2026/11/03 17:36:10 OK   00005_remove_scope_expiry.sql (7.02ms)
+2026/11/03 17:36:10 OK   00006_e3_scheduler_fixes.sql (9.38ms)
+2026/11/03 17:36:10 OK   00007_plugin_evidence.sql (10.88ms)
+2026/11/03 17:36:10 OK   00008_execution_policy.sql (12.84ms)
+2026/11/03 17:36:10 OK   00009_favicon_hashes.sql (15.24ms)
+2026/11/03 17:36:10 OK   00010_projects.sql (48.01ms)
+2026/11/03 17:36:10 OK   00011_network_evidence.sql (6.7ms)
+2026/11/03 17:36:10 OK   00012_fingerprint_evidence.sql (6.66ms)
+2026/11/03 17:36:10 OK   00013_enterprise_exploration.sql (25.96ms)
+2026/11/03 17:36:10 OK   00014_passive_sources.sql (42.2ms)
+2026/11/03 17:36:10 OK   00015_passive_credits_only.sql (17.9ms)
+2026/11/03 17:36:10 OK   00016_event_dedupe_legacy_lookup.sql (4.72ms)
+2026/11/03 17:36:10 OK   00017_dns_observation.sql (4.21ms)
+2026/11/03 17:36:10 OK   00018_asset_classification.sql (5.83ms)
+2026/11/03 17:36:10 goose: successfully migrated database to version: 18
+    ux_source_integration_test.go:142: 400 {"error":"ERROR: null value in column \"policy\" of relation \"scopes\" violates not-null constraint (SQLSTATE 23502)"}
+        
+--- FAIL: TestUXEnterpriseHandoffKeepsAuthorizationAndIsIdempotent (0.92s)
+FAIL

@@ -43,7 +43,7 @@ test('HTTP permission is described separately from actual observations',()=>{
 });
 test('exact targets cannot enqueue subfinder and changing scope never expands authorization',async()=>{
   const scope={id:1,domain:'example.com',mode:'exact',active:false};
-  const m=model({selectedScope:1,state:{scopes:[scope],source_options:['certspotter','subfinder']},sources:['subfinder'],collectionMode:'profile'});
+  const m=model({selectedScope:1,state:{scopes:[scope],source_options:['certspotter','subfinder']},plan:{collectors:['subfinder'],collection_mode:'profile'}});
   const requests=[];m.request=async(...args)=>{requests.push(args);return {job:1};};m.loadState=async()=>{};
   await m.collect();assert.equal(requests.length,0);assert.match(m.message,/精确域名|不支持/);assert.equal(scope.mode,'exact');
 });
@@ -74,11 +74,82 @@ test('an old incompatible plan can still be disabled without widening its scope'
   const scope={id:1,mode:'exact',plan:{collectors:['subfinder']}};
   const m=model({selectedScope:1,state:{scopes:[scope]},plan:{enabled:false,collectors:[],collection_mode:'profile'}});
   const requests=[];m.request=async(...args)=>{requests.push(args);return {}};m.loadState=async()=>{};
-  await m.savePlan();assert.equal(requests.length,1);
+  await m.disablePlan();assert.equal(requests.length,1);
   assert.equal(requests[0][1].enabled,false);assert.equal(requests[0][1].collectors.join(','),'subfinder');assert.equal(scope.mode,'exact');
 });
 test('source cleanup preserves compatible choices and reports unsaved plan changes',()=>{
   const scope={id:1,mode:'exact'};
-  const m=model({selectedScope:1,state:{scopes:[scope]},sources:['certspotter','subfinder'],collectionMode:'profile',plan:{collectors:['certspotter','subfinder'],collection_mode:'profile'}});
-  m.reconcileSourceSelections();assert.equal(m.sources.join(','),'certspotter');assert.equal(m.plan.collectors.join(','),'certspotter');assert.equal(m.sourceWarnings.length,2);assert.equal(scope.mode,'exact');
+  const m=model({selectedScope:1,state:{scopes:[scope]},plan:{collectors:['certspotter','subfinder'],collection_mode:'profile'}});
+  m.reconcileSourceSelections();assert.equal(m.plan.collectors.join(','),'certspotter');assert.equal(m.sourceWarnings.length,1);assert.equal(scope.mode,'exact');
+});
+
+test('primary navigation has five entries and old pages remain grouped',()=>{
+  const m=model({me:{id:1,role:'admin'}});assert.equal(m.navigation.length,5);
+  m.page='events';assert.equal(m.primaryPage,'assets');m.page='plugins';assert.equal(m.primaryPage,'settings');
+  assert.equal(m.settingsNavigation.some(n=>n[0]==='plugins'),true);
+  m.me.role='readonly';assert.equal(m.settingsNavigation.some(n=>n[0]==='plugins'),false);
+});
+
+test('manual runs use saved target defaults and block unsaved source changes',async()=>{
+  const saved={enabled:false,collectors:['certspotter'],collection_mode:'evidence_only',interval_hours:24,cron:''};
+  const scope={id:1,mode:'exact',plan:saved};const m=model({selectedScope:1,state:{scopes:[scope]},plan:{...saved,collectors:[...saved.collectors]}});
+  const calls=[];m.request=async(...args)=>{calls.push(args);return {job:2};};m.loadState=async()=>{};m.loadTargetJobs=async()=>{};
+  await m.collect();assert.equal(calls.length,1);assert.equal(JSON.stringify(calls[0][1]),'{"use_saved_config":true}');
+  m.plan.collection_mode='profile';await m.collect();assert.equal(calls.length,1);assert.match(m.message,/先保存/);
+});
+
+test('selecting targets never aliases or rewrites saved source configuration',()=>{
+  const scope={id:1,mode:'exact',plan:{collectors:['certspotter','subfinder'],collection_mode:'profile'}};
+  const m=model({state:{scopes:[scope]}});m.selectScope(1);
+  assert.equal(scope.plan.collectors.join(','),'certspotter,subfinder');assert.equal(m.plan.collectors.join(','),'certspotter');assert.equal(m.sourceConfigDirty,true);
+});
+
+test('editing a scope keeps limits and requires authorization confirmation again',()=>{
+  const scope={id:1,mode:'exact',rps:0.2,concurrency:1,request_limit:99,window_start:1,window_end:2,confirmed:true,exclusions:['x.example.com']};
+  const m=model({state:{scopes:[scope]}});m.editScope(scope);
+  assert.equal(m.scopeForm.rps,0.2);assert.equal(m.scopeForm.request_limit,99);assert.equal(m.scopeForm.confirmed,false);assert.equal(scope.confirmed,true);
+  m.scopeForm.exclusions.push('y.example.com');assert.equal(scope.exclusions.length,1);
+});
+
+test('presets stay within project rate limits and apply only on selection',()=>{
+  const m=model({state:{projects:[{id:7,rps_limit:0.3}]},scopeForm:{project_id:7,rps:0.1}});
+  m.applyScopePreset('aggressive');assert.equal(m.scopeForm.rps,0.3);assert.equal(m.scopeForm.concurrency,3);
+});
+
+test('batch target creation keeps failed domains for explicit retry',async()=>{
+  const m=model({scopeForm:{domain:'example.com\nEXAMPLE.com\nexample.org',confirmed:true,mode:'exact',active:false},state:{scopes:[]}});
+  const calls=[];m.request=async(path,body)=>{calls.push([path,body]);if(body.domain==='example.org')throw Error('duplicate');return {id:1};};m.loadState=async()=>{};
+  await m.saveScope();assert.equal(calls.length,2);assert.equal(m.scopeForm.domain,'example.org');assert.equal(m.scopeForm.confirmed,false);assert.equal(m.isError,true);assert.match(m.message,/已保存 1/);
+});
+
+test('enterprise handoff carries project and domain without creating or probing',async()=>{
+  const m=model({me:{id:1,role:'admin'}});const c={id:8,project_id:9,domain:'example.org',status:'confirmed'};
+  const calls=[];m.request=async(...args)=>{calls.push(args);return {id:4};};m.loadState=async()=>{};
+  await m.importEnterprise(c);assert.equal(calls.length,0);assert.equal(m.scopeForm.project_id,9);assert.equal(m.scopeForm.domain,c.domain);assert.equal(m.scopeForm.confirmed,false);
+  m.scopeForm.confirmed=true;await m.saveScope();assert.equal(calls.length,1);assert.match(calls[0][0],/candidates\/8\/import-scope/);assert.equal(calls[0][1].mode,'exact');
+});
+
+test('target history requests a server-side scope filter rather than filtering a truncated global list',async()=>{
+  const m=model({selectedScope:3,activeProject:'2'});let requested;m.request=async path=>{requested=path;return [{id:1,scope_id:3}];};
+  await m.loadTargetJobs();assert.match(requested,/scope_id=3/);assert.match(requested,/project_id=2/);assert.equal(m.targetJobs.length,1);
+});
+
+test('saved views whitelist filter keys and partition by account and project',()=>{
+  const m=model({me:{id:1},activeProject:'2'});assert.equal(m.localViewKey(),'scopedesk-views:1:2');
+  const filters=m.cleanViewFilters({q:'test',page:999,project_id:8,source:'certspotter'});
+  assert.equal(filters.q,'test');assert.equal(filters.page,undefined);assert.equal(filters.project_id,undefined);
+  m.me.id=3;assert.equal(m.localViewKey(),'scopedesk-views:3:2');
+});
+
+test('confirming enterprise ownership immediately opens the prefilled target form',async()=>{
+  const m=model({me:{id:1,role:'admin'}});const calls=[];
+  m.request=async(...args)=>{calls.push(args);return {ok:true};};m.loadEnterprise=async()=>{};
+  await m.reviewEnterprise({id:4,domain:'example.org',project_id:2,status:'pending'},'confirmed');
+  assert.equal(calls.length,1);assert.equal(m.page,'scope');assert.equal(m.scopeForm.domain,'example.org');assert.equal(m.scopeForm.confirmed,false);
+});
+
+test('target-specific history groups repeated issues even when global recent jobs exclude them',()=>{
+  const issue=id=>({id,scope_id:1,status:'done',source_stats:[{source:'certspotter',error:'temporary'}]});
+  const m=model({page:'scope',targetTab:'history',targetJobs:[issue(2),issue(1)],state:{jobs:[]}});
+  assert.equal(m.runIssueStreak(m.targetJobs[0]),2);assert.equal(m.runExpanded(m.targetJobs[1]),false);
 });

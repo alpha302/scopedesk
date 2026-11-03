@@ -21,3 +21,7 @@ docs/p0/evidence/w05-*/** -text
 docs/p0/evidence/production-w05-20261103/** -text
 docs/p0/evidence/production-w05-contract-20261103/** -text
 docs/p0/evidence/ux-status-20261103/** -text
+
+docs/p0/evidence/ux-workflow-20261103/** -text
+# Preserve original stderr indentation in the failing API fixture evidence.
+docs/p0/evidence/ux-workflow-20261103/enterprise-red.log -whitespace

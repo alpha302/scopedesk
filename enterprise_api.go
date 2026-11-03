@@ -298,7 +298,7 @@ func (e *Engine) importEnterpriseScope(w http.ResponseWriter, r *http.Request, u
 		return
 	}
 	var scope int64
-	err = tx.QueryRow(ctx, `INSERT INTO scopes(owner,project_id,domain,mode,confirmed,active,rps,concurrency,request_limit,window_start,window_end)VALUES($1,$2,$3,'exact',true,false,1,1,1000,0,24)ON CONFLICT(project_id,domain,mode)DO NOTHING RETURNING id`, u.ID, project, domain).Scan(&scope)
+	err = tx.QueryRow(ctx, `INSERT INTO scopes(owner,project_id,domain,mode,policy,confirmed,active,rps,concurrency,request_limit,window_start,window_end)VALUES($1,$2,$3,'exact','',true,false,1,1,1000,0,24)ON CONFLICT(project_id,domain,mode)DO NOTHING RETURNING id`, u.ID, project, domain).Scan(&scope)
 	if errors.Is(err, pgx.ErrNoRows) {
 		fail(w, 409, "项目已有相同精确范围，请在授权范围页核对，未修改已有设置")
 		return

@@ -1,0 +1,19 @@
+{
+  "source_files": 143,
+  "temporary_pg16": true,
+  "production_db_used": false,
+  "workers_started": false,
+  "binary_sha256": "1a1f67cb0c11d77ae79cabf21d6ee9d725960bc19898b30354fd3613c533016e",
+  "groups": {
+    "ux": {
+      "pass": 12,
+      "skip": 0,
+      "fail": 0
+    },
+    "regression": {
+      "pass": 41,
+      "skip": 0,
+      "fail": 0
+    }
+  }
+}

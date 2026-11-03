@@ -1,0 +1,68 @@
+Browser tab: 2, Title: "ScopeDesk · 持续资产监控", URL: "http://127.0.0.1:18769/".
+1 AXWebArea ScopeDesk · 持续资产监控, URL: 127.0.0.1:18769/
+	2 container app
+		3 container
+			4 text S ScopeDesk 持续资产监控 / v0.3
+			5 button ◈ 概览
+				95 text ◈
+				96 text 概览
+			8 button ▦ 资产
+				97 text ▦
+				98 text 资产
+			11 button ◎ 目标
+				99 text ◎
+				100 text 目标
+			14 button ⌕ 发现
+				101 text ⌕
+				102 text 发现
+			17 button ⚙ 设置
+				103 text ⚙
+				104 text 设置
+			105 text F fixture-admin 管理员
+			106 button 退出登录
+		22 container
+			23 text ScopeDesk  /  目标 PostgreSQL · 管理员
+			24 heading 目标, Value: 1
+				57 text 目标
+			26 text 授权范围 → 发现 → 画像 → 变化 → 通知
+			27 button 刷新
+			58 heading 目标 · 1, Value: 2
+				59 text 目标 · 1
+			60 button 添加目标
+			61 container
+				62 text 当前目标
+				63 pop up button (collapsed, settable) 当前目标, Value: example.com · 仅此域名, Secondary Actions: Expand
+					64 menu
+						65 (selected) example.com · 仅此域名
+			66 heading example.com, Value: 2
+				67 text example.com
+			68 text 仅此域名 · 本目标 1 RPS（项目合计上限 1 RPS） · 并发 2 · 每次执行最多 1000 次平台请求
+			69 button 查看资产
+			70 button 查看变化
+			71 button (disabled) 用默认配置执行一次
+			72 text 已允许 HTTP 探测；仅画像模式且当前授权有效时才会尝试，结果请看资产观测
+			73 text 当前配置尚未保存；保存后立即执行与定时计划将共用此配置。
+			74 container 目标详情
+				75 button 规则
+				76 button 数据源
+				77 button 计划
+				78 button 运行历史
+			79 heading 目标默认数据源, Value: 2
+				80 text 目标默认数据源
+			81 text 此处只配置一次，立即执行和定时计划共用。修改后需保存；不会自动开始执行。
+			82 container
+				83 checkbox (settable, integer) Description: certspotter, Value: 1
+				84 text certspotter
+				85 checkbox (disabled, settable, integer) Description: subfinder 精确域名不支持子域枚举工具；未扩大目标范围, Help: 精确域名不支持子域枚举工具；未扩大目标范围, Value: 0
+				86 text subfinder
+				87 text 精确域名不支持子域枚举工具；未扩大目标范围
+				88 button (collapsed) 高级设置 · 发现后是否解析 / 探测, Secondary Actions: Expand
+					89 text 高级设置 · 发现后是否解析 / 探测
+			90 text FOFA / Hunter 需在设置中绑定账户和积分预算；供应商未返回明确收费时保留待核对。
+			91 text subfinder：精确域名不支持子域枚举工具；未扩大目标范围。已从当前表单移除不兼容项，保存后才会修改已存配置。
+			92 button 保存目标配置
+			93 button (collapsed) 导入已有资产线索, Secondary Actions: Expand
+				94 text 导入已有资产线索
+			56 text ScopeDesk · Go + Vue 3 / PostgreSQL 授权 → 发现 → 变化 → 通知
+
+The focused UI element is 76 button 数据源
