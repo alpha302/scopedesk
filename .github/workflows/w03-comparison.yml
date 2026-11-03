@@ -1,6 +1,9 @@
 name: W03 same-runner latency comparison
 on:
   workflow_dispatch:
+  push:
+    branches: [batch-p0-p1]
+    paths: ['.github/workflows/w03-comparison.yml']
 permissions:
   contents: read
 jobs:
