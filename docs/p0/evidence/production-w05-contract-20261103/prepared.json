@@ -1,0 +1,11 @@
+{
+  "commit": "19f51a92fc57f5ca64249e802b1175cf197b91fd",
+  "schema_before": 17,
+  "schema_after": 18,
+  "legacy_values_preserved": true,
+  "historical_classification_null": true,
+  "old_binary_migrate_passed": true,
+  "counts_preserved": true,
+  "auth_fixture_passed": true,
+  "binary_sha256": "0df9b7f83a310ea514251704df8d6b5634ba8643db70c5a0b8773af6c2b13e0a"
+}

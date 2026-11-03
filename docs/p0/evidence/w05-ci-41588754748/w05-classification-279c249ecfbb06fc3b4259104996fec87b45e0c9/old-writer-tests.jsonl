@@ -1,0 +1,30 @@
+{"Time":"2026-11-03T06:17:00.083842713Z","Action":"start","Package":"scopedesk"}
+{"Time":"2026-11-03T06:17:00.100226895Z","Action":"run","Package":"scopedesk","Test":"TestW05OldWriterKeepsNewColumns"}
+{"Time":"2026-11-03T06:17:00.100248596Z","Action":"output","Package":"scopedesk","Test":"TestW05OldWriterKeepsNewColumns","Output":"=== RUN   TestW05OldWriterKeepsNewColumns\n"}
+{"Time":"2026-11-03T06:17:00.234537047Z","Action":"output","Package":"scopedesk","Test":"TestW05OldWriterKeepsNewColumns","Output":"2026/11/03 06:17:00 OK   00001_core.sql (96.66ms)\n"}
+{"Time":"2026-11-03T06:17:00.2471427Z","Action":"output","Package":"scopedesk","Test":"TestW05OldWriterKeepsNewColumns","Output":"2026/11/03 06:17:00 OK   00002_security_rules.sql (9.61ms)\n"}
+{"Time":"2026-11-03T06:17:00.355618093Z","Action":"output","Package":"scopedesk","Test":"TestW05OldWriterKeepsNewColumns","Output":"2026/11/03 06:17:00 OK   00003_discovery.sql (86.87ms)\n"}
+{"Time":"2026-11-03T06:17:00.376707212Z","Action":"output","Package":"scopedesk","Test":"TestW05OldWriterKeepsNewColumns","Output":"2026/11/03 06:17:00 OK   00004_plugins.sql (13.63ms)\n"}
+{"Time":"2026-11-03T06:17:00.384492182Z","Action":"output","Package":"scopedesk","Test":"TestW05OldWriterKeepsNewColumns","Output":"2026/11/03 06:17:00 OK   00005_remove_scope_expiry.sql (5.09ms)\n"}
+{"Time":"2026-11-03T06:17:00.392074041Z","Action":"output","Package":"scopedesk","Test":"TestW05OldWriterKeepsNewColumns","Output":"2026/11/03 06:17:00 OK   00006_e3_scheduler_fixes.sql (7.42ms)\n"}
+{"Time":"2026-11-03T06:17:00.400016648Z","Action":"output","Package":"scopedesk","Test":"TestW05OldWriterKeepsNewColumns","Output":"2026/11/03 06:17:00 OK   00007_plugin_evidence.sql (6.99ms)\n"}
+{"Time":"2026-11-03T06:17:00.408725681Z","Action":"output","Package":"scopedesk","Test":"TestW05OldWriterKeepsNewColumns","Output":"2026/11/03 06:17:00 OK   00008_execution_policy.sql (8.03ms)\n"}
+{"Time":"2026-11-03T06:17:00.419771048Z","Action":"output","Package":"scopedesk","Test":"TestW05OldWriterKeepsNewColumns","Output":"2026/11/03 06:17:00 OK   00009_favicon_hashes.sql (9.65ms)\n"}
+{"Time":"2026-11-03T06:17:00.461860374Z","Action":"output","Package":"scopedesk","Test":"TestW05OldWriterKeepsNewColumns","Output":"2026/11/03 06:17:00 OK   00010_projects.sql (38.53ms)\n"}
+{"Time":"2026-11-03T06:17:00.466418973Z","Action":"output","Package":"scopedesk","Test":"TestW05OldWriterKeepsNewColumns","Output":"2026/11/03 06:17:00 OK   00011_network_evidence.sql (4.21ms)\n"}
+{"Time":"2026-11-03T06:17:00.473036016Z","Action":"output","Package":"scopedesk","Test":"TestW05OldWriterKeepsNewColumns","Output":"2026/11/03 06:17:00 OK   00012_fingerprint_evidence.sql (3.97ms)\n"}
+{"Time":"2026-11-03T06:17:00.504737936Z","Action":"output","Package":"scopedesk","Test":"TestW05OldWriterKeepsNewColumns","Output":"2026/11/03 06:17:00 OK   00013_enterprise_exploration.sql (24.71ms)\n"}
+{"Time":"2026-11-03T06:17:00.552482989Z","Action":"output","Package":"scopedesk","Test":"TestW05OldWriterKeepsNewColumns","Output":"2026/11/03 06:17:00 OK   00014_passive_sources.sql (37.68ms)\n"}
+{"Time":"2026-11-03T06:17:00.568103489Z","Action":"output","Package":"scopedesk","Test":"TestW05OldWriterKeepsNewColumns","Output":"2026/11/03 06:17:00 OK   00015_passive_credits_only.sql (12.74ms)\n"}
+{"Time":"2026-11-03T06:17:00.571521942Z","Action":"output","Package":"scopedesk","Test":"TestW05OldWriterKeepsNewColumns","Output":"2026/11/03 06:17:00 OK   00016_event_dedupe_legacy_lookup.sql (2.52ms)\n"}
+{"Time":"2026-11-03T06:17:00.574745058Z","Action":"output","Package":"scopedesk","Test":"TestW05OldWriterKeepsNewColumns","Output":"2026/11/03 06:17:00 OK   00017_dns_observation.sql (2.82ms)\n"}
+{"Time":"2026-11-03T06:17:00.574784943Z","Action":"output","Package":"scopedesk","Test":"TestW05OldWriterKeepsNewColumns","Output":"2026/11/03 06:17:00 goose: successfully migrated database to version: 17\n"}
+{"Time":"2026-11-03T06:17:00.636293428Z","Action":"output","Package":"scopedesk","Test":"TestW05OldWriterKeepsNewColumns","Output":"2026/11/03 06:17:00 OK   00018_asset_classification.sql (5.52ms)\n"}
+{"Time":"2026-11-03T06:17:00.636330557Z","Action":"output","Package":"scopedesk","Test":"TestW05OldWriterKeepsNewColumns","Output":"2026/11/03 06:17:00 goose: successfully migrated database to version: 18\n"}
+{"Time":"2026-11-03T06:17:00.643645781Z","Action":"output","Package":"scopedesk","Test":"TestW05OldWriterKeepsNewColumns","Output":"2026/11/03 06:17:00 goose: no migrations to run. current version: 18\n"}
+{"Time":"2026-11-03T06:17:00.680903758Z","Action":"output","Package":"scopedesk","Test":"TestW05OldWriterKeepsNewColumns","Output":"    w05_old_writer_fixture_test.go:73: old writer failed against schema 18 (connection details suppressed)\n"}
+{"Time":"2026-11-03T06:17:00.95009673Z","Action":"output","Package":"scopedesk","Test":"TestW05OldWriterKeepsNewColumns","Output":"--- FAIL: TestW05OldWriterKeepsNewColumns (0.85s)\n"}
+{"Time":"2026-11-03T06:17:00.950154238Z","Action":"fail","Package":"scopedesk","Test":"TestW05OldWriterKeepsNewColumns","Elapsed":0.85}
+{"Time":"2026-11-03T06:17:00.950276759Z","Action":"output","Package":"scopedesk","Output":"FAIL\n"}
+{"Time":"2026-11-03T06:17:00.955488442Z","Action":"output","Package":"scopedesk","Output":"FAIL\tscopedesk\t0.871s\n"}
+{"Time":"2026-11-03T06:17:00.955508019Z","Action":"fail","Package":"scopedesk","Elapsed":0.872}

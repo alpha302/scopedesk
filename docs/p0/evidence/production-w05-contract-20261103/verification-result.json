@@ -1,0 +1,18 @@
+{
+  "commit": "19f51a92fc57f5ca64249e802b1175cf197b91fd",
+  "ci_run": 41589146132,
+  "ci_passed": true,
+  "old_writer_passed": true,
+  "source_hashes_verified": true,
+  "counts": {
+    "old-writer-tests.jsonl": {
+      "pass": 1
+    },
+    "regression-tests.jsonl": {
+      "pass": 21
+    },
+    "w05-tests.jsonl": {
+      "pass": 28
+    }
+  }
+}

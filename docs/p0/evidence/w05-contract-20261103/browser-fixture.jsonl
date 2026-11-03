@@ -1,0 +1,28 @@
+{"Time":"2026-11-03T13:46:08.690883098+08:00","Action":"start","Package":"scopedesk"}
+{"Time":"2026-11-03T13:46:08.722023727+08:00","Action":"run","Package":"scopedesk","Test":"TestBrowserW05Fixture"}
+{"Time":"2026-11-03T13:46:08.724069834+08:00","Action":"output","Package":"scopedesk","Test":"TestBrowserW05Fixture","Output":"=== RUN   TestBrowserW05Fixture\n","OutputType":"frame"}
+{"Time":"2026-11-03T13:46:08.958070772+08:00","Action":"output","Package":"scopedesk","Test":"TestBrowserW05Fixture","Output":"2026/11/03 13:46:08 OK   00001_core.sql (145.05ms)\n"}
+{"Time":"2026-11-03T13:46:08.974273426+08:00","Action":"output","Package":"scopedesk","Test":"TestBrowserW05Fixture","Output":"2026/11/03 13:46:08 OK   00002_security_rules.sql (15.88ms)\n"}
+{"Time":"2026-11-03T13:46:09.147196105+08:00","Action":"output","Package":"scopedesk","Test":"TestBrowserW05Fixture","Output":"2026/11/03 13:46:09 OK   00003_discovery.sql (111.21ms)\n"}
+{"Time":"2026-11-03T13:46:09.172938831+08:00","Action":"output","Package":"scopedesk","Test":"TestBrowserW05Fixture","Output":"2026/11/03 13:46:09 OK   00004_plugins.sql (19.42ms)\n"}
+{"Time":"2026-11-03T13:46:09.188419923+08:00","Action":"output","Package":"scopedesk","Test":"TestBrowserW05Fixture","Output":"2026/11/03 13:46:09 OK   00005_remove_scope_expiry.sql (10.34ms)\n"}
+{"Time":"2026-11-03T13:46:09.202369091+08:00","Action":"output","Package":"scopedesk","Test":"TestBrowserW05Fixture","Output":"2026/11/03 13:46:09 OK   00006_e3_scheduler_fixes.sql (11.19ms)\n"}
+{"Time":"2026-11-03T13:46:09.214751018+08:00","Action":"output","Package":"scopedesk","Test":"TestBrowserW05Fixture","Output":"2026/11/03 13:46:09 OK   00007_plugin_evidence.sql (12.01ms)\n"}
+{"Time":"2026-11-03T13:46:09.241503276+08:00","Action":"output","Package":"scopedesk","Test":"TestBrowserW05Fixture","Output":"2026/11/03 13:46:09 OK   00008_execution_policy.sql (16.31ms)\n"}
+{"Time":"2026-11-03T13:46:09.266181542+08:00","Action":"output","Package":"scopedesk","Test":"TestBrowserW05Fixture","Output":"2026/11/03 13:46:09 OK   00009_favicon_hashes.sql (18.69ms)\n"}
+{"Time":"2026-11-03T13:46:09.327916105+08:00","Action":"output","Package":"scopedesk","Test":"TestBrowserW05Fixture","Output":"2026/11/03 13:46:09 OK   00010_projects.sql (55.98ms)\n"}
+{"Time":"2026-11-03T13:46:09.354697818+08:00","Action":"output","Package":"scopedesk","Test":"TestBrowserW05Fixture","Output":"2026/11/03 13:46:09 OK   00011_network_evidence.sql (9.41ms)\n"}
+{"Time":"2026-11-03T13:46:09.361682609+08:00","Action":"output","Package":"scopedesk","Test":"TestBrowserW05Fixture","Output":"2026/11/03 13:46:09 OK   00012_fingerprint_evidence.sql (6.82ms)\n"}
+{"Time":"2026-11-03T13:46:09.43190052+08:00","Action":"output","Package":"scopedesk","Test":"TestBrowserW05Fixture","Output":"2026/11/03 13:46:09 OK   00013_enterprise_exploration.sql (30.45ms)\n"}
+{"Time":"2026-11-03T13:46:09.519392194+08:00","Action":"output","Package":"scopedesk","Test":"TestBrowserW05Fixture","Output":"2026/11/03 13:46:09 OK   00014_passive_sources.sql (46.47ms)\n"}
+{"Time":"2026-11-03T13:46:09.547354845+08:00","Action":"output","Package":"scopedesk","Test":"TestBrowserW05Fixture","Output":"2026/11/03 13:46:09 OK   00015_passive_credits_only.sql (17.61ms)\n"}
+{"Time":"2026-11-03T13:46:09.553660755+08:00","Action":"output","Package":"scopedesk","Test":"TestBrowserW05Fixture","Output":"2026/11/03 13:46:09 OK   00016_event_dedupe_legacy_lookup.sql (4.05ms)\n"}
+{"Time":"2026-11-03T13:46:09.564686774+08:00","Action":"output","Package":"scopedesk","Test":"TestBrowserW05Fixture","Output":"2026/11/03 13:46:09 OK   00017_dns_observation.sql (4.72ms)\n"}
+{"Time":"2026-11-03T13:46:09.578563144+08:00","Action":"output","Package":"scopedesk","Test":"TestBrowserW05Fixture","Output":"2026/11/03 13:46:09 OK   00018_asset_classification.sql (8.73ms)\n"}
+{"Time":"2026-11-03T13:46:09.578690182+08:00","Action":"output","Package":"scopedesk","Test":"TestBrowserW05Fixture","Output":"2026/11/03 13:46:09 goose: successfully migrated database to version: 18\n"}
+{"Time":"2026-11-03T13:46:15.358378273+08:00","Action":"output","Package":"scopedesk","Test":"TestBrowserW05Fixture","Output":"    w05_browser_fixture_test.go:37: synthetic browser fixture ready on loopback; no workers/scheduler\n"}
+{"Time":"2026-11-03T13:56:15.928943176+08:00","Action":"output","Package":"scopedesk","Test":"TestBrowserW05Fixture","Output":"--- PASS: TestBrowserW05Fixture (607.21s)\n","OutputType":"frame"}
+{"Time":"2026-11-03T13:56:15.933828984+08:00","Action":"pass","Package":"scopedesk","Test":"TestBrowserW05Fixture","Elapsed":607.21}
+{"Time":"2026-11-03T13:56:15.940061785+08:00","Action":"output","Package":"scopedesk","Output":"PASS\n","OutputType":"frame"}
+{"Time":"2026-11-03T13:56:16.947583961+08:00","Action":"output","Package":"scopedesk","Output":"ok  \tscopedesk\t608.256s\n"}
+{"Time":"2026-11-03T13:56:16.947691158+08:00","Action":"pass","Package":"scopedesk","Elapsed":608.257}

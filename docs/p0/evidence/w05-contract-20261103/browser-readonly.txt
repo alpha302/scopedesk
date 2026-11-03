@@ -1,0 +1,91 @@
+Browser tab: 2, Title: "ScopeDesk · 持续资产监控", URL: "http://127.0.0.1:18765/".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
++		157 container
++			158 heading api2.example.com, Value: 2
++				159 text api2.example.com
++			160 button 关闭
++			161 definition list
++				162 container 分类 / 评分
++					163 text 分类 / 评分
++				164 container
++					165 text API · 40 自动分类 · 规则 subdomain-tokens-v2 · 根域 example.com 自动命中：api （标签 api2） ；基础 10 + 关键词 20 + HTTP 存活 10。评分仅供排序，不是漏洞或归属置信度。
++				166 container DNS 最近观测
++					167 text DNS 最近观测
++				168 text 未取得独立 DNS 响应证据
++				169 container IP / CNAME
++					170 text IP / CNAME
++				171 text /
++				172 container 标题 / Server
++					173 text 标题 / Server
++				174 text /
++				175 container TLS 主体 / 到期
++					176 text TLS 主体 / 到期
++				177 text / —
++				178 container 图标 mmh3（已验证）
++					179 text 图标 mmh3（已验证）
++				180 text 未取得
++				181 container 图标 SHA-256（已验证）
++					182 text 图标 SHA-256（已验证）
++				183 text 未取得
++				184 container 旧哈希（未验证）
++					185 text 旧哈希（未验证）
++				186 text 未取得
++				187 container 安全设备命中
++					188 text 安全设备命中
++				189 container
++					190 text 未标记为安全设备 无命中规则
++				191 container 标签 / 备注
++					192 text 标签 / 备注
++				193 text /
++			194 heading 服务 · 0, Value: 3
++				195 text 服务 · 0
++			196 table
++				197 row
++					198 cell
++						199 text IP / 端口
++					200 cell
++						201 text 协议 / 服务
++					202 cell
++						203 text HTTP / 标题
++					204 cell
++						205 text 指纹 / Server
++					206 cell
++						207 text 图标哈希
++					208 cell
++						209 text TLS / 到期
++					210 cell
++						211 text 首次 / 最近
++				212 row
++					213 cell
++						214 text 暂无服务画像；后续授权探测会补充。
++			215 heading 被动指纹依据, Value: 3
++				216 text 被动指纹依据
++			217 text 暂无新引擎命中依据；历史名称不代表已按新规则验证。
++			218 heading 网络分类证据, Value: 3
++				219 text 网络分类证据
++			220 text 尚未按新规则分类，旧 CDN 标记未验证。
++			221 heading 插件画像证据 · 0, Value: 3
++				222 text 插件画像证据 · 0
++			223 text 来自插件的数据只作为画像线索，不用于判断当前存活。未提供端口时不推断端口。
++			224 table
++				225 row
++					226 cell
++						227 text 来源 / 目标
++					228 cell
++						229 text 标题 / Server
++					230 cell
++						231 text HTTP / TLS
++					232 cell
++						233 text 其他证据
++					234 cell
++						235 text 最近取得
++				236 row
++					237 cell
++						238 text 暂无插件画像证据。
++			239 heading 变化快照（最近 30 次）, Value: 3
++				240 text 变化快照（最近 30 次）
++			241 text 2026/11/3 14:20:37 · #1 · 未探测 ·
++			242 heading 关联事件, Value: 3
++				243 text 关联事件
++			244 text 2026/11/3 14:20:37 · 新增资产 · {"host":"api2.example.com","sources":[]}
+The focused UI element is 132 button api2.example.com
