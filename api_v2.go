@@ -109,7 +109,14 @@ func (e *Engine) serve(w http.ResponseWriter, r *http.Request, u User) {
 			apiError(w, err)
 			return
 		}
-		respond(w, 200, map[string]any{"projects": projects, "workspaces": workspaces, "scopes": scopes, "assets": []any{}, "jobs": jobs, "src": programs, "version": "0.3", "storage": "PostgreSQL", "source_options": e.collectorOptions(ctx), "passive_provider_options": passiveProviderMetadata()})
+		capabilities := e.collectorCapabilities(ctx)
+		sourceOptions := []string{}
+		for _, capability := range capabilities {
+			if capability.Enabled {
+				sourceOptions = append(sourceOptions, capability.Name)
+			}
+		}
+		respond(w, 200, map[string]any{"projects": projects, "workspaces": workspaces, "scopes": scopes, "assets": []any{}, "jobs": jobs, "src": programs, "version": "0.3", "storage": "PostgreSQL", "source_options": sourceOptions, "source_capabilities": capabilities, "passive_provider_options": passiveProviderMetadata()})
 		return
 	case path == "/api/scopes" && r.Method == "GET":
 		scopes, err := e.Store.scopes(ctx, u, r.URL.Query())
@@ -191,6 +198,12 @@ func (e *Engine) serve(w http.ResponseWriter, r *http.Request, u User) {
 				if err != nil {
 					apiError(w, err)
 					return
+				}
+				if p.Enabled {
+					if err = e.validateSourceSetup(ctx, scope.Mode, p.Collectors, p.CollectionMode); err != nil {
+						apiError(w, err)
+						return
+					}
 				}
 				raw, _ := json.Marshal(p.Collectors)
 				_, err = e.Store.DB.Exec(ctx, "INSERT INTO monitor_plans(scope_id,enabled,interval_hours,cron,collectors,next_run_at,collection_mode)VALUES($1,$2,$3,$4,$5,$6,$7)ON CONFLICT(scope_id)DO UPDATE SET enabled=excluded.enabled,interval_hours=excluded.interval_hours,cron=excluded.cron,collectors=excluded.collectors,collection_mode=excluded.collection_mode,next_run_at=excluded.next_run_at,schedule_error='',retry_at=NULL", id, p.Enabled, p.Interval, p.Cron, raw, next, p.CollectionMode)
@@ -506,6 +519,10 @@ func (e *Engine) enqueue(w http.ResponseWriter, r *http.Request, u User, s Scope
 	}
 	mode, err = validateCollectionMode(mode, sources)
 	if err != nil {
+		apiError(w, err)
+		return
+	}
+	if err = e.validateSourceSetup(r.Context(), g.Scope.Mode, sources, mode); err != nil {
 		apiError(w, err)
 		return
 	}

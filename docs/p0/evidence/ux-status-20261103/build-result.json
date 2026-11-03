@@ -1,0 +1,11 @@
+{
+  "go_version": "go1.26.0",
+  "target": "linux/amd64",
+  "cgo_enabled": false,
+  "test_binary_compiled": true,
+  "test_binary_sha256": "f6ecb8bf810709dceaeafc43a0ebe557aaaecd16a3255e304256fe7612956a78",
+  "linux_tests_executed": false,
+  "pg16_integration_executed": false,
+  "github_pushed": false,
+  "server_deployed": false
+}

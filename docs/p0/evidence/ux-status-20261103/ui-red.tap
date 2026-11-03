@@ -1,0 +1,164 @@
+✖ an ended job with a failed source is partial rather than successful (5.5978ms)
+✖ all sources failing without retained results is a failed result (0.5416ms)
+✔ absence eligibility and evidence-only mode do not mean collection failed (0.4262ms)
+✖ old ended jobs without result evidence are explicitly unknown (0.4334ms)
+✔ cancelled and running jobs keep their actual execution status (0.3073ms)
+✖ HTTP permission is described separately from actual observations (0.6995ms)
+✖ exact targets cannot enqueue subfinder and changing scope never expands authorization (0.7187ms)
+✖ source compatibility also respects evidence-only and custom manifest modes (0.4042ms)
+✖ events use readable summaries and do not invent HTTP evidence for old records (0.7308ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 2
+ℹ fail 7
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1242.3648
+
+✖ failing tests:
+
+test at ui_semantics_test.cjs:18:1
+✖ an ended job with a failed source is partial rather than successful (5.5978ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  '成功' !== '部分成功'
+  
+      at TestContext.<anonymous> (C:\Users\user\Documents\ChatGPT\渗透测试\recon-go\ui_semantics_test.cjs:20:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.start (node:internal/test_runner/test:1257:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '成功',
+    expected: '部分成功',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at ui_semantics_test.cjs:22:1
+✖ all sources failing without retained results is a failed result (0.5416ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  '成功' !== '失败'
+  
+      at TestContext.<anonymous> (C:\Users\user\Documents\ChatGPT\渗透测试\recon-go\ui_semantics_test.cjs:23:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+      at Test.postRun (node:internal/test_runner/test:1537:19)
+      at Test.run (node:internal/test_runner/test:1462:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '成功',
+    expected: '失败',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at ui_semantics_test.cjs:28:1
+✖ old ended jobs without result evidence are explicitly unknown (0.4334ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  '成功' !== '已完成，结果待核对'
+  
+      at TestContext.<anonymous> (C:\Users\user\Documents\ChatGPT\渗透测试\recon-go\ui_semantics_test.cjs:29:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+      at Test.postRun (node:internal/test_runner/test:1537:19)
+      at Test.run (node:internal/test_runner/test:1462:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '成功',
+    expected: '已完成，结果待核对',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at ui_semantics_test.cjs:34:1
+✖ HTTP permission is described separately from actual observations (0.6995ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'undefined'
+  - 'function'
+  
+      at TestContext.<anonymous> (C:\Users\user\Documents\ChatGPT\渗透测试\recon-go\ui_semantics_test.cjs:35:26)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+      at Test.postRun (node:internal/test_runner/test:1537:19)
+      at Test.run (node:internal/test_runner/test:1462:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'undefined',
+    expected: 'function',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at ui_semantics_test.cjs:43:1
+✖ exact targets cannot enqueue subfinder and changing scope never expands authorization (0.7187ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (C:\Users\user\Documents\ChatGPT\渗透测试\recon-go\ui_semantics_test.cjs:47:28)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at ui_semantics_test.cjs:49:1
+✖ source compatibility also respects evidence-only and custom manifest modes (0.4042ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'undefined'
+  - 'function'
+  
+      at TestContext.<anonymous> (C:\Users\user\Documents\ChatGPT\渗透测试\recon-go\ui_semantics_test.cjs:51:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+      at Test.postRun (node:internal/test_runner/test:1537:19)
+      at Test.run (node:internal/test_runner/test:1462:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'undefined',
+    expected: 'function',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at ui_semantics_test.cjs:57:1
+✖ events use readable summaries and do not invent HTTP evidence for old records (0.7308ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /新增资产.*api\.example\.com.*certspotter/. Input:
+  
+  '{"sources":["certspotter"]}'
+  
+      at TestContext.<anonymous> (C:\Users\user\Documents\ChatGPT\渗透测试\recon-go\ui_semantics_test.cjs:59:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+      at Test.postRun (node:internal/test_runner/test:1537:19)
+      at Test.run (node:internal/test_runner/test:1462:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '{"sources":["certspotter"]}',
+    expected: /新增资产.*api\.example\.com.*certspotter/,
+    operator: 'match',
+    diff: 'simple'
+  }

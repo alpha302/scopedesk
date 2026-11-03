@@ -768,7 +768,7 @@ func (e *Engine) scheduleTick() {
 			}
 			continue
 		}
-		if _, modeErr := validateCollectionMode(d.p.CollectionMode, d.p.Collectors); modeErr != nil {
+		if modeErr := e.validateSourceSetup(ctx, guard.Scope.Mode, d.p.Collectors, d.p.CollectionMode); modeErr != nil {
 			if _, err = tx.Exec(ctx, "UPDATE monitor_plans SET schedule_error=$2,retry_at=now()+interval '5 minutes' WHERE scope_id=$1", d.id, modeErr.Error()); err != nil {
 				return
 			}

@@ -1,0 +1,82 @@
+TAP version 13
+# Subtest: an ended job with a failed source is partial rather than successful
+ok 1 - an ended job with a failed source is partial rather than successful
+  ---
+  duration_ms: 1.6724
+  type: 'test'
+  ...
+# Subtest: all sources failing without retained results is a failed result
+ok 2 - all sources failing without retained results is a failed result
+  ---
+  duration_ms: 0.4683
+  type: 'test'
+  ...
+# Subtest: absence eligibility and evidence-only mode do not mean collection failed
+ok 3 - absence eligibility and evidence-only mode do not mean collection failed
+  ---
+  duration_ms: 0.31
+  type: 'test'
+  ...
+# Subtest: old ended jobs without result evidence are explicitly unknown
+ok 4 - old ended jobs without result evidence are explicitly unknown
+  ---
+  duration_ms: 1.025
+  type: 'test'
+  ...
+# Subtest: cancelled and running jobs keep their actual execution status
+ok 5 - cancelled and running jobs keep their actual execution status
+  ---
+  duration_ms: 0.3163
+  type: 'test'
+  ...
+# Subtest: HTTP permission is described separately from actual observations
+ok 6 - HTTP permission is described separately from actual observations
+  ---
+  duration_ms: 0.5877
+  type: 'test'
+  ...
+# Subtest: exact targets cannot enqueue subfinder and changing scope never expands authorization
+ok 7 - exact targets cannot enqueue subfinder and changing scope never expands authorization
+  ---
+  duration_ms: 0.6393
+  type: 'test'
+  ...
+# Subtest: source compatibility also respects evidence-only and custom manifest modes
+ok 8 - source compatibility also respects evidence-only and custom manifest modes
+  ---
+  duration_ms: 0.3243
+  type: 'test'
+  ...
+# Subtest: events use readable summaries and do not invent HTTP evidence for old records
+ok 9 - events use readable summaries and do not invent HTTP evidence for old records
+  ---
+  duration_ms: 0.5599
+  type: 'test'
+  ...
+# Subtest: same target issue streaks ignore other targets and keep changed runs visible
+ok 10 - same target issue streaks ignore other targets and keep changed runs visible
+  ---
+  duration_ms: 0.7271
+  type: 'test'
+  ...
+# Subtest: an old incompatible plan can still be disabled without widening its scope
+ok 11 - an old incompatible plan can still be disabled without widening its scope
+  ---
+  duration_ms: 0.4504
+  type: 'test'
+  ...
+# Subtest: source cleanup preserves compatible choices and reports unsaved plan changes
+ok 12 - source cleanup preserves compatible choices and reports unsaved plan changes
+  ---
+  duration_ms: 0.2614
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1238.5104

@@ -1,0 +1,26 @@
+{
+  "navigationCount": 17,
+  "uniqueNavigationCount": 17,
+  "folds": [
+    {
+      "open": true,
+      "summary": "#9 example.com部分成功2026/11/3 16:00:00 · 新增 0 · IP 变化 0同类问题已连续 3 次出现"
+    },
+    {
+      "open": false,
+      "summary": "#8 example.com部分成功2026/11/3 16:00:00 · 新增 0 · IP 变化 0"
+    },
+    {
+      "open": false,
+      "summary": "#7 example.com部分成功2026/11/3 16:00:00 · 新增 0 · IP 变化 0"
+    },
+    {
+      "open": false,
+      "summary": "#6 example.com成功2026/11/3 15:00:00 · 新增 0 · IP 变化 0"
+    },
+    {
+      "open": true,
+      "summary": "#5 example.com已完成，结果待核对2026/11/3 14:00:00 · 新增 0 · IP 变化 0"
+    }
+  ]
+}

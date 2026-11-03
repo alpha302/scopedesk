@@ -1,0 +1,40 @@
+{"Time":"2026-11-03T16:51:11.9265042+08:00","Action":"start","Package":"command-line-arguments"}
+{"Time":"2026-11-03T16:51:15.4228234+08:00","Action":"run","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"output","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations","Output":"=== RUN   TestSourcePolicyCombinations\n"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"run","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/exact_subfinder"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"output","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/exact_subfinder","Output":"=== RUN   TestSourcePolicyCombinations/exact_subfinder\n"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"output","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/exact_subfinder","Output":"--- PASS: TestSourcePolicyCombinations/exact_subfinder (0.00s)\n"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"pass","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/exact_subfinder","Elapsed":0}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"run","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/subdomain_subfinder"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"output","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/subdomain_subfinder","Output":"=== RUN   TestSourcePolicyCombinations/subdomain_subfinder\n"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"output","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/subdomain_subfinder","Output":"--- PASS: TestSourcePolicyCombinations/subdomain_subfinder (0.00s)\n"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"pass","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/subdomain_subfinder","Elapsed":0}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"run","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/evidence_subfinder"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"output","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/evidence_subfinder","Output":"=== RUN   TestSourcePolicyCombinations/evidence_subfinder\n"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"output","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/evidence_subfinder","Output":"--- PASS: TestSourcePolicyCombinations/evidence_subfinder (0.00s)\n"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"pass","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/evidence_subfinder","Elapsed":0}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"run","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/builtin_exact"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"output","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/builtin_exact","Output":"=== RUN   TestSourcePolicyCombinations/builtin_exact\n"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"output","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/builtin_exact","Output":"--- PASS: TestSourcePolicyCombinations/builtin_exact (0.00s)\n"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"pass","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/builtin_exact","Elapsed":0}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"run","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/builtin_cidr"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"output","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/builtin_cidr","Output":"=== RUN   TestSourcePolicyCombinations/builtin_cidr\n"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"output","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/builtin_cidr","Output":"--- PASS: TestSourcePolicyCombinations/builtin_cidr (0.00s)\n"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"pass","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/builtin_cidr","Elapsed":0}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"run","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/custom_declared"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"output","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/custom_declared","Output":"=== RUN   TestSourcePolicyCombinations/custom_declared\n"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"output","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/custom_declared","Output":"--- PASS: TestSourcePolicyCombinations/custom_declared (0.00s)\n"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"pass","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/custom_declared","Elapsed":0}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"run","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/custom_unrestricted"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"output","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/custom_unrestricted","Output":"=== RUN   TestSourcePolicyCombinations/custom_unrestricted\n"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"output","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/custom_unrestricted","Output":"--- PASS: TestSourcePolicyCombinations/custom_unrestricted (0.00s)\n"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"pass","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/custom_unrestricted","Elapsed":0}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"run","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/disabled"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"output","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/disabled","Output":"=== RUN   TestSourcePolicyCombinations/disabled\n"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"output","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/disabled","Output":"--- PASS: TestSourcePolicyCombinations/disabled (0.00s)\n"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"pass","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations/disabled","Elapsed":0}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"output","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations","Output":"--- PASS: TestSourcePolicyCombinations (0.00s)\n"}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"pass","Package":"command-line-arguments","Test":"TestSourcePolicyCombinations","Elapsed":0}
+{"Time":"2026-11-03T16:51:15.4234164+08:00","Action":"output","Package":"command-line-arguments","Output":"PASS\n"}
+{"Time":"2026-11-03T16:51:15.4275755+08:00","Action":"output","Package":"command-line-arguments","Output":"ok  \tcommand-line-arguments\t3.501s\n"}
+{"Time":"2026-11-03T16:51:15.4275755+08:00","Action":"pass","Package":"command-line-arguments","Elapsed":3.501}

@@ -1,0 +1,4 @@
+Browser tab: 2, Title: "ScopeDesk · 持续资产监控", URL: "http://127.0.0.1:18769/".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+~				78 text 界面验收 · 执行详情 schedule · 2026/11/3 16:00:00 · 进度 100% · 尝试 1/1 · 未记录执行节点 · 作业时限 未记录  · 截止 — 部分来源失败或未完整取得结果。 已有结果已保留。 本次按授权做 DNS/画像；是否实际发送 HTTP 以本次观测证据为准
+The focused UI element is 20 button ≡ 执行记录

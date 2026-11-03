@@ -40,14 +40,10 @@ func (s *Store) pluginPlanReferences(ctx context.Context) (map[string][]PluginPl
 }
 
 func (e *Engine) collectorOptions(ctx context.Context) []string {
-	out := []string{"crtsh", "certspotter", "fofa", "hunter"}
-	if e.Store.Plugins == nil {
-		return append(out, "subfinder")
-	}
-	for _, name := range e.Store.Plugins.names() {
-		m, _, enabled, err := e.Store.pluginConfig(ctx, name)
-		if err == nil && enabled && !m.Active {
-			out = append(out, name)
+	out := []string{}
+	for _, capability := range e.collectorCapabilities(ctx) {
+		if capability.Enabled {
+			out = append(out, capability.Name)
 		}
 	}
 	return out
