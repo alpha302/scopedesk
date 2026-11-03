@@ -1,0 +1,83 @@
+name: P0 item 2 raw measurements
+on:
+  workflow_dispatch:
+  push:
+    branches: [batch-p0-p1]
+    paths:
+      - 'p0_measurements_test.go'
+      - '.github/workflows/p0-measurements.yml'
+permissions:
+  contents: read
+jobs:
+  measurements:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      P0_IMAGE: postgres:16-alpine@sha256:0cefaabd882e42bcb2a2f3dc56d3ce4770560ba62fd7f197f1a2e008fd5731ab
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+      - name: Build measurement binary before network isolation
+        run: CGO_ENABLED=0 go test -c -o /tmp/scopedesk-p0-measurements .
+      - name: Create network-none PostgreSQL 16 and fixture namespace
+        shell: bash
+        run: |
+          mkdir -p p0-artifacts
+          git rev-parse HEAD > p0-artifacts/commit.txt
+          sha256sum migrations/*.sql p0_*test.go > p0-artifacts/source.sha256
+          go version > p0-artifacts/go.txt
+          lscpu > p0-artifacts/cpu.txt
+          free -b > p0-artifacts/memory.txt
+          docker pull "$P0_IMAGE"
+          docker run -d --name scopedesk-p0-item2 --network none --cap-add NET_ADMIN \
+            --cpus 2 --memory 1073741824 \
+            -e POSTGRES_DB=scopedesk_p0 -e POSTGRES_USER=scopedesk_p0 \
+            -e POSTGRES_HOST_AUTH_METHOD=trust \
+            -v "$GITHUB_WORKSPACE:/workspace" -v /tmp/scopedesk-p0-measurements:/tmp/p0-tests:ro \
+            "$P0_IMAGE" > p0-artifacts/container-id.txt
+          for i in $(seq 1 40); do
+            if docker exec scopedesk-p0-item2 pg_isready -U scopedesk_p0 -d scopedesk_p0; then break; fi
+            sleep 1
+          done
+          docker exec scopedesk-p0-item2 pg_isready -U scopedesk_p0 -d scopedesk_p0
+          docker exec scopedesk-p0-item2 /bin/busybox ip addr add 1.1.1.1/32 dev lo
+          docker exec scopedesk-p0-item2 /bin/busybox ip addr > p0-artifacts/interfaces.txt
+          docker exec scopedesk-p0-item2 /bin/busybox ip route show table all > p0-artifacts/routes.txt
+          docker inspect scopedesk-p0-item2 --format '{"network":{{json .HostConfig.NetworkMode}},"image":{{json .Image}},"nano_cpus":{{.HostConfig.NanoCpus}},"memory":{{.HostConfig.Memory}}}' > p0-artifacts/container-limits.json
+          docker exec scopedesk-p0-item2 sh -c 'cat /sys/fs/cgroup/cpu.max; cat /sys/fs/cgroup/memory.max' > p0-artifacts/cgroup-limits.txt
+          docker exec scopedesk-p0-item2 psql -U scopedesk_p0 -d scopedesk_p0 -Atc "SELECT name||'='||setting||coalesce(unit,'') FROM pg_settings WHERE name IN ('server_version','shared_buffers','work_mem','max_connections','effective_cache_size','TimeZone') ORDER BY name" > p0-artifacts/postgres-settings.txt
+      - name: Collect item 2 only with real product dial and PG limiter
+        shell: bash
+        run: |
+          export RECON_MASTER_KEY=$(openssl rand -base64 32)
+          echo "::add-mask::$RECON_MASTER_KEY"
+          docker exec -w /workspace \
+            -e RECON_MASTER_KEY \
+            -e DATABASE_URL='postgres://scopedesk_p0@127.0.0.1:5432/scopedesk_p0?sslmode=disable' \
+            -e P0_ISOLATED=ephemeral-ci -e P0_NETWORK_NONE=confirmed \
+            -e P0_ARTIFACT_DIR=/workspace/p0-artifacts -e GOMAXPROCS=2 \
+            scopedesk-p0-item2 /tmp/p0-tests \
+            -test.v -test.timeout=18m -test.run='^(TestP0DatabaseBoundary|TestP0Item2Measurements)$' \
+            > p0-artifacts/measurements-tests.txt 2>&1
+      - name: Decode actual login mutex callsite block profiles
+        if: always()
+        shell: bash
+        run: |
+          for profile in p0-artifacts/login-round*.block.pprof; do
+            [ -f "$profile" ] || continue
+            go tool pprof -raw /tmp/scopedesk-p0-measurements "$profile" > "$profile.raw.txt"
+          done
+      - name: Save evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p0-item2-${{ github.sha }}
+          path: p0-artifacts/
+          retention-days: 14
+          if-no-files-found: error
+      - name: Remove disposable measurement container
+        if: always()
+        run: docker rm -f scopedesk-p0-item2
