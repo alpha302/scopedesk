@@ -1,0 +1,25 @@
+{"Time":"2026-11-03T01:14:49.564604789Z","Action":"start","Package":"scopedesk"}
+{"Time":"2026-11-03T01:14:49.57846464Z","Action":"run","Package":"scopedesk","Test":"TestW01LongDetailCommits"}
+{"Time":"2026-11-03T01:14:49.578489918Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"=== RUN   TestW01LongDetailCommits\n"}
+{"Time":"2026-11-03T01:14:51.013058686Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 01:14:51 OK   00001_core.sql (1.17s)\n"}
+{"Time":"2026-11-03T01:14:51.022043163Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 01:14:51 OK   00002_security_rules.sql (7.91ms)\n"}
+{"Time":"2026-11-03T01:14:51.104070908Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 01:14:51 OK   00003_discovery.sql (69.5ms)\n"}
+{"Time":"2026-11-03T01:14:51.11632478Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 01:14:51 OK   00004_plugins.sql (9.47ms)\n"}
+{"Time":"2026-11-03T01:14:51.121303449Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 01:14:51 OK   00005_remove_scope_expiry.sql (4.31ms)\n"}
+{"Time":"2026-11-03T01:14:51.126860553Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 01:14:51 OK   00006_e3_scheduler_fixes.sql (5.33ms)\n"}
+{"Time":"2026-11-03T01:14:51.133062703Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 01:14:51 OK   00007_plugin_evidence.sql (5.56ms)\n"}
+{"Time":"2026-11-03T01:14:51.143413998Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 01:14:51 OK   00008_execution_policy.sql (6.74ms)\n"}
+{"Time":"2026-11-03T01:14:51.153603959Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 01:14:51 OK   00009_favicon_hashes.sql (7.97ms)\n"}
+{"Time":"2026-11-03T01:14:51.189993423Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 01:14:51 OK   00010_projects.sql (32.49ms)\n"}
+{"Time":"2026-11-03T01:14:51.195967768Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 01:14:51 OK   00011_network_evidence.sql (3.5ms)\n"}
+{"Time":"2026-11-03T01:14:51.19950625Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 01:14:51 OK   00012_fingerprint_evidence.sql (3.19ms)\n"}
+{"Time":"2026-11-03T01:14:51.221654766Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 01:14:51 OK   00013_enterprise_exploration.sql (17.95ms)\n"}
+{"Time":"2026-11-03T01:14:51.266182709Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 01:14:51 OK   00014_passive_sources.sql (29.23ms)\n"}
+{"Time":"2026-11-03T01:14:51.277703893Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 01:14:51 OK   00015_passive_credits_only.sql (10.71ms)\n"}
+{"Time":"2026-11-03T01:14:51.277724534Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"2026/11/03 01:14:51 goose: successfully migrated database to version: 15\n"}
+{"Time":"2026-11-03T01:14:51.346348078Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"    event_dedupe_test.go:32: 64KiB evidence must commit without an oversized index key: *pgconn.PgError\n"}
+{"Time":"2026-11-03T01:14:51.584707914Z","Action":"output","Package":"scopedesk","Test":"TestW01LongDetailCommits","Output":"--- FAIL: TestW01LongDetailCommits (2.01s)\n"}
+{"Time":"2026-11-03T01:14:51.584744639Z","Action":"fail","Package":"scopedesk","Test":"TestW01LongDetailCommits","Elapsed":2.01}
+{"Time":"2026-11-03T01:14:51.585032505Z","Action":"output","Package":"scopedesk","Output":"FAIL\n"}
+{"Time":"2026-11-03T01:14:51.59057042Z","Action":"output","Package":"scopedesk","Output":"FAIL\tscopedesk\t2.026s\n"}
+{"Time":"2026-11-03T01:14:51.59060996Z","Action":"fail","Package":"scopedesk","Elapsed":2.026}

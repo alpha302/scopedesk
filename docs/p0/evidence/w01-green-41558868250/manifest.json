@@ -1,0 +1,11 @@
+{
+  "phase": "green",
+  "run_url": "https://github.com/alpha302/scopedesk/actions/runs/41558868250",
+  "tested_commit": "c9080fdba76437dfdcac977da906fcc6ab77ced0",
+  "sha256": {
+    "commit.txt": "2266ae8d880ee17060e8795784683ee1fb00f4a478438bdd0e681b3bfa812a57",
+    "regression-tests.jsonl": "e1be92d7be414c1e5d786a49e18c5f822fbadfef6bcb5a51b0af6f876063a464",
+    "source.sha256": "8c397dd1924c1d1c20e865ec0b389d147416082b0c4ac862bea58b3ad106c3ea",
+    "w01-tests.jsonl": "c72bc2ff416e9b09234499040b23833446343a3a583bf9db0c8ba60a71064d65"
+  }
+}
